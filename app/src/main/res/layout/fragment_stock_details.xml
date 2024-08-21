@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.androidmobilestock.AC_Class.Item" />
+        <variable
+            name="itemuom"
+            type="com.example.androidmobilestock.AC_Class.ItemUOM" />
+        <variable
+            name="DefaultCurr"
+            type="String" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.ui.main.StockDetailsFragment.MyClickHandler" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="17dp"
+        tools:context=".ui.main.StockDetailsFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.main.StockBalanceByLocationFragment">
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/no_image_lowres"
+                tools:scaleType="fitCenter" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@={item.ItemCode}"
+                android:hint="Attention"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textColor="#000000" />
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Item Code2"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@={item.itemCode2}"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Description" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={item.Description}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Description 2" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={item.Desc2}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="UOM" />
+
+                    <TextView
+                        android:id="@+id/UOM"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/down"
+                        android:gravity="center"
+                        android:onClick="@{handler::onUOMTxtViewClicked}"
+                        android:text="@={item.UOM}"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Rate" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.3f", item.Rate)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Shelf" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={item.Shelf}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/price_row_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Price" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.Price)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Price 2" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.Price2)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/price_row_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Price 3" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.Price3)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Price 4" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.Price4)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/price_row_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Price 5" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.Price5)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Price 6" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.Price6)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/price_row_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="MinPrice" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.minPrice)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="MaxPrice" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.2f", item.maxPrice)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Group" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={item.ItemGroup}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Type" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={item.ItemType}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Barcode" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={item.barCode}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Balance" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.0f", itemuom.BalQty)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Base UOM Balance" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@{String.format("%.0f", itemuom.BaseBalQty)}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_utd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/table">
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="Up-To-Date Cost"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FF4500"
+                android:fontFamily="@font/robotobold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/table"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="1dp"
+                android:weightSum="4"
+                android:background="@drawable/selector_fieldset_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Location"
+                    android:textColor="#FF4500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Batch No"
+                    android:textColor="#FF4500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Qty"
+                    android:textColor="#FF4500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Unit Cost"
+                    android:textColor="#FF4500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/utdcostlist"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_utd"></ListView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</layout>

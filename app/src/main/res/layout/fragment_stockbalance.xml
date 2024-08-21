@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="stockbalance"
+            type="com.example.androidmobilestock.AC_Class.StockBalance" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtItemCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ItemCode"
+            android:text="@={stockbalance.ItemCode}"
+            android:padding="5dp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/merriweather_bold"
+            android:textSize="26sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtItemCode"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/txtlocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Location"
+                android:fontFamily="@font/cantata_one"
+                android:textSize="24sp"
+                android:padding="5dp"
+                android:text="@={stockbalance.Location}"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtstockbalance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Stock Balance"
+                android:fontFamily="@font/cantata_one"
+                android:textSize="24sp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:text='@{String.format("%.2f", stockbalance.BalQty )}'/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

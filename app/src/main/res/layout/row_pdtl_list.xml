@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/layout">-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="PurchaseDetail"
+            type="com.example.androidmobilestock.AC_Class.PurchaseDetails" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<TextView-->
+        <!--android:id="@+id/invdtllist_docno"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:gravity="right"-->
+        <!--android:hint="DocNo"-->
+        <!--android:padding="0dp"-->
+        <!--android:text="@={InvDetail.DocNo}"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="italic"-->
+        <!--app:fontFamily="sans-serif-thin"-->
+        <!--app:layout_constraintLeft_toRightOf="@id/invdtllist_location"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/invdtllist_location" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/invdtllist_location"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:gravity="left"-->
+        <!--android:hint="Location"-->
+        <!--android:padding="0dp"-->
+        <!--android:text="@={InvDetail.Location}"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="italic"-->
+        <!--app:fontFamily="sans-serif-thin"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <TextView
+            android:id="@+id/invdtllist_itemcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:hint="ItemCode"
+            android:padding="0dp"
+            android:text="@={PurchaseDetail.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toTopOf="@+id/invdtllist_description"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/invdtllist_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hint="Description"
+            android:padding="0dp"
+            android:text="@={PurchaseDetail.ItemDescription}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toTopOf="@+id/invdtllist_divider2"
+            app:layout_constraintEnd_toEndOf="@+id/invdtllist_itemcode"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/invdtllist_itemcode"
+            app:layout_constraintTop_toBottomOf="@+id/invdtllist_itemcode" />
+
+        <TextView
+            android:id="@+id/invdtllist_chosen_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="center"
+            android:hint="Quantity"
+            android:padding="0dp"
+            android:text='@{String.format("%.0f", PurchaseDetail.Quantity)}'
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/invdtllist_description"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/invdtllist_taxvalue"
+            app:layout_constraintBottom_toTopOf="@+id/invdtllist_chosen_uom" />
+
+        <TextView
+            android:id="@+id/invdtllist_chosen_uom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="center"
+            android:hint="UOM"
+            android:padding="0dp"
+            android:text="@={PurchaseDetail.UOM}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/invdtllist_description"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/invdtllist_chosen_qty"
+             />
+
+        <TextView
+            android:id="@+id/invdtllist_uprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="right"
+            android:hint="Unit Price"
+            android:padding="0dp"
+            android:text='@{String.format("%.2f", PurchaseDetail.UPrice)}'
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toTopOf="@+id/invdtllist_taxvalue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/invdtllist_discount"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="right"-->
+        <!--android:hint="Discount"-->
+        <!--android:padding="0dp"-->
+        <!--android:text='@{String.format("%.2f", InvDetail.Discount)}'-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="14sp"-->
+        <!--app:fontFamily="@font/cantata_one"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/invdtllist_uprice"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/invdtllist_uprice"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/invdtllist_uprice" />-->
+
+        <TextView
+            android:id="@+id/invdtllist_taxvalue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="TotalDisc"
+            android:padding="0dp"
+            android:text='@{String.format("%.2f", PurchaseDetail.Discount)}'
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toTopOf="@+id/invdtllist_totalin"
+            app:layout_constraintEnd_toEndOf="@id/invdtllist_uprice"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/invdtllist_uprice"
+            app:layout_constraintTop_toBottomOf="@+id/invdtllist_uprice" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/invdtllist_taxtype"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="left"-->
+        <!--android:hint="Taxtype"-->
+        <!--android:padding="0dp"-->
+        <!--android:text="@={InvDetail.TaxType}"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="16sp"-->
+        <!--app:fontFamily="@font/cantata_one"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/invdtllist_chosen_qty"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/invdtllist_taxvalue" />-->
+
+        <View
+            android:id="@+id/invdtllist_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/invdtllist_taxvalue" />
+
+        <TextView
+            android:id="@+id/invdtllist_totalin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="right"
+            android:hint="TotalValue"
+            android:padding="0dp"
+            android:text='@{String.format("%.2f", PurchaseDetail.Total_In)}'
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toTopOf="@+id/invdtllist_divider2"
+            app:layout_constraintEnd_toEndOf="@+id/invdtllist_taxvalue"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/invdtllist_taxvalue" />
+
+        <View
+            android:id="@+id/invdtllist_divider2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.7"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier7" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/totaltaxtxt"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Total Tax: "-->
+        <!--android:textSize="16sp"-->
+        <!--app:fontFamily="@font/cantata_one"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/invdtllist_taxvalue"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/invdtllist_taxvalue"-->
+        <!--tools:layout_editor_absoluteX="224dp" />-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7007299" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="invdtllist_taxvalue,invdtllist_totalin,invdtllist_chosen_qty,invdtllist_uprice,invdtllist_description,invdtllist_itemcode,invdtllist_divider"
+            tools:layout_editor_absoluteY="602dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

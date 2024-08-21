@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="Connection"
+            type="com.example.androidmobilestock.AC_Class.Connection" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.ConnectionSettings.MyClickHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="15dp"
+        tools:context=".ConnectionSettings">
+
+        <TextView
+            android:id="@+id/lblAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:padding="5dp"
+            android:text="Server URL: "
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold" />
+
+        <EditText
+            android:id="@+id/txtaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblAddress"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="192.168.0.180"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/lblPort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtaddress"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:padding="5dp"
+            android:text="Port: "
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold" />
+
+        <EditText
+            android:id="@+id/txtPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblPort"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="8866"
+            android:inputType="number|numberSigned"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPort"
+            android:layout_alignRight="@id/txtPort"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="@{handler::OnAddBtnClicked}"
+            android:text="ADD"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fontFamily="@font/merriweather_bold" />
+
+        <TextView
+            android:id="@+id/textConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnAdd"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:padding="5dp"
+            android:text="Connection History"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold" />
+
+        <ListView
+            android:id = "@+id/list"
+            android:layout_width ="match_parent"
+            android:layout_height ="match_parent"
+            android:background="@color/MintCream"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/textConnection"
+            android:listSelector="@android:color/holo_green_light" />
+    </RelativeLayout>
+</layout>

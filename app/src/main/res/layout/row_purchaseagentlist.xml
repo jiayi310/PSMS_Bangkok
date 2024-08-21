@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="agent"
+            type="com.example.androidmobilestock.AC_Class.PurchaseAgent" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_agent_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@{agent.PurchaseAgent}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_agent_name"
+            android:layout_alignStart="@+id/text_agent_name"
+            android:layout_alignLeft="@+id/text_agent_name"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginRight="0dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@{agent.Description}"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:fontFamily="@font/merriweather" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/text_desc"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+</layout>

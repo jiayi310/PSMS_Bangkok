@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="TrDetail"
+            type="com.example.androidmobilestock.AC_Class.TransferDtl" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoreular"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_description"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_itemCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:hint="ItemCode"
+            android:text="@={TrDetail.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_description"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="3dp"
+            android:gravity="left"
+            android:hint="Description"
+            android:ellipsize="none"
+            android:singleLine="false"
+            android:text="@={TrDetail.Description}"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_itemCode"
+            app:layout_constraintEnd_toStartOf="@+id/tv_qty"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itemCode" />
+
+
+        <TextView
+            android:id="@+id/tv_batchno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Batch No: "
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintStart_toStartOf="@+id/tv_description"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+        <TextView
+            android:id="@+id/tv_batchno_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:hint="batchno"
+            android:visibility="gone"
+            android:text="@={TrDetail.BatchNo}"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintStart_toEndOf="@+id/tv_batchno"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+        <TextView
+            android:id="@+id/tv_uom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="center"
+            android:hint="UOM"
+            android:padding="0dp"
+            android:text="@={TrDetail.UOM}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_itemCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_itemCode" />
+
+        <TextView
+            android:id="@+id/tv_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="right"
+            android:hint="Quantity"
+            android:text="0"
+            android:textColor="@color/red"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="@+id/tv_uom"
+            app:layout_constraintTop_toTopOf="@+id/tv_description"
+            app:qty="@{TrDetail.Quantity}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

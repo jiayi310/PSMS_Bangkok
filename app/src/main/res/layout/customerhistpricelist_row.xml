@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="histprice"
+            type="com.example.androidmobilestock.AC_Class.HistoryPrice" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/HP_DocNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="left"
+            android:hint="DocNo"
+            android:padding="5dp"
+            android:text="@={histprice.DocNo}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/HP_DocDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="left"
+            android:hint="DocDate"
+            android:padding="5dp"
+            android:text="@={histprice.DocDate}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/HP_ItemCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/HP_DocDate"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="left"
+            android:hint="ItemCode"
+            android:padding="5dp"
+            android:text="@={histprice.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/HP_UnitPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HP_DocDate"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="right"
+            android:hint="Price"
+            android:padding="5dp"
+            android:text='@{String.format("%.2f", histprice.UnitPrice)}'
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/HP_Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HP_ItemCode"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="left"
+            android:hint="Location"
+            android:padding="5dp"
+            android:text="@={histprice.Location}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/HP_DebtorCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HP_Location"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="left"
+            android:hint="Debtor Code"
+            android:padding="5dp"
+            android:text="@={histprice.AccNo}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/HP_Agent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HP_DebtorCode"
+            android:fontFamily="@font/cantata_one"
+            android:gravity="left"
+            android:hint="Agent"
+            android:padding="5dp"
+            android:text="@={histprice.Agent}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+
+    </RelativeLayout>
+</layout>

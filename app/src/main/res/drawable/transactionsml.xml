@@ -1,0 +1,7 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/transaction"
+        android:width="38dp"
+        android:height="38dp">
+    </item>
+</layer-list>

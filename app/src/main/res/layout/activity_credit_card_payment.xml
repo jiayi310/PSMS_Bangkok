@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="payment"
+            type="com.example.androidmobilestock.AC_Class.Payment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".CreditCardPayment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeLayout21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/lblNetTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:text="Net Total: "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_NetTotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:padding="5dp"
+                android:text='@{String.format("%.2f", payment.OriginalAmt)}'
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/lblNetTotal"
+                app:layout_constraintLeft_toRightOf="@+id/lblNetTotal"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblNetTotal" />
+
+            <TextView
+                android:id="@+id/lblCardPayment"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Amount: "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblNetTotal" />
+
+            <EditText
+                android:id="@+id/tv_CardPayment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_cart"
+                android:gravity="right|center_vertical"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text='@{String.format("%.2f", payment.PaymentAmt)}'
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/lblCardPayment"
+                app:layout_constraintLeft_toRightOf="@+id/lblCardPayment"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblCardPayment" />
+
+            <TextView
+                android:id="@+id/lblCCType"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Card Type: "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblCardPayment" />
+
+            <Spinner
+                android:id="@+id/spinner_cardtype"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:entries="@array/cctype_array_name"
+                android:focusable="true"
+                android:gravity="right|center_vertical"
+                android:padding="5dp"
+                android:spinnerMode="dialog"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/averia_serif_libre"
+                app:layout_constraintBottom_toBottomOf="@+id/lblCCType"
+                app:layout_constraintLeft_toRightOf="@+id/lblCCType"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblCCType" />
+
+            <TextView
+                android:id="@+id/lblCreditCardNo"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Card No.: "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblCCType" />
+
+            <EditText
+                android:id="@+id/tv_cardNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right|center_vertical"
+                android:inputType="number"
+                android:maxLength="16"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="@={payment.CCNo}"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/lblCreditCardNo"
+                app:layout_constraintLeft_toRightOf="@+id/lblCreditCardNo"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblCreditCardNo" />
+
+            <TextView
+                android:id="@+id/lblexpirydate"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Expiry Date: "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblCreditCardNo" />
+
+            <EditText
+                android:id="@+id/tv_expirydate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right|center_vertical"
+                android:hint="MM/YYYY"
+                android:inputType="date"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="@={payment.CCExpiryDate}"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/lblexpirydate"
+                app:layout_constraintLeft_toRightOf="@+id/lblexpirydate"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblexpirydate" />
+
+            <TextView
+                android:id="@+id/lblAppCode"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Approval Code:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblexpirydate" />
+
+            <EditText
+                android:id="@+id/tv_appCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right|center_vertical"
+                android:inputType="number"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="@={payment.CCApprovalCode}"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/lblAppCode"
+                app:layout_constraintLeft_toRightOf="@+id/lblAppCode"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblAppCode" />
+
+            <Button
+                android:id="@+id/btnCardPaymentSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:fontFamily="@font/merriweather_bold"
+                android:onClick="btnSaveClicked"
+                android:text="Save"
+                android:background="@drawable/bg_cart_orange"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_appCode"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_appCode" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

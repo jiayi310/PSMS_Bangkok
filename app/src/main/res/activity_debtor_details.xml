@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="debtor"
+            type="com.example.androidmobilestock.AC_Class.Debtor" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="17dp"
+        tools:context=".DebtorDetails">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*"
+            >
+            <ImageView
+                android:id="@+id/iv_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/no_image_lowres"
+                tools:scaleType="fitCenter" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@={debtor.Attention}"
+                android:hint="Attention"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#FF6500"
+                    android:contentDescription="Call"
+                    android:src="@android:drawable/ic_menu_call" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#FF6500"
+                    android:contentDescription="Whatsapp"
+                    android:src="@drawable/ic_download_whatsapp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#FF6500"
+                    android:contentDescription="Email"
+                    android:src="@android:drawable/ic_dialog_email" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#FF6500"
+                    android:contentDescription="Map"
+                    android:src="@android:drawable/ic_dialog_map" />
+            </LinearLayout>
+
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Company Name" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.CompanyName}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Desc2" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.Description}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Code" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.AccNo}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Agent" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.SalesAgent}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Phone" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.Phone}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Fax" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.Fax}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_column="0"
+                android:layout_margin="3dp"
+                android:padding="5dp"
+                android:background="@drawable/selector_fieldset_background"
+                android:orientation="vertical" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#FF4500"
+                    android:textSize="14sp"
+                    android:text="Phone2" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:text="@={debtor.Phone2}"
+                    android:textColor="#000000" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Area" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.AreaCode}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Email" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.EmailAddress}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Address" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.ADD1}"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.ADD2}"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.ADD3}"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.ADD4}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Debtor Type" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.DebtorType}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Currency" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.CurrencyCode}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="0"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Terms" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.DisplayTerm}"
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_column="1"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="Tax Code" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="@={debtor.TaxType}"
+
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+
+
+        </TableLayout >
+
+    </ScrollView>
+
+
+</layout>

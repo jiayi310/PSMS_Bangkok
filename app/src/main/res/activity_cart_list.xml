@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="Inv"
+            type="com.example.androidmobilestock.AC_Class.Invoice" />
+        <variable
+            name="defaultCurr"
+            type="String" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.CartList.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        tools:context=".CartList">
+
+
+
+        <LinearLayout
+            android:id="@+id/layoutbottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+
+            <!--        <LinearLayout-->
+            <!--            android:background="@color/white"-->
+            <!--            android:id="@+id/layoutbottom2"-->
+            <!--            android:layout_width="fill_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:padding="10dp"-->
+            <!--            android:paddingEnd="15dp"-->
+            <!--            android:orientation="horizontal"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent">-->
+
+
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/lblTotal"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="bottom"-->
+            <!--                android:layout_marginStart="10dp"-->
+            <!--                android:layout_weight="4"-->
+            <!--                android:gravity="end"-->
+            <!--                android:hint="Total"-->
+            <!--                android:text='@{String.format("Total (%s) ", defaultCurr)}'-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="11sp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:fontFamily="@font/merriweather_bold" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/totalTxt"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="bottom"-->
+            <!--                android:layout_marginEnd="10dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:gravity="end"-->
+            <!--                android:hint="Total"-->
+            <!--                android:textColor="@color/red"-->
+            <!--                android:textSize="19sp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:fontFamily="@font/merriweather" />-->
+
+
+
+
+
+
+            <!--        </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/layoutbottom3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <Button
+                    android:id="@+id/btnSignature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:onClick="@{handler::OnSignatureClicked}"
+                    android:scaleType="fitCenter"
+                    android:text="Signature"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_red_round"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp"/>
+
+                <ImageView
+                    android:id="@+id/ivSign"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnSignature"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnSignature"
+                    app:layout_constraintTop_toTopOf="@+id/btnSignature" />
+
+                <Button
+                    android:id="@+id/btnMerge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:onClick="@{handler::OnbtnMergeClicked}"
+                    android:scaleType="fitCenter"
+                    android:text="Merge"
+                    android:textStyle="italic"
+                    android:background="@drawable/button_red_round"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"/>
+
+
+                <Button
+                    android:id="@+id/btnCheckOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:onClick="@{handler::OnCheckOutTxtViewClicked}"
+                    android:scaleType="fitCenter"
+                    android:text="Check Out"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_red_round"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"/>
+
+                <!--            <Button-->
+                <!--                android:id="@+id/btnCheckOut2"-->
+                <!--                style="@style/Widget.MaterialComponents.Button.TextButton"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="23dp"-->
+                <!--                android:layout_margin="5dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:onClick="@{handler::OnSignatureClicked}"-->
+                <!--                android:scaleType="fitCenter"-->
+                <!--                android:src="@drawable/bg_border_top"-->
+                <!--                android:text="Signature"-->
+                <!--                android:textColor="@color/colorPrimary"-->
+                <!--                android:textSize="12dp"-->
+                <!--                android:textStyle="bold" />-->
+
+                <!--            <Button-->
+                <!--                android:id="@+id/btnmerge"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="30dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"-->
+                <!--                android:onClick="@{handler::OnbtnMergeClicked}"-->
+                <!--                android:scaleType="fitCenter"-->
+                <!--                android:layout_margin="5dp"-->
+                <!--                android:text="Merge Items"-->
+                <!--                android:textStyle="italic"-->
+                <!--                android:background="@color/gray"-->
+                <!--                android:textColor="@color/gray"-->
+                <!--                android:textSize="12dp"/>-->
+
+                <!--            <Button-->
+                <!--                android:id="@+id/btnCheckOut"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="40dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:layout_margin="10dp"-->
+                <!--                android:onClick="@{handler::OnCheckOutTxtViewClicked}"-->
+                <!--                android:scaleType="fitCenter"-->
+                <!--                android:text="Check Out"-->
+                <!--                android:textStyle="bold"-->
+                <!--                android:background="@drawable/button_red_round"-->
+                <!--                android:textColor="@color/white"-->
+                <!--                android:textSize="12dp"/>-->
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/layout51"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/layout52"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/lblSubtotal2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="4"
+                android:hint="Subtotal"
+                android:text='@{String.format("Subtotal (%s) ", defaultCurr)}'
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather" />
+
+            <TextView
+                android:id="@+id/subtotalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Subtotal"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/layout52"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout53">
+
+            <TextView
+                android:id="@+id/lblDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_weight="4"
+                android:hint="Total Discount"
+                android:text='@{String.format("Total Discount (%s) ", defaultCurr)}'
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather" />
+
+            <TextView
+                android:id="@+id/discountTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Total Discount"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout53"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout54">
+
+            <TextView
+                android:id="@+id/lblTax2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text='@{String.format("Total Tax (%s) ", defaultCurr)}'
+                android:hint="Total Tax"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:layout_marginStart="15dp"
+                app:fontFamily="@font/merriweather"/>
+
+            <TextView
+                android:id="@+id/taxTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Total Tax"
+                android:layout_marginEnd="15dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather"/>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout54"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/layoutbottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/lblTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="4"
+                android:gravity="start"
+                android:hint="Total"
+                android:text='@{String.format("Total (%s) ", defaultCurr)}'
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold" />
+
+            <TextView
+                android:id="@+id/totalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Total"
+                android:textColor="@color/red"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather" />
+
+
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/invdtllist_itemlist2"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="0dp"
+            android:divider="@null"
+            android:dividerHeight="2dp"
+            app:layout_constraintBottom_toTopOf="@id/layout51"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

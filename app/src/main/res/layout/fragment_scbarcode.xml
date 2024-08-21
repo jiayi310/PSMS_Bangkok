@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="stockCount"
+            type="com.example.androidmobilestock.AC_Class.StockCount" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.ui.main.SCBarcodeFragment.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/item_txt_UOM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"
+            android:padding="10dp"
+            android:text="@={stockCount.UOM}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/itemEditTextB"
+            app:layout_constraintStart_toStartOf="@+id/itemEditTextB"
+            app:layout_constraintTop_toBottomOf="@+id/item_txt_detail" />
+
+        <TextView
+            android:id="@+id/lbl_Item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:padding="0dp"
+            android:text="Barcode:"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/itemEditTextB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/averia_serif_libre"
+            android:padding="10dp"
+            android:selectAllOnFocus="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:singleLine="true"
+            android:text="@={stockCount.ItemCodeInput}"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_Item" />
+
+        <TextView
+            android:id="@+id/item_txt_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"
+            android:padding="10dp"
+            android:text="@={stockCount.description}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/itemEditTextB"
+            app:layout_constraintStart_toStartOf="@+id/itemEditTextB"
+            app:layout_constraintTop_toBottomOf="@+id/itemEditTextB" />
+
+        <TextView
+            android:id="@+id/lblQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/merriweather_bold"
+            android:padding="0dp"
+            android:text="Quantity:"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/item_txt_detail"
+            app:layout_constraintTop_toBottomOf="@+id/item_txt_UOM" />
+
+        <TextView
+            android:id="@+id/tv_Qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/biorhyme"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text='@{String.format("%.0f", stockCount.Qty)}'
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/lblQty"
+            app:layout_constraintStart_toEndOf="@+id/lblQty"
+            app:layout_constraintTop_toTopOf="@+id/lblQty" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

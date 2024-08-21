@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jobsheet_AddNew"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/js_docNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:hint="JS no."
+        android:textColor="#FF0011"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:fontFamily="serif-monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout1"/>
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/js_docNo">
+
+        <ScrollView
+            android:id="@+id/scrollView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="insideInset">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lbl_debtor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Debtor"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <TextView
+                    android:id="@+id/tv_debtorCode"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border2"
+                    android:drawableRight="@drawable/rightarrowvector"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold"/>
+
+                <TextView
+                    android:id="@+id/lbl_debtorName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_debtorName"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:maxLength="100"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_debtorName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Name 2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_debtorName2"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:maxLength="100"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_agent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Agent"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"/>
+
+                <TextView
+                    android:id="@+id/tv_agent"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="12"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border2"
+                    android:drawableRight="@drawable/rightarrowvector"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Phone "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_phone"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold"
+                    tools:layout_conversion_wrapHeight="105"
+                    tools:layout_conversion_wrapWidth="1028" />
+
+                <TextView
+                    android:id="@+id/lbl_address1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Address 1 "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_address1"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:maxLength="40"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_address2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Address 2 "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_address2"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:maxLength="40"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_address3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Address 3"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_address3"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:maxLength="40"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_address4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Address 4 "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_address4"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:maxLength="40"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_attention"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Attention "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"/>
+
+                <EditText
+                    android:id="@+id/editText_attention"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:maxLength="40"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold"
+                    tools:layout_conversion_wrapHeight="105"
+                    tools:layout_conversion_wrapWidth="1028" />
+
+                <TextView
+                    android:id="@+id/lbl_fax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Fax "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"/>
+
+                <EditText
+                    android:id="@+id/editText_fax"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:maxLength="25"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold"
+                    tools:layout_conversion_wrapHeight="105"
+                    tools:layout_conversion_wrapWidth="1028" />
+
+                <TextView
+                    android:id="@+id/lbl_remarks1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Remark"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_remarks1"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="250"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold"/>
+
+                <TextView
+                    android:id="@+id/lbl_remarks2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Remark 2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_remarks2"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="250"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+                <TextView
+                    android:id="@+id/lbl_remarks3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Remark 3"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_remarks3"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="250"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold"/>
+
+                <TextView
+                    android:id="@+id/lbl_remarks4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Remark 4"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <EditText
+                    android:id="@+id/editText_remarks4"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="250"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:paddingStart="12dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_Next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=" Next"
+        android:textSize="18sp"
+        android:background="@color/red5"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

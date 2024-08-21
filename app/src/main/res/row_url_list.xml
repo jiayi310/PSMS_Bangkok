@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="Connection"
+            type="com.example.androidmobilestock.AC_Class.Connection" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={Connection.URL}"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/cantata_one"
+            android:padding="10dp"
+            />
+    </RelativeLayout>
+</layout>

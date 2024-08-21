@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+<!--        <item-->
+<!--            android:id="@+id/nav_stock_count"-->
+<!--            android:icon="@drawable/stock_count3"-->
+<!--            android:title="@string/menu_stock_count" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_stock_inquiry"-->
+<!--            android:icon="@drawable/stock_inquiry3"-->
+<!--            android:title="@string/menu_stock_inquiry" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_customer"-->
+<!--            android:icon="@drawable/customer3"-->
+<!--            android:title="@string/menu_customer" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_cashSales"-->
+<!--            android:icon="@drawable/sales3"-->
+<!--            android:title="@string/menu_invoice" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_packingList"-->
+<!--            android:icon="@drawable/packinglist3"-->
+<!--            android:title="Packing List" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_purchase"-->
+<!--            android:icon="@drawable/purchase3"-->
+<!--            android:title="Purchase" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_transfer"-->
+<!--            android:icon="@drawable/transfer3"-->
+<!--            android:title = "Transfer" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_cart"-->
+<!--            android:icon="@drawable/cart3"-->
+<!--            android:title = "Catalog" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/nav_dl"-->
+<!--            android:icon="@drawable/download3"-->
+<!--            android:title="Download" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_ul"-->
+<!--            android:icon="@drawable/upload6"-->
+<!--            android:title="Upload" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_setting"-->
+<!--            android:icon="@drawable/set3"-->
+<!--            android:title="@string/menu_setting" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_about"-->
+<!--            android:icon="@drawable/about3"-->
+<!--            android:title="@string/menu_about" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_logout"-->
+<!--            android:icon="@drawable/logout3"-->
+<!--            android:title="@string/menu_exit" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/home"-->
+<!--            android:title="Home"-->
+<!--            android:icon="@drawable/ic_home_black_24"/>-->
+<!--        <item-->
+<!--            android:id="@+id/menu"-->
+<!--            android:title="Menu"-->
+<!--            android:icon="@drawable/ic_baseline_menu_24"/>-->
+<!--        <item-->
+<!--            android:id="@+id/profile"-->
+<!--            android:title="Profile"-->
+<!--            android:icon="@drawable/ic_baseline_bookmark_24"/>-->
+    </group>
+
+</menu>

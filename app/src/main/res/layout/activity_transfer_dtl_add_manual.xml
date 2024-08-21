@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="TransferDtl"
+            type="com.example.androidmobilestock.AC_Class.TransferDtl" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.TransferDtlAddManual.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_DocNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Inv_No"
+            android:padding="0dp"
+            android:text="@={TransferDtl.DocNo}"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif-monospace"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutbottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_DocNo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="insideInset"
+        android:fillViewport="true"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_item_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item:"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_UOM_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UOM:"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail" />
+
+        <TextView
+            android:id="@+id/tv_Qty_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="Quantity :"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_batchno" />
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="@={TransferDtl.description}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item" />
+
+        <TextView
+            android:id="@+id/tv_itemsearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/border"
+            android:drawableRight="@drawable/search"
+            android:gravity="fill"
+            android:onClick="@{handler::onItemSearchClicked}"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/si_item_camera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_lbl" />
+
+        <TextView
+            android:id="@+id/si_item_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/border"
+            android:drawableRight="@drawable/scan"
+            android:gravity="center_vertical"
+            android:onClick="@{handler::OnItemCameraClicked}"
+            app:layout_constraintEnd_toStartOf="@+id/tv_itemsearch"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_lbl" />
+
+        <EditText
+            android:id="@+id/et_barcode"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            android:background="@drawable/border"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="fill"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/si_item_camera"
+            app:layout_constraintEnd_toStartOf="@+id/si_item_camera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/si_item_camera" />
+
+        <TextView
+            android:id="@+id/tv_item"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            android:background="@drawable/border"
+            android:focusable="auto"
+            android:focusableInTouchMode="true"
+            android:gravity="fill"
+            android:onClick="@{handler::onItemTextViewClicked}"
+            android:singleLine="true"
+            android:text="@={TransferDtl.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/si_item_camera"
+            app:layout_constraintEnd_toStartOf="@+id/si_item_camera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/si_item_camera" />
+
+        <TextView
+            android:id="@+id/tv_uom"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:background="@drawable/border"
+            android:drawableRight="@drawable/search"
+            android:gravity="center_vertical"
+            android:onClick="@{handler::onUOMTxtViewClicked}"
+            android:text="@={TransferDtl.UOM}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_UOM_lbl" />
+
+        <TextView
+            android:id="@+id/lbl_batch_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Batch No:"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_uom"
+            app:layout_constraintTop_toBottomOf="@+id/tv_uom" />
+
+
+        <TextView
+            android:id="@+id/tv_batchno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:selectAllOnFocus="true"
+            android:text="@={TransferDtl.BatchNo}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintEnd_toStartOf="@+id/batchno_list"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_batch_no" />
+
+        <ImageButton
+            android:id="@+id/batchno_list"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@color/white"
+            android:onClick="@{handler::onBatchNoListClicked}"
+            android:src="@drawable/search"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_batchno"
+            app:layout_constraintEnd_toEndOf="@+id/tv_uom"
+            app:layout_constraintTop_toTopOf="@+id/tv_batchno"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+
+        <ImageButton
+            android:id="@+id/btn_Dec"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/tv_Qty_lbl"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/minus"
+            android:fontFamily="sans-serif-black"
+            android:onClick="@{handler::BtnDecClicked}"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtTransferQty"
+            app:layout_constraintEnd_toStartOf="@+id/edtTransferQty"
+            app:layout_constraintTop_toTopOf="@+id/edtTransferQty" />
+
+        <ImageButton
+            android:id="@+id/btn_Inc"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/plus"
+            android:fontFamily="sans-serif-black"
+            android:onClick="@{handler::BtnIncClicked}"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtTransferQty"
+            app:layout_constraintStart_toEndOf="@+id/edtTransferQty"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Qty_lbl" />
+
+        <EditText
+            android:id="@+id/edtTransferQty"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="numberDecimal"
+            android:text="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Qty_lbl" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutbottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <Button
+                android:id="@+id/btncancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handler::OnCancelBtnClicked}"
+                android:text="Cancel"
+                android:background="@color/red5"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+            <Button
+                android:id="@+id/btnsave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handler::OnSaveBtnClicked}"
+                android:text="ADD"
+                android:background="@color/red5"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

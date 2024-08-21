@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contentBodyColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingRight="30dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="30dp">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCircleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/stock_mobile"
+                app:civ_border_color="@color/gray"
+                app:civ_border_width="0.2dp" />
+
+            <TextView
+                android:id="@+id/usernameTextView"
+                style="@style/viewParent.headerText"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toRightOf="@id/profileCircleImageView"
+                android:ellipsize="none"
+                android:maxLines="100"
+                android:scrollHorizontally="false"
+                android:text="Presoft"
+                android:textSize="18sp" />
+
+
+
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/general"
+            android:layout_marginTop="30dp"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:text="General" />
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/favouritexml"
+            android:text="Modify Status" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/module"-->
+<!--            style="@style/viewParent.headerText.settingsTextIcon"-->
+<!--            android:drawableLeft="@drawable/modulexml"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Module Settings" />-->
+
+<!--        <Switch-->
+<!--            style="@style/settingsText"-->
+<!--            android:checked="true"-->
+<!--            android:drawableLeft="@drawable/ic_notifications"-->
+<!--            android:text="Notifications" />-->
+
+
+
+<!--        <TextView-->
+<!--            style="@style/viewParent.headerText.settingsTextIcon"-->
+<!--            android:drawableLeft="@drawable/ic_languages"-->
+<!--            android:text="Language" />-->
+
+
+        <TextView
+            android:id="@+id/numbering"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/documentxml"
+            android:layout_marginTop="20dp"
+            android:text="Document Auto Numbering" />
+
+
+        <TextView
+            android:id="@+id/transaction"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/transactionsml"
+            android:layout_marginTop="20dp"
+            android:text="Transaction" />
+
+
+        <TextView
+            android:id="@+id/appversion"
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="App ver 3.5.7"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</ScrollView></layout>

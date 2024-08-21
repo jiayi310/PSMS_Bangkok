@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="custDebug" />
+        <option name="name" value="Unnamed-0" />
+        <option name="packageNamePattern" value="" />
+        <option name="pid" value="" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Unnamed-0" />
+  </component>
+  <component name="AvailableLibraryUpdateStorage">
+    <library-updates>
+      <library-update>
+        <group-id>com.android.support</group-id>
+        <name>recyclerview-v7</name>
+        <version>28.0.0</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support</group-id>
+        <name>mediarouter-v7</name>
+        <version>28.0.0</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support</group-id>
+        <name>appcompat-v7</name>
+        <version>28.0.0</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support</group-id>
+        <name>design</name>
+        <version>28.0.0</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.google.android.play</group-id>
+        <name>core</name>
+        <version>1.6.4</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>android.arch.lifecycle</group-id>
+        <name>extensions</name>
+        <version>1.1.1</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support</group-id>
+        <name>support-v4</name>
+        <version>28.0.0</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support.constraint</group-id>
+        <name>constraint-layout</name>
+        <version>2.0.0-beta4</version>
+        <repository>Google</repository>
+      </library-update>
+      <library-update>
+        <group-id>junit</group-id>
+        <name>junit</name>
+        <version>4.13</version>
+        <repository>JCenter</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support.test</group-id>
+        <name>runner</name>
+        <version>1.0.2</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support.test.espresso</group-id>
+        <name>espresso-core</name>
+        <version>3.0.2</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+    </library-updates>
+    <last-search-timestamp>1581069523828</last-search-timestamp>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="066bd319-af12-494b-84e9-7c5ae099d152" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="AndroidMobileStock - Copy (8)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/LocalData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4397">
+              <caret line="40" column="89" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+              <folding>
+                <element signature="method#onOptionsItemSelected#0;class#LocalData#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/TaxSettings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="127" column="79" lean-forward="true" selection-start-line="127" selection-start-column="79" selection-end-line="127" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>intent</find>
+      <find>dump</find>
+      <find>notifyDataSetChanged</find>
+      <find>getStockC</find>
+      <find>&quot;I</find>
+      <find>txt_item_description3</find>
+      <find>btnN</find>
+      <find>btn</find>
+      <find>MyClick</find>
+      <find>date</find>
+      <find>t</find>
+      <find>connection</find>
+      <find>Connection</find>
+      <find>Connection su</find>
+      <find>CS</find>
+      <find>CashCha</find>
+      <find>Toast</find>
+      <find>this</find>
+      <find>insertDe</find>
+      <find>dum</find>
+      <find>getDe</find>
+      <find>Debtor</find>
+      <find>Debto</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/res/menu/reset_menu.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Invoice_Menu.java" />
+        <option value="$PROJECT_DIR$/src/main/res/menu/invdtl_menu.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_inv_admanual.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/history_price_list_header.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_invoice_items.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/CustomerHistoryPriceFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/history_price_list_row.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_invoice_detail_list.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_add__invoice__header.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Item_List.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/item_row_list.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_cash_payment.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_invoice_details_multiple_tab.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_stock_details.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ChequePayment.java" />
+        <option value="$PROJECT_DIR$/src/main/res/menu/inv_menu.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvoicePaymentsFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/CreditCardPayment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ConnectionSettings.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/CashPayment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/MultiPayment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/StockCountList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/StockCountMultipleTab.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/StockInquiry.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/SCBarcodeFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/sc_row.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ItemListViewAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/InvoiceDetailsMultipleTab.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Debtor_List.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/UploadDownload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/AC_Class.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ACDatabase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Add_Invoice_Header.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/EmptyAD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvADBarcodeFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/InvoiceDetailList.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_tax_settings.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/LocalData.java" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/TaxSettings.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="729" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <abbreviatePackageNames AndroidView="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="androidmobilestock" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="androidmobilestock" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="AndroidMobileStock - Copy (8)" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="MT9050-2WE-8G03672" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../AndroidMobileStock" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.androidmobilestock.Settings" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PP01\AndroidStudioProjects\MobileStock backups\AndroidMobileStock - Copy (8)\app\src\main\res\layout" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="R" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="066bd319-af12-494b-84e9-7c5ae099d152" name="Default Changelist" comment="" />
+      <created>1580710089636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580710089636</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49829933" weight="0.32980332" />
+      <window_info id="Structure" order="2" sideWeight="0.5017007" side_tool="true" weight="0.32980332" />
+      <window_info id="Favorites" order="3" sideWeight="0.5017007" side_tool="true" weight="0.24962178" />
+      <window_info id="Build Variants" order="4" show_stripe_button="false" sideWeight="0.5017007" side_tool="true" weight="0.24962178" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Captures" order="7" sideWeight="0.49829933" side_tool="true" weight="0.24962178" />
+      <window_info id="Resources Explorer" order="8" weight="0.32980332" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49924356" weight="0.5255102" />
+      <window_info anchor="bottom" id="TODO" order="1" weight="0.32993197" />
+      <window_info anchor="bottom" id="Statistic" order="2" weight="0.32993197" />
+      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49924356" weight="0.792517" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49924356" weight="0.32993197" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50226927" side_tool="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.4977307" weight="0.32993197" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32993197" />
+      <window_info anchor="bottom" id="Android Profiler" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Preview" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.32980332" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_stock_details.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2709">
+          <caret line="134" column="39" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/ULDLListViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/menu/inv_menu.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/CustomerHistoryPriceFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvoicePaymentsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/InvPymntAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="47" column="82" lean-forward="true" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/SCManualFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="107" column="62" selection-start-line="107" selection-start-column="62" selection-end-line="107" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_add__invoice__details.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Add_Invoice_Details.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="46" column="81" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvoiceDetailsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/MultiPayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="298" column="13" selection-start-line="298" selection-start-column="13" selection-end-line="298" selection-end-column="13" />
+          <folding>
+            <element signature="e#2258#3255#1" />
+            <element signature="e#3009#3082#0" />
+            <element signature="method#onBackPressed#0;class#MultiPayment#0" />
+            <element signature="method#onOptionsItemSelected#0;class#MultiPayment#0" />
+            <element signature="e#3684#3749#1" />
+            <element signature="method#onActivityResult#0;class#MultiPayment#0" />
+            <element signature="e#3997#4948#0" />
+            <element signature="e#4064#4287#1" />
+            <element signature="e#4377#4600#1" />
+            <element signature="e#4690#4915#1" />
+            <element signature="method#OnCashButtonClicked#0;class#MyClickHandler#0;class#MultiPayment#0" />
+            <element signature="e#5331#5450#1" />
+            <element signature="e#5456#5562#1" />
+            <element signature="e#5693#5725#0" />
+            <element signature="method#OnCcardButtonClicked#0;class#MyClickHandler#0;class#MultiPayment#0" />
+            <element signature="e#6625#7000#1" />
+            <element signature="e#7030#7419#1" />
+            <element signature="e#8265#8359#0" />
+            <element signature="e#8512#8584#0" />
+            <element signature="method#OnChequeButtonClicked#0;class#MyClickHandler#0;class#MultiPayment#0" />
+            <element signature="e#7516#7895#1" />
+            <element signature="e#7925#8291#1" />
+            <element signature="e#9064#9156#0" />
+            <element signature="e#9284#9358#0" />
+            <element signature="e#8354#8444#0" />
+            <element signature="e#8889#8957#1" />
+            <element signature="e#9243#9848#1" />
+            <element signature="e#9950#11471#1" />
+            <element signature="e#10602#10791#0" />
+            <element signature="e#10842#10926#0" />
+            <element signature="e#9122#9170#0" />
+            <element signature="method#OnCancelButtonClicked#0;class#MyClickHandler#0;class#MultiPayment#0" />
+            <element signature="e#13255#13339#0" />
+            <element signature="method#closeAll#0;class#MultiPayment#0" />
+            <element signature="e#14393#14419#0" />
+            <element signature="method#getQty#0;class#MultiPayment#0" />
+            <element signature="e#15879#15955#1" />
+            <element signature="e#16067#16140#1" />
+            <element signature="e#16256#16371#1" />
+            <element signature="e#20235#20267#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ChequePayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="190" column="4" selection-start-line="190" selection-start-column="4" selection-end-line="190" selection-end-column="4" />
+          <folding>
+            <element signature="class#1545:3309" />
+            <element signature="method#beforeTextChanged#0;class#1545:3309" />
+            <element signature="method#onTextChanged#0;class#1545:3309" />
+            <element signature="method#afterTextChanged#0;class#1545:3309" />
+            <element signature="e#1915#3156#0" />
+            <element signature="e#2015#2817#1" />
+            <element signature="e#2823#3054#1" />
+            <element signature="e#3177#3252#0" />
+            <element signature="method#onBackPressed#0;class#ChequePayment#0" />
+            <element signature="method#onOptionsItemSelected#0;class#ChequePayment#0" />
+            <element signature="e#3575#3640#1" />
+            <element signature="method#closeAll#0;class#ChequePayment#0" />
+            <element signature="e#4121#4212#1" />
+            <element signature="e#4302#4394#1" />
+            <element signature="method#CheckEmpty#0;class#ChequePayment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/inv_payment_list_row.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-580">
+          <caret line="86" column="77" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/CreditCardPayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+          <folding>
+            <element signature="method#onCreate#0;class#CreditCardPayment#0" />
+            <element signature="class#2103:2738" />
+            <element signature="method#onItemSelected#0;class#2103:2738" />
+            <element signature="e#2356#2517#1" />
+            <element signature="e#2539#2611#1" />
+            <element signature="method#onNothingSelected#0;class#2103:2738" />
+            <element signature="class#2779:4998" />
+            <element signature="method#beforeTextChanged#0;class#2779:4998" />
+            <element signature="method#onTextChanged#0;class#2779:4998" />
+            <element signature="e#3232#4883#1" />
+            <element signature="e#3530#3584#1" />
+            <element signature="e#3683#3778#1" />
+            <element signature="e#3784#4520#1" />
+            <element signature="e#4222#4278#0" />
+            <element signature="method#afterTextChanged#0;class#2779:4998" />
+            <element signature="method#onBackPressed#0;class#CreditCardPayment#0" />
+            <element signature="method#onOptionsItemSelected#0;class#CreditCardPayment#0" />
+            <element signature="e#5357#5422#1" />
+            <element signature="e#5655#5749#1" />
+            <element signature="e#5836#5925#1" />
+            <element signature="e#6016#6109#1" />
+            <element signature="e#6197#6287#1" />
+            <element signature="e#6758#6954#1" />
+            <element signature="e#6976#11994#1" />
+            <element signature="e#7035#11718#1" />
+            <element signature="e#7125#11419#1" />
+            <element signature="e#7503#7595#1" />
+            <element signature="e#8444#11393#1" />
+            <element signature="e#8562#11184#1" />
+            <element signature="e#9501#9754#0" />
+            <element signature="e#9821#9937#0" />
+            <element signature="e#9938#10059#0" />
+            <element signature="e#10644#10761#0" />
+            <element signature="e#11222#11363#1" />
+            <element signature="e#11425#11696#1" />
+            <element signature="e#11724#11976#1" />
+            <element signature="e#12014#13875#1" />
+            <element signature="e#12221#12296#0" />
+            <element signature="method#closeAll#0;class#CreditCardPayment#0" />
+            <element signature="method#PaymentSelection#0;class#CreditCardPayment#0" />
+            <element signature="e#14591#14868#1" />
+            <element signature="e#14920#15150#1" />
+            <element signature="method#CheckEmpty#0;class#CreditCardPayment#0" />
+            <element signature="e#15512#15551#1" />
+            <element signature="e#15573#15613#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ConnectionSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+          <folding>
+            <element signature="method#onBackPressed#0;class#ConnectionSettings#0" />
+            <element signature="method#onOptionsItemSelected#0;class#ConnectionSettings#0" />
+            <element signature="e#3977#4042#1" />
+            <element signature="class#MyClickHandler#0;class#ConnectionSettings#0" />
+            <element signature="method#OnAddBtnClicked#0;class#MyClickHandler#0;class#ConnectionSettings#0" />
+            <element signature="e#4381#4496#1" />
+            <element signature="e#4514#4565#1" />
+            <element signature="method#GetNewConnection#0;class#ConnectionSettings#0" />
+            <element signature="e#4714#4976#1" />
+            <element signature="e#4982#5097#1" />
+            <element signature="method#GetData#0;class#ConnectionSettings#0" />
+            <element signature="e#5269#5558#1" />
+            <element signature="e#5309#5548#1" />
+            <element signature="e#5724#5838#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b10b32a20b27aa5c1e1efd8563a8d229/jars/classes.jar!/android/support/v4/app/FragmentActivity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="108" column="20" lean-forward="true" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/SalesAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+          <folding>
+            <element signature="method#onCreate#0;class#SalesAN#0" />
+            <element signature="e#1793#1972#0" />
+            <element signature="e#1993#2052#0" />
+            <element signature="e#2476#8039#0" />
+            <element signature="e#3470#3862#1" />
+            <element signature="e#3535#3730#1" />
+            <element signature="e#3736#3828#1" />
+            <element signature="e#5316#5708#1" />
+            <element signature="e#5381#5576#1" />
+            <element signature="e#5582#5674#1" />
+            <element signature="e#7166#7562#1" />
+            <element signature="e#7235#7430#1" />
+            <element signature="e#7436#7528#1" />
+            <element signature="method#onOptionsItemSelected#0;class#SalesAN#0" />
+            <element signature="e#8225#8290#1" />
+            <element signature="method#getANData#0;class#SalesAN#0" />
+            <element signature="e#8490#8807#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/CashPayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+          <folding>
+            <element signature="class#2090:3903" />
+            <element signature="method#beforeTextChanged#0;class#2090:3903" />
+            <element signature="method#onTextChanged#0;class#2090:3903" />
+            <element signature="method#afterTextChanged#0;class#2090:3903" />
+            <element signature="e#2460#3752#0" />
+            <element signature="e#2560#3418#1" />
+            <element signature="e#3424#3660#1" />
+            <element signature="e#3773#3848#0" />
+            <element signature="method#roundFloat#0;class#CashPayment#0" />
+            <element signature="method#onOptionsItemSelected#0;class#CashPayment#0" />
+            <element signature="e#4354#4419#1" />
+            <element signature="class#OnClickHandler#0;class#CashPayment#0" />
+            <element signature="e#4576#4623#0" />
+            <element signature="method#btnSaveClicked#0;class#OnClickHandler#0;class#CashPayment#0" />
+            <element signature="e#4723#5099#1" />
+            <element signature="e#4800#4895#1" />
+            <element signature="e#4988#5085#1" />
+            <element signature="e#5403#5493#0" />
+            <element signature="method#closeAll#0;class#CashPayment#0" />
+            <element signature="method#Calculation#0;class#CashPayment#0" />
+            <element signature="method#CheckEmpty#0;class#CashPayment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_stock_inquiry.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/StockInquiry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/StockCountMultipleTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/StockCountList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/SCBarcodeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+          <folding>
+            <element signature="method#SCBarcodeFragment#0;class#SCBarcodeFragment#0" />
+            <element signature="method#newInstance#0;class#SCBarcodeFragment#0" />
+            <element signature="method#onActivityResult#0;class#SCBarcodeFragment#0" />
+            <element signature="method#onDetach#0;class#SCBarcodeFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ItemListViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/sc_row.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/SettingsListViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="64" column="40" lean-forward="true" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/generated/source/apt/debug/com/example/androidmobilestock/BR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3963">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_invoice_details_multiple_tab.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1932">
+          <caret line="92" column="52" selection-start-line="92" selection-start-column="52" selection-end-line="92" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/database/sqlite/SQLiteDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="1419" column="40" selection-start-line="1419" selection-start-column="40" selection-end-line="1419" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Debtor_List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/UploadDownload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="518" column="57" lean-forward="true" selection-start-line="518" selection-start-column="57" selection-end-line="518" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="214" column="11" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
+          <folding>
+            <element signature="e#4025#5766#0" />
+            <element signature="e#4674#4979#1" />
+            <element signature="e#5039#5116#1" />
+            <element signature="e#5175#5442#1" />
+            <element signature="e#5268#5432#1" />
+            <element signature="e#5524#5601#1" />
+            <element signature="e#5681#5760#1" />
+            <element signature="e#5813#5838#0" />
+            <element signature="e#5844#8201#0" />
+            <element signature="e#6064#8195#1" />
+            <element signature="e#6345#8185#1" />
+            <element signature="e#8207#8403#0" />
+            <element signature="e#9436#11710#0" />
+            <element signature="e#9571#9671#1" />
+            <element signature="e#9739#9838#1" />
+            <element signature="e#9906#10005#1" />
+            <element signature="e#10047#11704#1" />
+            <element signature="e#10222#11510#1" />
+            <element signature="e#10314#10685#1" />
+            <element signature="e#10691#10760#1" />
+            <element signature="e#10781#11300#0" />
+            <element signature="e#11321#11496#0" />
+            <element signature="e#11540#11694#1" />
+            <element signature="e#11716#13705#0" />
+            <element signature="e#11947#13165#0" />
+            <element signature="e#12099#13006#0" />
+            <element signature="e#12828#12891#1" />
+            <element signature="e#13028#13128#0" />
+            <element signature="e#13278#13698#0" />
+            <element signature="e#13402#13538#1" />
+            <element signature="e#13556#13688#1" />
+            <element signature="e#13711#17036#0" />
+            <element signature="e#14002#15044#0" />
+            <element signature="e#14160#14932#0" />
+            <element signature="e#14738#14801#1" />
+            <element signature="e#14954#15007#0" />
+            <element signature="e#15054#15349#0" />
+            <element signature="e#15359#17030#0" />
+            <element signature="e#15481#16879#1" />
+            <element signature="e#15503#16782#0" />
+            <element signature="e#15557#16764#1" />
+            <element signature="e#15812#16357#1" />
+            <element signature="e#16219#16331#1" />
+            <element signature="e#16804#16865#0" />
+            <element signature="e#16885#16982#1" />
+            <element signature="e#17037#17103#0" />
+            <element signature="e#20487#25376#0" />
+            <element signature="e#20737#21735#0" />
+            <element signature="e#20895#21623#0" />
+            <element signature="e#21473#21536#1" />
+            <element signature="e#21645#21698#0" />
+            <element signature="e#21745#22040#0" />
+            <element signature="e#22050#25370#0" />
+            <element signature="e#22172#25202#1" />
+            <element signature="e#22194#25105#0" />
+            <element signature="e#22248#25086#1" />
+            <element signature="e#22517#24678#1" />
+            <element signature="e#25127#25188#0" />
+            <element signature="e#25382#30442#0" />
+            <element signature="e#25626#26633#0" />
+            <element signature="e#25791#26521#0" />
+            <element signature="e#26371#26434#1" />
+            <element signature="e#26543#26596#0" />
+            <element signature="e#26643#26942#0" />
+            <element signature="e#26952#30436#0" />
+            <element signature="e#27075#30255#1" />
+            <element signature="e#27097#30142#0" />
+            <element signature="e#27172#30124#1" />
+            <element signature="e#27437#30102#1" />
+            <element signature="e#30180#30241#0" />
+            <element signature="e#30448#34223#0" />
+            <element signature="e#30705#31713#0" />
+            <element signature="e#30871#31601#0" />
+            <element signature="e#31451#31514#1" />
+            <element signature="e#31623#31676#0" />
+            <element signature="e#31723#32022#0" />
+            <element signature="e#32032#34217#0" />
+            <element signature="e#32154#34048#1" />
+            <element signature="e#32176#33951#0" />
+            <element signature="e#32231#33933#1" />
+            <element signature="e#32502#33520#1" />
+            <element signature="e#33973#34034#0" />
+            <element signature="e#34229#38733#0" />
+            <element signature="e#34482#35490#0" />
+            <element signature="e#34648#35378#0" />
+            <element signature="e#35228#35291#1" />
+            <element signature="e#35400#35453#0" />
+            <element signature="e#35500#35799#0" />
+            <element signature="e#35809#38727#0" />
+            <element signature="e#35931#38558#1" />
+            <element signature="e#35953#38461#0" />
+            <element signature="e#36008#38443#1" />
+            <element signature="e#36274#38039#1" />
+            <element signature="e#38483#38544#0" />
+            <element signature="e#38739#42481#0" />
+            <element signature="e#38990#39998#0" />
+            <element signature="e#39156#39886#0" />
+            <element signature="e#39736#39799#1" />
+            <element signature="e#39908#39961#0" />
+            <element signature="e#40008#40307#0" />
+            <element signature="e#40317#42475#0" />
+            <element signature="e#40439#42306#1" />
+            <element signature="e#40461#42209#0" />
+            <element signature="e#40516#42191#1" />
+            <element signature="e#40793#41779#1" />
+            <element signature="e#42231#42292#0" />
+            <element signature="e#42487#47746#0" />
+            <element signature="e#42750#43758#0" />
+            <element signature="e#42916#43646#0" />
+            <element signature="e#43496#43559#1" />
+            <element signature="e#43668#43721#0" />
+            <element signature="e#43768#44067#0" />
+            <element signature="e#44077#47740#0" />
+            <element signature="e#44199#47571#1" />
+            <element signature="e#44221#47474#0" />
+            <element signature="e#44276#47456#1" />
+            <element signature="e#44565#47032#1" />
+            <element signature="e#47496#47557#0" />
+            <element signature="e#47752#51730#0" />
+            <element signature="e#48000#49008#0" />
+            <element signature="e#48166#48896#0" />
+            <element signature="e#48746#48809#1" />
+            <element signature="e#48918#48971#0" />
+            <element signature="e#49018#49317#0" />
+            <element signature="e#49327#51724#0" />
+            <element signature="e#49449#51555#1" />
+            <element signature="e#49471#51442#0" />
+            <element signature="e#49526#51424#1" />
+            <element signature="e#49799#51012#1" />
+            <element signature="e#51480#51541#0" />
+            <element signature="e#51736#55918#0" />
+            <element signature="e#51991#52989#0" />
+            <element signature="e#52149#52877#0" />
+            <element signature="e#52727#52790#1" />
+            <element signature="e#52899#52952#0" />
+            <element signature="e#52999#53298#0" />
+            <element signature="e#53308#55912#0" />
+            <element signature="e#53430#55743#1" />
+            <element signature="e#53452#55646#0" />
+            <element signature="e#53507#55627#1" />
+            <element signature="e#53797#55207#1" />
+            <element signature="e#54798#54873#0" />
+            <element signature="e#55668#55729#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ACDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="964" column="33" lean-forward="true" selection-start-line="964" selection-start-column="33" selection-end-line="964" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/InvoiceDetailsMultipleTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="145" column="38" selection-start-line="145" selection-start-column="38" selection-end-line="145" selection-end-column="38" />
+          <folding>
+            <element signature="method#onCreate#0;class#InvoiceDetailsMultipleTab#0" />
+            <element signature="e#1569#1715#0" />
+            <element signature="method#onSupportNavigateUp#0;class#InvoiceDetailsMultipleTab#0" />
+            <element signature="method#onCreateOptionsMenu#0;class#InvoiceDetailsMultipleTab#0" />
+            <element signature="method#onOptionsItemSelected#0;class#InvoiceDetailsMultipleTab#0" />
+            <element signature="e#3099#3164#1" />
+            <element signature="e#3206#4034#1" />
+            <element signature="method#printInvoice#0;class#InvoiceDetailsMultipleTab#0" />
+            <element signature="e#4279#4505#1" />
+            <element signature="e#4297#4422#0" />
+            <element signature="e#4443#4495#0" />
+            <element signature="e#4511#5427#1" />
+            <element signature="method#getData#0;class#InvoiceDetailsMultipleTab#0" />
+            <element signature="e#5653#8280#1" />
+            <element signature="e#5892#6371#1" />
+            <element signature="e#6427#6999#0" />
+            <element signature="e#6623#6846#1" />
+            <element signature="e#7020#7087#0" />
+            <element signature="e#7273#8214#1" />
+            <element signature="e#7295#8140#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Add_Invoice_Header.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="method#onOptionsItemSelected#0;class#Add_Invoice_Header#0" />
+            <element signature="method#onCreate#0;class#Add_Invoice_Header#0" />
+            <element signature="method#onBackPressed#0;class#Add_Invoice_Header#0" />
+            <element signature="method#CheckEmpty#0;class#Add_Invoice_Header#0" />
+            <element signature="method#onAgentTxtViewClicked#0;class#MyClickHandler#0;class#Add_Invoice_Header#0" />
+            <element signature="method#OnImageButtonClicked#0;class#MyClickHandler#0;class#Add_Invoice_Header#0" />
+            <element signature="method#OnNextButtonClicked#0;class#MyClickHandler#0;class#Add_Invoice_Header#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Item_List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1239">
+          <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/EmptyAD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="40" column="64" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/AC_Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="1867" column="41" selection-start-line="1867" selection-start-column="41" selection-end-line="1867" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8c6067dcc239f5ba38bc6a9aa731db2b/jars/classes.jar!/android/support/constraint/ConstraintSet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="570" column="16" selection-start-line="570" selection-start-column="16" selection-end-line="570" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="111" column="45" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
+          <folding>
+            <element signature="method#InvADManualFragment#0;class#InvADManualFragment#0" />
+            <element signature="method#newInstance#0;class#InvADManualFragment#0" />
+            <element signature="e#3051#3308#0" />
+            <element signature="class#3616:5543" />
+            <element signature="method#afterTextChanged#0;class#3616:5543" />
+            <element signature="e#4073#4933#1" />
+            <element signature="e#4630#4723#1" />
+            <element signature="e#4939#5138#1" />
+            <element signature="class#5608:6453" />
+            <element signature="method#afterTextChanged#0;class#5608:6453" />
+            <element signature="e#6048#6156#1" />
+            <element signature="e#6162#6429#1" />
+            <element signature="class#6519:7003" />
+            <element signature="method#afterTextChanged#0;class#6519:7003" />
+            <element signature="method#onResume#0;class#InvADManualFragment#0" />
+            <element signature="e#8431#8486#0" />
+            <element signature="e#9012#9368#1" />
+            <element signature="e#9142#9350#1" />
+            <element signature="e#9486#9826#1" />
+            <element signature="e#9611#9808#1" />
+            <element signature="method#onButtonPressed#0;class#InvADManualFragment#0" />
+            <element signature="e#9941#10002#1" />
+            <element signature="method#onAttach#0;class#InvADManualFragment#0" />
+            <element signature="e#10163#10239#1" />
+            <element signature="e#10245#10386#1" />
+            <element signature="method#onDetach#0;class#InvADManualFragment#0" />
+            <element signature="class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="method#onItemTxtViewClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="method#OnItemTextViewClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="method#BtnIncClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="method#BtnDecClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="method#onTaxTypeTxtViewClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="method#onHistoryPriceViewClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="e#11951#12226#1" />
+            <element signature="method#onUOMTxtViewClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="e#12345#12569#1" />
+            <element signature="method#OnSaveBtnClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="e#12661#13222#1" />
+            <element signature="e#13228#13271#1" />
+            <element signature="method#OnCancelBtnClicked#0;class#MyClickHandler#0;class#InvADManualFragment#0" />
+            <element signature="e#13335#13412#0" />
+            <element signature="method#CheckEmpty#0;class#InvADManualFragment#0" />
+            <element signature="e#14256#14356#0" />
+            <element signature="method#Calculation#0;class#InvADManualFragment#0" />
+            <element signature="e#15554#16088#1" />
+            <element signature="e#16094#16541#1" />
+            <element signature="method#getTax#0;class#InvADManualFragment#0" />
+            <element signature="method#SaveData#0;class#InvADManualFragment#0" />
+            <element signature="method#getInvoiceDetailsFrom#0;class#InvADManualFragment#0" />
+            <element signature="e#17293#17721#0" />
+            <element signature="method#hideSoftKeyboard#0;class#InvADManualFragment#0" />
+            <element signature="class#OnFragmentInteractionListener#0;class#InvADManualFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/ui/main/InvADBarcodeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="269" selection-start-line="269" selection-end-line="269" />
+          <folding>
+            <element signature="method#InvADBarcodeFragment#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#newInstance#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#onCreate#0;class#InvADBarcodeFragment#0" />
+            <element signature="e#4840#4948#0" />
+            <element signature="e#6243#6307#0" />
+            <element signature="method#onButtonPressed#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#onAttach#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#onDetach#0;class#InvADBarcodeFragment#0" />
+            <element signature="class#MyClickHandler#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#onEditTextViewClicked#0;class#MyClickHandler#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#OnSaveBtnClicked#0;class#MyClickHandler#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#CheckEmpty#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#getInvoiceDetailsFrom#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#Calculation#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#insertItem#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#updateInvDtls#0;class#InvADBarcodeFragment#0" />
+            <element signature="method#hideSoftKeyboard#0;class#InvADBarcodeFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_inv_admanual.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_invoice_detail_list.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/InvoiceDetailList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="89" column="60" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
+          <folding>
+            <element signature="e#1330#1352#0" />
+            <element signature="e#1836#1866#0" />
+            <element signature="e#5518#6386#0" />
+            <element signature="e#6392#7800#0" />
+            <element signature="e#6582#7794#0" />
+            <element signature="e#6673#6844#1" />
+            <element signature="e#6850#6931#1" />
+            <element signature="e#6966#7096#1" />
+            <element signature="e#7177#7674#1" />
+            <element signature="e#7394#7656#1" />
+            <element signature="e#7680#7761#1" />
+            <element signature="e#7806#7911#0" />
+            <element signature="e#7917#8106#0" />
+            <element signature="e#8112#8258#0" />
+            <element signature="e#8404#8481#1" />
+            <element signature="e#9827#9829#0" />
+            <element signature="e#10204#10227#0" />
+            <element signature="e#10662#11310#0" />
+            <element signature="e#10805#11304#1" />
+            <element signature="e#10857#11294#1" />
+            <element signature="e#11316#11587#0" />
+            <element signature="e#11593#12735#0" />
+            <element signature="e#11880#12126#1" />
+            <element signature="e#12741#13427#0" />
+            <element signature="e#13433#18332#0" />
+            <element signature="e#13597#14745#0" />
+            <element signature="e#13716#14577#1" />
+            <element signature="e#14583#14735#1" />
+            <element signature="e#14755#15798#0" />
+            <element signature="e#15064#15124#1" />
+            <element signature="e#15808#18326#0" />
+            <element signature="e#15925#18158#1" />
+            <element signature="e#16398#18016#0" />
+            <element signature="e#18164#18316#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_tax_settings.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_sales_an.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_settings.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/LocalData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4397">
+          <caret line="40" column="89" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+          <folding>
+            <element signature="method#onOptionsItemSelected#0;class#LocalData#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/androidmobilestock/Settings/TaxSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="127" column="79" lean-forward="true" selection-start-line="127" selection-start-column="79" selection-end-line="127" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

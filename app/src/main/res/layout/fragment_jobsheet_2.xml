@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Jobsheet_Fragment2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lbl_workType"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Work Type"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:id="@+id/tv_workType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="8dp"
+                    android:padding="6dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lbl_replacementType"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Replacement Type"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:id="@+id/tv_replacementType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="8dp"
+                    android:padding="6dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lbl_timeIn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Time In"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:id="@+id/tv_timeIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="8dp"
+                    android:padding="6dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lbl_timeOut"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Time Out"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:id="@+id/tv_timeOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="8dp"
+                    android:padding="6dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_problem"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Problem"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_gravity="top"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"
+                    android:layout_gravity="top"/>
+
+                <TextView
+                    android:id="@+id/tv_problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold"
+                    android:minLines="2"
+                    android:layout_marginStart="8dp"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_resolution"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Resolution"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"
+                    android:layout_gravity="top"/>
+
+                <TextView
+                    android:id="@+id/tv_resolution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold"
+                    android:minLines="2"
+                    android:layout_marginStart="8dp"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_remarks"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Remarks"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    android:layout_marginBottom="3dp"
+                    android:layout_gravity="top"/>
+
+                <TextView
+                    android:id="@+id/tv_remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_cart_orange_border"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/caudex_bold"
+                    android:minLines="2"
+                    android:layout_marginStart="8dp"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

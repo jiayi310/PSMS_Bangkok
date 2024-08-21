@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/quantity_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:text="Quantity: "
+        android:padding="10dp"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/merriweather_bold"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/invdtllist_Qty"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:layout_toRightOf="@id/quantity_lbl"
+        android:padding="5dp"
+        android:textSize="26sp"
+        android:inputType="number"
+        android:fontFamily="@font/work_sans_medium"
+        android:textColor="@android:color/black"
+        android:background="@drawable/border"
+        android:layout_marginLeft="10dp" />
+
+    <ImageButton
+        android:id="@+id/invdtllist_btnInc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/up"
+        android:layout_toRightOf="@id/invdtllist_Qty"/>
+
+    <ImageButton
+        android:id="@+id/invdtllist_btnDec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/dec"
+        android:layout_toRightOf="@id/invdtllist_Qty"
+        android:layout_below="@+id/invdtllist_btnInc"/>
+
+    <Button
+        android:id="@+id/dialogButtonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/biorhyme"
+        android:text=" Cancel "
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/quantity_lbl"
+        android:layout_marginLeft="90dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/dialogButtonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/biorhyme"
+        android:text=" Ok "
+        android:layout_toRightOf="@id/dialogButtonCancel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/invdtllist_Qty"
+        android:textStyle="bold" />
+</RelativeLayout>

@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="InvoiceDetail"
+            type="com.example.androidmobilestock.AC_Class.InvoiceDetails" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.ui.main.InvADManualFragment.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <ScrollView
+            android:id="@+id/scrollView5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintBottom_toTopOf="@+id/layoutbottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Subtotal (ex.):"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_discount_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Remark:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_stock_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_remark2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Remark 2:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_remark_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_taxrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Tax Rate:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_taxtype_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Unit Price:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintBottom_toTopOf="@+id/invdtl_unitprice_txt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+                <TextView
+                    android:id="@+id/invdtl_item_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Item:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_DocNo" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_UOM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="UOM:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_item_detail_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lblQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Quantity :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_remark_txt2" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_TaxValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Tax Value:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_taxrate_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_total_ex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Total (ex):"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_taxvalue_txt" />
+
+                <TextView
+                    android:id="@+id/lbl_total_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Total (in):"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_totalex_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Discount:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hist_list" />
+
+                <TextView
+                    android:id="@+id/invdtl_lbl_taxtype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Tax Type:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_subtotal_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_item_detail_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@={InvoiceDetail.ItemDescription}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="@+id/invdtl_item_txt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_item_txt" />
+
+                <TextView
+                    android:id="@+id/invdtl_taxtype_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:drawableRight="@drawable/search"
+                    android:gravity="center_vertical"
+                    android:onClick="@{handler::onTaxTypeTxtViewClicked}"
+                    android:padding="5dp"
+                    android:text="@={InvoiceDetail.TaxType}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_taxtype" />
+
+                <TextView
+                    android:id="@+id/invdtl_taxrate_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text='@{String.format("%.2f", InvoiceDetail.TaxRate)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_taxrate" />
+
+                <TextView
+                    android:id="@+id/invdtl_totalex_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text='@{String.format("%.2f", InvoiceDetail.Total_Ex)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_total_ex" />
+
+                <TextView
+                    android:id="@+id/invdtl_totalin_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text='@{String.format("%.2f", InvoiceDetail.Total_In)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_total_in" />
+
+                <TextView
+                    android:id="@+id/invdtl_subtotal_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:padding="5dp"
+                    android:text='@{String.format("%.2f", InvoiceDetail.SubTotal)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_subtotal" />
+
+                <EditText
+                    android:id="@+id/invdtl_remark_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:maxLength="250"
+                    android:padding="5dp"
+                    android:selectAllOnFocus="true"
+                    android:text='@{InvoiceDetail.Remarks}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="@+id/uom_text"
+                    app:layout_constraintStart_toStartOf="@+id/uom_text"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_remark" />
+
+                <EditText
+                    android:id="@+id/invdtl_remark_txt2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:maxLength="250"
+                    android:padding="5dp"
+                    android:selectAllOnFocus="true"
+                    android:text='@{InvoiceDetail.Remarks2}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="@+id/uom_text"
+                    app:layout_constraintStart_toStartOf="@+id/uom_text"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_lbl_remark2" />
+
+                <EditText
+                    android:id="@+id/invdtl_unitprice_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/border"
+                    android:digits="0123456789"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:maxLength="16"
+                    android:padding="5dp"
+                    android:selectAllOnFocus="true"
+                    android:text='@{String.format("%.2f", InvoiceDetail.UPrice)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toStartOf="@+id/check_list"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_price" />
+
+                <EditText
+                    android:id="@+id/invdtl_discount_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:digits="0123456789."
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:maxLength="16"
+                    android:layout_marginEnd="8dp"
+                    android:padding="5dp"
+                    android:selectAllOnFocus="true"
+                    android:text='@{String.format("%.2f", InvoiceDetail.Discount)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toStartOf="@+id/discount_list"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_discount" />
+
+                <!--<EditText-->
+                <!--android:id="@+id/invdtl_discount_txt"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:inputType="numberDecimal"-->
+                <!--android:padding="5dp"-->
+                <!--android:text='@{String.format("%.2f", InvoiceDetail.Discount)}'-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="14sp"-->
+                <!--android:selectAllOnFocus="true"-->
+                <!--app:fontFamily="@font/caudex_bold"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_discount" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/invdtl_unitprice_txt"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:background="@drawable/border"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:inputType="number"-->
+                <!--android:digits="0123456789."-->
+                <!--android:padding="5dp"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:text='@{String.format("%.2f", InvoiceDetail.UPrice)}'-->
+                <!--android:textSize="14sp"-->
+                <!--app:fontFamily="@font/caudex_bold"-->
+                <!--android:selectAllOnFocus="true"-->
+                <!--app:layout_constraintEnd_toStartOf="@+id/hist_list"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_price" />-->
+
+                <ImageButton
+                    android:id="@+id/discount_list"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:onClick="@{handler::onCheckDiscountClicked}"
+                    android:src="@drawable/discount"
+                    app:layout_constraintBottom_toBottomOf="@+id/invdtl_discount_txt"
+                    app:layout_constraintEnd_toEndOf="@+id/hist_list"
+                    app:layout_constraintTop_toTopOf="@+id/invdtl_discount_txt"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/invdtl_taxvalue_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text='@{String.format("%.2f", InvoiceDetail.TaxValue)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_TaxValue" />
+
+                <TextView
+                    android:id="@+id/invdtl_item_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:drawableRight="@drawable/search"
+                    android:gravity="fill"
+                    android:onClick="@{handler::onItemTxtViewClicked}"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/si_item_camera"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_item_lbl" />
+
+                <TextView
+                    android:id="@+id/si_item_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:drawableRight="@drawable/scan"
+                    android:gravity="center_vertical"
+                    android:onClick="@{handler::OnItemCameraClicked}"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toStartOf="@+id/invdtl_item_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_item_lbl" />
+
+                <EditText
+                    android:id="@+id/invdtl_barcode_editText"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/border"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="fill"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/si_item_camera"
+                    app:layout_constraintEnd_toStartOf="@+id/si_item_camera"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/si_item_camera" />
+
+                <TextView
+                    android:id="@+id/invdtl_item_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/border"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="fill"
+                    android:onClick="@{handler::OnItemTextViewClicked}"
+                    android:padding="5dp"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:text="@={InvoiceDetail.ItemCode}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/si_item_camera"
+                    app:layout_constraintEnd_toStartOf="@+id/si_item_camera"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/si_item_camera" />
+
+                <TextView
+                    android:id="@+id/uom_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border"
+                    android:drawableRight="@drawable/search"
+                    android:gravity="center_vertical"
+                    android:onClick="@{handler::onUOMTxtViewClicked}"
+                    android:padding="5dp"
+                    android:text="@={InvoiceDetail.UOM}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_lbl_UOM" />
+
+
+                <TextView
+                    android:id="@+id/invdtl_DocNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Inv_No"
+                    android:padding="0dp"
+                    android:text="@={InvoiceDetail.DocNo}"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic"
+                    app:fontFamily="serif-monospace"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_Dec"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/invdtl_lblQty"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/minus"
+                    android:fontFamily="sans-serif-black"
+                    android:onClick="@{handler::BtnDecClicked}"
+                    android:padding="10dp"
+                    android:scaleType="centerInside"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@+id/invdtl_lbl_price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_lblQty" />
+
+                <ImageButton
+                    android:id="@+id/btn_Inc"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/invdtl_lblQty"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/plus"
+                    android:fontFamily="sans-serif-black"
+                    android:onClick="@{handler::BtnIncClicked}"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextNumber2"
+                    app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
+                    app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+
+                <ImageButton
+                    android:id="@+id/check_list"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="@{handler::onCheckPriceClicked}"
+                    android:src="@drawable/dollar"
+                    app:layout_constraintBottom_toBottomOf="@+id/invdtl_unitprice_txt"
+                    app:layout_constraintEnd_toStartOf="@+id/hist_list"
+                    app:layout_constraintTop_toTopOf="@+id/invdtl_unitprice_txt" />
+                <ImageButton
+                    android:id="@+id/hist_list"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:onClick="@{handler::onHistoryPriceViewClicked}"
+                    android:src="@drawable/history"
+                    android:background="@drawable/history"
+                    app:layout_constraintBottom_toBottomOf="@+id/invdtl_unitprice_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/invdtl_unitprice_txt" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <EditText
+                    android:id="@+id/editTextNumber2"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:text="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_Dec"
+                    app:layout_constraintStart_toEndOf="@+id/btn_Dec"
+                    app:layout_constraintTop_toTopOf="@+id/btn_Dec" />
+
+                <TextView
+                    android:id="@+id/lbl_batch_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:padding="5dp"
+                    android:text="Batch No:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uom_text" />
+
+                <TextView
+                    android:id="@+id/invdtl_batchno_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toStartOf="@+id/batchno_list"
+                    app:layout_constraintStart_toStartOf="@+id/invdtl_totalin_txt"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_batch_no" />
+
+
+                <TextView
+                    android:id="@+id/invdtl_stock_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/caudex_bold"
+                    app:layout_constraintEnd_toEndOf="@+id/invdtl_batchno_txt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_batchno_txt" />
+
+
+                <ImageButton
+                    android:id="@+id/batchno_list"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:onClick="@{handler::onBatchNoListClicked}"
+                    android:src="@drawable/search"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/invdtl_batchno_txt"
+                    app:layout_constraintEnd_toEndOf="@+id/hist_list"
+                    app:layout_constraintTop_toTopOf="@+id/invdtl_batchno_txt"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/layoutbottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="@{handler::OnCancelBtnClicked}"
+            android:text="Cancel"
+            android:background="@color/red5"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+
+            <Button
+                android:id="@+id/btnsave"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{handler::OnSaveBtnClicked}"
+                android:text="ADD"
+                android:background="@color/red5"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

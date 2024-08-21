@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="Std"
+            type="com.example.androidmobilestock.AC_Class.StockTakeDetails" />
+        <variable
+            name="StdHandler"
+            type="com.example.androidmobilestock.StockTakeDtlList.MyClickHandler" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".StockTakeDtlList"
+        android:padding="10dp">
+
+        <ListView
+            android:id="@+id/std_listview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/layouttotal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </ListView>
+
+        <EditText
+            android:id="@+id/invdtl_editText"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:hint="ItemCode"
+            android:nextFocusLeft="@id/invdtl_editText"
+            android:nextFocusUp="@id/invdtl_editText"
+            android:onClick="@{StdHandler::onEditTextViewClicked}"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layouttotal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnMerge2">
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Qty:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/std_listview"/>
+            <TextView
+                android:id="@+id/lblTotal3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Total Qty"
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                app:fontFamily="@font/robotomedium"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnMerge2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{StdHandler::OnbtnMergeClicked}"
+            android:scaleType="fitCenter"
+            android:text="Merge Items"
+            android:textSize="18sp"
+            android:background="@color/red5"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/btnSave2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnSave2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{StdHandler::OnbtnSaveClicked}"
+            android:scaleType="fitCenter"
+            android:text="Save"
+            android:textSize="18sp"
+            android:background="@color/red5"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

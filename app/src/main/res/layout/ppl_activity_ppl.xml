@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="DO"
+            type="com.example.androidmobilestock.AC_Class.DO" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.PPL_PPL.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout25"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tv_docNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="do no."
+            android:text="@={DO.docNo}"
+            android:textColor="#FF0011"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif-monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_fromDocNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:hint="so no."
+            android:text="@={DO.fromDocNo}"
+            android:textColor="#FF0011"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif-monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_docNo">
+
+            <ScrollView
+                android:id="@+id/scrollView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarStyle="insideInset">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_DocDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Date : "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:paddingBottom="3dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_DocDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:background="@drawable/bg_cart_green_border"
+                            android:onClick="@{handler::OnImageButtonClicked}"
+                            android:padding="6dp"
+                            android:paddingStart="12dp"
+                            android:text="@={DO.docDate}"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            app:fontFamily="@font/caudex_bold"
+                            app:layout_constraintRight_toLeftOf="@+id/btn_DocDate"/>
+
+                        <ImageButton
+                            android:id="@+id/btn_DocDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="@{handler::OnImageButtonClicked}"
+                            android:src="@drawable/date_vector_green"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_DebtorCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Creditor: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:paddingBottom="3dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_DocDate" />
+
+                    <TextView
+                        android:id="@+id/tv_DebtorCode"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:text="@={DO.debtorCode}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_DebtorCode"/>
+
+                    <TextView
+                        android:id="@+id/lbl_DebtorName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Name: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:paddingBottom="3dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_DebtorCode"/>
+
+                    <TextView
+                        android:id="@+id/tv_DebtorName"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:maxLength="100"
+                        android:paddingStart="12dp"
+                        android:text="@={DO.debtorName}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_DebtorName"/>
+
+                    <TextView
+                        android:id="@+id/lbl_SalesAgent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Purchase Agent: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:paddingBottom="3dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_DebtorName"/>
+
+                    <TextView
+                        android:id="@+id/tv_SalesAgent"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:maxLength="12"
+                        android:paddingStart="12dp"
+                        android:text="@={DO.salesAgent}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_SalesAgent"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Location: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:paddingBottom="3dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_DebtorName"/>
+
+                    <TextView
+                        android:id="@+id/tv_Location"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:maxLength="12"
+                        android:paddingStart="12dp"
+                        android:text="@={DO.Location}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lbl_SalesAgent"/>
+
+
+                    <TextView
+                        android:id="@+id/lbl_Phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Phone: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_SalesAgent"/>
+
+                    <TextView
+                        android:id="@+id/tv_Phone"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:maxLength="25"
+                        android:paddingStart="12dp"
+                        android:text="@={DO.phone}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Attention"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Attention: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_Attention"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="40"
+                        android:text="@={DO.attention}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Fax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Fax: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_Fax"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border2"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="25"
+                        android:text="@={DO.fax}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Remarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Remark: "
+                        android:textColor="@color/apricot"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"/>
+
+                    <EditText
+                        android:id="@+id/tv_Remarks"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_green_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:maxLength="250"
+                        android:paddingStart="12dp"
+                        android:text="@={DO.remarks}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"/>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_Next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=" Next"
+            android:textSize="18sp"
+            android:background="@color/red5"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</ScrollView>-->
+</layout>

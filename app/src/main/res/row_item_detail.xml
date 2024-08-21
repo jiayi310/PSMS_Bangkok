@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.example.androidmobilestock.AC_Class.Item" />
+        <variable
+            name="defaultCurr"
+            type="String" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.CartView.MyClickHandler" />
+        <import type="android.graphics.Bitmap"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        app:contentPadding="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/ImageItem"
+                android:layout_width="match_parent"
+                android:layout_height="132dp"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:adjustViewBounds="true"
+                android:src="@drawable/photo_empty"
+                tools:scaleType="centerCrop" />
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/ItemCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toStartOf="@+id/uom"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/robotobold"
+                    android:hint="ItemCode"
+                    android:singleLine="true"
+                    android:text="@{item.ItemCode}"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/uom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="3dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/robotobold"
+                    android:hint="UOM"
+                    android:text='@{item.UOM}'
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ItemDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/cantata_one"
+                android:hint="ItemDesc"
+                android:lines="2"
+                android:maxLines="2"
+                android:textColor="@color/gray"
+                android:text="@{item.Description}"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/Price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginStart="10dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/robotomedium"
+                android:hint="Price"
+                android:paddingTop="3dp"
+                android:text='@{String.format(defaultCurr+" %.2f", item.price)}'
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.androidmobilestock">
+    <!-- BLUETOOTH PERMISSION -->
+    <!-- Request legacy Bluetooth permissions on older devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--
+ Needed only if your app looks for Bluetooth devices.
+             If your app doesn't use Bluetooth scan results to derive physical
+             location information, you can strongly assert that your app
+             doesn't derive physical location.
+    -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!--
+ Needed only if your app makes the device discoverable to Bluetooth
+      devices.
+    -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <!--
+ Needed only if your app communicates with already-paired Bluetooth
+           devices.
+    -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android-.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/stock_mobile"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/stock_mobile_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StockReceive_AutoNumbering"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_AutoNumbering"
+            android:exported="false" />
+        <activity
+            android:name=".Setting_Status_StockTake"
+            android:exported="false" />
+        <activity
+            android:name=".Setting_Status_SR"
+            android:exported="false" />
+        <activity
+            android:name=".Setting_Status_JS"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_ImageView"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_Details"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_AddItemDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_AddItemManual"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_AddNewItem"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_AddNew2"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet_AddNew"
+            android:exported="false" />
+        <activity
+            android:name=".StockReceive_AddNewItemDetail"
+            android:exported="false" />
+        <activity
+            android:name=".StockReceive_AddItemManual"
+            android:exported="false" />
+        <activity
+            android:name=".StockReceive_Details"
+            android:exported="false" />
+        <activity
+            android:name=".StockReceive_AddNewItem"
+            android:exported="false" />
+        <activity
+            android:name=".StockReceive_AddNew"
+            android:exported="false" />
+        <activity
+            android:name=".StockReceive"
+            android:exported="false" />
+        <activity
+            android:name=".Jobsheet"
+            android:exported="false" />
+        <activity
+            android:name=".InvoiceViewHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Setting_AdditionalFeatures"
+            android:exported="false" />
+        <activity
+            android:name=".ARPayment_OutstandingList"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Settings.SettingsHome"
+            android:exported="false" />
+        <activity
+            android:name=".StockAssemblyMultipleTab"
+            android:exported="false" />
+        <activity
+            android:name=".AgingStatementDtl"
+            android:exported="false" />
+        <activity
+            android:name=".StockTakeUOM"
+            android:exported="false" />
+        <activity
+            android:name=".ReceiptView"
+            android:exported="false" />
+        <activity
+            android:name=".ARMultipleTab"
+            android:exported="false" />
+        <activity
+            android:name=".ARPaymentDtlList"
+            android:exported="false" />
+        <activity
+            android:name=".ItemBatchList"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Settings.BatchNoConfiguration"
+            android:exported="false" />
+        <activity
+            android:name=".Settings.BatchNoSettings"
+            android:exported="false" />
+        <activity
+            android:name=".Discount_List"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".AgingStatement"
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ARPaymentList"
+            android:exported="true" />
+        <activity
+            android:name=".ARPayment"
+            android:exported="true" />
+        <activity android:name=".Setting_AutoPrice" />
+        <activity android:name=".Setting_Hybrid" />
+        <activity android:name=".PL_SODtlList" />
+        <activity
+            android:name=".PL_SO_DownloadDtlList"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".Setting_Barcode" />
+        <activity android:name=".PUR_MultipleTab" />
+        <activity android:name=".PUR_EmptyAD" />
+        <activity
+            android:name=".PUR_PurchaseDtlList"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".PurchaseAgentList" />
+        <activity android:name=".CreditorList" />
+        <activity android:name=".PUR_Purchase" />
+        <activity android:name=".PUR_PurchaseList" />
+        <activity android:name=".Setting_Status_Pur" />
+        <activity android:name=".Setting_Status_PL" />
+        <activity android:name=".Setting_Status_AR" />
+        <activity android:name=".Setting_Status_SA" />
+        <activity android:name=".StockAssembly_AutoNumbering" />
+        <activity android:name=".AR_AutoNumbering" />
+        <activity android:name=".PL_AutoNumbering" />
+        <activity android:name=".PL_Compare" />
+        <activity android:name=".PL_MultipleTab" />
+        <activity android:name=".PL_PLDtlAddBarcode" />
+        <activity android:name=".PL_PLDtlAddManual" />
+        <activity android:name=".PL_PL" />
+        <activity
+            android:name=".PL_PLDtlList"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".PL_PLList" />
+        <activity android:name=".Analytics" />
+        <activity android:name=".PL_SO_DownloadList" />
+        <activity android:name=".PL_SOList" />
+        <activity android:name=".PL_SO_Search" />
+        <activity
+            android:name=".Check_List"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".ItemDetail"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".ShowCart" />
+        <activity
+            android:name=".CartView"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".CartList" />
+        <activity android:name=".Invoice_C" />
+        <activity android:name=".OrderList" />
+        <activity android:name=".ItemGroup" />
+        <activity android:name=".BK_Backup" />
+        <activity android:name=".BK_Restore" />
+        <activity android:name=".Setting_Logo" />
+        <activity android:name=".RFIDSettings" />
+        <activity android:name=".StockTakeDtlAddBarcode" />
+        <activity android:name=".StockTakeAN" />
+        <activity android:name=".MainActivityRFID" />
+        <activity android:name=".activity.UHFMainActivity" />
+        <activity
+            android:name=".activity.UHFSecondActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" />
+        <activity android:name=".StockTakeUploadStatus" />
+        <activity android:name=".activity.UHFWriteActivity" />
+        <activity android:name=".StockTakeDtlMultipleTab" />
+        <activity android:name=".StockTakeDtlAddManual" />
+        <activity android:name=".activity.StockTakeDtlAddRFID" />
+        <activity
+            android:name=".StockTakeDtlList"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".StockTake" />
+        <activity android:name=".StockCountHome" />
+        <activity android:name=".StockAssemblyList" />
+        <activity
+            android:name=".StockAssembly"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".StockAssemblyDtlList" />
+        <activity android:name=".FGItem_List" />
+        <activity
+            android:name=".PL_Item_List"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PL_Location_List"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".PUR_AutoNumbering" />
+        <activity android:name=".TransferAN" />
+        <activity android:name=".DocumentAN" />
+        <activity android:name=".TransferUploadStatus" />
+        <activity android:name=".TransferDtlMultipleTab" />
+        <activity android:name=".TransactionSettings" />
+        <activity android:name=".ModuleSettings" />
+        <activity android:name=".GeneralSettings" />
+        <activity
+            android:name=".TransferDtlAddBarcode"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".TransferDtlAddManual"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".TransferDtlList"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".Transfer" />
+        <activity
+            android:name=".TransferList"
+            android:configChanges="screenLayout|orientation|screenSize"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".DebtorDetails" />
+        <activity android:name=".SalesUploadStatus" />
+        <activity android:name=".EmptyAD" />
+        <activity
+            android:name=".ImageView"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Settings.UploadDownload" />
+        <activity android:name=".Settings.AN" />
+        <activity android:name=".Settings.SalesAN" />
+        <activity android:name=".StockCountMultipleTab" />
+        <activity android:name=".Settings.TaxSettings" />
+        <activity
+            android:name=".WelcomePage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Login"
+            android:configChanges="screenLayout|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".StockInquiryMultipleTab"
+            android:label="@string/title_activity_stock_inquiry_multiple_tab" />
+        <activity
+            android:name=".StockInquiry"
+            android:configChanges="screenLayout|orientation|screenSize"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".InvoiceDtlList"
+            android:configChanges="screenLayout|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConnectionSettings"
+            android:configChanges="screenLayout|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".InvoiceList"
+            android:configChanges="screenLayout|orientation|screenSize"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Item_List"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Item_List_Sales"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Location_List" />
+        <activity
+            android:name=".DebtorList"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".About" />
+        <activity android:name=".ItemUOMList" />
+        <activity android:name=".TaxType_List" />
+        <activity
+            android:name=".ChequePayment"
+            android:parentActivityName=".MultiPayment" />
+        <activity android:name=".CashPayment" />
+        <activity android:name=".CreditCardPayment" />
+        <activity android:name=".MultiPayment" />
+        <activity android:name=".HistoryPrice" />
+        <activity
+            android:name=".InvoiceDtlMultipleTab"
+            android:label="@string/InvoiceDetailsMultipleTab" />
+        <activity
+            android:name=".Agent_List"
+            android:label="Agent_List" />
+        <activity android:name=".Invoice" />
+        <activity android:name=".BluetoothPrinter.DeviceList" />
+        <activity android:name=".PPL_PLList" />
+        <activity android:name=".PPL_PO_Search" />
+        <activity android:name=".PPL_PO_DownloadList" />
+        <activity android:name=".PPL_PO_DownloadDtlList" />
+        <activity android:name=".PPL_PODtlList" />
+        <activity android:name=".PPL_PPL" />
+        <activity
+            android:name=".PPL_PLDtlList"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".PPL_PLDtlAddManual" />
+        <activity android:name=".PPL_Item_List" />
+        <activity android:name=".PPL_Compare" />
+        <activity android:name=".PPL_MultipleTab" />
+        <activity android:name=".Setting_Status_PPL" />
+        <activity android:name=".PPL_AutoNumbering" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

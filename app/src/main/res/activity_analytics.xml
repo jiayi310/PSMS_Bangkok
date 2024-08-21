@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Analytics">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/analytics_bg"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/robotobold"
+                    android:text="Sales Performances"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tablayout" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="20dp"
+                    android:scaleX="-1"
+                    android:onClick="previous"
+                    android:src="@drawable/rightarrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                    app:layout_constraintStart_toStartOf="@+id/viewPager" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="next"
+                    android:src="@drawable/rightarrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView33"
+                    app:layout_constraintEnd_toEndOf="@+id/viewPager" />
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/linearLayoutIndividual"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/viewPager">-->
+
+                <!--                    <LinearLayout-->
+                <!--                        android:id="@+id/linearLayout16"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_margin="10dp"-->
+                <!--                        android:layout_marginTop="20dp"-->
+                <!--                        android:orientation="horizontal"-->
+                <!--                        app:layout_constraintBottom_toBottomOf="@+id/view11"-->
+                <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent"-->
+                <!--                        app:layout_constraintVertical_bias="0.219">-->
+
+                <!--                        <RelativeLayout-->
+                <!--                            android:id="@+id/covermain"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:layout_marginEnd="5dp"-->
+                <!--                            android:layout_weight="1"-->
+                <!--                            android:background="@drawable/bg_orange_border"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/text"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_above="@+id/ttlsales"-->
+                <!--                                android:layout_alignParentEnd="true"-->
+                <!--                                android:layout_marginEnd="10dp"-->
+                <!--                                android:layout_marginBottom="5dp"-->
+                <!--                                android:text="Today"-->
+                <!--                                android:textColor="@color/gray"-->
+                <!--                                android:textSize="12dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/textyesterday"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_alignParentStart="true"-->
+                <!--                                android:layout_alignParentTop="true"-->
+                <!--                                android:layout_marginStart="10dp"-->
+                <!--                                android:layout_marginTop="10dp"-->
+                <!--                                android:text="Yesterday"-->
+                <!--                                android:textColor="@color/gray"-->
+                <!--                                android:textSize="12dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/ttlsales"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_alignParentEnd="true"-->
+                <!--                                android:layout_alignParentBottom="true"-->
+                <!--                                android:layout_marginEnd="10dp"-->
+                <!--                                android:layout_marginBottom="10dp"-->
+                <!--                                android:text="RM 999,999,99"-->
+                <!--                                android:textColor="@color/black"-->
+                <!--                                android:textSize="14dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/ttlsalesyesterday"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_below="@+id/textyesterday"-->
+                <!--                                android:layout_alignParentStart="true"-->
+                <!--                                android:layout_marginStart="10dp"-->
+                <!--                                android:layout_marginTop="5dp"-->
+                <!--                                android:text="RM 999,999,99"-->
+                <!--                                android:textColor="@color/black"-->
+                <!--                                android:textSize="14dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                        </RelativeLayout>-->
+
+                <!--                        <RelativeLayout-->
+                <!--                            android:id="@+id/covermain2"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="100dp"-->
+                <!--                            android:layout_marginStart="5dp"-->
+                <!--                            android:layout_weight="1"-->
+                <!--                            android:background="@drawable/bg_green_border"-->
+                <!--                            android:gravity="center"-->
+                <!--                            android:orientation="vertical"-->
+                <!--                            app:layout_constraintBottom_toBottomOf="@+id/covermain"-->
+                <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                            app:layout_constraintHorizontal_bias="0.0"-->
+                <!--                            app:layout_constraintStart_toEndOf="@+id/covermain"-->
+                <!--                            app:layout_constraintTop_toTopOf="@+id/covermain">-->
+
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/textmonth"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_above="@+id/ttlsales2"-->
+                <!--                                android:layout_alignParentEnd="true"-->
+                <!--                                android:layout_marginEnd="10dp"-->
+                <!--                                android:layout_marginBottom="5dp"-->
+                <!--                                android:text="This Month"-->
+                <!--                                android:textColor="@color/gray"-->
+                <!--                                android:textSize="12dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/textyesterday2"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_alignParentStart="true"-->
+                <!--                                android:layout_alignParentTop="true"-->
+                <!--                                android:layout_marginStart="10dp"-->
+                <!--                                android:layout_marginTop="10dp"-->
+                <!--                                android:text="Last Month"-->
+                <!--                                android:textColor="@color/gray"-->
+                <!--                                android:textSize="12dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/ttlsales2"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_alignParentEnd="true"-->
+                <!--                                android:layout_alignParentBottom="true"-->
+                <!--                                android:layout_marginEnd="10dp"-->
+                <!--                                android:layout_marginBottom="10dp"-->
+                <!--                                android:text="RM 999,999,99"-->
+                <!--                                android:textColor="@color/black"-->
+                <!--                                android:textSize="14dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/ttlsalesmm"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_below="@+id/textyesterday2"-->
+                <!--                                android:layout_alignParentStart="true"-->
+                <!--                                android:layout_marginStart="10dp"-->
+                <!--                                android:layout_marginTop="5dp"-->
+                <!--                                android:text="RM 999,999,99"-->
+                <!--                                android:textColor="@color/black"-->
+                <!--                                android:textSize="14dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+
+                <!--                        </RelativeLayout>-->
+                <!--                    </LinearLayout>-->
+
+                <!--                    <LinearLayout-->
+                <!--                        android:id="@+id/linearLayout15"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_margin="10dp"-->
+                <!--                        android:layout_marginTop="20dp"-->
+                <!--                        android:orientation="horizontal"-->
+                <!--                        app:layout_constraintBottom_toBottomOf="@+id/view11"-->
+                <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent"-->
+                <!--                        app:layout_constraintVertical_bias="0.219">-->
+
+                <!--                        <RelativeLayout-->
+                <!--                            android:id="@+id/covermain3"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="match_parent"-->
+                <!--                            android:layout_marginEnd="5dp"-->
+                <!--                            android:layout_weight="1"-->
+                <!--                            android:background="@drawable/bg_blue_border"-->
+                <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/textyy"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_above="@+id/ttlsales3"-->
+                <!--                                android:layout_alignParentEnd="true"-->
+                <!--                                android:layout_marginEnd="10dp"-->
+                <!--                                android:layout_marginBottom="5dp"-->
+                <!--                                android:text="This Year"-->
+                <!--                                android:textColor="@color/gray"-->
+                <!--                                android:textSize="12dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/textyy_txt"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_alignParentStart="true"-->
+                <!--                                android:layout_alignParentTop="true"-->
+                <!--                                android:layout_marginStart="10dp"-->
+                <!--                                android:layout_marginTop="10dp"-->
+                <!--                                android:text="Last Year"-->
+                <!--                                android:textColor="@color/gray"-->
+                <!--                                android:textSize="12dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/ttlsales3"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_alignParentEnd="true"-->
+                <!--                                android:layout_alignParentBottom="true"-->
+                <!--                                android:layout_marginEnd="10dp"-->
+                <!--                                android:layout_marginBottom="10dp"-->
+                <!--                                android:text="RM 999,999,99"-->
+                <!--                                android:textColor="@color/black"-->
+                <!--                                android:textSize="14dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                            <TextView-->
+                <!--                                android:id="@+id/ttlsalesyy"-->
+                <!--                                android:layout_width="wrap_content"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:layout_below="@+id/textyy_txt"-->
+                <!--                                android:layout_alignParentStart="true"-->
+                <!--                                android:layout_marginStart="10dp"-->
+                <!--                                android:layout_marginTop="5dp"-->
+                <!--                                android:text="RM 999,999,99"-->
+                <!--                                android:textColor="@color/black"-->
+                <!--                                android:textSize="14dp"-->
+                <!--                                android:textStyle="bold" />-->
+
+                <!--                        </RelativeLayout>-->
+
+                <!--                        <RelativeLayout-->
+                <!--                            android:id="@+id/covermain4"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="100dp"-->
+                <!--                            android:layout_marginStart="5dp"-->
+                <!--                            android:layout_weight="1"-->
+                <!--                            android:gravity="center"-->
+                <!--                            android:orientation="vertical"-->
+                <!--                            app:layout_constraintBottom_toBottomOf="@+id/covermain"-->
+                <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                            app:layout_constraintHorizontal_bias="0.0"-->
+                <!--                            app:layout_constraintStart_toEndOf="@+id/covermain"-->
+                <!--                            app:layout_constraintTop_toTopOf="@+id/covermain">-->
+
+                <!--                        </RelativeLayout>-->
+                <!--                    </LinearLayout>-->
+                <!--                </LinearLayout>-->
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+                <LinearLayout
+                    android:id="@+id/graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/viewPager"
+                    tools:layout_editor_absoluteX="10dp">
+
+                    <View
+                        android:id="@+id/view11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/gray1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutIndividual" />
+
+                    <LinearLayout
+                        android:id="@+id/barchartagentlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/view11"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/robotobold"
+                            android:gravity="center"
+                            android:text="Top 10 Agent Sales"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                        <com.github.mikephil.charting.charts.BarChart
+                            android:id="@+id/barChartAgent"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_below="@+id/text0"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/bg_cart_history"
+                            app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="Top 10 Sales by Customer (Amt)"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_below="@+id/text1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cart_history"
+                        app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="Top 10 Sales by Customer (Qty)"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/barChart" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart2"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_below="@+id/text1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cart_history"
+                        app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="Top 10 Sales by Product (Amt)"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/barChart2" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart3"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cart_history"
+                        app:layout_constraintTop_toBottomOf="@+id/text3" />
+
+                    <TextView
+                        android:id="@+id/text4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="Top 10 Sales by Product (Qty)"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/barChart3" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart4"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cart_history"
+                        app:layout_constraintTop_toBottomOf="@+id/text4" />
+
+                    <TextView
+                        android:id="@+id/text5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="Top 10 Highest Product (Balance Qty)"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/barChart4" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart5"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cart_history"
+                        app:layout_constraintTop_toBottomOf="@+id/text5" />
+
+                    <TextView
+                        android:id="@+id/text6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:text="Top 10 Lowest Product (Balance Qty)"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/barChart5" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart6"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cart_history"
+                        app:layout_constraintTop_toBottomOf="@+id/text6" />
+
+
+                </LinearLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tablayout"
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/tablayoutdesign"
+                    android:foregroundGravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabGravity="fill"
+                    app:tabIndicator="@drawable/tablayoutdesign2"
+                    app:tabIndicatorColor="@color/colorAccent"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabIndicatorGravity="stretch"
+                    app:tabIndicatorHeight="54dp"
+                    app:tabInlineLabel="true"
+                    app:tabMode="fixed"
+                    app:tabTextColor="@color/black">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tabitem1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INDIVIDUAL" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tabitem2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ALL" />
+                </com.google.android.material.tabs.TabLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="StDetail"
+            type="com.example.androidmobilestock.AC_Class.StockAssemblyDetails" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sclist_description"
+            android:layout_width="211dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_margin="10dp"
+            android:layout_marginStart="20dp"
+            android:hint="Description"
+            android:padding="0dp"
+            android:text="@{StDetail.SubItemCode}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="103"
+            tools:layout_conversion_wrapWidth="341" />
+
+        <TextView
+            android:id="@+id/sclist_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_medium"
+            android:gravity="center_vertical|end"
+            android:hint="Quantity"
+            android:padding="0dp"
+            android:text='@{String.format(" %.2f",StDetail.Quantity)}'
+            android:textAlignment="textEnd"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            app:fontFamily="@font/robotomedium"
+            app:layout_constraintBottom_toBottomOf="@+id/sclist_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.866"
+            app:layout_constraintStart_toEndOf="@+id/sclist_description"
+            app:layout_constraintTop_toTopOf="@+id/sclist_description"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_wrapHeight="99"
+            tools:layout_conversion_wrapWidth="335" />
+
+        <View
+            android:id="@+id/sc_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sclist_description"
+            tools:layout_conversion_wrapHeight="5"
+            tools:layout_conversion_wrapWidth="1080" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

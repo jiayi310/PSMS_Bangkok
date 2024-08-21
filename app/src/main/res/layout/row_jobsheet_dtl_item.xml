@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:paddingStart="2dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ImageItemCart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:foregroundGravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/photo_empty"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedCorners" />
+
+    <TextView
+        android:id="@+id/bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cantata_one"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/invdtllist_itemcode"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:text="Item Code"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/invdtllist_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginEnd="2dp"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:padding="0dp"
+        android:text="Description"
+        android:textColor="@color/gray"
+        android:textSize="9sp"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/invdtllist_itemcode"
+        app:layout_constraintTop_toBottomOf="@+id/invdtllist_itemcode" />
+
+    <TextView
+        android:id="@+id/invdtllist_chosen_qty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cantata_one"
+        android:gravity="center"
+        android:text="Quantity"
+        android:padding="0dp"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/invdtllist_itemcode"
+        app:layout_constraintEnd_toStartOf="@id/guideline7"/>
+
+    <TextView
+        android:id="@+id/invdtllist_chosen_uom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cantata_one"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="UOM"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/invdtllist_itemcode" />
+
+    <!--
+
+    <TextView
+        android:id="@+id/invdtllist_uprice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="0dp"
+        android:text="Unit Price"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toEndOf="@+id/invdtllist_totalin"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/invdtllist_chosen_qty" />
+
+    <TextView
+        android:id="@+id/invdtllist_taxvalue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:padding="0dp"
+        android:text="TotalDisc"
+        android:textColor="@color/red"
+        android:textSize="11sp"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toEndOf="@id/invdtllist_uprice"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/invdtllist_uprice"
+        app:layout_constraintTop_toBottomOf="@+id/invdtllist_uprice" />
+
+    <TextView
+        android:id="@+id/invdtllist_totalin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:gravity="right"
+        android:padding="0dp"
+        android:text="TotalValue"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/invdtllist_taxvalue" />
+
+        -->
+
+    <TextView
+        android:id="@+id/remarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remarks: "
+        android:textColor="@color/red"
+        android:textSize="11sp"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toEndOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/batchno"
+        app:layout_constraintTop_toBottomOf="@+id/batchno" />
+
+
+    <TextView
+        android:id="@+id/remarks2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remarks2"
+        android:textColor="@color/red"
+        android:textSize="11sp"
+        app:fontFamily="@font/cantata_one"
+        app:layout_constraintEnd_toEndOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/batchno"
+        app:layout_constraintTop_toBottomOf="@+id/remarks" />
+
+    <TextView
+        android:id="@+id/batchno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Batch no"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:fontFamily="@font/cantata_one"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/invdtllist_description"
+        app:layout_constraintTop_toBottomOf="@+id/invdtllist_description"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80"  />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

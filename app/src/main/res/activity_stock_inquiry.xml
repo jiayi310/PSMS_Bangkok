@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item"
+            type="com.example.androidmobilestock.AC_Class.Item" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.StockInquiry.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout17"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context=".StockInquiry">
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/si_UOM"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@={item.baseUOM}"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp"-->
+            <!--android:visibility="visible"-->
+            <!--app:fontFamily="@font/averia_serif_libre"-->
+            <!--app:layout_constraintEnd_toEndOf="@+id/si_item_selection"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/itemEditText"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/si_itemdetails" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/lbl_items"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Item:"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="18dp"-->
+<!--            app:fontFamily="@font/merriweather_bold"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/si_item_selection"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:clickable="true"-->
+<!--            android:background="@drawable/border"-->
+<!--            android:drawableRight="@drawable/search"-->
+<!--            android:focusable="false"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:onClick="@{handler::OnItemTxtViewClicked}"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="18sp"-->
+<!--            app:fontFamily="@font/caudex_bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/itemEditText"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/itemEditText" />-->
+
+        <TextView
+            android:id="@+id/si_item_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:drawableRight="@drawable/scan"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:onClick="@{handler::OnItemCameraClicked}"
+            android:padding="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/itemEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/itemEditText" />
+
+        <EditText
+            android:id="@+id/itemEditText"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:fontFamily="@font/averia_serif_libre"
+            android:hint="Search"
+            android:padding="5dp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:text="@={item.itemCodeInput}"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/si_item_camera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemEditText">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.65" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/robotobold"
+                android:text="Item"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.012"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/robotobold"
+                android:text="UOM"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintHorizontal_bias="0.196"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/robotobold"
+                android:text="Price"
+                android:textColor="@color/white"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ListView
+            android:id="@+id/list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5"></ListView>
+
+        <!--<TextView-->
+            <!--android:id="@+id/si_itemdetails"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@={item.Description}"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp"-->
+            <!--android:visibility="visible"-->
+            <!--app:fontFamily="@font/averia_serif_libre"-->
+            <!--app:layout_constraintEnd_toEndOf="@+id/si_item_selection"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/itemEditText"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/si_itemcode" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/si_itemcode"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@={item.ItemCode}"-->
+            <!--android:singleLine="true"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="18sp"-->
+            <!--app:fontFamily="@font/averia_serif_libre"-->
+            <!--app:layout_constraintEnd_toEndOf="@+id/itemEditText"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/itemEditText"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/itemEditText" />-->
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:onClick="@{handler::onSearchBtnClicked}"
+            android:text="View Details"
+            android:visibility="invisible"
+            android:textSize="18sp"
+            android:background="@color/red5"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

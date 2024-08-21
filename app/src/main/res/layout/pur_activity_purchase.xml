@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="doc"
+            type="com.example.androidmobilestock.AC_Class.Purchase" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.PUR_Purchase.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout25"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/invheader_invno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="inv no."
+            android:text="@={doc.docNo}"
+            android:textColor="#FF0011"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif-monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="74"
+            tools:layout_conversion_wrapWidth="1028" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/invheader_btnNext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/invheader_invno">
+
+            <ScrollView
+                android:id="@+id/scrollView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarStyle="insideInset">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/invheader_Date_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Date : "
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/invheader_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/bg_cart_red_border"
+                            android:onClick="@{handler::OnImageButtonClicked}"
+                            android:padding="6dp"
+                            android:paddingStart="12dp"
+                            android:text="@={doc.docDate}"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            app:fontFamily="@font/caudex_bold"
+                            app:layout_constraintRight_toLeftOf="@+id/stheader_imgbtn_calendar"
+                            tools:layout_conversion_wrapHeight="96"
+                            tools:layout_conversion_wrapWidth="897"
+                            tools:layout_editor_absoluteY="64dp" />
+
+                        <ImageButton
+                            android:id="@+id/stheader_imgbtn_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="@{handler::OnImageButtonClicked}"
+                            android:src="@drawable/date_vector_red"
+                            tools:layout_conversion_wrapHeight="105"
+                            tools:layout_conversion_wrapWidth="131"
+                            tools:layout_editor_absoluteX="352dp"
+                            tools:layout_editor_absoluteY="64dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/invheader_debtor_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Creditor: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_date"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_debtorcode"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border2"
+                        android:drawableRight="@drawable/rightarrowvector_red"
+                        android:layout_marginStart="5dp"
+                        android:onClick="@{handler::OnDebtorTxtViewClicked}"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:text="@={doc.creditorCode}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_debtor_lbl"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_debtorname_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Name: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_debtorcode"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_debtorname"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:maxLength="100"
+                        android:paddingStart="12dp"
+                        android:layout_marginStart="5dp"
+                        android:text="@={doc.creditorName}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_debtorname_lbl"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_agent_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Agent: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_debtorname"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_agent"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border2"
+                        android:drawableRight="@drawable/rightarrowvector_red"
+                        android:onClick="@{handler::onAgentTxtViewClicked}"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="12"
+                        android:text="@={doc.agent}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_agent_lbl"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_phone_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Phone: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/invheader_agent"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_phone"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:maxLength="12"
+                        android:paddingStart="12dp"
+                        android:text="@={doc.phone}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_attention_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Attention: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_attention"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:maxLength="40"
+                        android:paddingStart="12dp"
+                        android:text="@={doc.attention}"
+                        android:textColor="@android:color/black"
+                        android:layout_marginStart="5dp"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_fax_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Fax: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_fax"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:maxLength="25"
+                        android:paddingStart="12dp"
+                        android:text="@={doc.fax}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_remarks_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Remark: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_remarks"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="250"
+                        android:text="@={doc.remarks}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+                    <TextView
+                        android:id="@+id/invheader_remarks_lbl2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Remark 2: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_remarks2"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="250"
+                        android:text="@={doc.remarks2}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_remarks_lbl3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Remark 3: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_remarks3"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="250"
+                        android:text="@={doc.remarks3}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_remarks_lbl4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Remark 4: "
+                        android:textColor="@color/red"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <EditText
+                        android:id="@+id/invheader_remarks4"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_cart_red_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:maxLength="250"
+                        android:text="@={doc.remarks4}"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/invheader_btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::OnNextButtonClicked}"
+            android:text=" Next"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:background="@color/red5"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_wrapHeight="126"
+            tools:layout_conversion_wrapWidth="231" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</ScrollView>-->
+</layout>

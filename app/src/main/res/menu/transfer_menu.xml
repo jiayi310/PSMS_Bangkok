@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/addTr"
+        android:icon="@drawable/plus_sales"
+        android:title="Add Transfer"
+        app:showAsAction="always" />
+<!--    <item-->
+<!--        android:id="@+id/addScan"-->
+<!--        android:icon="@drawable/scanning"-->
+<!--        android:title="Add Transfer"-->
+<!--        app:showAsAction="always" />-->
+</menu>

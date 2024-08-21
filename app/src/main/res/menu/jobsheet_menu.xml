@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/pic"
+        android:icon="@drawable/ic_baseline_image_24"
+        android:title="Export to PDF"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/pdf"
+        android:icon="@drawable/printer"
+        android:title="Export to PDF" />
+
+    <item
+        android:id="@+id/convert"
+        android:icon="@drawable/printer"
+        android:title="Convert To Sales" />
+
+</menu>

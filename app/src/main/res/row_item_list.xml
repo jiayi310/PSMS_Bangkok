@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.example.androidmobilestock.AC_Class.Item" />
+        <variable
+            name="DefaultCurr"
+            type="String" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <!--app:layout_constraintEnd_toStartOf="@+id/imageView"-->
+
+
+        <!--app:layout_constraintEnd_toStartOf="@+id/imageView"-->
+
+
+        <TextView
+            android:id="@+id/text_item_UOM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:gravity="right"
+            android:text="@{item.UOM}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/robotomediumitalic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintHorizontal_bias="0.196"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_itemcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/text_item_UOM"
+            android:fontFamily="@font/robotobold"
+            android:gravity="left"
+            android:text="@{item.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            app:fontFamily="@font/robotobold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_itemcode"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            android:gravity="left"
+            android:text="@{item.Description}"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:fontFamily="@font/merriweather"
+            app:layout_constraintEnd_toEndOf="@+id/text2_Price"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_itemcode"
+            app:layout_constraintTop_toBottomOf="@id/text_itemcode" />
+
+        <TextView
+            android:id="@+id/text_item_name2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/text_itemcode"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="left"
+            android:text="@{item.Desc2}"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:fontFamily="@font/merriweather"
+            app:layout_constraintEnd_toEndOf="@+id/text2_Price"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_itemcode"
+            app:layout_constraintTop_toBottomOf="@+id/text_item_name" />
+
+        <TextView
+            android:id="@+id/text_item_balance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_itemcode"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="left"
+            android:hint="balance"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:fontFamily="@font/merriweather"
+            app:layout_constraintEnd_toEndOf="@+id/text_item_name"
+            app:layout_constraintStart_toStartOf="@+id/text_item_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_item_name2" />
+
+        <TextView
+            android:id="@+id/text2_Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_item_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/robotobold"
+            android:gravity="right"
+            android:text='@{String.format("%.2f", item.Price)}'
+            android:textColor="@color/red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_item_UOM"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_item_balance" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/text2_Price"
+            android:layout_alignBottom="@+id/text2_Price"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="3dp"
+            android:layout_toStartOf="@+id/text2_Price"
+            android:fontFamily="@font/robotobold"
+            android:gravity="right"
+            android:text="@={DefaultCurr}"
+            android:textColor="@color/red"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text2_Price"
+            app:layout_constraintEnd_toStartOf="@+id/text2_Price"
+            app:layout_constraintTop_toTopOf="@+id/text2_Price"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

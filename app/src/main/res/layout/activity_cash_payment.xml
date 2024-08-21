@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="payment"
+            type="com.example.androidmobilestock.AC_Class.Payment" />
+        <variable
+            name="invoice"
+            type="com.example.androidmobilestock.AC_Class.Invoice" />
+        <variable
+            name="clickHandler"
+            type="com.example.androidmobilestock.CashPayment.OnClickHandler"/>
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout8"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/lblNetTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="32dp"
+            android:padding="5dp"
+            android:text="Net Total "
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="164"
+            tools:layout_conversion_wrapWidth="429" />
+
+        <TextView
+            android:id="@+id/tv_NetTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text='@{String.format("%.2f", payment.OriginalAmt)}'
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/lblNetTotal"
+            app:layout_constraintLeft_toRightOf="@+id/lblNetTotal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblNetTotal"
+            tools:layout_conversion_wrapHeight="140"
+            tools:layout_conversion_wrapWidth="52" />
+
+
+        <TextView
+            android:id="@+id/lblCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="60dp"
+            android:padding="5dp"
+            android:text="Enter the Amount "
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblNetTotal"
+            tools:layout_conversion_wrapHeight="164"
+            tools:layout_conversion_wrapWidth="268" />
+
+        <EditText
+            android:id="@+id/tvCash"
+            android:layout_width="140dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right|center_vertical"
+            android:inputType="number"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/lblCash"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toRightOf="@+id/lblCash"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblCash"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_wrapHeight="140"
+            tools:layout_conversion_wrapWidth="52"
+            tools:selectAllOnFocus="true" />
+
+
+        <View
+            android:id="@+id/invdtllist_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintBottom_toTopOf="@+id/tv_Change"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblCash" />
+
+        <TextView
+            android:id="@+id/lblChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="60dp"
+            android:padding="5dp"
+            android:text="Change "
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblCash"
+            tools:layout_conversion_wrapHeight="164"
+            tools:layout_conversion_wrapWidth="355" />
+
+        <TextView
+            android:id="@+id/tv_Change"
+            android:layout_width="267dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text='@{String.format("%.2f", payment.CashChanges)}'
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/lblChange"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toRightOf="@+id/lblChange"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblChange"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_conversion_wrapHeight="140"
+            tools:layout_conversion_wrapWidth="52" />
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCashPaymentSave"
+            app:layout_constraintEnd_toEndOf="@+id/tv_Change"
+            app:layout_constraintStart_toStartOf="@+id/lblChange"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Change" />
+
+        <Button
+            android:id="@+id/btnCashPaymentSave"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cart_orange"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:onClick="@{clickHandler::btnSaveClicked}"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Change"
+            app:layout_constraintVertical_bias="0.908" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

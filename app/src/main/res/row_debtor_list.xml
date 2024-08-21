@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="debtor"
+            type="com.example.androidmobilestock.AC_Class.Debtor" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout16"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_debtor_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="@{debtor.AccNo}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:fontFamily="@font/robotoitalic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="84"
+            tools:layout_conversion_wrapWidth="1028" />
+
+        <TextView
+            android:id="@+id/text_debtor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@{debtor.CompanyName}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            app:fontFamily="@font/robotobold"
+            app:layout_constraintStart_toEndOf="@+id/text_debtor_code"
+            app:layout_constraintTop_toTopOf="@+id/text_debtor_code"
+            tools:layout_conversion_wrapHeight="84"
+            tools:layout_conversion_wrapWidth="1028" />
+
+        <TextView
+            android:id="@+id/text_debtor_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="@{debtor.Description}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/robotoreular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_debtor_name"
+            tools:layout_conversion_wrapHeight="84"
+            tools:layout_conversion_wrapWidth="1028" />
+
+        <TextView
+            android:id="@+id/text_agent_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/robotoreular"
+            android:gravity="right"
+            android:text="@{debtor.SalesAgent}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_debtor_name2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_debtor_code"
+            tools:layout_conversion_wrapHeight="63"
+            tools:layout_conversion_wrapWidth="1028" />
+
+        <TextView
+            android:id="@+id/text_Attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@{debtor.Attention}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/robotoreular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_debtor_name2"
+            tools:layout_conversion_wrapHeight="84"
+            tools:layout_conversion_wrapWidth="1028" />
+
+        <TextView
+            android:id="@+id/text_Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="@{debtor.Phone}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/robotoreular"
+            android:gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_debtor_name2"
+            />
+
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_Attention" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

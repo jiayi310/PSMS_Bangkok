@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="invoice"
+            type="com.example.androidmobilestock.AC_Class.InvoiceMenu" />
+        <variable
+            name="payment"
+            type="com.example.androidmobilestock.AC_Class.Payment" />
+
+        <variable
+            name="inv"
+            type="com.example.androidmobilestock.AC_Class.Invoice" />
+        <variable
+            name="defaultCurr"
+            type="String" />
+        <variable
+            name="test"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/webView"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".InvoiceDtlMultipleTab">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".ui.main.StockDetailsFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--<TextView-->
+                <!--android:id="@+id/si_txt_doctype"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:hint="Doc Type"-->
+                <!--android:padding="2dp"-->
+                <!--android:text="@={invoice.DocType}"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="18sp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0.0"-->
+                <!--app:layout_constraintStart_toEndOf="@+id/barrier"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/si_txt_doctype2" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/si_txt_itemcode"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:hint="Doc No."-->
+                <!--android:padding="2dp"-->
+                <!--android:text="@={invoice.DocNo}"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="18sp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toEndOf="@+id/barrier"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/si_txt_itemcode2" />-->
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/txt_item_tax"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:hint="Total Tax"-->
+                <!--android:padding="2dp"-->
+                <!--android:text='@{String.format("%.2f", invoice.totalTax)}'-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="18sp"-->
+                <!--app:layout_constraintEnd_toStartOf="@+id/guideline5"-->
+                <!--app:layout_constraintStart_toEndOf="@+id/txt_item_tax2"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/txt_item_tax2" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/txt_item_ex"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:hint="Total Ex"-->
+                <!--android:padding="2dp"-->
+                <!--android:text='@{String.format("%.2f", invoice.totalEx)}'-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="18sp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toEndOf="@+id/txt_item_ex2"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/txt_item_ex2" />-->
+
+                <TextView
+                    android:id="@+id/txt_item_docdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/robotobold"
+                    android:text="SALES"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_agentname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="TOTAL"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_agent" />
+
+                <TextView
+                    android:id="@+id/txt_agent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@={invoice.docNo}'
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_item_docdate"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_item_docdate" />
+
+
+                <TextView
+                    android:id="@+id/txt_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/robotobold"
+                    android:text='@{String.format(defaultCurr)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_agent2"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_agent2"
+                    app:layout_constraintTop_toTopOf="@+id/txt_agent2" />
+
+                <TextView
+                    android:id="@+id/txt_agent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotobold"
+                    android:text='@{String.format("%.2f", invoice.totalIn)}'
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_agentname"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_agentname" />
+
+                <TextView
+                    android:id="@+id/txt_docDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="90dp"
+                    android:text="Invoice Date: "
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_docDate2" />
+
+                <TextView
+                    android:id="@+id/txt_docDate2"
+                    android:layout_width="0dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@{invoice.docDate}"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_Attention"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_Attention" />
+
+                <TextView
+                    android:id="@+id/txt_agentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agent: "
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_docDate"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_docDate" />
+
+                <TextView
+                    android:id="@+id/txt_agentName2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@{invoice.agent}"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_agentName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_docDate2" />
+
+                <TextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="BILL TO"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_date2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={invoice.DebtorCode}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_agent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/txt_date"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date" />
+
+
+                <TextView
+                    android:id="@+id/txt_debtor_name2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={invoice.DebtorName}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="28dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_date2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_date2" />
+
+                <TextView
+                    android:id="@+id/txt_debtor_name3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={invoice.DebtorName2}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_date2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_debtor_name2" />
+
+                <TextView
+                    android:id="@+id/txt_address1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.address1}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_debtor_name2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_debtor_name3" />
+
+                <TextView
+                    android:id="@+id/txt_address2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.address2}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="28dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_address1"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_address1" />
+
+                <TextView
+                    android:id="@+id/txt_address3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.address3}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="28dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_address2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_address2" />
+
+                <TextView
+                    android:id="@+id/txt_address4"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.address4}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="28dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_address3"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_address3" />
+
+                <TextView
+                    android:id="@+id/txt_Attention"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Attention"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_address4"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_address4" />
+
+                <TextView
+                    android:id="@+id/txt_Attention2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.attention}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_Attention"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_Attention" />
+
+                <TextView
+                    android:id="@+id/txt_fax"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fax"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_Attention2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_Attention2" />
+
+                <TextView
+                    android:id="@+id/txt_fax2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.fax}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_fax"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fax" />
+
+
+                <TextView
+                    android:id="@+id/txt_remark"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Remark"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_fax2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fax2" />
+
+                <TextView
+                    android:id="@+id/txt_remark2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.remarks}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_remark"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_remark" />
+
+
+                <TextView
+                    android:id="@+id/txt_remark3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.remarks2}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_remark4"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_remark4" />
+
+                <TextView
+                    android:id="@+id/txt_remark4"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Remark 2"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_remark2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_remark2" />
+
+
+
+                <TextView
+                    android:id="@+id/text_remark3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.remarks3}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_remark5"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_remark5" />
+
+                <TextView
+                    android:id="@+id/txt_remark5"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Remark 3"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_remark3"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_remark3" />
+
+                <TextView
+                    android:id="@+id/text_remark4"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={inv.remarks4}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_remark7"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_remark7" />
+
+                <TextView
+                    android:id="@+id/txt_remark7"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Remark 4"
+                    android:textColor="@color/gray"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@+id/text_remark3"
+                    app:layout_constraintTop_toBottomOf="@+id/text_remark3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:layout_constraintBottom_toTopOf="@+id/view_pager2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF9C49"
+                app:tabSelectedTextColor="@color/MintCream"
+                app:tabTextColor="@color/MintCream" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amiko</item>
+        <item>@font/averia_serif_libre</item>
+        <item>@font/biorhyme</item>
+        <item>@font/cantata_one</item>
+        <item>@font/caudex_bold</item>
+        <item>@font/merriweather</item>
+        <item>@font/merriweather_bold</item>
+        <item>@font/work_sans_medium</item>
+    </array>
+</resources>

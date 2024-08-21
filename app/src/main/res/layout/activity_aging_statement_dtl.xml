@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="StateDtl"
+            type="com.example.androidmobilestock.AC_Class.Statement" />
+
+        <variable
+            name="defaultCurr"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TableRow android:background="@color/rose" android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_item_docdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/robotobold"
+                    android:text="DocNo"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txt_docno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="docNo"
+                    android:fontFamily="@font/robotomedium"
+                    android:text='@={StateDtl.docNo}'
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_item_debtorcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/robotobold"
+                    android:text="Debtor Code"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_debtorcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@={StateDtl.DebtorCode}"
+                    android:hint="debtor code"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
+
+            </TableRow>
+
+            <TableRow android:padding="10dp">
+                <TextView
+                    android:id="@+id/txt_item_debtorname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/robotobold"
+                    android:text="Debtor Name"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_debtor_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="debtor name"
+                    android:text="@={StateDtl.DebtorName}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp"/>
+
+            </TableRow>
+
+            <TableRow android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_agentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Agent"
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_agentName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="agent"
+                    android:text="@{StateDtl.agent}"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_agentName"
+                    app:layout_constraintStart_toEndOf="@+id/txt_agentName"
+                    app:layout_constraintTop_toTopOf="@+id/txt_agentName" />
+
+            </TableRow>
+
+            <TableRow android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_docDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Date"
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    android:id="@+id/txt_docDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@{StateDtl.docDate}"
+                    android:textColor="@color/black"
+                    android:hint="date"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_docDate"
+                    app:layout_constraintStart_toStartOf="@+id/txt_agentName2"
+                    app:layout_constraintTop_toTopOf="@+id/txt_docDate" />
+
+
+            </TableRow>
+
+            <TableRow android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Term"
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{StateDtl.terms}"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:hint="term"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_docDate"
+                    app:layout_constraintStart_toStartOf="@+id/txt_agentName2"
+                    app:layout_constraintTop_toTopOf="@+id/txt_docDate" />
+
+            </TableRow>
+
+            <TableRow  android:padding="10dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#c0c0c0" />
+            </TableRow>
+
+            <TableRow android:background="@color/gray3" android:layout_marginTop="10dp"  android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TOTAL"
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_agent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/robotoreular"
+                    android:text='@{String.format(defaultCurr) + " " + String.format("%.2f", StateDtl.total)}'
+                    android:textColor="@android:color/black"
+                    android:hint="10000.00"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/txt_currency"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_agentname" />
+
+
+            </TableRow>
+
+            <TableRow android:background="@color/gray3" android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_Paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PAID"
+                    android:fontFamily="@font/robotobold"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/robotoreular"
+                    android:text='@{String.format(defaultCurr) + " " + String.format("%.2f", StateDtl.paid)}'
+                    android:textColor="@color/green"
+                    android:hint="10000.00"
+                    android:textSize="16dp"/>
+
+
+            </TableRow>
+
+            <TableRow android:background="@color/gray3" android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_Balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/robotobold"
+                    android:text="Balance"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/txt_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/robotoreular"
+                    android:text='@{String.format(defaultCurr) + " " + String.format("%.2f", StateDtl.balance)}'
+                    android:textColor="@color/red"
+                    android:hint="10000.00"
+                    android:textSize="16dp" />
+
+
+            </TableRow>
+        </TableLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

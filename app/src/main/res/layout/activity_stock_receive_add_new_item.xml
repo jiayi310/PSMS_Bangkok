@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StockReceive_AddNewItem"
+    android:background="#f7f7f7"
+    android:layout_marginBottom="10dp">
+
+
+    <LinearLayout
+        android:id="@+id/layoutbottom1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutbottom2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Clear"
+            android:textColor="@color/gray"
+            android:textSize="14dp"
+            android:background="@color/white"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnMerge"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Merge"
+            android:textColor="@color/gray"
+            android:textSize="14dp"
+            android:background="@color/white"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutbottom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/Total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Total Qty:"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="20dp"
+                app:fontFamily="@font/merriweather_bold" />
+
+            <TextView
+                android:id="@+id/TotalItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Total Item:"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="20dp"
+                app:fontFamily="@font/merriweather_bold" />
+
+            <TextView
+                android:id="@+id/TotalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Total Amount:"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="20dp"
+                app:fontFamily="@font/merriweather_bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/lblTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="0"
+                android:layout_gravity="center"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:paddingEnd="10dp"
+                app:fontFamily="@font/merriweather" />
+
+            <TextView
+                android:id="@+id/lblTotalItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="0"
+                android:paddingEnd="10dp"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                app:fontFamily="@font/merriweather" />
+
+            <TextView
+                android:id="@+id/lblTotalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="0.00"
+                android:paddingEnd="10dp"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                app:fontFamily="@font/merriweather" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/red5"
+            android:onClick="@{handler::OnbtnSaveClicked}"
+            android:scaleType="fitCenter"
+            android:text="Save"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutbottom1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/invdtl_editText">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/invdtllist_itemlist2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:divider="@null"
+            android:dividerHeight="2dp" />
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/invdtl_editText"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:focusable="true"
+        android:focusableInTouchMode ="true"
+        android:gravity="center_vertical"
+        android:nextFocusLeft="@id/invdtl_editText"
+        android:nextFocusUp="@id/invdtl_editText"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:fontFamily="@font/caudex_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

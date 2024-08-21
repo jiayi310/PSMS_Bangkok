@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="Inv"
+            type="com.example.androidmobilestock.AC_Class.Purchase" />
+        <variable
+            name="defaultCurr"
+            type="String" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.PUR_PurchaseDtlList.MyClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        tools:context=".PUR_PurchaseDtlList">
+
+        <LinearLayout
+            android:id="@+id/layoutbottom2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnMerge"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:textStyle="italic"
+                android:background="@color/red5"
+                android:onClick="@{handler::OnbtnMergeClicked}"
+                android:scaleType="fitCenter"
+                android:text="Merge"
+                android:textColor="@color/gray"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnSave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/red5"
+                android:onClick="@{handler::OnSaveTxtViewClicked}"
+                android:scaleType="fitCenter"
+                android:text="Save"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout51"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout52">
+
+            <TextView
+                android:id="@+id/lblSubtotal2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text='@{String.format("Subtotal (%s) ", defaultCurr)}'
+                android:hint="Subtotal"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:fontFamily="@font/merriweather_bold"/>
+
+            <TextView
+                android:id="@+id/subtotalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Subtotal"
+                android:layout_marginEnd="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/layout52"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout53">
+
+            <TextView
+                android:id="@+id/lblDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text='@{String.format("Total Discount (%s) ", defaultCurr)}'
+                android:hint="Total Discount"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:fontFamily="@font/merriweather_bold"/>
+
+            <TextView
+                android:id="@+id/discountTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Total Discount"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:layout_marginEnd="10dp"
+                app:fontFamily="@font/merriweather"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/dividerco4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/layout53"/>
+
+        <LinearLayout
+            android:id="@+id/layout53"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout54">
+
+
+
+            <TextView
+                android:id="@+id/lblTax2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text='@{String.format("Total Tax (%s) ", defaultCurr)}'
+                android:hint="Total Tax"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:fontFamily="@font/merriweather_bold"/>
+
+            <TextView
+                android:id="@+id/taxTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="Total Tax"
+                android:layout_marginEnd="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:fontFamily="@font/merriweather"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout54"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/layoutbottom2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/lblTotal2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Total"
+                android:text='@{String.format("Total (%s) ", defaultCurr)}'
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:fontFamily="@font/merriweather_bold" />
+
+            <TextView
+                android:id="@+id/totalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_marginEnd="10dp"
+                android:hint="Total"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/merriweather" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:dividerHeight="5dp"
+            android:divider="@null"
+            app:layout_constraintBottom_toTopOf="@id/layout51"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/invdtl_editText"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:hint="ItemCode"
+            android:nextFocusLeft="@id/invdtl_editText"
+            android:nextFocusUp="@id/invdtl_editText"
+            android:onClick="@{handler::onEditTextViewClicked}"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:fontFamily="@font/caudex_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

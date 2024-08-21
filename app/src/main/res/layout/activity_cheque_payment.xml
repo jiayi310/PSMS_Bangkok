@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="payment"
+            type="com.example.androidmobilestock.AC_Class.Payment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout22"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ChequePayment">
+
+        <TextView
+            android:id="@+id/lblNetTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="Net Total: "
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="117"
+            tools:layout_conversion_wrapWidth="363" />
+
+        <TextView
+            android:id="@+id/tv_NetTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/holo_blue_bright"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text='@{String.format("%.2f", payment.OriginalAmt)}'
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/lblNetTotal"
+            app:layout_constraintLeft_toRightOf="@+id/lblNetTotal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblNetTotal"
+            tools:layout_conversion_wrapHeight="86"
+            tools:layout_conversion_wrapWidth="26"
+            tools:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/lblChequeNoPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:padding="5dp"
+            android:text="Cheque No.: "
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblChequeAmt"
+            tools:layout_conversion_wrapHeight="117"
+            tools:layout_conversion_wrapWidth="429" />
+
+        <EditText
+            android:id="@+id/tv_ChequeNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="end"
+            android:padding="5dp"
+            android:text="@{payment.ChequeNo}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/lblChequeNoPayment"
+            app:layout_constraintLeft_toRightOf="@+id/lblChequeNoPayment"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblChequeNoPayment"
+            tools:layout_conversion_wrapHeight="86"
+            tools:layout_conversion_wrapWidth="26" />
+
+
+        <TextView
+            android:id="@+id/lblChequeAmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:padding="5dp"
+            android:text="Cheque Amt: "
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblNetTotal"
+            tools:layout_conversion_wrapHeight="117"
+            tools:layout_conversion_wrapWidth="454" />
+
+        <EditText
+            android:id="@+id/tv_ChequeAmt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="end"
+            android:inputType="numberDecimal"
+            android:padding="5dp"
+            android:text='@{String.format("%.2f", payment.PaymentAmt)}'
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/merriweather_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/lblChequeAmt"
+            app:layout_constraintLeft_toRightOf="@+id/lblChequeAmt"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblChequeAmt"
+            tools:layout_conversion_wrapHeight="86"
+            tools:layout_conversion_wrapWidth="26" />
+
+        <Button
+            android:id="@+id/btnChequeOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            app:fontFamily="@font/merriweather_bold"
+            android:onClick="btnOKClicked"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ChequeNo"
+            tools:layout_conversion_wrapHeight="171"
+            tools:layout_conversion_wrapWidth="231" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

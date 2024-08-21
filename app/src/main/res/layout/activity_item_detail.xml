@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="invoicedetail"
+            type="com.example.androidmobilestock.AC_Class.InvoiceDetails" />
+        <variable
+            name="defaultCurr"
+            type="String" />
+        <variable
+            name="handler"
+            type="com.example.androidmobilestock.ItemDetail.MyClickHandler" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/relativeLayout"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                tools:context=".ItemDetail">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="250dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/photo_empty" />
+
+
+                    <TextView
+                        android:id="@+id/discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/price"
+                        android:layout_alignBottom="@+id/price"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:drawableEnd="@drawable/dec"
+                        android:fontFamily="@font/robotobold"
+                        android:gravity="center"
+                        android:onClick="@{handler::OnDiscountClicked}"
+                        android:text="- 0.00"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/ItemCode"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/uom"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/robotobold"
+                        android:hint="ItemCode"
+                        android:text="@={invoicedetail.itemCode}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ItemCode"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/cantata_one"
+                        android:justificationMode="inter_word"
+                        android:text="@={invoicedetail.ItemDescription}"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Description2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Description"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/cantata_one"
+                        android:justificationMode="inter_word"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/pricecurrency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageViewInfo"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="bottom"
+                        android:hint="RM"
+                        android:onClick="@{handler::OnPriceClicked}"
+                        android:text='@{String.format(defaultCurr)}'
+                        android:textColor="@color/red"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageViewInfo"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toEndOf="@+id/pricecurrency"
+                        android:drawableEnd="@drawable/dec"
+                        android:gravity="bottom"
+                        android:hint="Price"
+                        android:onClick="@{handler::OnPriceClicked}"
+                        android:text='@{String.format(" %.2f", invoicedetail.UPrice)}'
+                        android:textColor="@color/red"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/taxtype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tax"
+                        android:layout_alignBottom="@+id/tax"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_toStartOf="@+id/tax"
+                        android:onClick="@{handler::onTaxTypeTxtViewClicked}"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/uom"
+                        android:layout_alignEnd="@+id/discount"
+                        android:layout_alignBottom="@+id/uom"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:drawableEnd="@drawable/dec"
+                        android:gravity="center"
+                        android:hint="Tax"
+                        android:onClick="@{handler::onTaxTypeTxtViewClicked}"
+                        android:text='Tax'
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/batchno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/ItemCode"
+                        android:layout_alignEnd="@+id/tax"
+                        android:layout_alignBottom="@+id/ItemCode"
+                        android:drawableEnd="@drawable/dec"
+                        android:hint="Batch No"
+                        android:onClick="@{handler::onItemBatchTxtViewClicked}"
+                        android:text='Batch No'
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/uom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/price"
+                        android:layout_alignStart="@+id/pricecurrency"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/robotobold"
+                        android:hint="UOM"
+                        android:text="@={invoicedetail.UOM}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/balanceqty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Description2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="-79dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="120dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/robotoitalic"
+                        android:gravity="left"
+                        android:textColor="@color/gray2"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/remarks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/balanceqty"
+                        android:layout_alignStart="@+id/Description2"
+                        android:layout_marginStart="0dp"
+                        android:fontFamily="@font/cantata_one"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="Remark:  "
+                        android:textColor="@color/colorPrimary" />
+
+                    <EditText
+                        android:id="@+id/remarkstxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/remarks"
+                        android:layout_alignBottom="@+id/remarks"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/remarks"
+                        android:background="@drawable/bg_cart_orange_border"
+                        android:inputType="textNoSuggestions"
+                        android:maxLength="250"
+                        android:maxLines="1"
+                        android:paddingStart="10dp"
+                        android:text="@={invoicedetail.remarks}" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_border_top"
+            android:foregroundGravity="bottom"
+            android:gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+
+            <ImageButton
+                android:id="@+id/addquantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toStartOf="@+id/addtocart"
+                android:background="@drawable/plus"
+                android:onClick="@{handler::OnInClicked}" />
+
+            <EditText
+                android:id="@+id/quantity"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toStartOf="@+id/addquantity"
+                android:layout_toEndOf="@+id/subquantity"
+                android:gravity="center"
+                android:hint="1"
+                android:inputType="numberDecimal"
+                android:text='@{String.format("%.0f", invoicedetail.Quantity)}'
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/subquantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/minus"
+                android:onClick="@{handler::OnDeClicked}" />
+
+            <Button
+                android:id="@+id/addtocart"
+                android:layout_width="120dp"
+                android:layout_height="59dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_red_round"
+                android:onClick="@{handler::OnAddClicked}"
+                android:text="Add to cart"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

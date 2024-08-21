@@ -1,0 +1,222 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="StDetail"
+            type="com.example.androidmobilestock.AC_Class.DODtl" />
+        <variable
+            name="Item"
+            type="com.example.androidmobilestock.AC_Class.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_cart_orange_border3">
+
+
+        <TextView
+            android:id="@+id/bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoreular"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ImageItemCart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ImageItemCart"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/photo_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearanceOverlay="@style/roundedCorners" />
+
+        <TextView
+            android:id="@+id/sclist_itemcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:hint="ItemCode"
+            android:padding="0dp"
+            android:text="@={StDetail.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/robotobold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="103"
+            tools:layout_conversion_wrapWidth="291" />
+
+        <TextView
+            android:id="@+id/sclist_itemdes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:gravity="start"
+            android:padding="0dp"
+            android:paddingEnd="5dp"
+            android:singleLine="false"
+            android:text="@={StDetail.ItemDescription}"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:fontFamily="@font/robotoitalic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/sclist_itemcode"
+            app:layout_constraintTop_toBottomOf="@+id/sclist_itemcode" />
+
+
+        <TextView
+            android:id="@+id/sclist_itemLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@={StDetail.Location}"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toBottomOf="@+id/sclist_itemcode"
+            app:layout_constraintStart_toStartOf="@+id/tableLayout2"
+            app:layout_constraintTop_toTopOf="@+id/sclist_itemcode"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/sclist_itemUOM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="@={StDetail.UOM}"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toBottomOf="@+id/sclist_itemcode"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/sclist_itemcode"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/remarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"Remarks: " + StDetail.Remarks}'
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/batchno"
+            app:layout_constraintTop_toBottomOf="@+id/batchno" />
+
+
+        <TextView
+            android:id="@+id/batchno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"Batch No: " + StDetail.BatchNo}'
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:fontFamily="@font/merriweather"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/sclist_itemdes" />
+
+        <TableLayout
+            android:id="@+id/tableLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/sclist_itemdes">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <ImageButton
+                    android:id="@+id/subquantity"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_column="0"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/minus"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+
+                <EditText
+                    android:id="@+id/sclist_quantity2"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/transparent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/work_sans_medium"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    app:qty='@{StDetail.Qty}'
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/cantata_one" />
+
+                <ImageButton
+                    android:id="@+id/addquantity"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_column="2"
+                    android:layout_marginStart="13dp"
+                    android:background="@drawable/plus"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

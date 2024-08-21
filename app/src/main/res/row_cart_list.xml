@@ -1,0 +1,285 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="StDetail"
+            type="com.example.androidmobilestock.AC_Class.InvoiceDetails" />
+        <variable
+            name="Item"
+            type="com.example.androidmobilestock.AC_Class.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_cart">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ImageItemCart"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/photo_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearanceOverlay="@style/roundedCorners" />
+
+        <TextView
+            android:id="@+id/bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoreular"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ImageItemCart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/sclist_itemcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:hint="ItemCode"
+            android:padding="0dp"
+            android:text="@={StDetail.ItemCode}"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/robotobold"
+            app:layout_constraintStart_toEndOf="@+id/ImageItemCart"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_wrapHeight="103"
+            tools:layout_conversion_wrapWidth="291" />
+
+        <TextView
+            android:id="@+id/sclist_itemdes"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:hint="Item Description"
+            android:ellipsize="none"
+            android:singleLine="false"
+            android:padding="0dp"
+            android:paddingEnd="5dp"
+            android:text="@={StDetail.ItemDescription}"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/robotoitalic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/sclist_itemcode"
+            app:layout_constraintTop_toBottomOf="@+id/sclist_itemcode" />
+
+        <TextView
+            android:id="@+id/sclist_itemUOM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="UOM"
+            android:padding="0dp"
+            android:text="@={StDetail.UOM}"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ImageItemCart"
+            app:layout_constraintStart_toStartOf="@+id/ImageItemCart"
+            app:layout_constraintTop_toBottomOf="@+id/ImageItemCart"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/remarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"Remarks: " + StDetail.Remarks}'
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/invdtllist_totalin"
+            app:layout_constraintHorizontal_bias="0.026"
+            app:layout_constraintStart_toEndOf="@+id/bill"
+            app:layout_constraintTop_toBottomOf="@+id/sclist_itemUOM" />
+
+
+        <TextView
+            android:id="@+id/batchno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{StDetail.BatchNo}'
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sclist_itemUOM"
+            app:layout_constraintEnd_toEndOf="@+id/invdtllist_totalin"
+            app:layout_constraintHorizontal_bias="0.026"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/sclist_itemUOM" />
+
+        <TextView
+            android:id="@+id/sclist_itemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:hint="Price"
+            android:layout_marginTop="30dp"
+            android:padding="0dp"
+            android:text='@{String.format("%.2f", StDetail.discount)}'
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintEnd_toEndOf="@+id/discount_text"
+            app:layout_constraintTop_toBottomOf="@+id/discount_text"
+            tools:layout_conversion_wrapHeight="103"
+            tools:layout_conversion_wrapWidth="291" />
+
+        <TextView
+            android:id="@+id/discount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:hint="Price"
+            android:padding="0dp"
+            android:text='@{String.format("%.2f", StDetail.UPrice)}'
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toBottomOf="@+id/sclist_itemcode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintStart_toEndOf="@+id/sclist_itemcode"
+            app:layout_constraintTop_toTopOf="@+id/sclist_itemcode"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:id="@+id/invdtllist_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/sclist_itemPrice" />
+
+        <TextView
+            android:id="@+id/invdtllist_totalin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:hint="TotalValue"
+            android:padding="0dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:text='@{String.format("%.2f", StDetail.Total_In)}'
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/cantata_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/sclist_itemPrice"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ImageItemCart"
+            app:layout_constraintTop_toTopOf="@+id/sclist_itemUOM"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TableLayout
+            android:id="@+id/tableLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@+id/sclist_itemcode"
+            app:layout_constraintTop_toBottomOf="@+id/sclist_itemcode">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/subquantity"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_column="0"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/minus"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+
+                <EditText
+                    android:id="@+id/sclist_quantity2"
+                    android:layout_width="50dp"
+                    android:layout_height="23dp"
+                    android:layout_column="1"
+                    android:singleLine="true"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/transparent"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/work_sans_medium"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:scrollHorizontally="true"
+                    android:text='@{String.format("%.2f", StDetail.Quantity)}'
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/cantata_one" />
+
+                <ImageButton
+                    android:id="@+id/addquantity"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_column="2"
+                    android:layout_marginStart="13dp"
+                    android:background="@drawable/plus"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.28" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
