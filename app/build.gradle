@@ -5,15 +5,12 @@ android {
         viewBinding true
         dataBinding true
     }
-    defaultConfig {
-        compileSdk 33
-    }
-    //compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.example.androidmobilestockTest"
         minSdk 24
         targetSdk 34
+        compileSdk 33
         versionCode 309036
         versionName '3.9.36'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -34,7 +31,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildToolsVersion '30.0.3'
 
     lintOptions {
         checkReleaseBuilds false
@@ -45,7 +41,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.android.play:core:1.10.3'
     implementation 'com.github.javiersantos:AppUpdater:2.7'
     implementation 'com.android.support:appcompat-v7:29.0.0'
     implementation 'com.android.support:design:29.0.0'
@@ -53,12 +48,11 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'com.android.support:support-v4:29.0.0'
     implementation 'com.android.support:recyclerview-v7:29.0.0'
-    implementation 'com.google.android.play:core:1.10.3'
     implementation 'android.arch.navigation:navigation-fragment:1.0.0'
     implementation 'android.arch.navigation:navigation-ui:1.0.0'
-    implementation files('..\\appRFIDemo\\libs\\deviceapi20190214.jar')
-    implementation files('..\\appRFIDemo\\libs\\jxl.jar')
-    implementation files('..\\appRFIDemo\\libs\\xUtils-2.5.5.jar')
+    implementation files('../appRFIDemo/libs/deviceapi20190214.jar')
+    implementation files('../appRFIDemo/libs/jxl.jar')
+    implementation files('../appRFIDemo/libs/xUtils-2.5.5.jar')
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.preference:preference:1.0.0'

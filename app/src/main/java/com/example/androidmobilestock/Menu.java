@@ -27,9 +27,6 @@ import com.example.androidmobilestock.Settings.UploadDownload;
 import com.example.androidmobilestock.activity.UHFWriteActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.play.core.appupdate.AppUpdateInfo;
-import com.google.android.play.core.appupdate.AppUpdateManager;
-import com.google.android.play.core.tasks.Task;
 
 import java.util.ArrayList;
 
@@ -82,8 +79,6 @@ public class Menu extends Fragment {
     int StockReceive = 0;
     TextView cover;
     TextView date;
-    AppUpdateManager appUpdateManager;
-    Task<AppUpdateInfo> appUpdateInfoTask;
 
     android.widget.ImageView imageView;
     String user;

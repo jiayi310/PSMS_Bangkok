@@ -53,7 +53,6 @@ public class StockTakeDtlList extends AppCompatActivity {
     List<AC_Class.StockTakeDetails> checkDtl = new ArrayList<>();
     private AC_Class.StockTakeDetails std;
     ArrayList<String> myModules = new ArrayList<String>();
-    int Purchase = 0;
     private IntentIntegrator qrScan;
     StockTakeDtlAdapter adapter;
     boolean isCustomBarcodeEnabled = false;
@@ -133,7 +132,10 @@ public class StockTakeDtlList extends AppCompatActivity {
         Cursor data8 = db.getModules();
         if (data8.getCount() > 0) {
             while (data8.moveToNext()) {
-                myModules.add(data8.getString(data8.getColumnIndex("Name")));
+                int myIndex = data8.getColumnIndex("Name");
+                if (myIndex >= 0) {
+                    myModules.add(data8.getString(myIndex));
+                }
             }
         }
 
@@ -245,9 +247,21 @@ public class StockTakeDtlList extends AppCompatActivity {
                                     "yyyy/MM/dd HH:mm:ss", Locale.getDefault());
                             Date date = new Date();
 
-                            stDtl.setItemCode(results.getString(results.getColumnIndex("ItemCode")));
-                            stDtl.setItemDescription(results.getString(results.getColumnIndex("Description")));
-                            stDtl.setUOM(results.getString(results.getColumnIndex("UOM")));
+                            int myItemCodeIndex = results.getColumnIndex("ItemCode");
+                            if (myItemCodeIndex >= 0) {
+                                stDtl.setItemCode(results.getString(myItemCodeIndex));
+                            }
+
+                            int myDescriptionIndex = results.getColumnIndex("Description");
+                            if (myDescriptionIndex >= 0) {
+                                stDtl.setItemDescription(results.getString(myDescriptionIndex));
+                            }
+
+                            int myUOMIndex = results.getColumnIndex("UOM");
+                            if (myUOMIndex >= 0) {
+                                stDtl.setUOM(results.getString(myUOMIndex));
+                            }
+
                             stDtl.setQuantity(myQty);
                             stDtl.setStockDocNo(st.getDocNo());
                             stDtl.setCreatedTimeStamp(dateFormat.format(date));
