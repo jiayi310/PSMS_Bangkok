@@ -2798,9 +2798,11 @@ public class ACDatabase extends SQLiteOpenHelper {
                 "BarCode", "ItemCode2"};
 
         switch (mode) {
+            //All UOM
             case 0:
                 data = database.rawQuery("SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE (a.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ?  OR b.Desc2 LIKE ?) " + INCLAUSE  , new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
+            //BaseUOM
             case 1:
                 data = database.rawQuery("SELECT b.ItemCode,b.ItemCode2, BaseUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, b.Price, b.Price2, a.Price3, a.Price4, a.Price5, a.Price6, b.BarCode, a.Shelf, a.Rate, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM Item b JOIN ItemUOM a ON a.ItemCode=b.ItemCode AND a.UOM = b.BaseUOM WHERE (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ?  ) "+ INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
@@ -2811,18 +2813,18 @@ public class ACDatabase extends SQLiteOpenHelper {
                     data = database.rawQuery("SELECT b.ItemCode, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType , b.baseUOM, a.Price, a.Price2, a.BarCode, b.ItemCode2 FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode AND a.UOM=b.BaseUOM WHERE a.ItemCode = ? " + INCLAUSE, new String[]{substring});
                 }
                 break;
+
                 //SalesUOM
             case 4:
-                data = database.rawQuery("SELECT b.ItemCode, b.SalesUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate,b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.BaseUOM WHERE (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
-                break;
-                //PurchaseUOM
-            case 5:
-                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2,b.PurchaseUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, b.Price, b.Price2, b.BarCode, b.HasBatchNo FROM Item b WHERE (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
+                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, b.SalesUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate,b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.SalesUOM WHERE IsSalesItem = 1 AND  (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
 
-            case 6:
-                data = database.rawQuery("SELECT b.ItemCode, BaseUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, b.Price, b.Price2, b.BarCode, b.HasBatchNo FROM Item b WHERE (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ?  ) "+ INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
+                //PurchaseUOM
+            case 5:
+                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, b.PurchaseUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, b.Price, b.Price2, b.BarCode, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.PurchaseUOM WHERE IsPurchaseItem = 1 AND  (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
+
+
 
         }
         return data;

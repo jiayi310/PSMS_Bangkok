@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // Placeholder
-        versionNo = "3.9.35";
+        versionNo = "3.9.36";
 
         reg = new AC_Class.Register();
 
