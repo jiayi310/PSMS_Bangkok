@@ -79,6 +79,7 @@ public class InvADManualFragment extends Fragment {
 
     AC_Class.Item item = new AC_Class.Item();
 
+
     public InvADManualFragment() {
         // Required empty public constructor
     }
@@ -559,6 +560,7 @@ public class InvADManualFragment extends Fragment {
             invoiceDetails.setItemDescription(item.getDescription());
             invoiceDetails.setUOM(item.getUOM());
             invoiceDetails.setDiscount(0.00d);
+            invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
             invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
             //stock balance
@@ -735,6 +737,7 @@ public class InvADManualFragment extends Fragment {
                     invoiceDetails.setItemDescription(item.getDescription());
                     invoiceDetails.setUOM(item.getUOM());
                     invoiceDetails.setDiscount(0.00d);
+                    invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
                     invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
                     //stock balance
@@ -1266,12 +1269,26 @@ public class InvADManualFragment extends Fragment {
             Log.wtf("Subtotal", String.valueOf(invoiceDetails.getSubTotal()));
 
         } else {
-            // Exclusive
-            invoiceDetails.setSubTotal((invoiceDetails.getQuantity() * invoiceDetails.getUPrice()));
-            invoiceDetails.setTotal_Ex(invoiceDetails.getSubTotal() - invoiceDetails.getDiscount());
+            if (invoiceDetails.getDiscountText() != null && !invoiceDetails.getDiscountText().isEmpty()) {
+
+                double discountTextValue = Double.parseDouble(invoiceDetails.getDiscountText());
+
+                double subtotalAfterCustomerDiscount = (invoiceDetails.getQuantity() * invoiceDetails.getUPrice()) - discountTextValue;
+
+                double finalSubtotal = subtotalAfterCustomerDiscount - invoiceDetails.getDiscount();
+
+
+                invoiceDetails.setSubTotal(finalSubtotal);
+            } else {
+                invoiceDetails.setSubTotal((invoiceDetails.getQuantity() * invoiceDetails.getUPrice()) - invoiceDetails.getDiscount());
+            }
+
+            invoiceDetails.setTotal_Ex(invoiceDetails.getSubTotal());
             invoiceDetails.setTaxValue((invoiceDetails.getTotal_Ex() * invoiceDetails.getTaxRate()) / 100);
             invoiceDetails.setTotal_In(invoiceDetails.getTotal_Ex() + invoiceDetails.getTaxValue());
+
             Log.wtf("Subtotal", String.valueOf(invoiceDetails.getSubTotal()));
+
         }
     }
 

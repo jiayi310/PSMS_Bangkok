@@ -193,7 +193,7 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
             data.moveToNext();
             debtor = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                     data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Address1")), data.getString(data.getColumnIndex("Address2")), data.getString(data.getColumnIndex("Address3")), data.getString(data.getColumnIndex("Address4")),data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")), data.getString(data.getColumnIndex("Remarks3"))
-                    , data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")));
+                    , data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
 
             binding.setInv(debtor);
         }

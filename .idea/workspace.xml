@@ -10,6 +10,26 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_empty_ad.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_detail_list.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_admanual.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/row_sc.xml">
         <config>
           <theme>@style/AppTheme</theme>
@@ -22,23 +42,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/WelcomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aging_statement_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aging_statement_dtl.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ACDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ACDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AC_Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AC_Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Agent_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Agent_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/UploadDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/UploadDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_admanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_admanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +70,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=57b9ac4b)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\jiayi\.android\avd\Phone_Test.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -57,6 +79,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -69,6 +94,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Android App.app.executor": "Run",
+    "PROJECT_TRUSTED_KEY": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -76,11 +103,20 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/git/psms_v3",
+    "last_opened_file_path": "C:/Users/jiayi/AndroidStudioProjects/CP2DentalAppointment",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "configurable.group.build"
+  },
+  "keyToStringList": {
+    "com.android.tools.idea.sqlite.queryhistory": [
+      "SELECT CompanyName, SalesAgent, Taxtype, Phone, Fax, Attention, Address1, Address2, Address3, Address4, DetailDiscount FROM Debtor;",
+      "UPDATE Debtor\nSET DetailDiscount = '10%+10%'\nWHERE AccNo = 'ACC001';",
+      "ALTER TABLE Sales ADD COLUMN CreditTerm VARCHAR(80);",
+      "INSERT INTO Debtor \n    (AccNo, CompanyName, Desc2, Address1, Address2, Address3, Address4, SalesAgent, TaxType, Phone, Fax, Attention, EmailAddress, DebtorType, AreaCode, CurrencyCode, DisplayTerm, Phone2, PriceCategory, DetailDiscount) \nVALUES \n    ('ACC001', 'Company Name', 'Description 2', 'Address Line 1', 'Address Line 2', 'Address Line 3', 'Address Line 4', 'Sales Agent Name', 'Tax Type', '123456789', '987654321', 'Attention Person', 'email@example.com', 'Type', 'Area Code', 'Currency', '30 Days', '456789123', 'Category', 5.0);\n",
+      "Select * from Debtor"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -99,6 +135,7 @@
       <option name="MODE" value="default_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -172,5 +209,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ACDatabase.java</url>
+          <line>2015</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

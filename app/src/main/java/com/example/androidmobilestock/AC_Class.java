@@ -156,10 +156,11 @@ public class AC_Class {
         public String CurrencyCode;
         public String DisplayTerm;
         public String Phone2;
+        public String DetailDiscount;
 
         public Debtor(String _AccNo, String _CompanyName, String _Description, String _ADD1,
                       String _ADD2, String _ADD3, String _ADD4, String _SalesAgent,
-                      String _TaxType, String _Phone, String _Fax, String _Attention, String EmailAddressFP, String DebtorTypeFP, String AreaCodeFP, String CurrencyCodeFP, String DisplayTermFP, String phone2) {
+                      String _TaxType, String _Phone, String _Fax, String _Attention, String EmailAddressFP, String DebtorTypeFP, String AreaCodeFP, String CurrencyCodeFP, String DisplayTermFP, String phone2, String DetailDiscount) {
             this.AccNo = _AccNo;
             this.CompanyName = _CompanyName;
             this.Description = _Description;
@@ -178,6 +179,7 @@ public class AC_Class {
             this.CurrencyCode = CurrencyCodeFP;
             this.DisplayTerm = DisplayTermFP;
             this.Phone2 = phone2;
+            this.DetailDiscount = DetailDiscount;
         }
 
         protected Debtor(Parcel in) {
@@ -199,6 +201,7 @@ public class AC_Class {
             CurrencyCode = in.readString();
             DisplayTerm = in.readString();
             Phone2 = in.readString();
+            DetailDiscount = in.readString();
         }
 
         @Override
@@ -221,6 +224,7 @@ public class AC_Class {
             dest.writeString(CurrencyCode);
             dest.writeString(DisplayTerm);
             dest.writeString(Phone2);
+            dest.writeString(DetailDiscount);
         }
 
         @Override
@@ -418,6 +422,16 @@ public class AC_Class {
         public void setPhone2(String phone2) {
             this.Phone2 = phone2;
             notifyPropertyChanged(BR.phone2);
+        }
+
+        @Bindable
+        public String getDetailDiscount() {
+            return DetailDiscount;
+        }
+
+        public void setDetailDiscount(String detailDiscount) {
+            this.DetailDiscount = detailDiscount;
+            notifyPropertyChanged(BR.detailDiscount);
         }
 
 
@@ -2549,26 +2563,6 @@ public class AC_Class {
             setRemarks2(null);
         }
 
-//        public InvoiceDetails(String docNo, String location, String itemCode, String itemDescription, String UOM, Double quantity, Double UPrice, Double discount, Double subTotal, String taxType, Double taxRate, Double taxValue, Double total_Ex, Double total_In, String line_no, String remarks, String batchno, String remarks2) {
-//            DocNo = docNo;
-//            Location = location;
-//            ItemCode = itemCode;
-//            ItemDescription = itemDescription;
-//            this.UOM = UOM;
-//            Quantity = quantity;
-//            this.UPrice = UPrice;
-//            Discount = discount;
-//            SubTotal = subTotal;
-//            TaxType = taxType;
-//            TaxRate = taxRate;
-//            TaxValue = taxValue;
-//            Total_Ex = total_Ex;
-//            Total_In = total_In;
-//            Line_No = line_no;
-//            Remarks = remarks;
-//            BatchNo = batchno;
-//            Remarks2 = remarks2;
-//        }
 
         public InvoiceDetails(Integer id, String docNo, String location, String itemCode, String itemDescription, String UOM, Double quantity, Double UPrice, Double discount, Double subTotal, String taxType, Double taxRate, Double taxValue, Double total_Ex, Double total_In, String line_no, String remarks, String batchno, String remarks2) {
             ID = id;
@@ -2979,6 +2973,7 @@ public class AC_Class {
         private String signature;
         private String phone;
         private String fax;
+        private String creditTerm;
         private String attention;
         private String address1;
         private String address2;
@@ -2994,6 +2989,7 @@ public class AC_Class {
         private String LastModifiedUser;
 
         private String Terms;
+        private String DetailDiscount;
         private List<AC_Class.InvoiceDetails> invoiceDetailsList;
 
         public Invoice() {
@@ -3044,7 +3040,7 @@ public class AC_Class {
                        String debtorName, String agent, String taxType, String docType, String signature,
                        String phone, String fax, String attention,String address1, String address2,
                        String address3, String address4, String remarks, String remarks2, String remarks3,
-                       String remarks4, String createduser, String displayterm) {
+                       String remarks4, String createduser, String displayterm, String detailDiscount) {
             this.docNo = docNo;
             this.createdTimeStamp = createdTimeStamp;
             this.docDate = docDate;
@@ -3068,6 +3064,7 @@ public class AC_Class {
             this.Remarks4 = remarks4;
             this.Createduser = createduser;
             this.Terms = displayterm;
+            this.DetailDiscount = detailDiscount;
             invoiceDetailsList = new ArrayList<>();
         }
 
@@ -3085,6 +3082,7 @@ public class AC_Class {
             signature = in.readString();
             phone = in.readString();
             fax = in.readString();
+            creditTerm = in.readString();
             attention = in.readString();
             address1 = in.readString();
             address2 = in.readString();
@@ -3100,6 +3098,7 @@ public class AC_Class {
             LastModifiedDateTime = in.readString();
             invoiceDetailsList = new ArrayList<>();
             Terms =  in.readString();
+            DetailDiscount = in.readString();
             in.readTypedList(invoiceDetailsList, InvoiceDetails.CREATOR);
         }
 
@@ -3117,6 +3116,7 @@ public class AC_Class {
             dest.writeString(signature);
             dest.writeString(phone);
             dest.writeString(fax);
+            dest.writeString(creditTerm);
             dest.writeString(attention);
             dest.writeString(address1);
             dest.writeString(address2);
@@ -3131,6 +3131,7 @@ public class AC_Class {
             dest.writeString(LastModifiedUser);
             dest.writeString(LastModifiedDateTime);
             dest.writeString(Terms);
+            dest.writeString(DetailDiscount);
             dest.writeTypedList((List<InvoiceDetails>) invoiceDetailsList);
         }
 
@@ -3259,6 +3260,16 @@ public class AC_Class {
         public void setFax(String fax) {
             this.fax = fax;
             notifyPropertyChanged(BR.fax);
+        }
+
+        @Bindable
+        public String getCreditTerm() {
+            return creditTerm;
+        }
+
+        public void setCreditTerm(String creditTerm) {
+            this.creditTerm = creditTerm;
+            notifyPropertyChanged(BR.creditTerm);
         }
 
         @Bindable
@@ -3398,6 +3409,16 @@ public class AC_Class {
         public void setTerms(String termsFP) {
             Terms = termsFP;
             notifyPropertyChanged(BR.terms);
+        }
+
+        @Bindable
+        public String getDetailDiscount() {
+            return DetailDiscount;
+        }
+
+        public void setDetailDiscount(String detailDiscountFP) {
+            DetailDiscount = detailDiscountFP;
+            notifyPropertyChanged(BR.detailDiscount);
         }
 
         @Bindable
@@ -6735,7 +6756,7 @@ public class AC_Class {
                 data.moveToNext();
                 invoiceHeader = new Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(10), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                         data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Address1")), data.getString(data.getColumnIndex("Address2")), data.getString(data.getColumnIndex("Address3")), data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")),
-                        data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")));
+                        data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
             }
             Cursor data1 = db.getInvoiceDetailsPrint(docNo);
             if (data1.getCount() > 0) {

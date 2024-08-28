@@ -512,6 +512,41 @@
                         tools:layout_conversion_wrapWidth="1028" />
 
                     <TextView
+                        android:id="@+id/invheader_creditTerm_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Credit Term "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/merriweather_bold"
+                        tools:layout_conversion_wrapHeight="94"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
+                        android:id="@+id/invheader_creditTerm"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="12"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/bg_cart_orange_border2"
+                        android:drawableRight="@drawable/rightarrowvector"
+                        android:onClick="@{handler::onCreditTermTxtViewClicked}"
+                        android:padding="6dp"
+                        android:paddingStart="12dp"
+                        android:text="@={Inv.creditTerm}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/caudex_bold"
+                        tools:layout_conversion_wrapHeight="105"
+                        tools:layout_conversion_wrapWidth="1028" />
+
+                    <TextView
                         android:id="@+id/invheader_remarks_lbl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

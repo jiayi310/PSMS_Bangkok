@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class ACDatabase extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 61;
+    private static final int DATABASE_VERSION = 62;
 
     private static final String DATABASE_NAME = "AutoCountDatabase";
 
@@ -675,11 +675,7 @@ public class ACDatabase extends SQLiteOpenHelper {
 
         db.execSQL("ALTER TABLE Debtor ADD COLUMN DetailDiscount VARCHAR(100);");
 
-        db.execSQL("CREATE TABLE CreditTermMaintenance (" +
-                "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "DisplayTerm VARCHAR(20), " +
-                "Terms TEXT" +
-                ")");
+        db.execSQL("CREATE TABLE CreditTermMaintenance ( ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayTerm VARCHAR(80), Terms VARCHAR(80), TermType VARCHAR(80), TermDays VARCHAR(80), DiscountDays VARCHAR(80), DiscountPercent VARCHAR(80) ) ");
     }
 
     @Override
@@ -1389,10 +1385,11 @@ public class ACDatabase extends SQLiteOpenHelper {
         if (oldVersion < 62) {
             db.execSQL("ALTER TABLE Debtor ADD COLUMN DetailDiscount VARCHAR(100);");
 
-            db.execSQL("CREATE TABLE CreditTermMaintenance (ID INTEGER PRIMARY KEY AUTOINCREMENT, DocNo VARCHAR(20), DocDate TEXT)");
+            db.execSQL("CREATE TABLE CreditTermMaintenance ( ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayTerm VARCHAR(80), Terms VARCHAR(80), TermType VARCHAR(80), TermDays VARCHAR(80), DiscountDays VARCHAR(80), DiscountPercent VARCHAR(80) ) ");
+
+            db.execSQL("ALTER TABLE Sales ADD COLUMN CreditTerm VARCHAR(80);");
+
         }
-
-
 
     }
 
@@ -2298,6 +2295,21 @@ public class ACDatabase extends SQLiteOpenHelper {
         return results != -1;
     }
 
+    //Insert Credit terms
+    public boolean insertCreditTerms(String DisplayTerm, String Terms, String TermType, String TermDays, String DiscountDays, String DiscountPercent) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("DisplayTerm", escapeChar(DisplayTerm));
+        cv.put("Terms", escapeChar(Terms));
+        cv.put("TermType", escapeChar(TermType));
+        cv.put("TermDays", escapeChar(TermDays));
+        cv.put("DiscountDays", escapeChar(DiscountDays));
+        cv.put("DiscountPercent", escapeChar(DiscountPercent));
+        long results = db.insert("CreditTermMaintenance", null, cv);
+
+        return results != -1;
+    }
+
     public boolean insertInv(AC_Class.Invoice invoice) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -2324,6 +2336,7 @@ public class ACDatabase extends SQLiteOpenHelper {
         cv.put("CreatedUser", invoice.getCreateduser());
         cv.put("LastModifiedDateTime", invoice.getLastModifiedDateTime());
         cv.put("LastModifiedUser", invoice.getLastModifiedUser());
+        cv.put("CreditTerm", invoice.getCreditTerm());
         long results = db.insert("Sales", null, cv);
         return (results != -1);
     }
@@ -2638,7 +2651,7 @@ public class ACDatabase extends SQLiteOpenHelper {
     public AC_Class.Invoice getDebtorInfo(String accNo) {
         AC_Class.Invoice myInvoice = null;
         SQLiteDatabase database = this.getReadableDatabase();
-        Cursor data = database.rawQuery("SELECT CompanyName, SalesAgent, Taxtype, Phone, Fax, Attention, Address1, Address2, Address3, Address4 FROM " + TABLE_NAME_DEBTOR +
+        Cursor data = database.rawQuery("SELECT CompanyName, SalesAgent, Taxtype, Phone, Fax, Attention, Address1, Address2, Address3, Address4, DetailDiscount FROM " + TABLE_NAME_DEBTOR +
                 " WHERE " + COL2_HIS + " = ?", new String[]{accNo});
         if (data.moveToNext()) {
             myInvoice = new AC_Class.Invoice();
@@ -2652,6 +2665,7 @@ public class ACDatabase extends SQLiteOpenHelper {
             myInvoice.setAddress2(data.getString(data.getColumnIndex("Address2")));
             myInvoice.setAddress3(data.getString(data.getColumnIndex("Address3")));
             myInvoice.setAddress4(data.getString(data.getColumnIndex("Address4")));
+            myInvoice.setDetailDiscount(data.getString(data.getColumnIndex("DetailDiscount")));
         }
 
         return myInvoice;
@@ -6197,6 +6211,25 @@ public class ACDatabase extends SQLiteOpenHelper {
 
     public void endTransaction() {
         getWritableDatabase().endTransaction();
+    }
+
+    public Cursor getCreditTerm() {
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor data = database.rawQuery("SELECT * FROM CreditTermMaintenance", null);
+        return data;
+    }
+
+    public void deleteCreditTerm() {
+        SQLiteDatabase database = this.getWritableDatabase();
+        try {
+            Cursor cur = database.rawQuery("SELECT COUNT(*) FROM CreditTermMaintenance", null);
+            if (cur.getCount() > 0) {
+                database.delete("CreditTermMaintenance", null, null);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
     }
 
 

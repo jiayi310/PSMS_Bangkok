@@ -7,7 +7,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.androidmobilestockTest"
+        applicationId "com.example.androidmobilestock"
         minSdk 24
         targetSdk 34
         compileSdk 33

@@ -10,16 +10,21 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.provider.CalendarContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.androidmobilestock.databinding.ActivityInvoiceBinding;
 import java.text.SimpleDateFormat;
@@ -192,6 +197,7 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress2(debtor.getADD2());
                         invoice.setAddress3(debtor.getADD3());
                         invoice.setAddress4(debtor.getADD4());
+                        invoice.setDetailDiscount(debtor.getDetailDiscount());
 
                         //get debtor code
                         debtorCode = debtor.getAccNo();
@@ -316,6 +322,7 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress2(myInvoice.getAddress2());
                         invoice.setAddress3(myInvoice.getAddress3());
                         invoice.setAddress4(myInvoice.getAddress4());
+                        invoice.setDetailDiscount(myInvoice.getDetailDiscount());
 
                         Cursor deb = db.getDebtorName2(invoice.getDebtorCode());
                         while (deb.moveToNext()) {
@@ -335,7 +342,7 @@ public class Invoice extends AppCompatActivity {
                     data.moveToNext();
                     invoice = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(data.getColumnIndex("SalesAgent")), data.getString(data.getColumnIndex("TaxType")), data.getString(7),data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                             data.getString(data.getColumnIndex("Attention")),data.getString(data.getColumnIndex("Address1")),data.getString(data.getColumnIndex("Address2")),data.getString(data.getColumnIndex("Address3")),data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")),
-                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")));
+                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
                     data = db.getInvoiceDetailtoUpdate(docNo);
                     while (data.moveToNext()) {
                         invoice.addInvoiceDetail(new AC_Class.InvoiceDetails(data.getInt(0),
@@ -376,7 +383,7 @@ public class Invoice extends AppCompatActivity {
                     data.moveToNext();
                     invoice = new AC_Class.Invoice(db.getNextNo(), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(data.getColumnIndex("SalesAgent")), data.getString(data.getColumnIndex("TaxType")), data.getString(7),data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                             data.getString(data.getColumnIndex("Attention")),data.getString(data.getColumnIndex("Address1")),data.getString(data.getColumnIndex("Address2")),data.getString(data.getColumnIndex("Address3")),data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")),
-                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")));
+                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
                     data = db.getInvoiceDetailtoUpdate(docNo);
                     while (data.moveToNext()) {
                         invoice.addInvoiceDetail(new AC_Class.InvoiceDetails(data.getInt(0),
@@ -426,6 +433,50 @@ public class Invoice extends AppCompatActivity {
             Intent new_intent = new Intent(Invoice.this, Agent_List.class);
             startActivityForResult(new_intent, 3);
         }
+
+        public void onCreditTermTxtViewClicked(View view) {
+            Cursor data = db.getCreditTerm();
+            if (data.getCount() > 0) {
+
+                ArrayList<String> displayTerms = new ArrayList<>();
+
+                while (data.moveToNext()) {
+                    String displayTerm = data.getString(data.getColumnIndex("DisplayTerm"));
+                    displayTerms.add(displayTerm);
+                }
+
+                TextView title = new TextView(Invoice.this);
+                title.setText("Select Credit Term");
+                title.setTextColor(Color.BLACK);
+                title.setPadding(20, 20, 20, 5);
+                title.setTextSize(18);
+                title.setTypeface(null, Typeface.BOLD);
+
+               String[] displayTermArray = new String[displayTerms.size()];
+                displayTerms.toArray(displayTermArray);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Invoice.this);
+                builder.setCustomTitle(title);
+                builder.setItems(displayTermArray, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        String selectedTerm = displayTermArray[which];
+
+                        invoice.setCreditTerm(selectedTerm);
+
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            } else {
+                Toast.makeText(Invoice.this, "No credit terms available", Toast.LENGTH_SHORT).show();
+            }
+
+            data.close();
+        }
+
 
         public void OnImageButtonClicked(View view) {
             Calendar cal = Calendar.getInstance();

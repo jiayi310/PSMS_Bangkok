@@ -416,6 +416,7 @@ public class UploadDownload extends AppCompatActivity {
                             new GetAllItemBatch(UploadDownload.this).execute(url);
                             new GetSalesStatus(UploadDownload.this).execute(url);
                             new GetAllItemBOM(UploadDownload.this).execute(url);
+                            new GetCreditTerm(UploadDownload.this).execute(url);
 
 
                             if(dwnTime == 0){
@@ -476,9 +477,14 @@ public class UploadDownload extends AppCompatActivity {
                                         break;
                                     case "Item BOM":
                                         new GetAllItemBOM(UploadDownload.this).execute(url);
+                                        break;
                                     case "Profile":
                                         //new GetProfile(UploadDownload.this).execute(url);
                                         new GetMobileRN(UploadDownload.this).execute(url);
+                                        break;
+                                    case "Credit Term":
+                                        new GetCreditTerm(UploadDownload.this).execute(url);
+                                        break;
 //                                case "Sales Order":
 //                                    new GetSalesOrderList(UploadDownload.this).execute(url);
 //                                    break;
@@ -874,7 +880,129 @@ public class UploadDownload extends AppCompatActivity {
         return myCount;
     }
 
-    //Download Cresitor Data
+
+    class GetCreditTerm extends AsyncTask<String, Void, Integer> {
+        Activity context;
+        ProgressDialog pd;
+
+        GetCreditTerm(Activity context) {
+            this.context = context;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pd = new ProgressDialog(context);
+            pd.setMessage("Download Credit Terms...");
+            pd.setCancelable(false);
+            pd.show();
+        }
+
+        @Override
+        protected Integer doInBackground(String... connUrl) {
+            int myCount = getCreditTermData(connUrl[0],0,0);
+            return myCount;
+        }
+
+        @Override
+        protected void onPostExecute(Integer s) {
+            super.onPostExecute(s);
+
+            if (pd.isShowing())
+                pd.dismiss();
+
+            // Datetime
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm",
+                    Locale.getDefault());
+            String currentDateandTime = sdf.format(new Date());
+
+            db.insertULDL("CreditTerm", s, currentDateandTime, "download");
+            getTable();
+        }
+    }
+
+    private Integer getCreditTermData(String connUrl, int currIndex, int myCount)
+    {
+        HttpURLConnection conn;
+        BufferedReader reader;
+
+        try {
+            java.net.URL url = new URL(connUrl + "/getAllCreditTerm");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.addRequestProperty("Content-Type", "application/json; charset=utf-8");
+            conn.setRequestMethod("POST");
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+
+            // Send index to indicate no. of received chunks
+            byte[] sendb = Integer.toString(currIndex).getBytes("UTF-8");
+            conn.getOutputStream().write(sendb);
+            conn.getOutputStream().flush();
+            conn.getOutputStream().close();
+
+            // Receive chunk of data
+            InputStream inputStream = new BufferedInputStream(conn.getInputStream());
+            reader = new BufferedReader(new InputStreamReader(inputStream));
+
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            reader.close();
+            String status = sb.toString();
+
+            if (status != null)
+            {
+                JSONArray creditTerms = new JSONArray(status);
+
+                if (creditTerms.length() > 0) {
+                    if (currIndex == 0) db.deleteCreditTerm();
+
+                    boolean insert = true;
+                    for (int i = 0; i < creditTerms.length(); i++) {
+                        JSONObject object = creditTerms.getJSONObject(i);
+
+                        String DisplayTerm = null;
+                        String Terms = null;
+                        String TermType = null;
+                        String TermDays = null;
+                        String DiscountDays = null;
+                        String DiscountPercent = null;
+
+
+                        if (!object.isNull("DisplayTerm"))
+                            DisplayTerm = object.getString("DisplayTerm");
+                        if (!object.isNull("Terms"))
+                            Terms = object.getString("Terms");
+                        if (!object.isNull("TermType"))
+                            TermType = object.getString("TermType");
+                        if (!object.isNull("TermDays"))
+                            TermDays = object.getString("TermDays");
+                        if (!object.isNull("DiscountDays"))
+                            DiscountDays = object.getString("DiscountDays");
+                        if (!object.isNull("DiscountPercent"))
+                            DiscountPercent = object.getString("DiscountPercent");
+
+
+                        insert = db.insertCreditTerms(DisplayTerm, Terms, TermType, TermDays,
+                                DiscountDays, DiscountPercent) && insert;
+                        object = null;
+                        myCount++;
+                    }
+                    if (insert) currIndex++;
+                    creditTerms = null;
+                    myCount = getDebtorData(connUrl, currIndex, myCount);
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Log.i("custDebug", ex.getMessage());
+        }
+        return myCount;
+    }
+
+    //Download Creditor Data
     class GetCreditorList extends AsyncTask<String, Void, Integer> {
         Activity context;
         ProgressDialog pd;
