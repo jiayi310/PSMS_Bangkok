@@ -2816,7 +2816,7 @@ public class ACDatabase extends SQLiteOpenHelper {
         switch (mode) {
             //All UOM
             case 0:
-                data = database.rawQuery("SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE (a.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ?  OR b.Desc2 LIKE ?) " + INCLAUSE  , new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
+                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE (a.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ?  OR b.Desc2 LIKE ?) " + INCLAUSE  , new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
             //BaseUOM
             case 1:
@@ -2832,12 +2832,12 @@ public class ACDatabase extends SQLiteOpenHelper {
 
                 //SalesUOM
             case 4:
-                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, b.SalesUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate,b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.SalesUOM WHERE IsSalesItem = 1 AND  (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
+                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, b.SalesUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.SalesUOM WHERE IsSalesItem = 'true' AND  (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
 
                 //PurchaseUOM
             case 5:
-                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, b.PurchaseUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, b.Price, b.Price2, b.BarCode, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.PurchaseUOM WHERE IsPurchaseItem = 1 AND  (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
+                data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, b.PurchaseUOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, b.Price, b.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode  AND a.UOM = b.PurchaseUOM WHERE IsPurchaseItem = 'true' AND  (b.BarCode LIKE ? OR b.ItemCode LIKE ? OR b.Description LIKE ? OR b.Desc2 LIKE ? ) " + INCLAUSE, new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
                 break;
 
 
@@ -3505,7 +3505,7 @@ public class ACDatabase extends SQLiteOpenHelper {
     public Cursor getItem(String itemcodeFP, String uomFP) {
         SQLiteDatabase database = this.getReadableDatabase();
 
-        Cursor data = database.rawQuery("SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE b.ItemCode=? AND a.UOM=?", new String[]{itemcodeFP, uomFP});
+        Cursor data = database.rawQuery("SELECT b.ItemCode, b.ItemCode2, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE b.ItemCode=? AND a.UOM=?", new String[]{itemcodeFP, uomFP});
 
         return data;
     }

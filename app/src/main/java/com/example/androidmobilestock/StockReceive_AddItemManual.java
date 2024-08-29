@@ -200,10 +200,8 @@ public class StockReceive_AddItemManual extends AppCompatActivity implements Sto
             s_inquiry.clear();
             while (data.moveToNext()) {
                 try {
-                    AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1),
-                            data.getString(2), data.getString(3), data.getString(4), data.getString(5),
-                            data.getString(6), data.getString(7), data.getString(8), data.getString(9),
-                            data.getFloat(10), data.getFloat(11), data.getString(12), data.getString(13));
+                    AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(7), data.getString(8), data.getString(9), data.getFloat(10), data.getFloat(11), data.getFloat(12), data.getFloat(13), data.getFloat(14), data.getFloat(15), data.getString(16), data.getString(17), data.getFloat(18), data.getFloat(19),data.getFloat(20),data.getString(21));
+
 
                     originalList.add(item);
                     s_inquiry.add(item);

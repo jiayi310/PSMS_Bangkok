@@ -356,14 +356,15 @@ public class CartView extends AppCompatActivity {
     }
 
     public void getData(String substring) {
-        Cursor data = db.getItemLike(substring, 0, SQLINCLAUSE);
+        Cursor data = db.getItemLike(substring, 4, SQLINCLAUSE);
         if (data.getCount() > 0) {
             s_item.clear();
             s_item_new.clear();
             while (data.moveToNext()) {
                 try {
-                    AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(7), data.getString(8), data.getFloat(9), data.getFloat(10), data.getFloat(11), data.getFloat(12), data.getFloat(13), data.getFloat(14), data.getString(15), data.getString(16), data.getFloat(17), data.getString(18), data.getFloat(19), data.getFloat(20), data.getString(21));
-                        s_item.add(item);
+                    AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(7), data.getString(8), data.getString(9), data.getFloat(10), data.getFloat(11), data.getFloat(12), data.getFloat(13), data.getFloat(14), data.getFloat(15), data.getString(16), data.getString(17), data.getFloat(18), data.getFloat(19),data.getFloat(20),data.getString(21));
+
+                    s_item.add(item);
 
                     if(invoice.getDebtorCode()!=null) {
                         if (isAutoPrice) {
@@ -498,7 +499,8 @@ public class CartView extends AppCompatActivity {
             if (data.getCount() > 0) {
                 while (data.moveToNext()) {
                     try {
-                        AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(7), data.getString(8), data.getFloat(9), data.getFloat(10), data.getFloat(11), data.getFloat(12), data.getFloat(13), data.getFloat(14), data.getString(15), data.getString(16), data.getFloat(17), data.getString(18), data.getFloat(19), data.getFloat(20), data.getString(21));
+                        AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(7), data.getString(8), data.getString(9), data.getFloat(10), data.getFloat(11), data.getFloat(12), data.getFloat(13), data.getFloat(14), data.getFloat(15), data.getString(16), data.getString(17), data.getFloat(18), data.getFloat(19),data.getFloat(20),data.getString(21));
+
 
                         if (item.getImage() == null) {
                             item.setImage(db.getItemImage(item.getItemCode()));
