@@ -823,56 +823,7 @@ public class AC_Class {
         public Item() {}
 
         //Sales
-        public Item(String itemCode, String uom, String description, String desc2, String itemGroup, String itemType, String taxType, String purchaseTaxType, String baseUOM, Float price, Float price2, Float price3, Float price4, Float price5, Float price6, String barCode, String shelf, Float rate,String itemCode2, Float minPrice, Float maxPrice, String hasBatch) {
-            ItemCode = itemCode;
-            UOM = uom;
-            Description = description;
-            Desc2 = desc2;
-            ItemGroup = itemGroup;
-            ItemType = itemType;
-            TaxType = taxType;
-            PurchaseTaxType = purchaseTaxType;
-            BaseUOM = baseUOM;
-            Price = price;
-            Price2 = price2;
-            Price3 = price3;
-            Price4 = price4;
-            Price5 = price5;
-            Price6 = price6;
-            BarCode = barCode;
-            Shelf = shelf;
-            Rate = rate;
-            ItemCode2 = itemCode2;
-            MinPrice = minPrice;
-            MaxPrice = maxPrice;
-            HasBatchNo = hasBatch;
-
-        }
-
-        //Purchase
-        public Item(String itemCode, String itemCode2, String uom, String description, String desc2, String itemGroup, String itemType, String taxType, String purchaseTaxType, String baseUOM, Float price, Float price2, String barCode, String hasBatch) {
-            ItemCode = itemCode;
-            ItemCode2 = itemCode2;
-            UOM = uom;
-            Description = description;
-            Desc2 = desc2;
-            ItemGroup = itemGroup;
-            ItemType = itemType;
-            TaxType = taxType;
-            PurchaseTaxType = purchaseTaxType;
-            BaseUOM = baseUOM;
-            Price = price;
-            Price2 = price2;
-            BarCode = barCode;
-            HasBatchNo = hasBatch;
-
-        }
-
-
-        public Item(String itemCode, String itemCode2, String uom, String description, String desc2, String itemGroup,
-                    String itemType, String taxType, String purchaseTaxType, String baseUOM, Float price, Float price2,
-                    Float price3,Float price4,Float price5,Float price6,
-                    String barCode, String shelf, Float rate, Float minPrice, Float maxPrice, String hasBatch) {
+        public Item(String itemCode, String itemCode2, String uom, String description, String desc2, String itemGroup, String itemType, String taxType, String purchaseTaxType, String baseUOM, Float price, Float price2, Float price3, Float price4, Float price5, Float price6, String barCode, String shelf, Float rate, Float minPrice, Float maxPrice, String hasBatch) {
             ItemCode = itemCode;
             ItemCode2 = itemCode2;
             UOM = uom;
@@ -897,6 +848,25 @@ public class AC_Class {
             HasBatchNo = hasBatch;
 
         }
+
+//        //Purchase
+//        public Item(String itemCode, String itemCode2, String uom, String description, String desc2, String itemGroup, String itemType, String taxType, String purchaseTaxType, String baseUOM, Float price, Float price2, String barCode, String hasBatch) {
+//            ItemCode = itemCode;
+//            ItemCode2 = itemCode2;
+//            UOM = uom;
+//            Description = description;
+//            Desc2 = desc2;
+//            ItemGroup = itemGroup;
+//            ItemType = itemType;
+//            TaxType = taxType;
+//            PurchaseTaxType = purchaseTaxType;
+//            BaseUOM = baseUOM;
+//            Price = price;
+//            Price2 = price2;
+//            BarCode = barCode;
+//            HasBatchNo = hasBatch;
+//
+//        }
 
         public Item(String itemCode, String uom, String description, String desc2, String itemGroup, String itemType, String baseUOM, String barCode, String hasBatch, Double qty, String loc) {
             ItemCode = itemCode;
