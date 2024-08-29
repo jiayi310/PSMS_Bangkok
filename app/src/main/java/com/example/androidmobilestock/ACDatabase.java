@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class ACDatabase extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 62;
+    private static final int DATABASE_VERSION = 63;
 
     private static final String DATABASE_NAME = "AutoCountDatabase";
 
@@ -178,7 +178,7 @@ public class ACDatabase extends SQLiteOpenHelper {
                 "Description VARCHAR(100), Desc2 VARCHAR(100), ItemGroup VARCHAR(12), " +
                 "ItemType VARCHAR(12), TaxType VARCHAR(14), PurchaseTaxType VARCHAR(14), " +
                 "BaseUOM VARCHAR(8),SalesUOM VARCHAR(8),PurchaseUOM VARCHAR(8), Price DECIMAL(25, 8), Price2 DECIMAL(25, 8), " +
-                "BarCode VARCHAR(30), Image VARCHAR(4000),ItemCode2 VARCHAR(30), PRIMARY KEY(ItemCode))";
+                "BarCode VARCHAR(30), Image VARCHAR(4000),ItemCode2 VARCHAR(30), IsSalesItem INTEGER DEFAULT 1 NOT NULL, IsPurchaseItem INTEGER DEFAULT 1 NOT NULL, IsRawMaterialItem INTEGER DEFAULT 1 NOT NULL, IsFinishGoodsItem INTEGER DEFAULT 1 NOT NULL, PRIMARY KEY(ItemCode))";
         db.execSQL(query_ITEM);
 
         String query_LOC = "CREATE TABLE " + TABLE_NAME_LOCATION + "( Location VARCHAR(12), " +
@@ -214,7 +214,7 @@ public class ACDatabase extends SQLiteOpenHelper {
                 "DocDate TEXT, DebtorCode VARCHAR(12), DebtorName VARCHAR(80), Address1 VARCHAR(40), Address2 VARCHAR(40), Address3 VARCHAR(40), Address4 VARCHAR(40)," +
                 "SalesAgent VARCHAR(12), DocType TEXT, Uploaded INTEGER DEFAULT 0 NOT NULL, " +
                 "Signature VARCHAR(3000), Phone VARCHAR(25), Fax VARCHAR(25), Attention VARCHAR(40), " +
-                "Remarks VARCHAR(250),Remarks2 VARCHAR(250),Remarks3 VARCHAR(250),Remarks4 VARCHAR(250), Status VARCHAR(20), CreatedUser VARCHAR(20),LastModifiedDateTime DATETIME, LastModifiedUser VARCHAR(20))";
+                "Remarks VARCHAR(250),Remarks2 VARCHAR(250),Remarks3 VARCHAR(250),Remarks4 VARCHAR(250), Status VARCHAR(20), CreatedUser VARCHAR(20),LastModifiedDateTime DATETIME, LastModifiedUser VARCHAR(20), CreditTerm VARCHAR(30))";
         db.execSQL(query_INV);
 
         String query_INV_DTL = "CREATE TABLE SalesDtl" +
@@ -1387,8 +1387,14 @@ public class ACDatabase extends SQLiteOpenHelper {
 
             db.execSQL("CREATE TABLE CreditTermMaintenance ( ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayTerm VARCHAR(80), Terms VARCHAR(80), TermType VARCHAR(80), TermDays VARCHAR(80), DiscountDays VARCHAR(80), DiscountPercent VARCHAR(80) ) ");
 
-            db.execSQL("ALTER TABLE Sales ADD COLUMN CreditTerm VARCHAR(80);");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN CreditTerm VARCHAR(30);");
+        }
 
+        if (oldVersion < 63) {
+            db.execSQL("ALTER TABLE Item ADD COLUMN IsSalesItem INTEGER DEFAULT 1 NOT NULL");
+            db.execSQL("ALTER TABLE Item ADD COLUMN IsPurchaseItem INTEGER DEFAULT 1 NOT NULL");
+            db.execSQL("ALTER TABLE Item ADD COLUMN IsRawMaterialItem INTEGER DEFAULT 1 NOT NULL");
+            db.execSQL("ALTER TABLE Item ADD COLUMN IsFinishGoodsItem INTEGER DEFAULT 1 NOT NULL");
         }
 
     }
@@ -2051,7 +2057,7 @@ public class ACDatabase extends SQLiteOpenHelper {
     public boolean insertItem(String ItemCode, String Description, String Desc2, String ItemGroup,
                               String ItemType, String TaxType, String PurchaseTaxType, String BaseUOM,
                               Float Price, Float Price2, String BarCode, String Image, String ItemCode2,
-                              String hasBatchno, String SalesUOM, String PurchaseUOM) {
+                              String hasBatchno, String SalesUOM, String PurchaseUOM, String IsSalesItem, String IsPurchaseItem, String IsRawMaterialItem, String IsFinishGoodsItem) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL1_ITEM, ItemCode);
@@ -2070,6 +2076,10 @@ public class ACDatabase extends SQLiteOpenHelper {
         cv.put("HasBatchNo", hasBatchno);
         cv.put("SalesUOM", SalesUOM);
         cv.put("PurchaseUOM", PurchaseUOM);
+        cv.put("IsSalesItem", IsSalesItem);
+        cv.put("IsPurchaseItem", IsPurchaseItem);
+        cv.put("IsRawMaterialItem", IsRawMaterialItem);
+        cv.put("IsFinishGoodsItem", IsFinishGoodsItem);
         long results = db.insert(TABLE_NAME_ITEM, null, cv);
         return results != -1;
     }

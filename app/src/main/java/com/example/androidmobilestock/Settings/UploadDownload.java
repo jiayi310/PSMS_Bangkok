@@ -1247,11 +1247,15 @@ public class UploadDownload extends AppCompatActivity {
                             String Image = object1.getString("Image");
                             String ItemCode2 = object1.getString("ItemCode2");
                             String hasBatchNo = object1.getString("HasBatchNo");
+                            String isSalesItem = object1.getString("IsSalesItem");
+                            String isPurchaseItem = object1.getString("IsPurchaseItem");
+                            String isRawMaterialItem = object1.getString("IsRawMaterialItem");
+                            String isFinishGoodsItem = object1.getString("IsFinishGoodsItem");
 
 
                             insert = db.insertItem(ItemCode, Description, Desc2, ItemGroup,
                                     ItemType, TaxType, PurchaseTaxType, BaseUOM, Price, Price2,
-                                    BarCode, Image, ItemCode2, hasBatchNo, SalesUOM, PurchaseUOM) && insert;
+                                    BarCode, Image, ItemCode2, hasBatchNo, SalesUOM, PurchaseUOM, isSalesItem, isPurchaseItem, isRawMaterialItem, isFinishGoodsItem) && insert;
 
                             object1 = null;
                         }
