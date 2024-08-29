@@ -50,6 +50,7 @@ public class ItemDetail extends AppCompatActivity {
     String isPercentage, isChecked;
     Boolean NegativeInventory = true;
     double qty;
+    String nDiscountText = "0";
 
 
 
@@ -133,6 +134,7 @@ public class ItemDetail extends AppCompatActivity {
             discount.setText(Double.toString(invoiceDetails2.getDiscount()));
             double n2Var = Double.parseDouble(discount.getText().toString());
             invoiceDetails2.setDiscount(n2Var);
+            invoiceDetails2.setDiscountText("0");
 
             if (tax != null) {
 
@@ -278,47 +280,59 @@ public class ItemDetail extends AppCompatActivity {
                 }
                 break;
 
+                //return from discount
             case 8:
-                dis = data.getDoubleExtra("Discount", 0.00);
 
-                if (dis != null && dis != 0.00) {
+                nDiscountText = data.getStringExtra("DiscountText");
+                invoiceDetails2.setDiscountText(nDiscountText);
 
-                    isPercentage = data.getStringExtra("IsPercentage");
-                    isChecked = data.getStringExtra("IsChecked");
+                double subtotal = invoiceDetails2.getQuantity() * invoiceDetails2.getUPrice();
+                double nDiscount = 0;
+                double runningTotal = subtotal;
 
-                    if (isPercentage.equals("True")) {
-                        dis = dis / 100;
-                        disNumber = invoiceDetails2.getUPrice() * invoiceDetails2.getQuantity() * dis;
-                    } else {
-                        if (isChecked.equals("True")) {
-                            disNumber = dis * invoiceDetails2.getQuantity();
+                if (invoiceDetails2.getDiscountText() != null && !invoiceDetails2.getDiscountText().isEmpty()) {
+                    // Normalize the discount text: remove spaces and replace '/' with '+'
+                    String discountText = invoiceDetails2.getDiscountText().replace(" ", "").replace("/", "+");
+                    String[] discountParts = discountText.split("\\+"); // Split the string by '+'
+
+                    for (String part : discountParts) {
+                        if (part.endsWith("%")) {
+                            // Percentage discount
+                            double percentage = Double.parseDouble(part.replace("%", ""));
+                            double discountAmount = (runningTotal * (percentage / 100));
+                            nDiscount += discountAmount;
+                            runningTotal -= discountAmount;
 
                         } else {
-                            disNumber = dis;
+                            // Fixed amount discount
+                            double amount = Double.parseDouble(part);
+                            nDiscount += amount;
+                            runningTotal -= amount;
                         }
                     }
+                }
 
+                invoiceDetails2.setDiscount(nDiscount);
+                disNumber = nDiscount;
 
-                    if (Func != null) {
-                        if (Func.equals("Edit")) {
+                if (Func != null) {
+                    if (Func.equals("Edit")) {
 
-                            if (disNumber > invoiceDetails2.getUPrice()) {
-                                Toast.makeText(getApplicationContext(), "Discount Price Exceed Original Price", Toast.LENGTH_LONG).show();
-                            } else {
-                                discount.setText("- " + String.format("%.2f", disNumber));
-                                invoiceDetails2.setDiscount(disNumber);
-                            }
-                        }
-                    } else {
                         if (disNumber > invoiceDetails2.getUPrice()) {
                             Toast.makeText(getApplicationContext(), "Discount Price Exceed Original Price", Toast.LENGTH_LONG).show();
                         } else {
                             discount.setText("- " + String.format("%.2f", disNumber));
                             invoiceDetails2.setDiscount(disNumber);
-
                         }
                     }
+                } else {
+                    if (disNumber > invoiceDetails2.getUPrice()) {
+                        Toast.makeText(getApplicationContext(), "Discount Price Exceed Original Price", Toast.LENGTH_LONG).show();
+                    } else {
+                        discount.setText("- " + String.format("%.2f", disNumber));
+                        invoiceDetails2.setDiscount(disNumber);
 
+                    }
                 }
 
                 break;
@@ -460,7 +474,9 @@ public class ItemDetail extends AppCompatActivity {
             if (invoiceDetails2.getItemCode() != null) {
                 Intent new_intent = new Intent(context, Discount_List.class);
                 new_intent.putExtra("ItemCode", invoiceDetails2.getItemCode());
+                new_intent.putExtra("DiscountText", invoiceDetails2.getDiscountText());
                 startActivityForResult(new_intent, 8);
+
             }
 //            AlertDialog.Builder alert = new AlertDialog.Builder(context);
 //            final EditText input = new EditText(context);
@@ -611,6 +627,7 @@ public class ItemDetail extends AppCompatActivity {
             invoiceDetails2.setUOM(myItem.getUOM());
             invoiceDetails2.setDiscount(0.00);
             invoiceDetails2.setUPrice(Double.valueOf(myItem.getPrice()));
+            invoiceDetails2.setDiscountText("0");
 
 
             Cursor cur;

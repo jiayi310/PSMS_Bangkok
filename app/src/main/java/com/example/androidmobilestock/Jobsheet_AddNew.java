@@ -264,7 +264,7 @@ public class Jobsheet_AddNew extends AppCompatActivity {
 
                         if (def_Agent.equals("None")) {
                             String debAgent = debtor.getSalesAgent();
-                            if (debAgent != null && !debAgent.equals("")) {
+                            if (debAgent != null || !debAgent.equals("") || debAgent.equals("None")) {
                                 jobSheet.setAgent(debAgent);
                                 tv_agent.setText(debAgent);
                             } else {
@@ -338,8 +338,14 @@ public class Jobsheet_AddNew extends AppCompatActivity {
                             jobSheet.setAgent(def_Agent);
                             tv_agent.setText(jobSheet.getAgent());
                         } else {
-                            jobSheet.setAgent(myJobSheet.getAgent());
-                            tv_agent.setText(jobSheet.getAgent());
+                            if (myJobSheet.getAgent() != null || !myJobSheet.getAgent().equals("None")){
+                                jobSheet.setAgent(myJobSheet.getAgent());
+                                tv_agent.setText(jobSheet.getAgent());
+                            }else {
+                                jobSheet.setAgent(null);
+                                tv_agent.setText("");
+                            }
+
                         }
                         jobSheet.setDebtorName(myJobSheet.getDebtorName());
                         jobSheet.setTaxType(myJobSheet.getTaxType());
@@ -375,6 +381,16 @@ public class Jobsheet_AddNew extends AppCompatActivity {
                         }
                     }
 
+                }
+
+                if (def_Agent.equals("None")) {
+
+                        jobSheet.setAgent(null);
+                        tv_agent.setText("");
+
+                } else {
+                    jobSheet.setAgent(def_Agent);
+                    tv_agent.setText(def_Agent);
                 }
 
                 break;

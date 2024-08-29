@@ -14,6 +14,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.androidmobilestock.databinding.ActivityInvoiceCBinding;
 
@@ -142,6 +145,7 @@ public class Invoice_C extends AppCompatActivity {
                         invoice.setAddress2(debtor.getADD2());
                         invoice.setAddress3(debtor.getADD3());
                         invoice.setAddress4(debtor.getADD4());
+                        invoice.setCreditTerm(debtor.getDisplayTerm());
 
                         if (def_Agent.equals("None")) {
                             String debAgent = debtor.getSalesAgent();
@@ -219,6 +223,7 @@ public class Invoice_C extends AppCompatActivity {
                         invoice.setAddress4(myInvoice.getAddress4());
                         invoice.setCreateduser(user);
                         invoice.setLastModifiedUser(user);
+                        invoice.setCreditTerm(myInvoice.getCreditTerm());
 
 
                     }
@@ -295,6 +300,49 @@ public class Invoice_C extends AppCompatActivity {
         public void onAgentTxtViewClicked(View view) {
             Intent new_intent = new Intent(Invoice_C.this, Agent_List.class);
             startActivityForResult(new_intent, 3);
+        }
+
+        public void onCreditTermTxtViewClicked(View view) {
+            Cursor data = db.getCreditTerm();
+            if (data.getCount() > 0) {
+
+                ArrayList<String> displayTerms = new ArrayList<>();
+
+                while (data.moveToNext()) {
+                    String displayTerm = data.getString(data.getColumnIndex("DisplayTerm"));
+                    displayTerms.add(displayTerm);
+                }
+
+                TextView title = new TextView(Invoice_C.this);
+                title.setText("Select Credit Term");
+                title.setTextColor(Color.BLACK);
+                title.setPadding(20, 20, 20, 5);
+                title.setTextSize(18);
+                title.setTypeface(null, Typeface.BOLD);
+
+                String[] displayTermArray = new String[displayTerms.size()];
+                displayTerms.toArray(displayTermArray);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Invoice_C.this);
+                builder.setCustomTitle(title);
+                builder.setItems(displayTermArray, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        String selectedTerm = displayTermArray[which];
+
+                        invoice.setCreditTerm(selectedTerm);
+
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            } else {
+                Toast.makeText(Invoice_C.this, "No credit terms available", Toast.LENGTH_SHORT).show();
+            }
+
+            data.close();
         }
 
         public void OnImageButtonClicked(View view) {

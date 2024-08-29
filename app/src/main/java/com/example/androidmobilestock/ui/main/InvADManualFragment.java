@@ -917,32 +917,11 @@ public class InvADManualFragment extends Fragment {
 
             case 8:
                 if (data != null) {
-                    //dis = data.getDoubleExtra("Discount", 0.00);
 
                     String nDiscountText = data.getStringExtra("DiscountText");
                     invoiceDetails.setDiscountText(nDiscountText);
                     Calculation();
 
-//                    if (dis != null && dis != 0.00) {
-//
-//                        isPercentage = data.getStringExtra("IsPercentage");
-//                        isChecked = data.getStringExtra("IsChecked");
-//
-//                        if (isPercentage.equals("True")) {
-//                            dis = dis / 100;
-//                            disNumber = invoiceDetails.getUPrice() * invoiceDetails.getQuantity() * dis;
-//                        } else {
-//                            if (isChecked.equals("True")) {
-//                                disNumber = dis * invoiceDetails.getQuantity();
-//
-//                            } else {
-//                                disNumber = dis;
-//                            }
-//                        }
-//
-//                        invoiceDetails.setDiscount(disNumber);
-//                        Calculation();
-//                    }
                 }
                 break;
 

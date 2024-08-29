@@ -235,6 +235,7 @@ public class CartList extends AppCompatActivity {
                 if (invoiceDetail != null) {
 
                     temp.setQuantity(invoiceDetail.getQuantity());
+                    temp.setDiscountText(invoiceDetail.getDiscountText());
                     temp.setDiscount(invoiceDetail.getDiscount());
                     temp.setTaxRate(invoiceDetail.getTaxRate());
                     temp.setTaxType(invoiceDetail.getTaxType());
@@ -508,39 +509,43 @@ public class CartList extends AppCompatActivity {
                         if(myDtl.getRemarks() == null){
                             myDtl.setRemarks("");
                         }
-                        if(oriDetail.get(i).BatchNo !=null && myDtl.getBatchNo()!=null) {
-                            if (oriDetail.get(i).getItemCode().equals(myDtl.getItemCode()) && oriDetail.get(i).getUOM().equals(myDtl.getUOM()) && oriDetail.get(i).getUPrice().equals(myDtl.getUPrice()) && oriDetail.get(i).getRemarks().equals(myDtl.getRemarks()) && oriDetail.get(i).getDiscount().equals(myDtl.getDiscount()) && oriDetail.get(i).getBatchNo().equals(myDtl.getBatchNo())) {
+                        if (oriDetail.get(i).getBatchNo() != null && myDtl.getBatchNo() != null) {
+                            if (oriDetail.get(i).getItemCode().equals(myDtl.getItemCode()) &&
+                                    oriDetail.get(i).getUOM().equals(myDtl.getUOM()) &&
+                                    oriDetail.get(i).getUPrice().equals(myDtl.getUPrice()) &&
+                                    oriDetail.get(i).getRemarks().equals(myDtl.getRemarks()) &&
+                                    oriDetail.get(i).getDiscount().equals(myDtl.getDiscount()) &&
+                                    oriDetail.get(i).getDiscountText().equals(myDtl.getDiscountText()) &&
+                                    oriDetail.get(i).getBatchNo().equals(myDtl.getBatchNo())) {
+
                                 myDtl.setQuantity(myDtl.getQuantity() + oriDetail.get(i).getQuantity());
-
                                 myDtl.setDiscount(myDtl.getDiscount() + oriDetail.get(i).getDiscount());
-
                                 myDtl.setTaxValue(myDtl.getTaxValue() + oriDetail.get(i).getTaxValue());
-
                                 myDtl.setSubTotal(myDtl.getSubTotal() + oriDetail.get(i).getSubTotal());
-
                                 myDtl.setTotal_Ex(myDtl.getTotal_Ex() + oriDetail.get(i).getTotal_Ex());
-
                                 myDtl.setTotal_In(myDtl.getTotal_In() + oriDetail.get(i).getTotal_In());
 
                                 result = true;
                             }
-                        }else{
-                            if (oriDetail.get(i).getItemCode().equals(myDtl.getItemCode()) && oriDetail.get(i).getUOM().equals(myDtl.getUOM()) && oriDetail.get(i).getUPrice().equals(myDtl.getUPrice()) && oriDetail.get(i).getRemarks().equals(myDtl.getRemarks()) && oriDetail.get(i).getDiscount().equals(myDtl.getDiscount())) {
+                        } else {
+                            if (oriDetail.get(i).getItemCode().equals(myDtl.getItemCode()) &&
+                                    oriDetail.get(i).getUOM().equals(myDtl.getUOM()) &&
+                                    oriDetail.get(i).getUPrice().equals(myDtl.getUPrice()) &&
+                                    oriDetail.get(i).getRemarks().equals(myDtl.getRemarks()) &&
+                                    oriDetail.get(i).getDiscount().equals(myDtl.getDiscount()) &&
+                                    oriDetail.get(i).getDiscountText().equals(myDtl.getDiscountText())) {
+
                                 myDtl.setQuantity(myDtl.getQuantity() + oriDetail.get(i).getQuantity());
-
                                 myDtl.setDiscount(myDtl.getDiscount() + oriDetail.get(i).getDiscount());
-
                                 myDtl.setTaxValue(myDtl.getTaxValue() + oriDetail.get(i).getTaxValue());
-
                                 myDtl.setSubTotal(myDtl.getSubTotal() + oriDetail.get(i).getSubTotal());
-
                                 myDtl.setTotal_Ex(myDtl.getTotal_Ex() + oriDetail.get(i).getTotal_Ex());
-
                                 myDtl.setTotal_In(myDtl.getTotal_In() + oriDetail.get(i).getTotal_In());
 
                                 result = true;
                             }
                         }
+
                     }
 
                     if (!result) {

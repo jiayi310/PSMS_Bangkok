@@ -636,19 +636,30 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
                     //discountText
                     if(invoiceDetailsArrayList.get(i).getDiscount()!=null && invoiceDetailsArrayList.get(i).getDiscount()!=0) {
 
-                        String mText3 = invoiceDetailsArrayList.get(i).getDiscountText() ;
+                        if (invoiceDetailsArrayList.get(i).getDiscountText() != null) {
+                            String mText3 = invoiceDetailsArrayList.get(i).getDiscountText();
 
-                        TextPaint mTextPaint3 = new TextPaint();
-                        StaticLayout mTextLayout3 = new StaticLayout(mText3, mTextPaint3, 60, Layout.Alignment.ALIGN_NORMAL, 1, 0, false);
-                        mTextPaint3.setTextSize(8);
-                        canvas.save();
+                            TextPaint mTextPaint3 = new TextPaint();
+                            mTextPaint3.setTextSize(8);
 
-                        int textX3 = 447;
-                        int textY3 = start-10;
+                            // Measure the width of the text
+                            float textWidth = mTextPaint3.measureText(mText3);
 
-                        canvas.translate(textX3, textY3);
-                        mTextLayout3.draw(canvas);
-                        canvas.restore();
+                            // Calculate the X position to center the text within the given width (60 pixels)
+                            int textWidthLimit = 60;
+                            int textX3 = 447 + (textWidthLimit - (int) textWidth) / 2;
+
+                            // Create the StaticLayout for the text
+                            StaticLayout mTextLayout3 = new StaticLayout(mText3, mTextPaint3, textWidthLimit, Layout.Alignment.ALIGN_NORMAL, 1, 0, false);
+
+                            canvas.save();
+                            int textY3 = start - 8;
+
+                            canvas.translate(textX3, textY3);
+                            mTextLayout3.draw(canvas);
+                            canvas.restore();
+                        }
+
 
                     }
 

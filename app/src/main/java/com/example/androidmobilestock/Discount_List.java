@@ -54,7 +54,7 @@ public class Discount_List extends AppCompatActivity {
 
         lbl_DiscountText = findViewById(R.id.discountText);
 
-        if (discountText.isEmpty()){
+        if (discountText.isEmpty() || discountText.equals("0")){
             lbl_DiscountText.setText("No discount");
         }else {
             lbl_DiscountText.setText(discountText.toString());
@@ -100,7 +100,7 @@ public class Discount_List extends AppCompatActivity {
                     if(discountAmt.getText().toString().matches("")){
                         Toast.makeText(getApplicationContext(),"Please type an amount",Toast.LENGTH_SHORT).show();
                     } else {
-                        if (discountText.equals("No discount")){
+                        if (discountText.isEmpty() || discountText.equals("0")){
                             discountText = discountAmt.getText() + "%";
                             lbl_DiscountText.setText(discountText);
                         } else {
@@ -113,7 +113,7 @@ public class Discount_List extends AppCompatActivity {
                     if(discountAmt.getText().toString().matches("")){
                         Toast.makeText(getApplicationContext(),"Please type an amount",Toast.LENGTH_SHORT).show();
                     } else {
-                        if (discountText.equals("No discount")){
+                        if (discountText.isEmpty() || discountText.equals("0")){
                             discountText = discountAmt.getText().toString();
                             lbl_DiscountText.setText(discountText);
                         } else {
@@ -131,7 +131,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.isEmpty()){
+                if (discountText.isEmpty()  || discountText.equals("0")){
                     discountText = "0";
                 }
 
@@ -162,7 +162,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "1%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -185,7 +185,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "2%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -208,7 +208,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "3%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -231,7 +231,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "5%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -254,7 +254,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "8%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -277,7 +277,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "10%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -300,7 +300,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "15%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -323,7 +323,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "20%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -346,7 +346,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "25%";
                     lbl_DiscountText.setText(discountText);
                 } else {
@@ -369,7 +369,7 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (discountText.equals("No discount")){
+                if (discountText.isEmpty() || discountText.equals("0")){
                     discountText = "30%";
                     lbl_DiscountText.setText(discountText);
                 } else {
