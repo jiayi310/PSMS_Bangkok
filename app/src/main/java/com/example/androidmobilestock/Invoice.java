@@ -197,6 +197,7 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress2(debtor.getADD2());
                         invoice.setAddress3(debtor.getADD3());
                         invoice.setAddress4(debtor.getADD4());
+                        invoice.setCreditTerm(debtor.getDisplayTerm());
                         invoice.setDetailDiscount(debtor.getDetailDiscount());
 
                         //get debtor code
@@ -323,6 +324,7 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress3(myInvoice.getAddress3());
                         invoice.setAddress4(myInvoice.getAddress4());
                         invoice.setDetailDiscount(myInvoice.getDetailDiscount());
+                        invoice.setCreditTerm(myInvoice.getCreditTerm());
 
                         Cursor deb = db.getDebtorName2(invoice.getDebtorCode());
                         while (deb.moveToNext()) {
