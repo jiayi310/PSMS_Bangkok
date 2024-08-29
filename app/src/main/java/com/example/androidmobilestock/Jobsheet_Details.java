@@ -661,6 +661,9 @@ public class Jobsheet_Details extends AppCompatActivity {
                     mTextPaint.setTextSize(8);
                     canvas.save();
 
+
+
+
                     int textX = 170;
                     int textY = start - 12;
 

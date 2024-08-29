@@ -189,11 +189,12 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
         Cursor data;
         data = db.getInvoiceHeadertoUpdate(docNo);
 
+
         if (data.getCount() == 1) {
             data.moveToNext();
             debtor = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                     data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Address1")), data.getString(data.getColumnIndex("Address2")), data.getString(data.getColumnIndex("Address3")), data.getString(data.getColumnIndex("Address4")),data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")), data.getString(data.getColumnIndex("Remarks3"))
-                    , data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
+                    , data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")), data.getString(data.getColumnIndex("DetailDiscount")));
 
             binding.setInv(debtor);
         }
@@ -529,14 +530,14 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
         myPaint.setStyle(Paint.Style.FILL);
         myPaint.setTextSize(8);
         myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
-        canvas.drawText("No",60,y+170,myPaint);
-        canvas.drawText("Item Code",90,y+170,myPaint);
-        canvas.drawText("Description",170,y+170,myPaint);
-        canvas.drawText("Qty",300,y+170,myPaint);
-        canvas.drawText("UOM",350,y+170,myPaint);
-        canvas.drawText("U/ Price",400,y+170,myPaint);
-        canvas.drawText("Disc.",450,y+170,myPaint);
-        canvas.drawText("Total (" + defaultCurr + ")",500,y+170,myPaint);
+        canvas.drawText("No",60,y+173,myPaint);
+        canvas.drawText("Item Code",90,y+173,myPaint);
+        canvas.drawText("Description",170,y+173,myPaint);
+        canvas.drawText("Qty",302,y+173,myPaint);
+        canvas.drawText("UOM",350,y+173,myPaint);
+        canvas.drawText("U/ Price",400,y+173,myPaint);
+        canvas.drawText("Disc.",450,y+173,myPaint);
+        canvas.drawText("Total (" + defaultCurr + ")",500,y+173,myPaint);
         myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
 
     }
@@ -631,9 +632,26 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
                     canvas.drawText(invoiceDetailsArrayList.get(i).getQuantity().toString(), 320, start , myPaint);
                     canvas.drawText(invoiceDetailsArrayList.get(i).getUOM(), 370, start, myPaint);
                     canvas.drawText(String.format("%.2f",invoiceDetailsArrayList.get(i).getUPrice()), 430, start, myPaint);
+
+                    //discountText
                     if(invoiceDetailsArrayList.get(i).getDiscount()!=null && invoiceDetailsArrayList.get(i).getDiscount()!=0) {
-                        canvas.drawText( String.format("%.2f", invoiceDetailsArrayList.get(i).getDiscount()), 475, start, myPaint);
+
+                        String mText3 = invoiceDetailsArrayList.get(i).getDiscountText() ;
+
+                        TextPaint mTextPaint3 = new TextPaint();
+                        StaticLayout mTextLayout3 = new StaticLayout(mText3, mTextPaint3, 60, Layout.Alignment.ALIGN_NORMAL, 1, 0, false);
+                        mTextPaint3.setTextSize(8);
+                        canvas.save();
+
+                        int textX3 = 447;
+                        int textY3 = start-10;
+
+                        canvas.translate(textX3, textY3);
+                        mTextLayout3.draw(canvas);
+                        canvas.restore();
+
                     }
+
                     canvas.drawText(String.format("%.2f",invoiceDetailsArrayList.get(i).getTotal_In()), pageWidth - marginLeft - 10, start, myPaint);
 
                     start += mTextLayout.getHeight() - 20;
@@ -746,7 +764,8 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
                         data.getString(10), data.getDouble(11), data.getDouble(12),
                         data.getDouble(13), data.getDouble(14), data.getString(15),
                         data.getString(16), data.getString(data.getColumnIndex("BatchNo")),
-                        data.getString(data.getColumnIndex("Remarks2")));
+                        data.getString(data.getColumnIndex("Remarks2")),
+                        data.getString(data.getColumnIndex("DiscountText")));
                 invoiceDetailsArrayList.add(inv);
             }
         }

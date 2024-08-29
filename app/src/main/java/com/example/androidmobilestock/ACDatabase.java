@@ -2313,30 +2313,35 @@ public class ACDatabase extends SQLiteOpenHelper {
     public boolean insertInv(AC_Class.Invoice invoice) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(COL1_INV, invoice.getDocNo());
-        cv.put(COL2_INV, invoice.getCreatedTimeStamp());
-        cv.put(COL3_INV, invoice.getDocDate());
-        cv.put(COL4_INV, invoice.getDebtorCode());
-        cv.put(COL5_INV, invoice.getDebtorName());
-        cv.put(COL6_INV, invoice.getAgent());
-        cv.put(COL7_INV, invoice.getDocType());
-        cv.put("Signature", invoice.getSignature());
-        cv.put("Phone", invoice.getPhone());
-        cv.put("Fax", invoice.getFax());
-        cv.put("Attention", invoice.getAttention());
-        cv.put("Address1", invoice.getAddress1());
-        cv.put("Address2", invoice.getAddress2());
-        cv.put("Address3", invoice.getAddress3());
-        cv.put("Address4", invoice.getAddress4());
-        cv.put("Remarks", invoice.getRemarks());
-        cv.put("Remarks2", invoice.getRemarks2());
-        cv.put("Remarks3", invoice.getRemarks3());
-        cv.put("Remarks4", invoice.getRemarks4());
-        cv.put("Status", invoice.getStatus());
-        cv.put("CreatedUser", invoice.getCreateduser());
-        cv.put("LastModifiedDateTime", invoice.getLastModifiedDateTime());
-        cv.put("LastModifiedUser", invoice.getLastModifiedUser());
-        cv.put("CreditTerm", invoice.getCreditTerm());
+        try {
+            cv.put(COL1_INV, invoice.getDocNo());
+            cv.put(COL2_INV, invoice.getCreatedTimeStamp());
+            cv.put(COL3_INV, invoice.getDocDate());
+            cv.put(COL4_INV, invoice.getDebtorCode());
+            cv.put(COL5_INV, invoice.getDebtorName());
+            cv.put(COL6_INV, invoice.getAgent());
+            cv.put(COL7_INV, invoice.getDocType());
+            cv.put("Signature", invoice.getSignature());
+            cv.put("Phone", invoice.getPhone());
+            cv.put("Fax", invoice.getFax());
+            cv.put("Attention", invoice.getAttention());
+            cv.put("Address1", invoice.getAddress1());
+            cv.put("Address2", invoice.getAddress2());
+            cv.put("Address3", invoice.getAddress3());
+            cv.put("Address4", invoice.getAddress4());
+            cv.put("Remarks", invoice.getRemarks());
+            cv.put("Remarks2", invoice.getRemarks2());
+            cv.put("Remarks3", invoice.getRemarks3());
+            cv.put("Remarks4", invoice.getRemarks4());
+            cv.put("Status", invoice.getStatus());
+            cv.put("CreatedUser", invoice.getCreateduser());
+            cv.put("LastModifiedDateTime", invoice.getLastModifiedDateTime());
+            cv.put("LastModifiedUser", invoice.getLastModifiedUser());
+            cv.put("CreditTerm", invoice.getCreditTerm());
+
+        } catch (Exception e) {
+            Log.i("custDebug", e.getMessage());
+        }
         long results = db.insert("Sales", null, cv);
         return (results != -1);
     }
@@ -2385,7 +2390,7 @@ public class ACDatabase extends SQLiteOpenHelper {
 
     //INSERT Invoice Details
     public boolean insertSalesDtl(String DocNo, String Location, String ItemCode, String Description,
-                                  String UOM, Double Qty, Double UPrice, Double Discount, Double SubTotal,
+                                  String UOM, Double Qty, Double UPrice, String discountText, Double Discount, Double SubTotal,
                                   String TaxType, Double TaxRate, Double TaxValue, Double TotalEx, Double TotalIn,
                                   Integer LineNo, String Remarks, String BatchNo, String Remarks2) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -2397,6 +2402,7 @@ public class ACDatabase extends SQLiteOpenHelper {
         cv.put(COL5_INV_DTL, UOM);
         cv.put(COL6_INV_DTL, Qty);
         cv.put(COL7_INV_DTL, UPrice);
+        cv.put("DiscountText", discountText);
         cv.put(COL8_INV_DTL, Discount);
         cv.put(COL9_INV_DTL, SubTotal);
         cv.put(COL10_INV_DTL, TaxType);
@@ -4145,7 +4151,7 @@ public class ACDatabase extends SQLiteOpenHelper {
                 + "a.SalesAgent, a.Phone, a.Fax, a.Attention, b.Location, b.ItemCode, b.ItemDescription, b.Qty, b.UOM, b.UPrice, b.SubTotal, "
                 + "b.Discount, b.TaxType, b.TaxRate, b.TaxValue, b.Totalex, b.TotalIn, b.LineNo, a.Address1, a.Address2, " +
                 "a.Address3, a.Address4, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4, b.Remarks AS [DtlRemarks], b.Remarks2 AS [DtlRemarks2], " +
-                "b.BatchNo, a.CreatedUser, a.CreatedTimeStamp, a.LastModifiedUser, a.LastModifiedDateTime"
+                "b.BatchNo, a.CreatedUser, a.CreatedTimeStamp, a.LastModifiedUser, a.LastModifiedDateTime, a.CreditTerm, b.DiscountText "
                 + " FROM Sales a JOIN SalesDtl b ON b.DocNo = a.DocNo" +
                 " WHERE a.Uploaded=?", new String[]{"0"});
 //        Log.i("custDebug", "Cursor: "+DatabaseUtils.dumpCursorToString(data));
@@ -4497,7 +4503,7 @@ public class ACDatabase extends SQLiteOpenHelper {
     //Update Function for Invoice
     public Cursor getInvoiceHeadertoUpdate(String doc_no) {
         SQLiteDatabase database = this.getReadableDatabase();
-        Cursor data = database.rawQuery("SELECT Sales.*, Debtor.TaxType, Debtor.DisplayTerm FROM Sales INNER JOIN Debtor ON Sales.DebtorCode = Debtor.AccNo WHERE DocNo= '" + doc_no + "'", null);
+        Cursor data = database.rawQuery("SELECT Sales.*, Debtor.TaxType, Debtor.DisplayTerm, Debtor.DetailDiscount FROM Sales INNER JOIN Debtor ON Sales.DebtorCode = Debtor.AccNo WHERE DocNo= '" + doc_no + "'", null);
         return data;
     }
 
@@ -4733,7 +4739,8 @@ public class ACDatabase extends SQLiteOpenHelper {
                 insertSalesDtl(temp.get(i).getDocNo(), temp.get(i).getLocation(),
                         temp.get(i).getItemCode(), temp.get(i).getItemDescription(),
                         temp.get(i).getUOM(), temp.get(i).getQuantity(), temp.get(i).getUPrice(),
-                        temp.get(i).getDiscount(), temp.get(i).getSubTotal(), temp.get(i).getTaxType(),
+                        temp.get(i).getDiscountText(), temp.get(i).getDiscount(),
+                        temp.get(i).getSubTotal(), temp.get(i).getTaxType(),
                         temp.get(i).getTaxRate(), temp.get(i).getTaxValue(), temp.get(i).getTotal_Ex(),
                         temp.get(i).getTotal_In(), i+1, temp.get(i).getRemarks(),
                         temp.get(i).getBatchNo(), temp.get(i).getRemarks2());

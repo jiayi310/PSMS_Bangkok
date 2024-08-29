@@ -328,6 +328,7 @@ public class InvoiceDtlList extends AppCompatActivity {
         nDateNo = invoice.getDocDate();
         func = getIntent().getStringExtra("FunctionKey");
 
+
         checkOut = new AC_Class.CheckOut();
         getInvoiceDetailList();
         btnMerge.setText("Merge (" + Integer.toString(invoice.getInvoiceDetailsList().size()) + ")");
@@ -913,6 +914,7 @@ public class InvoiceDtlList extends AppCompatActivity {
         void commitCreditSales() {
             // Commit details
             boolean commitDetails = db.UpdateInvoiceDetail(invoice);
+
             // Insert header
 
             invoice.setDocType("IV");
@@ -924,6 +926,9 @@ public class InvoiceDtlList extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault());
             String date = sdf.format(new Date());
             invoice.setLastModifiedDateTime(date);
+
+
+            Log.d("Testing678", "inv: " + invoice.getCreditTerm());
 
             boolean insertHeader = db.insertInv(invoice);
             if (invoice.getDocNo().equals(db.getNextNo())) {

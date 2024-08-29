@@ -2564,6 +2564,30 @@ public class AC_Class {
         }
 
 
+        public InvoiceDetails(Integer id, String docNo, String location, String itemCode, String itemDescription, String UOM, Double quantity, Double UPrice, Double discount, Double subTotal, String taxType, Double taxRate, Double taxValue, Double total_Ex, Double total_In, String line_no, String remarks, String batchno, String remarks2, String discountText) {
+            ID = id;
+            DocNo = docNo;
+            Location = location;
+            ItemCode = itemCode;
+            ItemDescription = itemDescription;
+            this.UOM = UOM;
+            Quantity = quantity;
+            this.UPrice = UPrice;
+            Discount = discount;
+            SubTotal = subTotal;
+            TaxType = taxType;
+            TaxRate = taxRate;
+            TaxValue = taxValue;
+            Total_Ex = total_Ex;
+            Total_In = total_In;
+            Line_No = line_no;
+            Remarks = remarks;
+            BatchNo = batchno;
+            Remarks2 = remarks2;
+            DiscountText = discountText;
+        }
+
+
         public InvoiceDetails(Integer id, String docNo, String location, String itemCode, String itemDescription, String UOM, Double quantity, Double UPrice, Double discount, Double subTotal, String taxType, Double taxRate, Double taxValue, Double total_Ex, Double total_In, String line_no, String remarks, String batchno, String remarks2) {
             ID = id;
             DocNo = docNo;
@@ -3040,7 +3064,7 @@ public class AC_Class {
                        String debtorName, String agent, String taxType, String docType, String signature,
                        String phone, String fax, String attention,String address1, String address2,
                        String address3, String address4, String remarks, String remarks2, String remarks3,
-                       String remarks4, String createduser, String displayterm, String detailDiscount) {
+                       String remarks4, String createduser, String creditTerm, String detailDiscount) {
             this.docNo = docNo;
             this.createdTimeStamp = createdTimeStamp;
             this.docDate = docDate;
@@ -3063,7 +3087,7 @@ public class AC_Class {
             this.Remarks3 = remarks3;
             this.Remarks4 = remarks4;
             this.Createduser = createduser;
-            this.Terms = displayterm;
+            this.creditTerm = creditTerm;
             this.DetailDiscount = detailDiscount;
             invoiceDetailsList = new ArrayList<>();
         }

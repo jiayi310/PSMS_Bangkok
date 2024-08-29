@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -78,6 +79,8 @@ public class InvADManualFragment extends Fragment {
     NumberFormat nf = new DecimalFormat("##.###");
 
     AC_Class.Item item = new AC_Class.Item();
+    EditText invdtlUnitpriceTxtTest;
+
 
 
     public InvADManualFragment() {
@@ -172,8 +175,10 @@ public class InvADManualFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         this.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        binding = DataBindingUtil.inflate(inflater,
-                R.layout.fragment_inv_admanual, container, false);
+        View view = inflater.inflate(R.layout.fragment_inv_admanual, container, false);
+        binding = DataBindingUtil.bind(view);
+
+        invdtlUnitpriceTxtTest = view.findViewById(R.id.invdtl_unitprice_txtTest);
 
         binding.lblBatchNo.setVisibility(View.GONE);
         binding.invdtlBatchnoTxt.setVisibility(View.GONE);
@@ -191,8 +196,10 @@ public class InvADManualFragment extends Fragment {
         binding.setHandler(handler);
         Log.i("custDebug", "Manual Bound");
 
-        final View view = binding.getRoot();
+
         binding.setInvoiceDetail(invoiceDetails);
+
+        invdtlUnitpriceTxtTest.setText(invoiceDetails.getUPrice().toString());
 
         if (isBatchNoEnabled && invoiceDetails.getBatchNo() != null) {
             binding.invdtlBatchnoTxt.setVisibility(View.VISIBLE);
@@ -277,6 +284,11 @@ public class InvADManualFragment extends Fragment {
                         invoiceDetails.setUOM(data.getString(data.getColumnIndex("UOM")));
                         invoiceDetails.setUPrice(data.getDouble(data.getColumnIndex("Price")));
                         String hasBatch = data.getString(data.getColumnIndex("HasBatchNo"));
+
+                        // Retrieve the price from the cursor
+                        double price = data.getDouble(data.getColumnIndex("Price"));
+                        String formattedPrice = String.format("%.2f", price);
+                        invdtlUnitpriceTxtTest.setText(formattedPrice);
 
                         //BatchNo
                         if (isBatchNoEnabled && hasBatch.equals("true")) {
@@ -422,67 +434,6 @@ public class InvADManualFragment extends Fragment {
             }
         });
 
-        binding.invdtlDiscountTxt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.length() == 0) {
-                    invoiceDetails.setDiscount(0.00d);
-                    return;
-                }
-
-                binding.invdtlDiscountTxt.removeTextChangedListener(this);
-
-                /*
-                 * Clear input to get clean text before format
-                 * '\u0020' is empty character
-                 */
-                String text = s.toString();
-                String result = "";
-                // thanks for: https://stackoverflow.com/a/10372905/1595442
-                text = text.replaceAll("[^\\d]", "");
-
-                try {
-                    text = format(text);
-                    result = text.replace(",", "");
-                    double disc = Double.parseDouble(result);
-                    if (disc <= invoiceDetails.getSubTotal()) {
-                        invoiceDetails.setDiscount(disc);
-                        Calculation();
-                    } else {
-                        binding.invdtlDiscountTxt.setError("Discount cannot exceed subtotal");
-                    }
-                } catch (NumberFormatException e) {
-                    Log.e(getClass().getCanonicalName(), e.getMessage());
-                } catch (NullPointerException e) {
-                    Log.e(getClass().getCanonicalName(), e.getMessage());
-                }
-
-                binding.invdtlDiscountTxt.setText(result);
-                binding.invdtlDiscountTxt.setSelection(result.length());
-
-                binding.invdtlDiscountTxt.addTextChangedListener(this);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                /*if (s.length() > 0) {
-                    float disc = Float.parseFloat(s.toString());
-                    if (disc <= invoiceDetails.getSubTotal()) {
-                        invoiceDetails.setDiscount(disc);
-                       Calculation();
-                    } else {
-                        binding.invdtlDiscountTxt.setError("Discount cannot exceed subtotal");
-                        binding.invdtlDiscountTxt.setText(String.format(Locale.getDefault(),
-                                "%.2f", invoiceDetails.getDiscount()));
-                    }
-               }*/
-            }
-        });
-
         binding.editTextNumber2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -507,50 +458,71 @@ public class InvADManualFragment extends Fragment {
             }
         });
 
-        binding.invdtlUnitpriceTxt.addTextChangedListener(new TextWatcher() {
+        invdtlUnitpriceTxtTest.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.length() == 0) {
-                    invoiceDetails.setUPrice(0.00d);
-                    return;
-                }
 
-                binding.invdtlUnitpriceTxt.removeTextChangedListener(this);
-
-                /*
-                 * Clear input to get clean text before format
-                 * '\u0020' is empty character
-                 */
-                String text = s.toString();
-                String result = "";
-                text = text.replaceAll("[^\\d]", "");
-
-                try {
-                    text = format(text);
-                    result = text.replace(",", "");
-                    invoiceDetails.setUPrice(Double.parseDouble(result));
-                    Calculation();
-                } catch (NumberFormatException e) {
-                    Log.e(getClass().getCanonicalName(), e.getMessage());
-                } catch (NullPointerException e) {
-                    Log.e(getClass().getCanonicalName(), e.getMessage());
-                }
-
-                binding.invdtlUnitpriceTxt.setText(result);
-                binding.invdtlUnitpriceTxt.setSelection(result.length());
-
-                binding.invdtlUnitpriceTxt.addTextChangedListener(this);
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+                Log.d("TextWatcher", "onTextChanged: " + s.toString());
 
+                if (s.length() > 0) {
+                    try {
+                        double uPrice = Double.parseDouble(s.toString());
+                        Log.d("TextWatcher", "Parsed UPrice: " + uPrice);
+                        invoiceDetails.setUPrice(uPrice);
+                        Calculation();
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                        Log.e("TextWatcherError", "Invalid price input: " + s.toString());
+                    }
+                } else {
+                    invoiceDetails.setUPrice(0.0);
+                    Calculation();
+                }
             }
         });
+
+//        binding.invdtlUnitpriceTxt.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//                // No action needed before text is changed
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                Log.d("TextWatcher", "onTextChanged: " + s.toString());
+//
+//                if (s.length() > 0) {
+//                    try {
+//                        double uPrice = Double.parseDouble(s.toString());
+//                        Log.d("TextWatcher", "Parsed UPrice: " + uPrice);
+//                        invoiceDetails.setUPrice(uPrice);
+//                        Calculation();
+//                    } catch (NumberFormatException e) {
+//                        e.printStackTrace();
+//                        Log.e("TextWatcherError", "Invalid price input: " + s.toString());
+//                    }
+//                } else {
+//                    invoiceDetails.setUPrice(0.0);
+//                    Calculation();
+//                }
+//            }
+//        });
+
         return view;
     }
 
@@ -559,9 +531,12 @@ public class InvADManualFragment extends Fragment {
             invoiceDetails.setItemCode(item.getItemCode());
             invoiceDetails.setItemDescription(item.getDescription());
             invoiceDetails.setUOM(item.getUOM());
-            invoiceDetails.setDiscount(0.00d);
+            //invoiceDetails.setDiscount(0.00d);
             invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
             invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
+
+            invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+
 
             //stock balance
             Cursor temp;
@@ -586,18 +561,23 @@ public class InvADManualFragment extends Fragment {
                                 switch (myPC) {
                                     case 2:
                                         invoiceDetails.setUPrice(Double.valueOf(item.getPrice2()));
+                                        invdtlUnitpriceTxtTest.setText(item.getPrice2().toString());
                                         break;
                                     case 3:
                                         invoiceDetails.setUPrice(Double.valueOf(item.getPrice3()));
+                                        invdtlUnitpriceTxtTest.setText(item.getPrice3().toString());
                                         break;
                                     case 4:
                                         invoiceDetails.setUPrice(Double.valueOf(item.getPrice4()));
+                                        invdtlUnitpriceTxtTest.setText(item.getPrice4().toString());
                                         break;
                                     case 5:
                                         invoiceDetails.setUPrice(Double.valueOf(item.getPrice5()));
+                                        invdtlUnitpriceTxtTest.setText(item.getPrice5().toString());
                                         break;
                                     case 6:
                                         invoiceDetails.setUPrice(Double.valueOf(item.getPrice6()));
+                                        invdtlUnitpriceTxtTest.setText(item.getPrice6().toString());
                                         break;
                                 }
                             } catch (NumberFormatException e) {
@@ -740,6 +720,8 @@ public class InvADManualFragment extends Fragment {
                     invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
                     invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
+                    invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+
                     //stock balance
                     Cursor temp;
                     temp = db.getStockBalance(invoiceDetails.getItemCode(),
@@ -763,18 +745,23 @@ public class InvADManualFragment extends Fragment {
                                         switch (myPC) {
                                             case 2:
                                                 invoiceDetails.setUPrice(Double.valueOf(item.getPrice2()));
+                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
                                                 break;
                                             case 3:
                                                 invoiceDetails.setUPrice(Double.valueOf(item.getPrice3()));
+                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
                                                 break;
                                             case 4:
                                                 invoiceDetails.setUPrice(Double.valueOf(item.getPrice4()));
+                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
                                                 break;
                                             case 5:
                                                 invoiceDetails.setUPrice(Double.valueOf(item.getPrice5()));
+                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
                                                 break;
                                             case 6:
                                                 invoiceDetails.setUPrice(Double.valueOf(item.getPrice6()));
+                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
                                                 break;
                                         }
                                     } catch (NumberFormatException e) {
@@ -908,6 +895,7 @@ public class InvADManualFragment extends Fragment {
                     if (itemUOM != null) {
                         invoiceDetails.setUOM(itemUOM.getUOM());
                         invoiceDetails.setUPrice(Double.valueOf(itemUOM.getPrice()));
+                        invdtlUnitpriceTxtTest.setText(itemUOM.getPrice().toString());
                         Calculation();
                     }
                 }
@@ -920,6 +908,7 @@ public class InvADManualFragment extends Fragment {
                     if (sellingPrice != null) {
                         if (sellingPrice.getPrice() != 0) {
                             invoiceDetails.setUPrice(Double.valueOf(sellingPrice.getPrice()));
+                            invdtlUnitpriceTxtTest.setText(sellingPrice.getPrice().toString());
                             Calculation();
                         }
                     }
@@ -928,28 +917,32 @@ public class InvADManualFragment extends Fragment {
 
             case 8:
                 if (data != null) {
-                    dis = data.getDoubleExtra("Discount", 0.00);
+                    //dis = data.getDoubleExtra("Discount", 0.00);
 
-                    if (dis != null && dis != 0.00) {
+                    String nDiscountText = data.getStringExtra("DiscountText");
+                    invoiceDetails.setDiscountText(nDiscountText);
+                    Calculation();
 
-                        isPercentage = data.getStringExtra("IsPercentage");
-                        isChecked = data.getStringExtra("IsChecked");
-
-                        if (isPercentage.equals("True")) {
-                            dis = dis / 100;
-                            disNumber = invoiceDetails.getUPrice() * invoiceDetails.getQuantity() * dis;
-                        } else {
-                            if (isChecked.equals("True")) {
-                                disNumber = dis * invoiceDetails.getQuantity();
-
-                            } else {
-                                disNumber = dis;
-                            }
-                        }
-
-                        invoiceDetails.setDiscount(disNumber);
-                        Calculation();
-                    }
+//                    if (dis != null && dis != 0.00) {
+//
+//                        isPercentage = data.getStringExtra("IsPercentage");
+//                        isChecked = data.getStringExtra("IsChecked");
+//
+//                        if (isPercentage.equals("True")) {
+//                            dis = dis / 100;
+//                            disNumber = invoiceDetails.getUPrice() * invoiceDetails.getQuantity() * dis;
+//                        } else {
+//                            if (isChecked.equals("True")) {
+//                                disNumber = dis * invoiceDetails.getQuantity();
+//
+//                            } else {
+//                                disNumber = dis;
+//                            }
+//                        }
+//
+//                        invoiceDetails.setDiscount(disNumber);
+//                        Calculation();
+//                    }
                 }
                 break;
 
@@ -983,6 +976,7 @@ public class InvADManualFragment extends Fragment {
                     Float price = data.getFloatExtra("Price", 0.0f);
                     if (price != null) {
                         invoiceDetails.setUPrice(Double.valueOf(price));
+                        invdtlUnitpriceTxtTest.setText(price.toString());
                     }
 
                 }
@@ -1100,6 +1094,7 @@ public class InvADManualFragment extends Fragment {
             if (invoiceDetails.getItemCode() != null) {
                 Intent new_intent = new Intent(context, Discount_List.class);
                 new_intent.putExtra("ItemCode", invoiceDetails.getItemCode());
+                new_intent.putExtra("DiscountText", invoiceDetails.getDiscountText());
                 startActivityForResult(new_intent, 8);
             }
 
@@ -1259,38 +1254,92 @@ public class InvADManualFragment extends Fragment {
 
     public void Calculation() {
         if (isTaxInclusive) {
-            // Inclusive
-            invoiceDetails.setTotal_In(invoiceDetails.getQuantity() * invoiceDetails.getUPrice() - invoiceDetails.getDiscount());
-            // Calc. tax from total
-            invoiceDetails.setTaxValue((invoiceDetails.getTotal_In() *
-                    invoiceDetails.getTaxRate()) / (100 + invoiceDetails.getTaxRate()));
-            invoiceDetails.setTotal_Ex(invoiceDetails.getTotal_In() - invoiceDetails.getTaxValue());
-            invoiceDetails.setSubTotal((invoiceDetails.getTotal_Ex() + invoiceDetails.getDiscount()));
-            Log.wtf("Subtotal", String.valueOf(invoiceDetails.getSubTotal()));
+            // Tax Inclusive
+            double totalInclusive = invoiceDetails.getQuantity() * invoiceDetails.getUPrice();
+            double discount = 0;
+            double runningTotal = totalInclusive; // This will keep track of the amount after each discount
 
-        } else {
             if (invoiceDetails.getDiscountText() != null && !invoiceDetails.getDiscountText().isEmpty()) {
+                // Normalize the discount text: remove spaces and replace '/' with '+'
+                String discountText = invoiceDetails.getDiscountText().replace(" ", "").replace("/", "+");
+                String[] discountParts = discountText.split("\\+"); // Split the string by '+'
 
-                double discountTextValue = Double.parseDouble(invoiceDetails.getDiscountText());
+                for (String part : discountParts) {
+                    if (part.endsWith("%")) {
+                        // Percentage discount
+                        double percentage = Double.parseDouble(part.replace("%", ""));
+                        double discountAmount = (runningTotal * (percentage / 100));
+                        discount += discountAmount;
+                        runningTotal -= discountAmount;
 
-                double subtotalAfterCustomerDiscount = (invoiceDetails.getQuantity() * invoiceDetails.getUPrice()) - discountTextValue;
-
-                double finalSubtotal = subtotalAfterCustomerDiscount - invoiceDetails.getDiscount();
-
-
-                invoiceDetails.setSubTotal(finalSubtotal);
-            } else {
-                invoiceDetails.setSubTotal((invoiceDetails.getQuantity() * invoiceDetails.getUPrice()) - invoiceDetails.getDiscount());
+                    } else {
+                        // Fixed amount discount
+                        double amount = Double.parseDouble(part);
+                        discount += amount;
+                        runningTotal -= amount;
+                    }
+                }
             }
 
+            invoiceDetails.setDiscount(discount);
+
+            // The final total inclusive after all discounts
+            double finalTotalInclusive = runningTotal;
+            invoiceDetails.setTotal_In(finalTotalInclusive);
+
+            // Calculate tax from the inclusive total
+            invoiceDetails.setTaxValue((invoiceDetails.getTotal_In() * invoiceDetails.getTaxRate()) / (100 + invoiceDetails.getTaxRate()));
+
+            // Calculate the exclusive total (Total inclusive minus tax)
+            invoiceDetails.setTotal_Ex(invoiceDetails.getTotal_In() - invoiceDetails.getTaxValue());
+
+            // Calculate the subtotal (Total exclusive plus discount)
+            invoiceDetails.setSubTotal(invoiceDetails.getTotal_Ex() + discount);
+
+
+
+        } else {
+            // Tax Exclusive
+            double subtotal = invoiceDetails.getQuantity() * invoiceDetails.getUPrice();
+            double discount = 0;
+            double runningTotal = subtotal; // This will keep track of the amount after each discount
+
+            if (invoiceDetails.getDiscountText() != null && !invoiceDetails.getDiscountText().isEmpty()) {
+                // Normalize the discount text: remove spaces and replace '/' with '+'
+                String discountText = invoiceDetails.getDiscountText().replace(" ", "").replace("/", "+");
+                String[] discountParts = discountText.split("\\+"); // Split the string by '+'
+
+                for (String part : discountParts) {
+                    if (part.endsWith("%")) {
+                        // Percentage discount
+                        double percentage = Double.parseDouble(part.replace("%", ""));
+                        double discountAmount = (runningTotal * (percentage / 100));
+                        discount += discountAmount;
+                        runningTotal -= discountAmount;
+
+                    } else {
+                        // Fixed amount discount
+                        double amount = Double.parseDouble(part);
+                        discount += amount;
+                        runningTotal -= amount;
+                    }
+                }
+            }
+
+            invoiceDetails.setDiscount(discount);
+
+            // The final subtotal after all discounts
+            double finalSubtotal = runningTotal;
+            invoiceDetails.setSubTotal(finalSubtotal);
+
+            // Exclusive tax calculation
             invoiceDetails.setTotal_Ex(invoiceDetails.getSubTotal());
             invoiceDetails.setTaxValue((invoiceDetails.getTotal_Ex() * invoiceDetails.getTaxRate()) / 100);
             invoiceDetails.setTotal_In(invoiceDetails.getTotal_Ex() + invoiceDetails.getTaxValue());
 
-            Log.wtf("Subtotal", String.valueOf(invoiceDetails.getSubTotal()));
-
         }
     }
+
 
     public String getTax(String itemTaxType) {
         if (isTaxEnabled) {

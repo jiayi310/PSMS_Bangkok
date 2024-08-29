@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -16,7 +15,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.androidmobilestock.R;
 
 public class Discount_List extends AppCompatActivity {
 
@@ -31,7 +29,11 @@ public class Discount_List extends AppCompatActivity {
     String isPercentage,isChecked;
     TextView textdicount;
     LinearLayout buttonlist;
-    CheckBox checkBox;
+
+    String discountText;
+    TextView lbl_DiscountText;
+    Button btn_add, btn_clear;
+    String text = "by Percentage";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +47,22 @@ public class Discount_List extends AppCompatActivity {
         db = new ACDatabase(this);
         Intent pintent = getIntent();
         Item = pintent.getStringExtra("ItemCode");
+        discountText = pintent.getStringExtra("DiscountText");
 
-        TextView itemcode = (TextView) findViewById(R.id.itemcode);
-        itemcode.setText(Item);
+//        TextView itemcode = (TextView) findViewById(R.id.itemcode);
+//        itemcode.setText(Item);
+
+        lbl_DiscountText = findViewById(R.id.discountText);
+
+        if (discountText.isEmpty()){
+            lbl_DiscountText.setText("No discount");
+        }else {
+            lbl_DiscountText.setText(discountText.toString());
+        }
+
+
+        btn_add = findViewById(R.id.btn_add);
+        btn_clear = findViewById(R.id.btn_clear);
 
         radioGroup = findViewById(R.id.radioGroup);
         textType = findViewById(R.id.textType);
@@ -65,27 +80,80 @@ public class Discount_List extends AppCompatActivity {
         dis30 = findViewById(R.id.button30);
         textdicount = findViewById(R.id.textdiscount);
         buttonlist = findViewById(R.id.buttonlist);
-        checkBox = findViewById(R.id.CheckBox);
-        checkBox.setVisibility(View.INVISIBLE);
+
 
         isPercentage="True";
         isChecked="False";
+
+        btn_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                discountText = "";
+                lbl_DiscountText.setText("No discount");
+            }
+        });
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(text.equals("by Percentage")){
+                    if(discountAmt.getText().toString().matches("")){
+                        Toast.makeText(getApplicationContext(),"Please type an amount",Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (discountText.equals("No discount")){
+                            discountText = discountAmt.getText() + "%";
+                            lbl_DiscountText.setText(discountText);
+                        } else {
+                            discountText = discountText + " + " + discountAmt.getText() + "%";
+                            lbl_DiscountText.setText(discountText);
+                        }
+
+                    }
+                } else {
+                    if(discountAmt.getText().toString().matches("")){
+                        Toast.makeText(getApplicationContext(),"Please type an amount",Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (discountText.equals("No discount")){
+                            discountText = discountAmt.getText().toString();
+                            lbl_DiscountText.setText(discountText);
+                        } else {
+                            discountText = discountText + " + " + discountAmt.getText();
+                            lbl_DiscountText.setText(discountText);
+                        }
+
+                    }
+                }
+
+            }
+        });
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(discountAmt.getText().toString().matches("")){
-                    Toast.makeText(getApplicationContext(),"Please type an amount",Toast.LENGTH_SHORT).show();
-                }else{
-                    Double dis = Double.valueOf(discountAmt.getText().toString());
-                    Intent myintent = new Intent();
-                    myintent.putExtra("Discount", dis);
-                    myintent.putExtra("IsPercentage", isPercentage);
-                    myintent.putExtra("IsChecked", isChecked);
-                    setResult(8, myintent);
-                    finish();
+                if (discountText.isEmpty()){
+                    discountText = "0";
                 }
+
+
+                Intent myintent = new Intent();
+                myintent.putExtra("DiscountText", discountText);
+                myintent.putExtra("IsChecked", isChecked);
+                setResult(8, myintent);
+                finish();
+
+
+//                if(discountAmt.getText().toString().matches("")){
+//                    Toast.makeText(getApplicationContext(),"Please type an amount",Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Double dis = Double.valueOf(discountAmt.getText().toString());
+//                    Intent myintent = new Intent();
+//                    myintent.putExtra("Discount", dis);
+//                    myintent.putExtra("IsPercentage", isPercentage);
+//                    myintent.putExtra("IsChecked", isChecked);
+//                    setResult(8, myintent);
+//                    finish();
+//                }
 
             }
         });
@@ -94,14 +162,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(1.0);
+                if (discountText.equals("No discount")){
+                    discountText = "1%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 1%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(1.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -109,14 +185,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(2.0);
+                if (discountText.equals("No discount")){
+                    discountText = "2%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 2%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(2.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -124,14 +208,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(3.0);
+                if (discountText.equals("No discount")){
+                    discountText = "3%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 3%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(3.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -139,14 +231,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(5.0);
+                if (discountText.equals("No discount")){
+                    discountText = "5%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 5%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(5.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -154,14 +254,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(8.0);
+                if (discountText.equals("No discount")){
+                    discountText = "8%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 8%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(8.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -169,14 +277,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(10.0);
+                if (discountText.equals("No discount")){
+                    discountText = "10%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 10%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(10.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -184,14 +300,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(15.0);
+                if (discountText.equals("No discount")){
+                    discountText = "15%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 15%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(15.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -199,14 +323,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(20.0);
+                if (discountText.equals("No discount")){
+                    discountText = "20%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 20%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(20.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -214,14 +346,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(25.0);
+                if (discountText.equals("No discount")){
+                    discountText = "25%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 25%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(25.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -229,14 +369,22 @@ public class Discount_List extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Double dis = Double.valueOf(30.0);
+                if (discountText.equals("No discount")){
+                    discountText = "30%";
+                    lbl_DiscountText.setText(discountText);
+                } else {
+                    discountText = discountText + " + 30%";
+                    lbl_DiscountText.setText(discountText);
+                }
 
-                Intent myintent = new Intent();
-                myintent.putExtra("Discount", dis);
-                myintent.putExtra("IsPercentage", isPercentage);
-                myintent.putExtra("IsChecked", isChecked);
-                setResult(8, myintent);
-                finish();
+//                Double dis = Double.valueOf(30.0);
+//
+//                Intent myintent = new Intent();
+//                myintent.putExtra("Discount", dis);
+//                myintent.putExtra("IsPercentage", isPercentage);
+//                myintent.putExtra("IsChecked", isChecked);
+//                setResult(8, myintent);
+//                finish();
             }
         });
 
@@ -248,7 +396,7 @@ public class Discount_List extends AppCompatActivity {
 
         radioButton = findViewById(radioId);
 
-        String text;
+
         text = radioButton.getText().toString();
 
         if(text.equals("by Percentage")){
@@ -256,27 +404,18 @@ public class Discount_List extends AppCompatActivity {
             isPercentage ="True";
             textdicount.setVisibility(View.VISIBLE);
             buttonlist.setVisibility(View.VISIBLE);
-            checkBox.setVisibility(View.INVISIBLE);
         }else{
             textType.setText("Amount: ");
             isPercentage ="False";
             textdicount.setVisibility(View.INVISIBLE);
             buttonlist.setVisibility(View.INVISIBLE);
-            checkBox.setVisibility(View.VISIBLE);
         }
 
 
 
     }
 
-    public void checkBox(View v){
-        if(checkBox.isChecked()){
-            isChecked ="True";
-        }else{
-            isChecked ="False";
-        }
 
-    }
 
     @Override
     public void onBackPressed() {

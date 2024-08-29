@@ -2915,6 +2915,8 @@ public class UploadDownload extends AppCompatActivity {
                     jsonObject.put("CreatedDateTime", sdf.format(d));
                     jsonObject.put("LastModifiedUser", data.getString(data.getColumnIndex("LastModifiedUser")));
                     jsonObject.put("LastModifiedDateTime", data.getString(data.getColumnIndex("LastModifiedDateTime")));
+                    jsonObject.put("CreditTerm", data.getInt(data.getColumnIndex("CreditTerm")));
+                    jsonObject.put("DiscountText", data.getInt(data.getColumnIndex("DiscountText")));
                     jsonList.add(jsonObject);
 //                    Log.i("custDebug", jsonObject.toString());
                 } catch (Exception e) {

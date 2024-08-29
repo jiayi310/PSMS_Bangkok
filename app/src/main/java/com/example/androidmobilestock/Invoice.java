@@ -342,7 +342,7 @@ public class Invoice extends AppCompatActivity {
                     data.moveToNext();
                     invoice = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(data.getColumnIndex("SalesAgent")), data.getString(data.getColumnIndex("TaxType")), data.getString(7),data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                             data.getString(data.getColumnIndex("Attention")),data.getString(data.getColumnIndex("Address1")),data.getString(data.getColumnIndex("Address2")),data.getString(data.getColumnIndex("Address3")),data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")),
-                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
+                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("CreditTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
                     data = db.getInvoiceDetailtoUpdate(docNo);
                     while (data.moveToNext()) {
                         invoice.addInvoiceDetail(new AC_Class.InvoiceDetails(data.getInt(0),
@@ -355,7 +355,8 @@ public class Invoice extends AppCompatActivity {
                                 data.getDouble(13), data.getDouble(14),data.getString(15),
                                 data.getString(data.getColumnIndex("Remarks")),
                                 data.getString(data.getColumnIndex("BatchNo")),
-                                data.getString(data.getColumnIndex("Remarks2"))));
+                                data.getString(data.getColumnIndex("Remarks2")),
+                                data.getString(data.getColumnIndex("DiscountText"))));
                     }
 //                    binding.invheaderDebtorname.setVisibility(View.VISIBLE);
                     invoice.setStatus("Pending");
