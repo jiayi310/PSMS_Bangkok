@@ -96,24 +96,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="">
+    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="29/08&#10;-Discount Text&#10;-Credit Terms&#10;-Sales unitPrice accept multiple decimal&#10;-Sales pdf change to discount text&#10;-Sales Item List">
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Discount_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Discount_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_items.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_invdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_invdtl_list.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +117,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=R9PT60FQX6W)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\jiayi\.android\avd\Phone_Test.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -167,6 +161,12 @@
       </state>
     </system>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\jiayi\Downloads\nel 1.jks" />
+    <option name="KEY_ALIAS" value="presoft" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
@@ -182,36 +182,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "BundleExportedModule": "psms_v3.app",
-    "PROJECT_TRUSTED_KEY": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/git/psms_v3",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.build"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;ApkExportedModule&quot;: &quot;psms_v3.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;psms_v3.app&quot;,
+    &quot;ExportApk.ApkPathForpsms_v3.app&quot;: &quot;C:\\Users\\jiayi\\OneDrive\\Documents\\GitHub\\psms_v3\\app&quot;,
+    &quot;PROJECT_TRUSTED_KEY&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jiayi/Downloads/try this/AndroidMobileStock_3.9-main/AndroidMobileStock - Corida&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   },
-  "keyToStringList": {
-    "com.android.tools.idea.sqlite.queryhistory": [
-      "SELECT CompanyName, SalesAgent, Taxtype, Phone, Fax, Attention, Address1, Address2, Address3, Address4, DetailDiscount FROM Debtor;",
-      "UPDATE Debtor\nSET DetailDiscount = '10%+10%'\nWHERE AccNo = 'ACC001';",
-      "ALTER TABLE Sales ADD COLUMN CreditTerm VARCHAR(80);",
-      "INSERT INTO Debtor \n    (AccNo, CompanyName, Desc2, Address1, Address2, Address3, Address4, SalesAgent, TaxType, Phone, Fax, Attention, EmailAddress, DebtorType, AreaCode, CurrencyCode, DisplayTerm, Phone2, PriceCategory, DetailDiscount) \nVALUES \n    ('ACC001', 'Company Name', 'Description 2', 'Address Line 1', 'Address Line 2', 'Address Line 3', 'Address Line 4', 'Sales Agent Name', 'Tax Type', '123456789', '987654321', 'Attention Person', 'email@example.com', 'Type', 'Area Code', 'Currency', '30 Days', '456789123', 'Category', 5.0);\n",
-      "Select * from Debtor"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
+    ],
+    &quot;com.android.tools.idea.sqlite.queryhistory&quot;: [
+      &quot;SELECT CompanyName, SalesAgent, Taxtype, Phone, Fax, Attention, Address1, Address2, Address3, Address4, DetailDiscount FROM Debtor;&quot;,
+      &quot;UPDATE Debtor\nSET DetailDiscount = '10%+10%'\nWHERE AccNo = 'ACC001';&quot;,
+      &quot;ALTER TABLE Sales ADD COLUMN CreditTerm VARCHAR(80);&quot;,
+      &quot;INSERT INTO Debtor \n    (AccNo, CompanyName, Desc2, Address1, Address2, Address3, Address4, SalesAgent, TaxType, Phone, Fax, Attention, EmailAddress, DebtorType, AreaCode, CurrencyCode, DisplayTerm, Phone2, PriceCategory, DetailDiscount) \nVALUES \n    ('ACC001', 'Company Name', 'Description 2', 'Address Line 1', 'Address Line 2', 'Address Line 3', 'Address Line 4', 'Sales Agent Name', 'Tax Type', '123456789', '987654321', 'Attention Person', 'email@example.com', 'Type', 'Area Code', 'Currency', '30 Days', '456789123', 'Category', 5.0);\n&quot;,
+      &quot;Select * from Debtor&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="psms_v3.app.main" />
@@ -298,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724914515156</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="29/08&#10;-Discount Text&#10;-Credit Terms&#10;-Sales unitPrice accept multiple decimal&#10;-Sales pdf change to discount text&#10;-Sales Item List">
+      <option name="closed" value="true" />
+      <created>1724923104619</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724923104619</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,7 +327,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="credit term" />
-    <option name="LAST_COMMIT_MESSAGE" value="credit term" />
+    <MESSAGE value="29/08&#10;-Discount Text&#10;-Credit Terms&#10;-Sales unitPrice accept multiple decimal&#10;-Sales pdf change to discount text&#10;-Sales Item List" />
+    <option name="LAST_COMMIT_MESSAGE" value="29/08&#10;-Discount Text&#10;-Credit Terms&#10;-Sales unitPrice accept multiple decimal&#10;-Sales pdf change to discount text&#10;-Sales Item List" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

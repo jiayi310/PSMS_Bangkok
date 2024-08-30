@@ -518,8 +518,8 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
             canvas.drawText(invoice.getAgent(),460, y+86,myPaint);
         if(debtor.getAttention()!=null)
             canvas.drawText(debtor.getAttention(),460, y+104,myPaint);
-        if(debtor.getTerms()!=null)
-            canvas.drawText(debtor.getTerms(),460, y+122,myPaint);
+        if(debtor.getCreditTerm()!=null)
+            canvas.drawText(debtor.getCreditTerm(),460, y+122,myPaint);
         canvas.drawText(String.valueOf(currentPage),460, y+140,myPaint);
 
         myPaint.setStyle(Paint.Style.STROKE);
