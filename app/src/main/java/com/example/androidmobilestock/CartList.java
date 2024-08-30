@@ -164,14 +164,16 @@ public class CartList extends AppCompatActivity {
 
                 docNo = pintent.getStringExtra("DocNoKey");
         Func = pintent.getStringExtra("FunctionKey");
+
         if (Func != null) {
             getCurrentDataForEdit();
         }
 
         if (invoiceDetailsList != null) {
 
-            for (int i = 0; i < invoiceDetailsList.size(); i++) {
+            invoice.getInvoiceDetailsList().clear();
 
+            for (int i = 0; i < invoiceDetailsList.size(); i++) {
 
                 if(def_loc!=null) {
                     if (def_loc.equals("None")) {
@@ -185,9 +187,6 @@ public class CartList extends AppCompatActivity {
                     invoiceDetailsList.get(i).setLocation("None");
                 }
                 invoice.addInvoiceDetail(invoiceDetailsList.get(i));
-                // invoiceDetailsList.get(i).getQuantity();
-                //invoice.setDocNo(invoiceDetailsList.get(0).getDocNo());
-                //sub_total += invoiceDetailsList.get(i).getSubTotal();
             }
             if (docNo == null) {
                 invoice.setDocNo(db.getNextNo());

@@ -922,6 +922,8 @@ public class InvADManualFragment extends Fragment {
                     invoiceDetails.setDiscountText(nDiscountText);
                     Calculation();
 
+                } else {
+                    invoiceDetails.setDiscountText(invoiceDetails.getDiscountText());
                 }
                 break;
 

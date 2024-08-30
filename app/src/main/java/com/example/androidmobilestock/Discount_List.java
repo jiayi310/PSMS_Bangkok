@@ -88,7 +88,7 @@ public class Discount_List extends AppCompatActivity {
         btn_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                discountText = "";
+                discountText = "0";
                 lbl_DiscountText.setText("No discount");
             }
         });
@@ -420,6 +420,7 @@ public class Discount_List extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent newintent = new Intent();
+        newintent.putExtra("DiscountText", discountText);
         setResult(8, newintent);
         finish();
         super.onBackPressed();
