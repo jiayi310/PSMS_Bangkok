@@ -532,7 +532,12 @@ public class InvADManualFragment extends Fragment {
             invoiceDetails.setItemDescription(item.getDescription());
             invoiceDetails.setUOM(item.getUOM());
             //invoiceDetails.setDiscount(0.00d);
-            invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
+            if (invoiceHeader.getDetailDiscount() == null){
+                invoiceDetails.setDiscountText("0");
+            } else {
+                invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
+            }
+
             invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
             invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
@@ -717,7 +722,11 @@ public class InvADManualFragment extends Fragment {
                     invoiceDetails.setItemDescription(item.getDescription());
                     invoiceDetails.setUOM(item.getUOM());
                     invoiceDetails.setDiscount(0.00d);
-                    invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
+                    if (invoiceHeader.getDetailDiscount() == null){
+                        invoiceDetails.setDiscountText("0");
+                    } else {
+                        invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
+                    }
                     invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
                     invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
@@ -1072,6 +1081,10 @@ public class InvADManualFragment extends Fragment {
         }
 
         public void onCheckDiscountClicked(View view) {
+            if (invoiceDetails.getDiscountText() == null || invoiceDetails.getDiscountText().isEmpty()){
+                invoiceDetails.setDiscountText("0");
+            }
+
             if (invoiceDetails.getItemCode() != null) {
                 Intent new_intent = new Intent(context, Discount_List.class);
                 new_intent.putExtra("ItemCode", invoiceDetails.getItemCode());
@@ -1359,6 +1372,13 @@ public class InvADManualFragment extends Fragment {
                     binding.lblBatchNo.setVisibility(View.VISIBLE);
                     binding.invdtlBatchnoTxt.setText(invoiceDetails.getBatchNo());
                 }
+
+                if (invoiceDetails!=null){
+                    if (invoiceDetails.getDiscountText() == null){
+                        invoiceDetails.setDiscountText("0");
+                    }
+                }
+
 
                 binding.editTextNumber2.setText(new DecimalFormat("#.###").format(invoiceDetails.getQuantity()));
                 break;

@@ -127,8 +127,13 @@ public class DebtorList extends AppCompatActivity {
                             data.getString(data.getColumnIndex("CurrencyCode")),
                             data.getString(data.getColumnIndex("DisplayTerm")),
                             data.getString(data.getColumnIndex("Phone2")),
-                            data.getString(data.getColumnIndex("DetailDiscount")));
+                            (data.getString(data.getColumnIndex("DetailDiscount")) == null ||
+                                    data.getString(data.getColumnIndex("DetailDiscount")).isEmpty())
+                                    ? "0"
+                                    : data.getString(data.getColumnIndex("DetailDiscount"))
+                    );
                     debtors.add(myDebtor);
+
                 } catch (Exception e) { Log.i("custDebug", "error reading image: "+e.getMessage()); }
             }
             arrayAdapter.notifyDataSetChanged();

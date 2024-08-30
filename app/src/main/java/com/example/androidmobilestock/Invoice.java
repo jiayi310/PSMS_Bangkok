@@ -198,7 +198,12 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress3(debtor.getADD3());
                         invoice.setAddress4(debtor.getADD4());
                         invoice.setCreditTerm(debtor.getDisplayTerm());
-                        invoice.setDetailDiscount(debtor.getDetailDiscount());
+//                        if (debtor.getDetailDiscount().isEmpty() || debtor.getDetailDiscount() == null){
+//                            invoice.setDetailDiscount("0");
+//                        }else {
+//                            invoice.setDetailDiscount(debtor.getDetailDiscount());
+//                        }
+
 
                         //get debtor code
                         debtorCode = debtor.getAccNo();
@@ -323,7 +328,12 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress2(myInvoice.getAddress2());
                         invoice.setAddress3(myInvoice.getAddress3());
                         invoice.setAddress4(myInvoice.getAddress4());
-                        invoice.setDetailDiscount(myInvoice.getDetailDiscount());
+                        if (myInvoice.getDetailDiscount().isEmpty() || myInvoice.getDetailDiscount() == null){
+                            invoice.setDetailDiscount("0");
+                        }else {
+                            invoice.setDetailDiscount(myInvoice.getDetailDiscount());
+                        }
+
                         invoice.setCreditTerm(myInvoice.getCreditTerm());
 
                         Cursor deb = db.getDebtorName2(invoice.getDebtorCode());

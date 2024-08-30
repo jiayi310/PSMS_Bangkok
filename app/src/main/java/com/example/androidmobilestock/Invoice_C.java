@@ -32,13 +32,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class Invoice_C extends AppCompatActivity {
     ActivityInvoiceCBinding binding;
     public Invoice_C.MyClickHandler handler;
     private DatePickerDialog.OnDateSetListener mDataSetListener;
-    ArrayList<AC_Class.InvoiceDetails> invoiceDetailsList = new ArrayList<>();
+    List<AC_Class.InvoiceDetails> invoiceDetailsList = new ArrayList<>();
     SharedPreferences prefs;
     AC_Class.CheckOut checkout;
     private AC_Class.Invoice invoice;
@@ -240,10 +241,18 @@ public class Invoice_C extends AppCompatActivity {
                     data.moveToNext();
                     invoice = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(data.getColumnIndex("SalesAgent")), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
                             data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Address1")), data.getString(data.getColumnIndex("Address2")), data.getString(data.getColumnIndex("Address3")), data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")), data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
-                    data = db.getInvoiceDetailtoUpdate(docNo);
 
-                    while (data.moveToNext()) {
+
+//                    data = db.getInvoiceDetailtoUpdate(docNo);
+//
+//                    while (data.moveToNext()) {
+//                    }
+
+                    invoiceDetailsList = getIntent().getParcelableArrayListExtra("InvoiceDetail");
+                    for (int i = 0; i < invoiceDetailsList.size(); i++) {
+                        invoice.addInvoiceDetail(invoiceDetailsList.get(i));
                     }
+
 
                     invoice.setStatus("Pending");
                     invoice.setLastModifiedUser(user);

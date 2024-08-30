@@ -55,6 +55,7 @@ public class Discount_List extends AppCompatActivity {
         lbl_DiscountText = findViewById(R.id.discountText);
 
         if (discountText.isEmpty() || discountText.equals("0")){
+            discountText = "0";
             lbl_DiscountText.setText("No discount");
         }else {
             lbl_DiscountText.setText(discountText.toString());
