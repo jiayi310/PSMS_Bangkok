@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: C (3)" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/appRFIDemo/libs/deviceapi20190214.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
