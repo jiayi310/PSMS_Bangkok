@@ -68,14 +68,16 @@ public class InvoiceList extends AppCompatActivity implements AdapterView.OnItem
                     public void onClick(DialogInterface dialog, int which) {
                         int uploaded = ((AC_Class.InvoiceMenu)parent.getItemAtPosition(position)).getUploaded();
                         String status = ((AC_Class.InvoiceMenu)parent.getItemAtPosition(position)).getStatus();
-                        if(uploaded == 1 && status!=null) {
-                            if(status.equals("Rejected")){
-                                String DocNo = ((AC_Class.InvoiceMenu) parent.getItemAtPosition(position)).getDocNo();
-                                Intent intent = new Intent(InvoiceList.this, Invoice.class);
-                                intent.putExtra("DocNoKey", DocNo);
-                                intent.putExtra("FunctionKey", "Edit");
-                                startActivity(intent);
-                            }else {
+                        if(uploaded == 1 ) {
+                            if (status != null){
+                                if(status.equals("Rejected")){
+                                    String DocNo = ((AC_Class.InvoiceMenu) parent.getItemAtPosition(position)).getDocNo();
+                                    Intent intent = new Intent(InvoiceList.this, Invoice.class);
+                                    intent.putExtra("DocNoKey", DocNo);
+                                    intent.putExtra("FunctionKey", "Edit");
+                                    startActivity(intent);
+                                }
+                            } else {
                                 Toast.makeText(InvoiceList.this, "Action Failed. The Invoice already uploaded.",
                                         Toast.LENGTH_SHORT).show();
                             }

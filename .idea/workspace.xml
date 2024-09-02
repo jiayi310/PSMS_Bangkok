@@ -96,21 +96,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="30/08 bug fix">
+    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="empty discount text bug fixed">
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Discount_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Discount_List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +116,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=R9PT60FQX6W)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=MT9051-2WE-9K07552)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -187,7 +183,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Android App.app.executor": "Debug",
+    "Android App.app.executor": "Run",
     "ApkExportedModule": "psms_v3.app",
     "BundleExportedModule": "psms_v3.app",
     "ExportApk.ApkPathForpsms_v3.app": "C:\\Users\\jiayi\\OneDrive\\Documents\\GitHub\\psms_v3\\app",
@@ -314,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724923104619</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="empty discount text bug fixed">
+      <option name="closed" value="true" />
+      <created>1725011953913</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725011953913</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,7 +335,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="credit term" />
     <MESSAGE value="29/08&#10;-Discount Text&#10;-Credit Terms&#10;-Sales unitPrice accept multiple decimal&#10;-Sales pdf change to discount text&#10;-Sales Item List" />
-    <option name="LAST_COMMIT_MESSAGE" value="29/08&#10;-Discount Text&#10;-Credit Terms&#10;-Sales unitPrice accept multiple decimal&#10;-Sales pdf change to discount text&#10;-Sales Item List" />
+    <MESSAGE value="empty discount text bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty discount text bug fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
