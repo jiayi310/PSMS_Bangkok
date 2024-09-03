@@ -9,6 +9,7 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -86,7 +87,13 @@ public class PPL_PPL extends AppCompatActivity {
                 finish();
             }
         };
-        registerReceiver(exitReceiver, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(exitReceiver, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(exitReceiver, intentFilter);
+        }
 
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override

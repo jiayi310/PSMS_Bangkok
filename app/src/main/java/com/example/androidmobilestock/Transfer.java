@@ -13,6 +13,8 @@ import android.graphics.drawable.ColorDrawable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -84,7 +86,13 @@ public class Transfer extends AppCompatActivity {
                 finish();
             }
         };
-        registerReceiver(exitReceiver, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(exitReceiver, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(exitReceiver, intentFilter);
+        }
     }
 
     @Override

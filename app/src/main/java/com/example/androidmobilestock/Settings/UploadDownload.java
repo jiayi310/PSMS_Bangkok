@@ -1241,8 +1241,10 @@ public class UploadDownload extends AppCompatActivity {
                             String BaseUOM = object1.getString("BaseUOM");
                             String SalesUOM = object1.getString("SalesUOM");
                             String PurchaseUOM = object1.getString("PurchaseUOM");
-                            Float Price = BigDecimal.valueOf(object1.getDouble("Price")).floatValue();
-                            Float Price2 = BigDecimal.valueOf(object1.getDouble("Price2")).floatValue();
+
+                            BigDecimal price = new BigDecimal(object1.getString("Price"));
+                            BigDecimal price2 = new BigDecimal(object1.getString("Price2"));
+
                             String BarCode = object1.getString("BarCode");
                             String Image = object1.getString("Image");
                             String ItemCode2 = object1.getString("ItemCode2");
@@ -1254,7 +1256,7 @@ public class UploadDownload extends AppCompatActivity {
 
 
                             insert = db.insertItem(ItemCode, Description, Desc2, ItemGroup,
-                                    ItemType, TaxType, PurchaseTaxType, BaseUOM, Price, Price2,
+                                    ItemType, TaxType, PurchaseTaxType, BaseUOM, price, price2,
                                     BarCode, Image, ItemCode2, hasBatchNo, SalesUOM, PurchaseUOM, isSalesItem, isPurchaseItem, isRawMaterialItem, isFinishGoodsItem) && insert;
 
                             object1 = null;
@@ -1493,21 +1495,24 @@ public class UploadDownload extends AppCompatActivity {
                         JSONObject object = uom.getJSONObject(i);
                         String ItemCode = object.getString("ItemCode");
                         String UOM = object.getString("UOM");
-                        Float Price = BigDecimal.valueOf(object.getDouble("Price")).floatValue();
-                        Float Price2 = BigDecimal.valueOf(object.getDouble("Price2")).floatValue();
+
+                        BigDecimal price = new BigDecimal(object.getString("Price"));
+                        BigDecimal price2 = new BigDecimal(object.getString("Price2"));
                         String BarCode = object.getString("BarCode");
                         String Shelf = object.getString("Shelf");
-                        Float BalQty = BigDecimal.valueOf(object.getDouble("BalQty")).floatValue();
-                        Float Rate = BigDecimal.valueOf(object.getDouble("Rate")).floatValue();
-                        Float MinPrice = BigDecimal.valueOf(object.getDouble("MinPrice")).floatValue();
-                        Float MaxPrice = BigDecimal.valueOf(object.getDouble("MaxPrice")).floatValue();
-                        Float Price3 = BigDecimal.valueOf(object.getDouble("Price3")).floatValue();
-                        Float Price4 = BigDecimal.valueOf(object.getDouble("Price4")).floatValue();
-                        Float Price5 = BigDecimal.valueOf(object.getDouble("Price5")).floatValue();
-                        Float Price6 = BigDecimal.valueOf(object.getDouble("Price6")).floatValue();
+                        Float BalQty = Float.parseFloat(String.valueOf(object.getDouble("BalQty")));
+                        Float Rate = Float.parseFloat(String.valueOf(object.getDouble("Rate")));
 
-                        insert = db.insertUOM(ItemCode, UOM, Price, Price2, Shelf,
-                                BarCode, BalQty, Rate, MinPrice, MaxPrice, Price3, Price4, Price5, Price6) && insert;
+                        BigDecimal minPrice = new BigDecimal(object.getString("MinPrice"));
+                        BigDecimal maxPrice = new BigDecimal(object.getString("MaxPrice"));
+                        BigDecimal price3 = new BigDecimal(object.getString("Price3"));
+                        BigDecimal price4 = new BigDecimal(object.getString("Price4"));
+                        BigDecimal price5 = new BigDecimal(object.getString("Price5"));
+                        BigDecimal price6 = new BigDecimal(object.getString("Price6"));
+
+
+                        insert = db.insertUOM(ItemCode, UOM, price, price2, Shelf,
+                                BarCode, BalQty, Rate, minPrice, maxPrice, price3, price4, price5, price6) && insert;
                         object = null;
                         myCount++;
                     }

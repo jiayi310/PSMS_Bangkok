@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -74,7 +75,13 @@ public class DeviceList extends ListActivity {
     protected void proceedDiscovery() {
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         filter.addAction(BluetoothDevice.ACTION_NAME_CHANGED);
-        registerReceiver(mBTReceiver, filter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(mBTReceiver, filter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(mBTReceiver, filter);
+        }
 
         mBluetoothAdapter.startDiscovery();
     }

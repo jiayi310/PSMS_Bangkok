@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -112,13 +113,25 @@ public class Invoice extends AppCompatActivity {
         // Broadcast Receiver
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.package.ACTION_LOGOUT");
-        registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                unregisterReceiver(this);
-                finish();
-            }
-        }, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    unregisterReceiver(this);
+                    finish();
+                }
+            }, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    unregisterReceiver(this);
+                    finish();
+                }
+            }, intentFilter);
+        }
 
 //        // Broadcast Receiver
 //        IntentFilter intentFilter = new IntentFilter();
@@ -198,11 +211,11 @@ public class Invoice extends AppCompatActivity {
                         invoice.setAddress3(debtor.getADD3());
                         invoice.setAddress4(debtor.getADD4());
                         invoice.setCreditTerm(debtor.getDisplayTerm());
-//                        if (debtor.getDetailDiscount().isEmpty() || debtor.getDetailDiscount() == null){
-//                            invoice.setDetailDiscount("0");
-//                        }else {
-//                            invoice.setDetailDiscount(debtor.getDetailDiscount());
-//                        }
+                        if (debtor.getDetailDiscount().isEmpty() || debtor.getDetailDiscount() == null){
+                            invoice.setDetailDiscount("0");
+                        }else {
+                            invoice.setDetailDiscount(debtor.getDetailDiscount());
+                        }
 
 
                         //get debtor code

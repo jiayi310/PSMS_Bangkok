@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -213,13 +214,25 @@ public class Jobsheet_AddNew extends AppCompatActivity {
         // Broadcast Receiver
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.package.ACTION_LOGOUT");
-        registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                unregisterReceiver(this);
-                finish();
-            }
-        }, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    unregisterReceiver(this);
+                    finish();
+                }
+            }, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    unregisterReceiver(this);
+                    finish();
+                }
+            }, intentFilter);
+        }
 
     }
 
@@ -264,9 +277,12 @@ public class Jobsheet_AddNew extends AppCompatActivity {
 
                         if (def_Agent.equals("None")) {
                             String debAgent = debtor.getSalesAgent();
-                            if (debAgent != null || !debAgent.equals("") || debAgent.equals("None")) {
-                                jobSheet.setAgent(debAgent);
-                                tv_agent.setText(debAgent);
+                            if (debAgent != null)
+                            {
+                                if (!debAgent.equals("") || debAgent.equals("None")) {
+                                    jobSheet.setAgent(debAgent);
+                                    tv_agent.setText(debAgent);
+                                }
                             } else {
                                 jobSheet.setAgent(null);
                                 tv_agent.setText("");

@@ -93,7 +93,7 @@ public class SettingHistoryItemAdapter extends RecyclerView.Adapter<SettingHisto
         myViewHolder.uom_textView.setText(item.UOM);
 
         // Assuming item.Price is a float
-        float price = item.Price;
+        double price = item.Price;
         String formattedPrice = String.format(Locale.US, "%.2f", price);
 
         //set item price

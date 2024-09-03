@@ -199,7 +199,13 @@ public class ARPayment extends AppCompatActivity {
                 finish();
             }
         };
-        registerReceiver(exitReceiver, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(exitReceiver, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(exitReceiver, intentFilter);
+        }
     }
 
 

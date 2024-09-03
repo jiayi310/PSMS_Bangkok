@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -163,7 +164,13 @@ public class PL_SO_Search extends AppCompatActivity implements AdapterView.OnIte
                 finish();
             }
         };
-        registerReceiver(exitReceiver, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(exitReceiver, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(exitReceiver, intentFilter);
+        }
 
     }
 

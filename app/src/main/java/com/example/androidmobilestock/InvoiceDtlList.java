@@ -25,6 +25,7 @@ import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintSet;
@@ -321,7 +322,6 @@ public class InvoiceDtlList extends AppCompatActivity {
 
 //        getData();
         invoice = getIntent().getParcelableExtra("DataFromInvHeader");
-        //inv_temp = getIntent().getParcelableExtra("DataFromInvHeader");
         invoiceDetails.setDocNo(invoice.getDocNo());
         invoiceDetails.setDocDate(invoice.getDocDate());
         nDocNo = invoice.getDocNo();
@@ -507,13 +507,25 @@ public class InvoiceDtlList extends AppCompatActivity {
         // Broadcast Receiver
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("com.package.ACTION_LOGOUT");
-        registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                unregisterReceiver(this);
-                finish();
-            }
-        }, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    unregisterReceiver(this);
+                    finish();
+                }
+            }, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    unregisterReceiver(this);
+                    finish();
+                }
+            }, intentFilter);
+        }
     }
 
 //    private void deleteItem(int position) {

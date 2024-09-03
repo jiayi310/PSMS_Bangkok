@@ -14,6 +14,7 @@ import android.util.Log;
 
 import com.example.androidmobilestock.ui.main.Hash;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -2056,7 +2057,7 @@ public class ACDatabase extends SQLiteOpenHelper {
     //INSERT Item
     public boolean insertItem(String ItemCode, String Description, String Desc2, String ItemGroup,
                               String ItemType, String TaxType, String PurchaseTaxType, String BaseUOM,
-                              Float Price, Float Price2, String BarCode, String Image, String ItemCode2,
+                              BigDecimal  Price, BigDecimal  Price2, String BarCode, String Image, String ItemCode2,
                               String hasBatchno, String SalesUOM, String PurchaseUOM, String IsSalesItem, String IsPurchaseItem, String IsRawMaterialItem, String IsFinishGoodsItem) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -2068,8 +2069,8 @@ public class ACDatabase extends SQLiteOpenHelper {
         cv.put(COL6_ITEM, TaxType);
         cv.put(COL7_ITEM, PurchaseTaxType);
         cv.put(COL8_ITEM, BaseUOM);
-        cv.put(COL9_ITEM, Price);
-        cv.put(COL10_ITEM, Price2);
+        cv.put(COL9_ITEM, Price.toPlainString());
+        cv.put(COL10_ITEM, Price2.toPlainString());
         cv.put(COL11_ITEM, BarCode);
         cv.put(COL12_ITEM, Image);
         cv.put("ItemCode2", ItemCode2);
@@ -2130,27 +2131,29 @@ public class ACDatabase extends SQLiteOpenHelper {
     }
 
     //Insert UOM
-    public boolean insertUOM(String ItemCode, String UOM, Float Price, Float Price2, String Shelf,
-                             String BarCode, Float BalQty, Float Rate, Float MinPrice, Float MaxPrice, Float Price3, Float Price4, Float Price5, Float Price6) {
+    public boolean insertUOM(String ItemCode, String UOM, BigDecimal Price, BigDecimal Price2, String Shelf,
+                             String BarCode, Float BalQty, Float Rate, BigDecimal MinPrice, BigDecimal MaxPrice,
+                             BigDecimal Price3, BigDecimal Price4, BigDecimal Price5, BigDecimal Price6) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("ItemCode", ItemCode);
         cv.put("UOM", UOM);
-        cv.put("Price", Price);
-        cv.put("Price2", Price2);
+        cv.put("Price", Price.toPlainString());  // Convert BigDecimal to string for storage
+        cv.put("Price2", Price2.toPlainString());
         cv.put("Shelf", Shelf);
         cv.put("Barcode", BarCode);
         cv.put("BalQty", BalQty);
         cv.put("Rate", Rate);
-        cv.put("MinPrice", MinPrice);
-        cv.put("MaxPrice", MaxPrice);
-        cv.put("Price3", Price3);
-        cv.put("Price4", Price4);
-        cv.put("Price5", Price5);
-        cv.put("Price6", Price6);
+        cv.put("MinPrice", MinPrice.toPlainString());
+        cv.put("MaxPrice", MaxPrice.toPlainString());
+        cv.put("Price3", Price3.toPlainString());
+        cv.put("Price4", Price4.toPlainString());
+        cv.put("Price5", Price5.toPlainString());
+        cv.put("Price6", Price6.toPlainString());
         long results = db.insert("ItemUOM", null, cv);
         return results != -1;
     }
+
 
     //INSERT Stock Balance
     public boolean insertStockBalance(String ItemCode, String UOM, String Location, Float BalQty, String batchNo) {

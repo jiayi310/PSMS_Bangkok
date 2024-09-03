@@ -437,7 +437,7 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
                                 jobSheetDetails.setUOM(results.getString(results.getColumnIndex("BaseUOM")));
                                 uom_text.setText(jobSheetDetails.getUOM());
                                 jobSheetDetails.setUPrice(results.getDouble(results.getColumnIndex("Price")));
-                                editText_unitPrice.setText(String.format("%.2f", jobSheetDetails.getUPrice()));
+                                editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
 
                                 if (isAutoPrice){
                                     Cursor cursor_pc = db.getPriceCategory(jobSheet.getDebtorCode());
@@ -452,23 +452,23 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
 
                                                     switch (myPC) {
                                                         case 2:
-                                                            jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price2"))));
+                                                            jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price2"))));
                                                             editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                             break;
                                                         case 3:
-                                                            jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price3"))));
+                                                            jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price3"))));
                                                             editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                             break;
                                                         case 4:
-                                                            jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price4"))));
+                                                            jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price4"))));
                                                             editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                             break;
                                                         case 5:
-                                                            jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price5"))));
+                                                            jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price5"))));
                                                             editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                             break;
                                                         case 6:
-                                                            jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price6"))));
+                                                            jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price6"))));
                                                             editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                             break;
                                                     }
@@ -932,14 +932,14 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
             tv_description.setText(item.getDescription());
             uom_text.setText(item.getUOM());
             //editText_discount.setText("0.00");
-            editText_unitPrice.setText(String.format("%.2f", item.getPrice()));
+            editText_unitPrice.setText(String.valueOf(item.getPrice()));
 
             jobSheetDetails.setDocNo(jobSheet.getDocNo());
             jobSheetDetails.setDocDate(jobSheet.getDocDate());
             jobSheetDetails.setItemCode(item.getItemCode());
             jobSheetDetails.setItemDescription(item.getDescription());
             jobSheetDetails.setUOM(item.getUOM());
-            jobSheetDetails.setUPrice(Double.valueOf(item.getPrice()));
+            jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice())));
 
             jobSheetDetails.setTaxType(getTax(item.getTaxType()));
             tv_taxType.setText(jobSheetDetails.getTaxType());
@@ -971,24 +971,24 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
                                 myPC = Integer.parseInt(myPCObj.toString());
                                 switch (myPC) {
                                     case 2:
-                                        jobSheetDetails.setUPrice(Double.valueOf(item.getPrice2()));
-                                        editText_unitPrice.setText(String.format("%.2f", item.getPrice2()));
+                                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice2())));
+                                        editText_unitPrice.setText(String.valueOf(item.getPrice2()));
                                         break;
                                     case 3:
-                                        jobSheetDetails.setUPrice(Double.valueOf(item.getPrice3()));
-                                        editText_unitPrice.setText(String.format("%.2f", item.getPrice3()));
+                                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice3())));
+                                        editText_unitPrice.setText(String.valueOf(item.getPrice3()));
                                         break;
                                     case 4:
-                                        jobSheetDetails.setUPrice(Double.valueOf(item.getPrice4()));
-                                        editText_unitPrice.setText(String.format("%.2f", item.getPrice4()));
+                                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice4())));
+                                        editText_unitPrice.setText(String.valueOf(item.getPrice4()));
                                         break;
                                     case 5:
-                                        jobSheetDetails.setUPrice(Double.valueOf(item.getPrice5()));
-                                        editText_unitPrice.setText(String.format("%.2f", item.getPrice5()));
+                                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice5())));
+                                        editText_unitPrice.setText(String.valueOf(item.getPrice5()));
                                         break;
                                     case 6:
-                                        jobSheetDetails.setUPrice(Double.valueOf(item.getPrice6()));
-                                        editText_unitPrice.setText(String.format("%.2f", item.getPrice6()));
+                                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice6())));
+                                        editText_unitPrice.setText(String.valueOf(item.getPrice6()));
                                         break;
                                 }
                             } catch (NumberFormatException e) {
@@ -1179,9 +1179,9 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
                     AC_Class.ItemUOM itemUOM = data.getParcelableExtra("UOMKey");
                     if (itemUOM != null) {
                         jobSheetDetails.setUOM(itemUOM.getUOM());
-                        jobSheetDetails.setUPrice(Double.valueOf(itemUOM.getPrice()));
+                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(itemUOM.getPrice())));
                         uom_text.setText(jobSheetDetails.getUOM());
-                        editText_unitPrice.setText(String.format("%.2f", jobSheetDetails.getUPrice()));
+                        editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                         Calculation();
                     }
                 }
@@ -1193,8 +1193,8 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
                     AC_Class.SellingPrice sellingPrice = data.getParcelableExtra("price");
                     if (sellingPrice != null) {
                         if (sellingPrice.getPrice() != 0) {
-                            jobSheetDetails.setUPrice(Double.valueOf(sellingPrice.getPrice()));
-                            editText_unitPrice.setText(String.format("%.2f", jobSheetDetails.getUPrice()));
+                            jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(sellingPrice.getPrice())));
+                            editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                             Calculation();
                         }
                     }
@@ -1263,8 +1263,8 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
                 if(data != null) {
                     Float price = data.getFloatExtra("Price", 0.0f);
                     if (price != null) {
-                        jobSheetDetails.setUPrice(Double.valueOf(price));
-                        editText_unitPrice.setText(String.format("%.2f", jobSheetDetails.getUPrice()));
+                        jobSheetDetails.setUPrice(Double.parseDouble(String.valueOf(price)));
+                        editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                     }
 
                 }
@@ -1381,7 +1381,7 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
                         jobSheetDetails.setUOM(results.getString(results.getColumnIndex("BaseUOM")));
                         uom_text.setText(jobSheetDetails.getUOM());
                         jobSheetDetails.setUPrice(results.getDouble(results.getColumnIndex("Price")));
-                        editText_unitPrice.setText(String.format("%.2f", jobSheetDetails.getUPrice()));
+                        editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
 
                         if (isAutoPrice){
                             Cursor cursor_pc = db.getPriceCategory(jobSheet.getDebtorCode());
@@ -1396,23 +1396,23 @@ public class Jobsheet_AddItemDetails extends AppCompatActivity {
 
                                             switch (myPC) {
                                                 case 2:
-                                                    jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price2"))));
+                                                    jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price2"))));
                                                     editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                     break;
                                                 case 3:
-                                                    jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price3"))));
+                                                    jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price3"))));
                                                     editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                     break;
                                                 case 4:
-                                                    jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price4"))));
+                                                    jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price4"))));
                                                     editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                     break;
                                                 case 5:
-                                                    jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price5"))));
+                                                    jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price5"))));
                                                     editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                     break;
                                                 case 6:
-                                                    jobSheetDetails.setUPrice(Double.valueOf(results.getString(results.getColumnIndex("Price6"))));
+                                                    jobSheetDetails.setUPrice(Double.parseDouble(results.getString(results.getColumnIndex("Price6"))));
                                                     editText_unitPrice.setText(String.valueOf(jobSheetDetails.getUPrice()));
                                                     break;
                                             }

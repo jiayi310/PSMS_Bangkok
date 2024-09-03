@@ -10,6 +10,7 @@ import android.database.Cursor;
 import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -98,7 +99,13 @@ public class PUR_Purchase extends AppCompatActivity {
                 finish();
             }
         };
-        registerReceiver(exitReceiver, intentFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        {
+            registerReceiver(exitReceiver, intentFilter, RECEIVER_NOT_EXPORTED);
+        }
+        else {
+            registerReceiver(exitReceiver, intentFilter);
+        }
     }
 
     @Override

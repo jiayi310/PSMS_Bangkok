@@ -40,6 +40,7 @@ import com.example.androidmobilestock.databinding.FragmentInvAdmanualBinding;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -72,9 +73,6 @@ public class InvADManualFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    Double dis;
-    Double disNumber;
-    String isPercentage, isChecked;
     Boolean hasBatchNoItem = false;
     NumberFormat nf = new DecimalFormat("##.###");
 
@@ -199,7 +197,12 @@ public class InvADManualFragment extends Fragment {
 
         binding.setInvoiceDetail(invoiceDetails);
 
-        invdtlUnitpriceTxtTest.setText(invoiceDetails.getUPrice().toString());
+
+        //double unitPrice = invoiceDetails.getUPrice();
+        //String formattedPrice = String.format("%.2f", unitPrice); // Format to two decimal places
+        invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
+
+
 
         if (isBatchNoEnabled && invoiceDetails.getBatchNo() != null) {
             binding.invdtlBatchnoTxt.setVisibility(View.VISIBLE);
@@ -251,11 +254,11 @@ public class InvADManualFragment extends Fragment {
             binding.invdtlTaxvalueTxt.setVisibility(View.GONE);
             binding.invdtlLblTotalEx.setVisibility(View.GONE);
             binding.invdtlTotalexTxt.setVisibility(View.GONE);
-            ConstraintSet constraintSet = new ConstraintSet();
-            constraintSet.clone(binding.relativeLayout15);
-            constraintSet.connect(R.id.lbl_total_in, ConstraintSet.TOP,
-                    R.id.invdtl_discount_txt, ConstraintSet.BOTTOM);
-            constraintSet.applyTo(binding.relativeLayout15);
+//            ConstraintSet constraintSet = new ConstraintSet();
+//            constraintSet.clone(binding.relativeLayout15);
+//            constraintSet.connect(R.id.lbl_total_in, ConstraintSet.TOP,
+//                    R.id.invdtl_discount_txt, ConstraintSet.BOTTOM);
+//            constraintSet.applyTo(binding.relativeLayout15);
         }
 
 
@@ -287,8 +290,8 @@ public class InvADManualFragment extends Fragment {
 
                         // Retrieve the price from the cursor
                         double price = data.getDouble(data.getColumnIndex("Price"));
-                        String formattedPrice = String.format("%.2f", price);
-                        invdtlUnitpriceTxtTest.setText(formattedPrice);
+                        //String formattedPrice = String.format("%.2f", price);
+                        invdtlUnitpriceTxtTest.setText(String.valueOf(price));
 
                         //BatchNo
                         if (isBatchNoEnabled && hasBatch.equals("true")) {
@@ -538,9 +541,10 @@ public class InvADManualFragment extends Fragment {
                 invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
             }
 
-            invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
-            invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+            invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice())));
+            invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
+
 
 
             //stock balance
@@ -727,9 +731,10 @@ public class InvADManualFragment extends Fragment {
                     } else {
                         invoiceDetails.setDiscountText(invoiceHeader.getDetailDiscount());
                     }
-                    invoiceDetails.setUPrice(Double.valueOf(item.getPrice()));
 
-                    invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+                    invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice())));
+                    invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
+
 
                     //stock balance
                     Cursor temp;
@@ -753,24 +758,24 @@ public class InvADManualFragment extends Fragment {
                                         myPC = Integer.parseInt(myPCObj.toString());
                                         switch (myPC) {
                                             case 2:
-                                                invoiceDetails.setUPrice(Double.valueOf(item.getPrice2()));
-                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+                                                invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice2())));
+                                                invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                                                 break;
                                             case 3:
-                                                invoiceDetails.setUPrice(Double.valueOf(item.getPrice3()));
-                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+                                                invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice3())));
+                                                invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                                                 break;
                                             case 4:
-                                                invoiceDetails.setUPrice(Double.valueOf(item.getPrice4()));
-                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+                                                invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice4())));
+                                                invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                                                 break;
                                             case 5:
-                                                invoiceDetails.setUPrice(Double.valueOf(item.getPrice5()));
-                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+                                                invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice5())));
+                                                invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                                                 break;
                                             case 6:
-                                                invoiceDetails.setUPrice(Double.valueOf(item.getPrice6()));
-                                                invdtlUnitpriceTxtTest.setText(item.getPrice().toString());
+                                                invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(item.getPrice6())));
+                                                invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                                                 break;
                                         }
                                     } catch (NumberFormatException e) {
@@ -903,8 +908,10 @@ public class InvADManualFragment extends Fragment {
                     AC_Class.ItemUOM itemUOM = data.getParcelableExtra("UOMKey");
                     if (itemUOM != null) {
                         invoiceDetails.setUOM(itemUOM.getUOM());
-                        invoiceDetails.setUPrice(Double.valueOf(itemUOM.getPrice()));
-                        invdtlUnitpriceTxtTest.setText(itemUOM.getPrice().toString());
+                        Double itemUOMPrice = Double.parseDouble(String.valueOf(itemUOM.getPrice()));
+                        invoiceDetails.setUPrice(itemUOMPrice);
+                        invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
+
                         Calculation();
                     }
                 }
@@ -916,8 +923,8 @@ public class InvADManualFragment extends Fragment {
 
                     if (sellingPrice != null) {
                         if (sellingPrice.getPrice() != 0) {
-                            invoiceDetails.setUPrice(Double.valueOf(sellingPrice.getPrice()));
-                            invdtlUnitpriceTxtTest.setText(sellingPrice.getPrice().toString());
+                            invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(sellingPrice.getPrice())));
+                            invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                             Calculation();
                         }
                     }
@@ -965,8 +972,8 @@ public class InvADManualFragment extends Fragment {
                 if(data != null) {
                     Float price = data.getFloatExtra("Price", 0.0f);
                     if (price != null) {
-                        invoiceDetails.setUPrice(Double.valueOf(price));
-                        invdtlUnitpriceTxtTest.setText(price.toString());
+                        invoiceDetails.setUPrice(Double.parseDouble(String.valueOf(price)));
+                        invdtlUnitpriceTxtTest.setText(String.valueOf(invoiceDetails.getUPrice()));
                     }
 
                 }
