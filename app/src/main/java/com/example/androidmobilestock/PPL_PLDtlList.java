@@ -93,6 +93,8 @@ public class PPL_PLDtlList extends AppCompatActivity {
         packingList = getIntent().getParcelableExtra("iPackingList");
         typeFP = getIntent().getStringExtra("FunctionKey");
 
+
+
         binding.setPL(packingList);
         getPLDtlList();
 

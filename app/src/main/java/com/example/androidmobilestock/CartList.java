@@ -46,6 +46,7 @@ import android.widget.Toast;
 import com.example.androidmobilestock.databinding.ActivityCartListBinding;
 
 import java.io.ByteArrayOutputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -235,6 +236,11 @@ public class CartList extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    double roundDouble(double x) {
+        BigDecimal bd = new BigDecimal(Double.toString(x));
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -255,7 +261,7 @@ public class CartList extends AppCompatActivity {
 
 
                     if (invoiceDetail.getUPrice() != 0) {
-                        temp.setUPrice(invoiceDetail.getUPrice());
+                        temp.setUPrice(roundDouble(invoiceDetail.getUPrice()));
                     }
                     temp.setTotal_In((temp.getQuantity() * temp.getUPrice()) - temp.getDiscount());
                     //Double aftertaxprice = temp.getTotal_In()+temp.getTaxRate();

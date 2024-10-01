@@ -32,6 +32,7 @@ import com.example.androidmobilestock.databinding.ActivityCartViewBinding;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -424,6 +425,12 @@ public class CartView extends AppCompatActivity {
         }
     }
 
+    double roundDouble(double x) {
+        BigDecimal bd = new BigDecimal(Double.toString(x));
+        bd = bd.setScale(3, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
+
     private void setOnClickListener() {
         listener = new CartViewListAdapter.RecyclerViewClickListener() {
             @Override
@@ -442,12 +449,13 @@ public class CartView extends AppCompatActivity {
                 startActivityForResult(item_intent, 3);
             }
 
+
             @Override
             public void onImageClick(ImageView v, int position) {
                 AC_Class.InvoiceDetails tmp = new AC_Class.InvoiceDetails();
                 tmp.setItemCode(((AC_Class.Item) s_item.get(position)).getItemCode());
                 tmp.setItemDescription(((AC_Class.Item) s_item.get(position)).getDescription());
-                tmp.setUPrice(Double.valueOf(((AC_Class.Item) s_item.get(position)).getPrice()));
+                tmp.setUPrice(roundDouble(Double.valueOf(((AC_Class.Item) s_item.get(position)).getPrice())));
                 tmp.setUOM(((AC_Class.Item) s_item.get(position)).getUOM());
 
                 if(isBatchNoEnabled && s_item.get(position).getHasBatchNo().equals("true")){
@@ -464,7 +472,6 @@ public class CartView extends AppCompatActivity {
                 }else{
                     Calculation(tmp);
                     insertItem(tmp);
-                    //itemlist.add(tmp);
                     setupBadge();
                 }
 
@@ -671,7 +678,6 @@ public class CartView extends AppCompatActivity {
                 invoiceDetails.setBatchNo(batchNo);
                 Calculation(invoiceDetails);
                 insertItem(invoiceDetails);
-                //itemlist.add(tmp);
                 setupBadge();
 
             case IntentIntegrator.REQUEST_CODE:
@@ -820,7 +826,9 @@ public class CartView extends AppCompatActivity {
                 data = db.getInvoiceHeadertoUpdate(docNo);
                 if (data.getCount() == 1) {
                     data.moveToNext();
-                    invoice = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(9), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")), data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")), data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")));
+                    invoice = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(data.getColumnIndex("SalesAgent")), data.getString(data.getColumnIndex("TaxType")), data.getString(7),data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
+                            data.getString(data.getColumnIndex("Attention")),data.getString(data.getColumnIndex("Address1")),data.getString(data.getColumnIndex("Address2")),data.getString(data.getColumnIndex("Address3")),data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")),
+                            data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("CreditTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
                     data = db.getInvoiceDetailtoUpdate(docNo);
                     while (data.moveToNext()) {
                         invoice.addInvoiceDetail(new AC_Class.InvoiceDetails(data.getInt(0),

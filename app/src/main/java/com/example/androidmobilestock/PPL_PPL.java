@@ -26,8 +26,10 @@ import com.example.androidmobilestock.databinding.PlActivityPlBinding;
 import com.example.androidmobilestock.databinding.PplActivityPplBinding;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class PPL_PPL extends AppCompatActivity {
@@ -193,18 +195,19 @@ public class PPL_PPL extends AppCompatActivity {
 
                 String myFromDocNo = packingList.getFromDocNo();
                 Cursor data = db.getPO(myFromDocNo);
+                Cursor data2 = db.getPODtl(myFromDocNo);
 
-                if (data.getCount() > 0)
-                {
+
+                List<AC_Class.DODtl> dodtlList = new ArrayList<>();
+
+                if (data.getCount() > 0) {
                     data.moveToFirst();
                     packingList.setDebtorCode(data.getString(0));
 
-                    if (!data.getString(1).equals("null"))
-                    {
+                    if (!data.getString(1).equals("null")) {
                         packingList.setDebtorName(data.getString(1));
                     }
-                    if (!data.getString(2).equals("null"))
-                    {
+                    if (!data.getString(2).equals("null")) {
                         packingList.setSalesAgent(data.getString(2));
                     }
                     if (!data.getString(3).equals("null")) {
@@ -216,17 +219,19 @@ public class PPL_PPL extends AppCompatActivity {
                     if (!data.getString(5).equals("null")) {
                         packingList.setFax(data.getString(5));
                     }
-                    if(!data.getString(6).equals("null")) {
+                    if (!data.getString(6).equals("null")) {
                         packingList.setRemarks(data.getString(6));
                     }
-                    if(data.getString(7)!=null) {
+                    if (data.getString(7) != null) {
                         packingList.setDocType(data.getString(7));
                     }
                     packingList.setLocation(data.getString(8));
                     packingList.setCreatedUser(user);
                     packingList.setLastModifiedUser(user);
-
                 }
+
+//                18
+
                 break;
 
             case "Edit":

@@ -18,9 +18,11 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 import com.example.androidmobilestock.databinding.ActivityMultiPaymentBinding;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.text.DecimalFormat;
 
 public class MultiPayment extends AppCompatActivity {
     MyClickHandler handler;
@@ -229,6 +231,8 @@ public class MultiPayment extends AppCompatActivity {
 
         public void OnChequeButtonClicked(View view) {
             Intent cheque_intent = new Intent(MultiPayment.this, ChequePayment.class);
+            checkOut = getIntent().getParcelableExtra("CheckOutKey");
+            cheque_intent.putExtra("CheckOutKey", checkOut);
             cheque_intent.putExtra("ChequeKey", "Cheque1");
             if (!checkSize()) {
                 cheque_intent.putExtra("TotalKey", payment.getOriginalAmt());
@@ -242,6 +246,7 @@ public class MultiPayment extends AppCompatActivity {
 //                startActivityForResult(cheque_intent, 3);
             }
             cheque_intent.putExtra("MDocNoKey", payment.getDocNo());
+
             startActivityForResult(cheque_intent, 3);
         }
 
@@ -250,7 +255,7 @@ public class MultiPayment extends AppCompatActivity {
 //            {
            // Log.i("custDebug", String.format("%.2f, %.2f", OriginalAmt - totalCcCheque(), OutStanding));
             if(OutStanding != null && OriginalAmt != null) {
-                if (OutStanding == 0.00f && totalCcCheque() <= OriginalAmt) {
+                if (OutStanding == 0.00d && totalCcCheque() <= OriginalAmt) {
                     int size = payments.size();
                     // Commit details
                     boolean commitDetails = db.UpdateInvoiceDetail(invoice);
@@ -465,26 +470,44 @@ public class MultiPayment extends AppCompatActivity {
 
     }
 
+    double roundDouble(double x) {
+        BigDecimal bd = new BigDecimal(Double.toString(x));
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
+
     public void Calculation()
     {
 //        if (checkSize())
 //        {
-        OutStanding = OriginalAmt;
+        OutStanding = roundDouble(OriginalAmt);
         int size = payments.size();
         // Deduct existing payment amts
         for (int i = 0; i<size; i++) {
             OutStanding -= ((AC_Class.Payment) (payments.get(i))).PaymentAmt;
         }
-        if (OutStanding == 0)
-        { Log.i("custDebug", "OutStanding == 0: "+OutStanding); }
-        else { Log.i("custDebug", "OutStanding != 0: "+OutStanding); }
-//        }
+
+        // Ensure that if OutStanding is close to zero, it's set to positive zero
+        if (OutStanding == -0.0) {
+            OutStanding = 0.0;
+        }
+        OutStanding = roundDouble(OutStanding);
+
+//        DecimalFormat df = new DecimalFormat("#.00");
+//        String formattedOutStanding = df.format(OutStanding);
+
+
+
+//        if (OutStanding == 0)
+//        { Log.i("custDebug", "OutStanding == 0: "+OutStanding); }
+//        else { Log.i("custDebug", "OutStanding != 0: "+OutStanding); }
+
         binding.AmtLeft.setText(String.format(Locale.getDefault(), "Amount Left: %.2f", OutStanding));
     }
 
     // Get total of Cc and Cheque payments
-    float totalCcCheque(){
-        float total = 0.00f;
+    Double totalCcCheque(){
+        Double total = 0.00d;
         for (int i=0; i<payments.size(); i++) {
             AC_Class.Payment currPayment = payments.get(i);
             if (currPayment.getPaymentMethod().equals("Credit Card") ||
@@ -504,7 +527,7 @@ public class MultiPayment extends AppCompatActivity {
         if (payments.size() == 0){
 //            checkOut = getIntent().getParcelableExtra("CheckOutKey");
             payment.setDocNo(checkOut.getDocNo());
-            payment.setOriginalAmt(checkOut.getTotal());
+            payment.setOriginalAmt(roundDouble(checkOut.getTotal()));
             OriginalAmt = payment.getOriginalAmt();
             binding.AmtLeft.setText(String.format(Locale.getDefault(), "Amount Left: %.2f", payment.getOriginalAmt()));
             return false;

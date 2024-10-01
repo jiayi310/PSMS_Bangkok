@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.androidmobilestock.databinding.ActivityItemDetailBinding;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ItemDetail extends AppCompatActivity {
@@ -273,7 +274,7 @@ public class ItemDetail extends AppCompatActivity {
                 AC_Class.SellingPrice sellingPrice = data.getParcelableExtra("price");
                 if (sellingPrice != null) {
                     if (sellingPrice.getPrice() != 0) {
-                        invoiceDetails2.setUPrice(Double.valueOf(sellingPrice.getPrice()));
+                        invoiceDetails2.setUPrice(roundDouble(Double.valueOf(sellingPrice.getPrice())));
                         TextView price = findViewById(R.id.price);
                         price.setText(sellingPrice.getPrice().toString());
                     }
@@ -619,6 +620,12 @@ public class ItemDetail extends AppCompatActivity {
 
     }
 
+    double roundDouble(double x) {
+        BigDecimal bd = new BigDecimal(Double.toString(x));
+        bd = bd.setScale(3, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
+
     private void getData() {
         try {
             invoiceDetails2 = new AC_Class.InvoiceDetails();
@@ -626,7 +633,7 @@ public class ItemDetail extends AppCompatActivity {
             invoiceDetails2.setItemDescription(myItem.getDescription());
             invoiceDetails2.setUOM(myItem.getUOM());
             invoiceDetails2.setDiscount(0.00);
-            invoiceDetails2.setUPrice(Double.valueOf(myItem.getPrice()));
+            invoiceDetails2.setUPrice(roundDouble(Double.valueOf(myItem.getPrice())));
             invoiceDetails2.setDiscountText("0");
 
 

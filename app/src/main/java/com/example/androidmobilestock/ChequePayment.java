@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.example.androidmobilestock.databinding.ActivityChequePaymentBinding;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -26,6 +27,7 @@ public class ChequePayment extends AppCompatActivity {
     Boolean IsEmpty = false;
     ActivityChequePaymentBinding binding;
     AC_Class.Payment payment;
+    AC_Class.CheckOut checkOut;
     Boolean isCheque1 = false;
 
     @Override
@@ -36,6 +38,8 @@ public class ChequePayment extends AppCompatActivity {
         payment = new AC_Class.Payment();
         binding.setPayment(payment);
         binding.tvChequeAmt.requestFocus();
+        checkOut = getIntent().getParcelableExtra("CheckOutKey");
+        payment.setPaymentAmt(checkOut.getTotal());
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Cheque Payment");
@@ -64,7 +68,7 @@ public class ChequePayment extends AppCompatActivity {
                         sb.insert(sb.length()-2, ".");
                         temp = sb.toString();
                         Log.i("custDebug", temp);
-                        Float payAmt = Float.parseFloat(temp);
+                        Double payAmt = Double.parseDouble(temp);
                         binding.tvChequeAmt.setText(String.format(Locale.getDefault(),
                                 "%.2f", payAmt));
                         payment.setPaymentAmt(Double.valueOf(payAmt));
@@ -157,12 +161,12 @@ public class ChequePayment extends AppCompatActivity {
 //                {
                 payment.setPaymentType("MultiPayment");
                 payment.setPaymentMethod("Cheque");
-                payment.setCashChanges(Double.valueOf(Float.valueOf(binding.tvNetTotal.getText().toString()) - Float.valueOf(binding.tvChequeAmt.getText().toString())));
+                payment.setCashChanges(roundDouble(Double.parseDouble(binding.tvNetTotal.getText().toString()) - Double.parseDouble(binding.tvChequeAmt.getText().toString())));
                 payment.setCCType(null);
                 payment.setCCNo(null);
                 payment.setCCExpiryDate(null);
                 payment.setCCApprovalCode(null);
-                payment.setPaymentAmt(Double.valueOf(Float.valueOf(binding.tvChequeAmt.getText().toString())));
+                payment.setPaymentAmt(Double.valueOf(binding.tvChequeAmt.getText().toString()));
                 payment.setChequeNo(binding.tvChequeNo.getText().toString());
                 Intent intent = new Intent(ChequePayment.this, MultiPayment.class);
                 intent.putExtra("ChequePaymentKey", payment);
@@ -186,13 +190,19 @@ public class ChequePayment extends AppCompatActivity {
         return IsEmpty;
     }
 
+    double roundDouble(double x) {
+        BigDecimal bd = new BigDecimal(Double.toString(x));
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
+    }
+
     private void PaymentSelection()
     {
         key = getIntent().getStringExtra("ChequeKey");
         if (key.equals("Cheque1"))
         {
             Double TotalAmt = getIntent().getDoubleExtra("TotalKey", 0);
-            payment.setOriginalAmt(Double.valueOf(TotalAmt));
+            payment.setOriginalAmt(roundDouble(Double.valueOf(TotalAmt)));
             String DocNo = getIntent().getStringExtra("MDocNoKey");
             payment.setDocNo(DocNo);
             isCheque1 = true;
@@ -200,7 +210,7 @@ public class ChequePayment extends AppCompatActivity {
         else if (key.equals("Cheque2"))
         {
             Double TotalAmt = getIntent().getDoubleExtra("TotalKey", 0);
-            payment.setOriginalAmt(Double.valueOf(TotalAmt));
+            payment.setOriginalAmt(roundDouble(Double.valueOf(TotalAmt)));
             String DocNo = getIntent().getStringExtra("MDocNoKey");
             payment.setDocNo(DocNo);
             isCheque1 = false;

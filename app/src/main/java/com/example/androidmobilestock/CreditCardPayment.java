@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.androidmobilestock.databinding.ActivityCreditCardPaymentBinding;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -289,11 +290,11 @@ public class CreditCardPayment extends AppCompatActivity {
 //                    dialog.show();
 //                }
 //                else {
-                    payment.setPaymentAmt(Double.valueOf(Float.valueOf(binding.tvCardPayment.getText().toString())));
+                    payment.setPaymentAmt(Double.valueOf(binding.tvCardPayment.getText().toString()));
                     payment.setPaymentType("MultiPayment");
-                    payment.setPaymentAmt(Double.valueOf(Float.valueOf(binding.tvCardPayment.getText().toString())));
+                    payment.setPaymentAmt(Double.valueOf(binding.tvCardPayment.getText().toString()));
                     payment.setPaymentMethod("Credit Card");
-                    payment.setCashChanges(Double.valueOf(Float.valueOf(binding.tvNetTotal.getText().toString()) -
+                    payment.setCashChanges(roundDouble(Double.valueOf(binding.tvNetTotal.getText().toString()) -
                             Double.valueOf(binding.tvCardPayment.getText().toString())));
                     payment.setChequeNo(null);
                     Intent intent = new Intent(CreditCardPayment.this, MultiPayment.class);
@@ -338,7 +339,7 @@ public class CreditCardPayment extends AppCompatActivity {
         {
             checkOut = getIntent().getParcelableExtra("CheckOutKey");
             payment.setDocNo(checkOut.getDocNo());
-            payment.setOriginalAmt(checkOut.getTotal());
+            payment.setOriginalAmt(roundDouble(checkOut.getTotal()));
             payment.setPaymentAmt(checkOut.getTotal());
             isCCardOnly = true;
         }
@@ -346,7 +347,7 @@ public class CreditCardPayment extends AppCompatActivity {
         {
             payment.setDocNo(getIntent().getStringExtra("MDocNoKey"));
             NeedPayAmt = getIntent().getDoubleExtra("TotalKey", 0);
-            payment.setOriginalAmt(Double.valueOf(NeedPayAmt));
+            payment.setOriginalAmt(roundDouble(Double.valueOf(NeedPayAmt)));
             isCCardOnly = false;
         }
     }
@@ -365,5 +366,11 @@ public class CreditCardPayment extends AppCompatActivity {
             IsEmpty = false;
         }
         return IsEmpty;
+    }
+
+    double roundDouble(double x) {
+        BigDecimal bd = new BigDecimal(Double.toString(x));
+        bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
+        return bd.doubleValue();
     }
 }

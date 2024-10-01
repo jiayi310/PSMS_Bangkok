@@ -93,7 +93,7 @@ public class CashPayment extends AppCompatActivity {
                         sb.insert(sb.length()-2, ".");
                         temp = sb.toString();
                         Log.i("custDebug", temp);
-                        double payAmt = roundFloat(Double.parseDouble(temp));
+                        double payAmt = roundDouble(Double.parseDouble(temp));
                         binding.tvCash.setText(String.format(Locale.getDefault(),
                                 "%.2f", payAmt));
 //                        binding.tvCash.setText();
@@ -114,7 +114,7 @@ public class CashPayment extends AppCompatActivity {
         });
     }
 
-    double roundFloat(double x) {
+    double roundDouble(double x) {
         BigDecimal bd = new BigDecimal(Double.toString(x));
         bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
         return bd.doubleValue();
@@ -291,7 +291,7 @@ public class CashPayment extends AppCompatActivity {
 
     public void Calculation()
     {
-        paymentclass.setCashChanges((double) roundFloat( paymentclass.getPaymentAmt() - paymentclass.getOriginalAmt()));
+        paymentclass.setCashChanges((double) roundDouble( paymentclass.getPaymentAmt() - paymentclass.getOriginalAmt()));
     }
 
     private void PaymentSelection()
@@ -301,7 +301,7 @@ public class CashPayment extends AppCompatActivity {
         {
             checkOut = getIntent().getParcelableExtra("CheckOutKey");
             paymentclass.setDocNo(checkOut.getDocNo());
-            paymentclass.setOriginalAmt(checkOut.getTotal());
+            paymentclass.setOriginalAmt(roundDouble(checkOut.getTotal()));
             isCashOnly = true;
         }
         else if (key.equals("Cash"))
@@ -310,7 +310,7 @@ public class CashPayment extends AppCompatActivity {
             String docNo = getIntent().getStringExtra("MDocNoKey");
             paymentclass.setDocNo(docNo);
             NeedPayAmt = getIntent().getDoubleExtra("TotalKey", 0);
-            paymentclass.setOriginalAmt(Double.valueOf(NeedPayAmt));
+            paymentclass.setOriginalAmt(roundDouble(Double.valueOf(NeedPayAmt)));
         }
     }
 

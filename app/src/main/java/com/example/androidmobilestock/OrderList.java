@@ -204,7 +204,7 @@ public class OrderList extends AppCompatActivity implements AdapterView.OnItemSe
         {
 //            Log.i("custDebug", "debug");
             while (data.moveToNext()) {
-                AC_Class.InvoiceMenu invoiceMenu =  new AC_Class.InvoiceMenu(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(4), data.getString(5), data.getDouble(6), data.getDouble(7), data.getDouble(8), data.getInt(9),data.getString(10),data.getString(11),data.getString(12),data.getString(13),data.getString(14));
+                AC_Class.InvoiceMenu invoiceMenu = new AC_Class.InvoiceMenu(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getDouble(7), data.getDouble(8), data.getDouble(9), data.getInt(10),data.getString(11), data.getString(12), data.getString(13), data.getString(14), data.getString(15));
 
                 invoiceMenus.add(invoiceMenu);
             }
