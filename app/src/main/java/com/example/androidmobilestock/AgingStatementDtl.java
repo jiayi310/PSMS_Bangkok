@@ -13,7 +13,11 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -298,7 +302,14 @@ public class AgingStatementDtl extends AppCompatActivity {
                     alertDialogBuilder.setNegativeButton("Open report", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             debtorcode = debtorcode.replaceAll("[;\\/:*?\"<>|&']","");
-                            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSMSExport/" + "Invoice_" + debtorcode + toDate + ".pdf");  // -> filename = maven.pdf
+
+
+//                            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSMSExport/" + "Invoice_" + debtorcode + toDate + ".pdf");
+
+
+                            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "PSMSExport/" + "Invoice_" + debtorcode + toDate + ".pdf");
+
+                            // -> filename = maven.pdf
                             if(file.length()> 0) {
                                 Intent target = new Intent(Intent.ACTION_VIEW);
                                 target.setDataAndType(FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file), "application/pdf");
@@ -315,6 +326,7 @@ public class AgingStatementDtl extends AppCompatActivity {
                                 Toast.makeText(AgingStatementDtl.this, "Empty File",
                                         Toast.LENGTH_SHORT).show();
                             }
+
                         }
                     });
                     alertDialogBuilder.show();

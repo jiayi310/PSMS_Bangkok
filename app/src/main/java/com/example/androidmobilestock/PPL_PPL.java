@@ -116,7 +116,7 @@ public class PPL_PPL extends AppCompatActivity {
                     binding.tvDebtorCode.clearFocus();
                 }
 
-                packingList.setCreatedUser("ADMIN");
+                //packingList.setCreatedUser("ADMIN");
                 String key = getIntent().getStringExtra("FunctionKey");
                 Intent new_intent = new Intent(PPL_PPL.this, PPL_PLDtlList.class);
                 new_intent.putExtra("iPackingList", packingList);

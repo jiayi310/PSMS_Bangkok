@@ -52,6 +52,8 @@ public class PPL_PLDtlList extends AppCompatActivity {
     MyClickHandler handler;
     PPLCartListAdapter adapter;
 
+    PLItemListViewAdapter arrayAdapter;
+
     String typeFP;
     String def_loc;
     private IntentIntegrator qrScan;
@@ -93,10 +95,12 @@ public class PPL_PLDtlList extends AppCompatActivity {
         packingList = getIntent().getParcelableExtra("iPackingList");
         typeFP = getIntent().getStringExtra("FunctionKey");
 
-
-
         binding.setPL(packingList);
         getPLDtlList();
+
+        arrayAdapter = new PLItemListViewAdapter(this, s_inquiry);
+        binding.lvPackingListDtl.setAdapter(arrayAdapter);
+        getItemData2();
 
 
         Cursor data = db.getReg("25");
@@ -166,6 +170,25 @@ public class PPL_PLDtlList extends AppCompatActivity {
             }
 
         }
+
+        binding.lvPackingListDtl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
+                tempItem = (AC_Class.Item) parent.getItemAtPosition(position);
+                if (tempItem != null) {
+                    tempDtl = new AC_Class.DODtl();
+                    tempDtl.setDocNo(packingList.getDocNo());
+                    tempDtl.setItemCode(tempItem.getItemCode());
+                    tempDtl.setItemDescription(tempItem.getDescription());
+                    tempDtl.setUOM(tempItem.getUOM());
+                    tempDtl.setQty(1.00);
+
+                    Intent new_intent_loc = new Intent(PPL_PLDtlList.this, Location_List.class);
+                    startActivityForResult(new_intent_loc, 10);
+                }
+            }
+         }
+        );
 
 
         binding.invdtlEditText.requestFocus();
@@ -295,6 +318,24 @@ public class PPL_PLDtlList extends AppCompatActivity {
                     finish();
                 }
             }, intentFilter);
+        }
+    }
+
+    private void getItemData2() {
+        Cursor data = db.getPOItem(packingList.getFromDocNo());
+        if (data.getCount() > 0){
+            s_inquiry.clear();
+            while (data.moveToNext()) {
+                try {
+                    AC_Class.Item item = new AC_Class.Item(data.getString(0), data.getString(1),
+                            data.getString(2), data.getString(3), data.getString(4), data.getString(5),
+                            data.getString(6), data.getString(7), data.getString(8), data.getDouble(9),
+                            data.getString(10));
+
+                    s_inquiry.add(item);
+                } catch (Exception e) { Log.i("custDebug", "error reading image: "+e.getMessage()); }
+            }
+            arrayAdapter.notifyDataSetChanged();
         }
     }
 

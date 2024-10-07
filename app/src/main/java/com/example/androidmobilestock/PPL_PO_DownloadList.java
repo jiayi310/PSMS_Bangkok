@@ -257,7 +257,10 @@ public class PPL_PO_DownloadList extends AppCompatActivity {
         protected void onPostExecute(Boolean bool) {
             super.onPostExecute(bool);
 
-            if (!bool)
+//            if (!bool)
+//                Snackbar.make(this.context.findViewById(android.R.id.content), "Server connection failed.", Snackbar.LENGTH_SHORT).show();
+
+            if (bool)
                 Snackbar.make(this.context.findViewById(android.R.id.content), "Server connection failed.", Snackbar.LENGTH_SHORT).show();
 
 

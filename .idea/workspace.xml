@@ -95,6 +95,11 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pl.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_pldtllist.xml">
         <config>
           <theme>@style/AppTheme</theme>
@@ -120,6 +125,11 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/invdtl_menu.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/jobsheet_menu.xml">
         <config>
           <theme>@style/AppTheme</theme>
@@ -131,7 +141,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="detail discount not showing fixed, &#10;tax disabled item detail page layout error fix&#10;download price bug fixed&#10;-change float to big decimal&#10;-change valueOf to parseDouble">
+    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="payment issues 0.00">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -140,19 +152,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_Dhaval2404_ImagePicker_v2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_Dhaval2404_ImagePicker_v2_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CashPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CashPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ChequePayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ChequePayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CreditCardPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CreditCardPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MultiPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MultiPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/OrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatementDtl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatementDtl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_DownloadList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_DownloadList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item_detail.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +167,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=57b9ac4b)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\jiayi\.android\avd\Phone_Test.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -227,45 +232,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Debug",
-    "ApkExportedModule": "psms_v3.app",
-    "BundleExportedModule": "psms_v3.app",
-    "DEBUGGABLE_DEVICE": "xiaomi-redmi_note_6_pro-57b9ac4b",
-    "DEBUGGABLE_PROCESS": "com.example.androidmobilestock",
-    "DEBUGGER_ID": "Auto",
-    "ExportApk.ApkPathForpsms_v3.app": "C:\\Users\\jiayi\\OneDrive\\Documents\\GitHub\\psms_v3\\app",
-    "PROJECT_TRUSTED_KEY": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHOW_ALL_PROCESSES": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jiayi/Downloads/try this/AndroidMobileStock_3.9-main/AndroidMobileStock - Corida",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;ApkExportedModule&quot;: &quot;psms_v3.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;psms_v3.app&quot;,
+    &quot;DEBUGGABLE_DEVICE&quot;: &quot;xiaomi-redmi_note_6_pro-57b9ac4b&quot;,
+    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.example.androidmobilestock&quot;,
+    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
+    &quot;ExportApk.ApkPathForpsms_v3.app&quot;: &quot;C:\\Users\\jiayi\\OneDrive\\Documents\\GitHub\\psms_v3\\app&quot;,
+    &quot;PROJECT_TRUSTED_KEY&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jiayi/Downloads/AC_TSG_MobileStock-main/AC_TSG_MobileStock-main/AndroidMobileStock - Corida&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "release"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
     ],
-    "com.android.tools.idea.sqlite.queryhistory": [
-      "SELECT a.DocType,a.DocDate,a.DocNo,a.DebtorCode,a.DebtorName, c.Desc2,a.SalesAgent, SUM(b.Totalex), SUM(b.TaxValue), SUM(b.Totalin), Uploaded, Status, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4 FROM Sales a JOIN SalesDtl b ON a.DocNo = b.DocNo INNER JOIN Debtor c ON a.DebtorCode = c.AccNo GROUP BY a.DocNo",
-      "SELECT Sales.*, Debtor.TaxType, Debtor.DisplayTerm, Debtor.DetailDiscount FROM Sales INNER JOIN Debtor ON Sales.DebtorCode = Debtor.AccNo WHERE DocNo='MIN-00016'",
-      "SELECT ID, Location, ItemCode, ItemDescription, UOM, SUM(Qty) AS Qty, LineNo,DocType, RemarksDtl, BatchNo FROM PO WHERE DocNo=\"PO-000001\"",
-      "DELETE FROM ItemUOM WHERE BalQty = 0",
-      "SELECT CompanyName, SalesAgent, Taxtype, Phone, Fax, Attention, Address1, Address2, Address3, Address4, DetailDiscount FROM Debtor;"
+    &quot;com.android.tools.idea.sqlite.queryhistory&quot;: [
+      &quot;SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.BaseUOM, a.BarCode, b.HasBatchNo, SUM(c.Qty), c.Location FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode JOIN PO c ON b.ItemCode = c.ItemCode and a.UOM = c.UOM WHERE c.DocNo=\&quot;PO-000002\&quot; GROUP BY a.ItemCode;&quot;,
+      &quot;SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.BaseUOM, a.BarCode, b.HasBatchNo, SUM(c.Qty), c.Location FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode JOIN PO c ON b.ItemCode = c.ItemCode and a.UOM = c.UOM WHERE c.DocNo=\&quot;PO-000002\&quot;&quot;,
+      &quot;SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.BaseUOM, a.BarCode, b.HasBatchNo, SUM(c.Qty), c.Location FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode JOIN PO c ON b.ItemCode = c.ItemCode and a.UOM = c.UOM WHERE c.DocNo=\&quot;PO-000002 \&quot; Group by a.ItemCode;&quot;,
+      &quot;SELECT a.DocType,a.DocDate,a.DocNo,a.DebtorCode,a.DebtorName, c.Desc2,a.SalesAgent, SUM(b.Totalex), SUM(b.TaxValue), SUM(b.Totalin), Uploaded, Status, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4 FROM Sales a JOIN SalesDtl b ON a.DocNo = b.DocNo INNER JOIN Debtor c ON a.DebtorCode = c.AccNo GROUP BY a.DocNo&quot;,
+      &quot;SELECT Sales.*, Debtor.TaxType, Debtor.DisplayTerm, Debtor.DetailDiscount FROM Sales INNER JOIN Debtor ON Sales.DebtorCode = Debtor.AccNo WHERE DocNo='MIN-00016'&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="psms_v3.app.main" />
@@ -376,7 +381,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725333581706</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="payment issues 0.00">
+      <option name="closed" value="true" />
+      <created>1727781984801</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727781984801</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -396,7 +409,8 @@
     <MESSAGE value="empty discount text bug fixed" />
     <MESSAGE value="detail discount not showing fixed, &#10;tax disabled item detail page layout error fix" />
     <MESSAGE value="detail discount not showing fixed, &#10;tax disabled item detail page layout error fix&#10;download price bug fixed&#10;-change float to big decimal&#10;-change valueOf to parseDouble" />
-    <option name="LAST_COMMIT_MESSAGE" value="detail discount not showing fixed, &#10;tax disabled item detail page layout error fix&#10;download price bug fixed&#10;-change float to big decimal&#10;-change valueOf to parseDouble" />
+    <MESSAGE value="payment issues 0.00" />
+    <option name="LAST_COMMIT_MESSAGE" value="payment issues 0.00" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

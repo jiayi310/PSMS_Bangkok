@@ -231,15 +231,20 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
             // Path to your PDF file
             File pdfFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "PSMSExport/" + invoice.getDocNo() + ".pdf");
 
-            // Create an Intent to view the PDF file
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            Uri uri = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".provider", pdfFile);
-            intent.setDataAndType(uri, "application/pdf");
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            if (pdfFile.length() > 0) {
+                // Create an Intent to view the PDF file
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Uri uri = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".provider", pdfFile);
+                intent.setDataAndType(uri, "application/pdf");
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            // Create a chooser to let the user pick a PDF viewer
-            Intent chooser = Intent.createChooser(intent, "Open File");
-            startActivity(chooser);
+                // Create a chooser to let the user pick a PDF viewer
+                Intent chooser = Intent.createChooser(intent, "Open File");
+                startActivity(chooser);
+            } else{
+                Toast.makeText(InvoiceDtlMultipleTab.this, "Empty File",
+                        Toast.LENGTH_SHORT).show();
+            }
 
         }
 
@@ -249,6 +254,8 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+
+
 
         /*
         Intent intent = new Intent();
