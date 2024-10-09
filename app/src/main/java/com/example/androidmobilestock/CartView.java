@@ -80,6 +80,8 @@ public class CartView extends AppCompatActivity {
     String SQLINCLAUSE = "";
     Boolean isAutoPrice = false;
 
+    TextView tv_noProducts;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +92,8 @@ public class CartView extends AppCompatActivity {
         actionBar.setTitle("Catalog");
         actionBar.setDisplayHomeAsUpEnabled(true);
         searchEditText = (EditText) findViewById(R.id.searchField);
+        tv_noProducts = findViewById(R.id.tv_noProducts);
+
 
         db = new ACDatabase(this);
 
@@ -367,6 +371,9 @@ public class CartView extends AppCompatActivity {
 
                     s_item.add(item);
 
+
+
+
                     if(invoice.getDebtorCode()!=null) {
                         if (isAutoPrice) {
                             Cursor cursor_pc = db.getPriceCategory(invoice.getDebtorCode());
@@ -422,6 +429,12 @@ public class CartView extends AppCompatActivity {
             if (dcurren.moveToFirst()) {
                 Default_curr = dcurren.getString(0);
             }
+        }
+
+        if (s_item.size() > 0) {
+            tv_noProducts.setVisibility(View.GONE);
+        } else {
+            tv_noProducts.setVisibility(View.VISIBLE);
         }
     }
 
@@ -514,6 +527,7 @@ public class CartView extends AppCompatActivity {
                         }
                         s_item.add(item);
 
+
                         if(invoice.getDebtorCode()!=null) {
                             if (isAutoPrice) {
                                 Cursor cursor_pc = db.getPriceCategory(invoice.getDebtorCode());
@@ -556,6 +570,13 @@ public class CartView extends AppCompatActivity {
                 }
 
             }
+
+        if (s_item.size() > 0) {
+            tv_noProducts.setVisibility(View.GONE);
+        } else {
+            tv_noProducts.setVisibility(View.VISIBLE);
+        }
+
         setOnClickListener();
         view_listView.setHasFixedSize(true);
         int mNoOfColumns = Utility.calculateNoOfColumns(this.getApplicationContext(), 180);
@@ -571,7 +592,6 @@ public class CartView extends AppCompatActivity {
     public void sort(){
         if (s_item.size() > 0) {
 
-
             for (int i = 0; i < s_item.size(); i++) {
                 boolean result = false;
 
@@ -585,7 +605,6 @@ public class CartView extends AppCompatActivity {
                     s_item_new.add(s_item.get(i));
                 }
             }
-
         }
     }
 

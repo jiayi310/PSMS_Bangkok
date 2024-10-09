@@ -38,12 +38,14 @@ public class ItemGroup extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Category");
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         this.listView = (GridView) findViewById(R.id.listView);
         this.listView2 = (GridView) findViewById(R.id.listView2);
         this.button = (Button)findViewById(R.id.button);
         this.reset = (Button) findViewById(R.id.buttonreset);
         this.listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         this.listView2.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+
         db = new ACDatabase(this);
         checkGroup = (ArrayList<String>) getIntent().getSerializableExtra("CheckedGroup");
         checkType = (ArrayList<String>) getIntent().getSerializableExtra("CheckedType");

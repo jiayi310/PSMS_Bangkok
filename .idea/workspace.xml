@@ -141,23 +141,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="payment issues 0.00">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+    <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="purchase receiving bug fixed">
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatementDtl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatementDtl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLDtlList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_DownloadList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_DownloadList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PPL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,11 +249,11 @@
       &quot;release&quot;
     ],
     &quot;com.android.tools.idea.sqlite.queryhistory&quot;: [
-      &quot;SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.BaseUOM, a.BarCode, b.HasBatchNo, SUM(c.Qty), c.Location FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode JOIN PO c ON b.ItemCode = c.ItemCode and a.UOM = c.UOM WHERE c.DocNo=\&quot;PO-000002\&quot; GROUP BY a.ItemCode;&quot;,
-      &quot;SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.BaseUOM, a.BarCode, b.HasBatchNo, SUM(c.Qty), c.Location FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode JOIN PO c ON b.ItemCode = c.ItemCode and a.UOM = c.UOM WHERE c.DocNo=\&quot;PO-000002\&quot;&quot;,
-      &quot;SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.BaseUOM, a.BarCode, b.HasBatchNo, SUM(c.Qty), c.Location FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode JOIN PO c ON b.ItemCode = c.ItemCode and a.UOM = c.UOM WHERE c.DocNo=\&quot;PO-000002 \&quot; Group by a.ItemCode;&quot;,
-      &quot;SELECT a.DocType,a.DocDate,a.DocNo,a.DebtorCode,a.DebtorName, c.Desc2,a.SalesAgent, SUM(b.Totalex), SUM(b.TaxValue), SUM(b.Totalin), Uploaded, Status, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4 FROM Sales a JOIN SalesDtl b ON a.DocNo = b.DocNo INNER JOIN Debtor c ON a.DebtorCode = c.AccNo GROUP BY a.DocNo&quot;,
-      &quot;SELECT Sales.*, Debtor.TaxType, Debtor.DisplayTerm, Debtor.DetailDiscount FROM Sales INNER JOIN Debtor ON Sales.DebtorCode = Debtor.AccNo WHERE DocNo='MIN-00016'&quot;
+      &quot;SELECT 1  FROM ItemBatch a, StockBalance b WHERE a.BatchNo = b.BatchNo  AND a.ItemCode = b.ItemCode AND a.ItemCode = \&quot;700001\&quot; AND upper(b.UOM) = upper(\&quot;pack\&quot;) AND b.Location = \&quot;HQ\&quot; AND a.BatchNo = \&quot;09092027\&quot; AND (a.ExpiryDate &gt;= strftime('%Y/%m/%d', date('now')) OR a.ExpiryDate IS NULL) LIMIT 1;&quot;,
+      &quot;SELECT 1  FROM ItemBatch a, StockBalance b WHERE a.BatchNo = b.BatchNo  AND a.ItemCode = b.ItemCode AND a.ItemCode = \&quot;700001\&quot; AND upper(b.UOM) = upper(\&quot;pack\&quot;) AND b.Location = \&quot;HQ\&quot; AND a.BatchNo = \&quot;09092027\&quot; LIMIT 1;&quot;,
+      &quot;SELECT 1  FROM ItemBatch a, StockBalance b WHERE a.BatchNo = b.BatchNo  AND a.ItemCode = b.ItemCode AND a.ItemCode = \&quot;700001\&quot; AND upper(b.UOM) = upper(\&quot;pack\&quot;) AND b.Location = \&quot;HQ\&quot; AND a.BatchNo = \&quot;09092027\&quot;;&quot;,
+      &quot;SELECT 1  FROM ItemBatch a, StockBalance b WHERE a.BatchNo = b.BatchNo  AND a.ItemCode = b.ItemCode AND a.ItemCode = \&quot;700001\&quot; AND upper(b.UOM) = upper(\&quot;pack\&quot;) AND b.Location = \&quot;HQQ\&quot; AND a.BatchNo = \&quot;09092027\&quot;;&quot;,
+      &quot;SELECT *  FROM ItemBatch a, StockBalance b WHERE a.BatchNo = b.BatchNo  AND a.ItemCode = b.ItemCode AND a.ItemCode = \&quot;700001\&quot; AND upper(b.UOM) = upper(\&quot;pack\&quot;) AND b.Location = \&quot;HQ\&quot; AND a.BatchNo = \&quot;09092027\&quot;;&quot;
     ]
   }
 }</component>
@@ -389,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727781984801</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="purchase receiving bug fixed">
+      <option name="closed" value="true" />
+      <created>1728301961038</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728301961038</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,7 +404,8 @@
     <MESSAGE value="detail discount not showing fixed, &#10;tax disabled item detail page layout error fix" />
     <MESSAGE value="detail discount not showing fixed, &#10;tax disabled item detail page layout error fix&#10;download price bug fixed&#10;-change float to big decimal&#10;-change valueOf to parseDouble" />
     <MESSAGE value="payment issues 0.00" />
-    <option name="LAST_COMMIT_MESSAGE" value="payment issues 0.00" />
+    <MESSAGE value="purchase receiving bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="purchase receiving bug fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5513,14 +5513,40 @@ public class ACDatabase extends SQLiteOpenHelper {
 
 
 
-    public Cursor getAllItemGroupType(ArrayList<String> ItemGroup, ArrayList<String> ItemType) {
+//    public Cursor getAllItemGroupType(ArrayList<String> ItemGroup, ArrayList<String> ItemType) {
+//        SQLiteDatabase database = this.getReadableDatabase();
+//        String selection = " IN ('" + TextUtils.join("', '", ItemGroup) + "')";
+//        String selection2 = " IN ('" + TextUtils.join("', '", ItemType) + "')";
+//        String selectQuery = "SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE ItemGroup" + selection + " AND ItemType" + selection2 ;
+//        Cursor data = database.rawQuery(selectQuery, null);
+//        return data;
+//    }
+
+        public Cursor getAllItemGroupType(ArrayList<String> ItemGroup, ArrayList<String> ItemType) {
         SQLiteDatabase database = this.getReadableDatabase();
-        String selection = " IN ('" + TextUtils.join("', '", ItemGroup) + "')";
-        String selection2 = " IN ('" + TextUtils.join("', '", ItemType) + "')";
-        String selectQuery = "SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode=b.ItemCode WHERE ItemGroup" + selection + " AND ItemType" + selection2 ;
-        Cursor data = database.rawQuery(selectQuery, null);
+        StringBuilder selectQuery = new StringBuilder("SELECT b.ItemCode, a.UOM, b.Description, b.Desc2, b.ItemGroup, b.ItemType, b.TaxType, b.PurchaseTaxType, b.BaseUOM, a.Price, a.Price2, a.Price3, a.Price4, a.Price5, a.Price6, a.BarCode, a.Shelf, a.Rate, b.ItemCode2, a.MinPrice, a.MaxPrice, b.HasBatchNo FROM ItemUOM a JOIN Item b ON a.ItemCode = b.ItemCode");
+
+        ArrayList<String> conditions = new ArrayList<>();
+
+        if (ItemGroup != null && !ItemGroup.isEmpty()) {
+            String groupCondition = "b.ItemGroup IN ('" + TextUtils.join("', '", ItemGroup) + "')";
+            conditions.add(groupCondition);
+        }
+
+        if (ItemType != null && !ItemType.isEmpty()) {
+            String typeCondition = "b.ItemType IN ('" + TextUtils.join("', '", ItemType) + "')";
+            conditions.add(typeCondition);
+        }
+
+        // Add conditions to the WHERE clause
+        if (!conditions.isEmpty()) {
+            selectQuery.append(" WHERE ").append(TextUtils.join(" AND ", conditions));
+        }
+
+        Cursor data = database.rawQuery(selectQuery.toString(), null);
         return data;
     }
+
 
     public Cursor getAllItemGroup(ArrayList<String> ItemGroup) {
         SQLiteDatabase database = this.getReadableDatabase();
