@@ -6994,18 +6994,84 @@ public class AC_Class {
                             String.format("%23s", currencyword) + "\r\n";
                 }
 
+                /*
+                %: This marks the start of a format specifier.
+                -: This means left-align the text. Without the -, the text would be right-aligned.
+                14: This specifies the width of the text field, meaning the printed string will occupy at least 14 characters. If the string is shorter than 14 characters, spaces will be added to the right to fill up the width.
+                s: This represents that you are formatting a string.
+                \r\n: Moves the cursor to the start of the line and then to the next line (Windows-style newline).
+                 */
+
 
                 String details1 = "";
                 float totalIn = 0.00f;
                 float totalEx = 0.00f;
                 float totalTax = 0.00f;
                 for (int i = 0; i < invoiceDetailsList.size(); i++) {
+                    String itemCode = invoiceDetailsList.get(i).ItemCode;
+                    String itemCodeFirstLine = itemCode.length() > 13 ? itemCode.substring(0, 13) : itemCode;
+                    String itemCodeOverflow = itemCode.length() > 13 ? itemCode.substring(13) : "";
+
+                    String itemCode2 = invoiceDetailsList.get(i).ItemCode;
+                    String itemCode2FirstLine = itemCode2.length() > 7 ? itemCode2.substring(0, 7) : itemCode2;
+                    String itemCode2Overflow = itemCode2.length() > 7 ? itemCode2.substring(7) : "";
+
                     if (reportNameFP.equals("Tax Invoice"))
                     {
-                        details1 += String.format(Locale.getDefault(), "%-8s%5s%9s%6s%8s%10s\r\n", (invoiceDetailsList.get(i).ItemCode.length()>8 ? invoiceDetailsList.get(i).ItemCode.substring(0,7) : invoiceDetailsList.get(i).ItemCode), new DecimalFormat("#.###").format(invoiceDetailsList.get(i).Quantity), String.format("%.2f", invoiceDetailsList.get(i).UPrice), String.format("%.2f", invoiceDetailsList.get(i).Discount), String.format("%.2f", invoiceDetailsList.get(i).getTaxValue()), String.format("%.2f", invoiceDetailsList.get(i).Total_In)) + (invoiceDetailsList.get(i).ItemDescription == null ? "" : invoiceDetailsList.get(i).ItemDescription) + "\r\n\r\n";
+                        details1 += String.format(Locale.getDefault(),
+                                "%-8s%5s%9s%6s%8s%10s\r\n",
+//                                (invoiceDetailsList.get(i).ItemCode.length()>8 ? invoiceDetailsList.get(i).ItemCode.substring(0,7) : invoiceDetailsList.get(i).ItemCode),
+                                itemCode2FirstLine,
+                                new DecimalFormat("#.###").format(invoiceDetailsList.get(i).Quantity),
+                                String.format("%.2f", invoiceDetailsList.get(i).UPrice),
+                                String.format("%.2f", invoiceDetailsList.get(i).Discount),
+                                String.format("%.2f", invoiceDetailsList.get(i).getTaxValue()),
+                                String.format("%.2f", invoiceDetailsList.get(i).Total_In));
+
+                        while (!itemCode2Overflow.isEmpty()) {
+                            // Print next 13 characters in each subsequent line until there are no more characters left
+                            String currentLine = itemCode2Overflow.length() > 7 ? itemCode2Overflow.substring(0, 7) : itemCode2Overflow;
+                            // Just print the remaining part of the item code, aligned to the first column
+                            details1 += String.format(Locale.getDefault(),
+                                    "%-8s\r\n",
+                                    currentLine);
+
+                            // Update the overflow for the next iteration
+                            itemCode2Overflow = itemCode2Overflow.length() > 7 ? itemCode2Overflow.substring(7) : "";
+                        }
+
+                        details1 += String.format(Locale.getDefault(),
+                                "%-8s\r\n\r\n",
+                                invoiceDetailsList.get(i).ItemDescription);
                     }
                     else {
-                        details1 += String.format(Locale.getDefault(), "%-14s%5s%9s%8s%10s\r\n", (invoiceDetailsList.get(i).ItemCode.length()>12 ? invoiceDetailsList.get(i).ItemCode.substring(0,12) : invoiceDetailsList.get(i).ItemCode), new DecimalFormat("#.###").format(invoiceDetailsList.get(i).Quantity), String.format("%.2f", invoiceDetailsList.get(i).UPrice), String.format("%.2f", invoiceDetailsList.get(i).Discount), String.format("%.2f", invoiceDetailsList.get(i).Total_In)) + (invoiceDetailsList.get(i).ItemDescription == null ? "" : invoiceDetailsList.get(i).ItemDescription) + "\r\n\r\n";
+                        // Print the first line with the item code and other details
+                        details1 += String.format(Locale.getDefault(),
+                                "%-14s%5s%9s%8s %9s\r\n",
+                                itemCodeFirstLine,
+                                new DecimalFormat("#.###").format(invoiceDetailsList.get(i).Quantity),
+                                String.format("%.2f", invoiceDetailsList.get(i).UPrice),
+                                String.format("%.2f", invoiceDetailsList.get(i).Discount),
+                                String.format("%.2f", invoiceDetailsList.get(i).Total_In));
+
+                        // If there is an overflow (item code longer than 13 characters),
+                        // print the remaining characters on the next lines
+                        while (!itemCodeOverflow.isEmpty()) {
+                            // Print next 13 characters in each subsequent line until there are no more characters left
+                            String currentLine = itemCodeOverflow.length() > 13 ? itemCodeOverflow.substring(0, 13) : itemCodeOverflow;
+                            // Just print the remaining part of the item code, aligned to the first column
+                            details1 += String.format(Locale.getDefault(),
+                                    "%-14s\r\n",
+                                    currentLine);
+
+                            // Update the overflow for the next iteration
+                            itemCodeOverflow = itemCodeOverflow.length() > 16 ? itemCodeOverflow.substring(16) : "";
+                        }
+
+                        // Now, print the description after the item code has been fully printed
+                        details1 += String.format(Locale.getDefault(),
+                                "%-14s\r\n\r\n",
+                                invoiceDetailsList.get(i).ItemDescription);
                     }
                     totalEx += invoiceDetailsList.get(i).getTotal_Ex();
                     totalIn += invoiceDetailsList.get(i).getTotal_In();
@@ -7139,6 +7205,7 @@ public class AC_Class {
                 Log.i("custDebug", ex.getMessage());
             }
         }
+
         //Disconnect Printer //
         void disconnectBT() throws IOException
         {
