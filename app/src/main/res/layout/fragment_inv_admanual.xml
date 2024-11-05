@@ -148,20 +148,35 @@
                     app:layout_constraintTop_toBottomOf="@+id/invdtl_item_lbl" />
 
                 <TextView
+                    android:id="@+id/invdtl_desc_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:text="Description:"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/merriweather_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/invdtl_item_textView" />
+
+                <EditText
                     android:id="@+id/invdtl_item_detail_txt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/border"
                     android:gravity="center_vertical"
+                    android:maxLength="250"
                     android:padding="5dp"
+                    android:selectAllOnFocus="true"
                     android:text="@={InvoiceDetail.ItemDescription}"
                     android:textColor="@android:color/black"
                     android:textSize="14sp"
                     app:fontFamily="@font/caudex_bold"
-                    app:layout_constraintEnd_toEndOf="@+id/invdtl_item_txt"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/invdtl_item_txt" />
+                    app:layout_constraintEnd_toEndOf="@+id/uom_text"
+                    app:layout_constraintStart_toStartOf="@+id/uom_text"
+                    app:layout_constraintTop_toBottomOf="@id/invdtl_desc_lbl" />
 
                 <TextView
                     android:id="@+id/invdtl_lbl_UOM"

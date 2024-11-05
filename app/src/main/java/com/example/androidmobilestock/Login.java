@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // Placeholder
-        versionNo = "3.9.36";
+        versionNo = "3.9.37";
 
         reg = new AC_Class.Register();
 
@@ -374,6 +374,10 @@ public class Login extends AppCompatActivity {
             Cursor checkData = db.loginValidate(binding.txtID.getText().toString(),
                     binding.txtpw.getText().toString().toUpperCase());
 
+//            Cursor checkData = db.loginValidate(binding.txtID.getText().toString(),
+//                    "");
+
+
             if (checkData.getCount() > 0) {
                 checkData.moveToNext();
 
@@ -503,6 +507,7 @@ public class Login extends AppCompatActivity {
 
             JSONArray users = new JSONArray(status);
             if(users.length() > 0 && users!=null) {
+                Log.d("testcustdebug", "why: ");
                 db.deleteUsers();
 
                 for (int i = 0; i < users.length(); i++) {

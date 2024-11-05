@@ -2638,6 +2638,7 @@ public class AC_Class {
             } else {
                 Total_In = in.readDouble();
             }
+            
             Line_No = in.readString();
             Remarks = in.readString();
             BatchNo = in.readString();
@@ -2713,6 +2714,7 @@ public class AC_Class {
                 dest.writeByte((byte) 1);
                 dest.writeDouble(Total_In);
             }
+            
             dest.writeString(Line_No);
             dest.writeString(Remarks);
             dest.writeString(BatchNo);
@@ -2986,6 +2988,13 @@ public class AC_Class {
 
         private String Terms;
         private String DetailDiscount;
+        private Double SubTotal;
+        private Double TotalDiscount;
+        private Double TotalTax;
+        private Boolean IsRound;
+        private Double RoundingAdj;
+        private Double TotalIn;
+        private Double TotalEx;
         private List<AC_Class.InvoiceDetails> invoiceDetailsList;
 
         public Invoice() {
@@ -3064,6 +3073,43 @@ public class AC_Class {
             invoiceDetailsList = new ArrayList<>();
         }
 
+        public Invoice(String docNo, String createdTimeStamp, String docDate, String debtorCode,
+                       String debtorName, String agent, String taxType, String docType, String signature,
+                       String phone, String fax, String attention,String address1, String address2,
+                       String address3, String address4, String remarks, String remarks2, String remarks3,
+                       String remarks4, String createduser, String creditTerm, String detailDiscount, Double totalIn, Double totalEx, Double roundingAdj, Double totalTax, Double subTotal, Boolean isRound) {
+            this.docNo = docNo;
+            this.createdTimeStamp = createdTimeStamp;
+            this.docDate = docDate;
+            this.debtorCode = debtorCode;
+            this.debtorName = debtorName;
+            this.agent = agent;
+            this.taxType = taxType;
+            this.docType = docType;
+            this.uploaded = 0;
+            this.signature = signature;
+            this.phone = phone;
+            this.fax = fax;
+            this.attention = attention;
+            this.address1 = address1;
+            this.address2 = address2;
+            this.address3 = address3;
+            this.address4 = address4;
+            this.Remarks = remarks;
+            this.Remarks2 = remarks2;
+            this.Remarks3 = remarks3;
+            this.Remarks4 = remarks4;
+            this.Createduser = createduser;
+            this.creditTerm = creditTerm;
+            this.DetailDiscount = detailDiscount;
+            this.TotalIn = totalIn;
+            this.TotalEx = totalEx;
+            this.RoundingAdj = roundingAdj;
+            this.TotalTax = totalTax;
+            this.SubTotal = subTotal;
+            this.IsRound = isRound;
+            invoiceDetailsList = new ArrayList<>();
+        }
 
         protected Invoice(Parcel in) {
             docNo = in.readString();
@@ -3095,6 +3141,40 @@ public class AC_Class {
             invoiceDetailsList = new ArrayList<>();
             Terms =  in.readString();
             DetailDiscount = in.readString();
+            if (in.readByte() == 0) {
+                SubTotal = null;
+            } else {
+                SubTotal = in.readDouble();
+            }
+            if (in.readByte() == 0) {
+                TotalDiscount = null;
+            } else {
+                TotalDiscount = in.readDouble();
+            }
+            if (in.readByte() == 0) {
+                TotalTax = null;
+            } else {
+                TotalTax = in.readDouble();
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                IsRound = in.readBoolean();
+            }
+            if (in.readByte() == 0) {
+                RoundingAdj = null;
+            } else {
+                RoundingAdj = in.readDouble();
+            }
+            if (in.readByte() == 0) {
+                TotalIn = null;
+            } else {
+                TotalIn = in.readDouble();
+            }
+            if (in.readByte() == 0) {
+                TotalEx = null;
+            } else {
+                TotalEx = in.readDouble();
+            }
+
             in.readTypedList(invoiceDetailsList, InvoiceDetails.CREATOR);
         }
 
@@ -3128,6 +3208,47 @@ public class AC_Class {
             dest.writeString(LastModifiedDateTime);
             dest.writeString(Terms);
             dest.writeString(DetailDiscount);
+            if (SubTotal == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeDouble(SubTotal);
+            }
+            if (TotalDiscount == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeDouble(TotalDiscount);
+            }
+            if (TotalTax == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeDouble(TotalTax);
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                dest.writeBoolean(IsRound != null && IsRound);
+
+            }
+            if (RoundingAdj == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeDouble(RoundingAdj);
+            }
+            if (TotalIn == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeDouble(TotalIn);
+            }
+            if (TotalEx == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeDouble(TotalEx);
+            }
+
             dest.writeTypedList((List<InvoiceDetails>) invoiceDetailsList);
         }
 
@@ -3415,6 +3536,76 @@ public class AC_Class {
         public void setDetailDiscount(String detailDiscountFP) {
             DetailDiscount = detailDiscountFP;
             notifyPropertyChanged(BR.detailDiscount);
+        }
+
+        @Bindable
+        public Double getSubTotal() {
+            return SubTotal;
+        }
+
+        public void setSubTotal(Double subTotal) {
+            SubTotal = subTotal;
+            notifyPropertyChanged(BR.subTotal);
+        }
+
+        @Bindable
+        public Double getTotalDiscount() {
+            return TotalDiscount;
+        }
+
+        public void setTotalDiscount(Double totalDiscount) {
+            TotalDiscount = totalDiscount;
+            notifyPropertyChanged(BR.totalDiscount);
+        }
+
+        @Bindable
+        public Double getTotalTax() {
+            return TotalTax;
+        }
+
+        public void setTotalTax(Double totalTax) {
+            TotalTax = totalTax;
+            notifyPropertyChanged(BR.totalTax);
+        }
+
+        @Bindable
+        public Boolean getIsRound() {
+            return IsRound;
+        }
+
+        public void setIsRound(Boolean isRound) {
+            IsRound = isRound;
+            notifyPropertyChanged(BR.isRound);
+        }
+
+        @Bindable
+        public Double getRoundingAdj() {
+            return RoundingAdj;
+        }
+
+        public void setRoundingAdj(Double roundingAdj) {
+            RoundingAdj = roundingAdj;
+            notifyPropertyChanged(BR.roundingAdj);
+        }
+
+        @Bindable
+        public Double getTotalIn() {
+            return TotalIn;
+        }
+
+        public void setTotalIn(Double totalIn) {
+            TotalIn = totalIn;
+            notifyPropertyChanged(BR.totalIn);
+        }
+
+        @Bindable
+        public Double getTotalEx() {
+            return TotalEx;
+        }
+
+        public void setTotalEx(Double totalEx) {
+            TotalEx = totalEx;
+            notifyPropertyChanged(BR.totalEx);
         }
 
         @Bindable
@@ -6750,9 +6941,37 @@ public class AC_Class {
             if (data.getCount() > 0)
             {
                 data.moveToNext();
-                invoiceHeader = new Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(10), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
-                        data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Address1")), data.getString(data.getColumnIndex("Address2")), data.getString(data.getColumnIndex("Address3")), data.getString(data.getColumnIndex("Address4")), data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")),
-                        data.getString(data.getColumnIndex("Remarks3")), data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("DisplayTerm")),data.getString(data.getColumnIndex("DetailDiscount")));
+                invoiceHeader = new Invoice(
+                        data.getString(1),
+                        data.getString(2),
+                        data.getString(3),
+                        data.getString(4),
+                        data.getString(5),
+                        data.getString(10),
+                        data.getString(data.getColumnIndex("TaxType")),
+                        data.getString(7),
+                        data.getString(data.getColumnIndex("Signature")),
+                        data.getString(data.getColumnIndex("Phone")),
+                        data.getString(data.getColumnIndex("Fax")),
+                        data.getString(data.getColumnIndex("Attention")),
+                        data.getString(data.getColumnIndex("Address1")),
+                        data.getString(data.getColumnIndex("Address2")),
+                        data.getString(data.getColumnIndex("Address3")),
+                        data.getString(data.getColumnIndex("Address4")),
+                        data.getString(data.getColumnIndex("Remarks")),
+                        data.getString(data.getColumnIndex("Remarks2")),
+                        data.getString(data.getColumnIndex("Remarks3")),
+                        data.getString(data.getColumnIndex("Remarks4")),
+                        data.getString(data.getColumnIndex("CreatedUser")),
+                        data.getString(data.getColumnIndex("DisplayTerm")),
+                        data.getString(data.getColumnIndex("DetailDiscount")),
+                        data.getDouble(data.getColumnIndex("TotalIn")),
+                        data.getDouble(data.getColumnIndex("TotalEx")),
+                        data.getDouble(data.getColumnIndex("RoundingAdj")),
+                        data.getDouble(data.getColumnIndex("TotalTax")),
+                        data.getDouble(data.getColumnIndex("SubTotal")),
+                        data.getDouble(data.getColumnIndex("IsRound")) != 0.0);
+
             }
             Cursor data1 = db.getInvoiceDetailsPrint(docNo);
             if (data1.getCount() > 0) {
@@ -6986,6 +7205,14 @@ public class AC_Class {
                 String detailheader3 = String.format("%28s", currencyword) +
                         String.format("%17s", currencyword) + "\r\n";
 
+                String roundingAdj = "";
+                roundingAdj = String.format(Locale.getDefault(), "%-18s%-2s%26s\r\n", "Rounding Adj ", ":" , String.format("%.2f",invoiceHeader.getRoundingAdj()));
+                String subTotal = "";
+                subTotal = String.format(Locale.getDefault(), "%-18s%-2s%26s\r\n", "SubTotal " + currencyword, ":" , String.format("%.2f",invoiceHeader.getSubTotal() + invoiceHeader.getTotalTax()));
+                String totalIN = "";
+                totalIN = String.format(Locale.getDefault(), "%-18s%-2s%26s\r\n", "Final Total " + currencyword, ":" , String.format("%.2f",invoiceHeader.getTotalIn()));
+
+
                 if (reportNameFP.equals("Tax Invoice"))
                 {
                     detailheader2 = String.format("%-10s", "Item") + String.format("%-4s", "Qty") + String.format("%-8s", " U.Price") + String.format("%-10s", " Disc.") + String.format("%-6s", " Tax") + String.format("%-8s", " SubTotal") + "\r\n";
@@ -7086,6 +7313,8 @@ public class AC_Class {
                 }
                 totalAmount += String.format(Locale.getDefault(), "%-18s%-2s%26s\r\n", "Final Total " + currencyword, ":" , String.format("%.2f",totalIn));
 
+
+
                 String payments = "";
                 String cashChanges = "";
                 if (paymentList != null) {
@@ -7153,7 +7382,14 @@ public class AC_Class {
                 outputStream.write(Formatter.bb3);
                 outputStream.write(divider.getBytes());
                 outputStream.write(Formatter.bb);
-                outputStream.write(totalAmount.getBytes());
+                if (invoiceHeader.getIsRound() == true){
+                    outputStream.write(subTotal.getBytes());
+                    outputStream.write(roundingAdj.getBytes());
+                }
+
+                outputStream.write(totalIN.getBytes());
+                //outputStream.write(totalAmount.getBytes());
+
                 printNewLine();
                 printNewLine();
                 outputStream.write(Formatter.cc);

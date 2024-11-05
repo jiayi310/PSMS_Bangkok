@@ -63,13 +63,15 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
     String companyHeader, salesReceiptFormat;
     boolean isFresh;
     String salesFormat;
-    TextView attention,attention2,fax,fax2,remark,remark2,remark3,remark4,remark5,remark6,remark7,remark8;
+    TextView attention,attention2,fax,fax2,remark,remark2,remark3,remark4,remark5,remark6,remark7,remark8, txt_totalExTax, txt_roundingAdj;
     Bitmap invoiceheader,scaledheader;
     PdfDocument document;
     String defaultCurr;
 
     private static final int BLUETOOTH_REQUEST_CODE_IMPORT = 2;
     private String[] bluetoothPermissions;
+    Double nTotalExTax;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,8 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
         remark6 = findViewById(R.id.text_remark3);
         remark7 = findViewById(R.id.txt_remark7);
         remark8 = findViewById(R.id.text_remark4);
+        txt_totalExTax = findViewById(R.id.txt_totalExTax);
+        txt_roundingAdj = findViewById(R.id.txt_roundingAdj);
         invoiceheader = BitmapFactory.decodeResource(getResources(),R.drawable.logo_presoft);
         scaledheader = Bitmap.createScaledBitmap(invoiceheader,1200,518,false);
 
@@ -127,6 +131,21 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
         getDebtor(docNo);
         binding.setInvoice(invoice);
         binding.setPayment(payment);
+
+        Double nTotalEx = debtor.getTotalEx();
+        Double nToTalTax = debtor.getTotalTax();
+        nTotalExTax = nTotalEx + nToTalTax;
+
+        Double nRoundingAdj = debtor.getRoundingAdj();
+
+        if (debtor.getIsRound() == true){
+            txt_totalExTax.setText(String.format("%.2f", nTotalExTax));
+            txt_roundingAdj.setText(nRoundingAdj.toString());
+        } else {
+            txt_totalExTax.setVisibility(View.GONE);
+            txt_roundingAdj.setVisibility(View.GONE);
+        }
+
 
         //Hide the attention and fax
         if(debtor.getAttention()==null){
@@ -192,9 +211,36 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
 
         if (data.getCount() == 1) {
             data.moveToNext();
-            debtor = new AC_Class.Invoice(data.getString(1), data.getString(2), data.getString(3), data.getString(4), data.getString(5), data.getString(6), data.getString(data.getColumnIndex("TaxType")), data.getString(7), data.getString(data.getColumnIndex("Signature")), data.getString(data.getColumnIndex("Phone")), data.getString(data.getColumnIndex("Fax")),
-                    data.getString(data.getColumnIndex("Attention")), data.getString(data.getColumnIndex("Address1")), data.getString(data.getColumnIndex("Address2")), data.getString(data.getColumnIndex("Address3")), data.getString(data.getColumnIndex("Address4")),data.getString(data.getColumnIndex("Remarks")), data.getString(data.getColumnIndex("Remarks2")), data.getString(data.getColumnIndex("Remarks3"))
-                    , data.getString(data.getColumnIndex("Remarks4")), data.getString(data.getColumnIndex("CreatedUser")),data.getString(data.getColumnIndex("CreditTerm")), data.getString(data.getColumnIndex("DetailDiscount")));
+            debtor = new AC_Class.Invoice(
+                    data.getString(1),
+                    data.getString(2),
+                    data.getString(3),
+                    data.getString(4),
+                    data.getString(5),
+                    data.getString(6),
+                    data.getString(data.getColumnIndex("TaxType")),
+                    data.getString(7),
+                    data.getString(data.getColumnIndex("Signature")),
+                    data.getString(data.getColumnIndex("Phone")),
+                    data.getString(data.getColumnIndex("Fax")),
+                    data.getString(data.getColumnIndex("Attention")),
+                    data.getString(data.getColumnIndex("Address1")),
+                    data.getString(data.getColumnIndex("Address2")),
+                    data.getString(data.getColumnIndex("Address3")),
+                    data.getString(data.getColumnIndex("Address4")),
+                    data.getString(data.getColumnIndex("Remarks")),
+                    data.getString(data.getColumnIndex("Remarks2")),
+                    data.getString(data.getColumnIndex("Remarks3")),
+                    data.getString(data.getColumnIndex("Remarks4")),
+                    data.getString(data.getColumnIndex("CreatedUser")),
+                    data.getString(data.getColumnIndex("CreditTerm")),
+                    data.getString(data.getColumnIndex("DetailDiscount")),
+                    data.getDouble(data.getColumnIndex("TotalIn")),
+                    data.getDouble(data.getColumnIndex("TotalEx")),
+                    data.getDouble(data.getColumnIndex("RoundingAdj")),
+                    data.getDouble(data.getColumnIndex("TotalTax")),
+                    data.getDouble(data.getColumnIndex("SubTotal")),
+                    data.getDouble(data.getColumnIndex("IsRound")) != 0.0);
 
             binding.setInv(debtor);
         }
@@ -370,26 +416,29 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
                 invoice.setDebtorCode(inv.getString(inv.getColumnIndex("DebtorCode")));
                 invoice.setDebtorName(inv.getString(inv.getColumnIndex("DebtorName")));
                 invoice.setAgent(inv.getString(inv.getColumnIndex("SalesAgent")));
+                invoice.setTotalEx(inv.getDouble(inv.getColumnIndex("TotalEx")));
+                invoice.setTotalIn(inv.getDouble(inv.getColumnIndex("TotalIn")));
+                invoice.setTotalTax(inv.getDouble(inv.getColumnIndex("TotalTax")));
 
             }
             // Read from table INV_DTL
-            try {
-                Double totalEx = 0.00d;
-                Double totalValue = 0.00d;
-                Double totalIn = 0.00d;
-                // Sum total
-                while (invDetails.moveToNext()) {
-                    // Hardcoded
-                    totalEx += invDetails.getDouble(13);
-                    totalValue += invDetails.getDouble(12);
-                    totalIn += invDetails.getDouble(14);
-                }
-                invoice.setTotalEx(totalEx);
-                invoice.setTotalTax(totalValue);
-                invoice.setTotalIn(totalIn);
-            } catch (Exception e) {
-                Log.i("custDebug", e.getMessage());
-            }
+//            try {
+//                Double totalEx = 0.00d;
+//                Double totalValue = 0.00d;
+//                Double totalIn = 0.00d;
+//                // Sum total
+//                while (invDetails.moveToNext()) {
+//                    // Hardcoded
+//                    totalEx += invDetails.getDouble(13);
+//                    totalValue += invDetails.getDouble(12);
+//                    totalIn += invDetails.getDouble(14);
+//                }
+//                invoice.setTotalEx(totalEx);
+//                invoice.setTotalTax(totalValue);
+//                invoice.setTotalIn(totalIn);
+//            } catch (Exception e) {
+//                Log.i("custDebug", e.getMessage());
+//            }
 
             // Read from table Payment
             StringBuilder stringBuilder = new StringBuilder();
@@ -703,14 +752,40 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
             }
 
             int end = 600;
-            //myPaint.setColor(Color.rgb(247, 147, 30));
             canvas.drawLine(marginLeft,end+20,pageWidth-marginLeft,end+20 ,myPaint);
-            //canvas.drawRect(380, end+20, pageWidth - marginLeft, end + 50, myPaint);
-            canvas.drawText("RINGGIT MALAYSIA " + EnglishNumberToWords.convert(invoice.getTotalIn()), marginLeft + 10, end + 38, myPaint);
+
+            String text = "RINGGIT MALAYSIA " + EnglishNumberToWords.convert(invoice.getTotalIn());
+
+
+            String[] words = text.split(" ");
+            StringBuilder lineBuilder = new StringBuilder();
+            String firstLine = "";
+            String secondLine = "";
+
+            for (String word : words) {
+                String tempLine = lineBuilder + (lineBuilder.length() > 0 ? " " : "") + word;
+                float tempLineWidth = myPaint.measureText(tempLine);
+
+                if (tempLineWidth > 310) {
+                    firstLine = lineBuilder.toString();
+                    secondLine = text.substring(firstLine.length()).trim();
+                    break;
+                } else {
+                    lineBuilder.append((lineBuilder.length() > 0 ? " " : "")).append(word);
+                }
+            }
+
+            if (firstLine.isEmpty()) {
+                canvas.drawText(text, marginLeft + 10, end + 38, myPaint);
+            } else {
+                canvas.drawText(firstLine, marginLeft + 10, end + 38, myPaint);
+                canvas.drawText(secondLine, marginLeft + 10, end + 48, myPaint);
+            }
+
+
             myPaint.setTextSize(6);
             canvas.drawText("Notes:", marginLeft + 10, end + 58, myPaint);
             String[] myFormatArray = salesReceiptFormat.split("\n");
-
 
             myPaint.setColor(Color.BLACK);
             myPaint.setTextSize(8);
@@ -724,8 +799,39 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
             canvas.drawLine(450, end+40, pageWidth - marginLeft, end + 40, myPaint);
             canvas.drawLine(pageWidth - marginLeft, end+27, pageWidth - marginLeft, end + 40, myPaint);
             myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
-            canvas.drawText(String.format("%.2f",invoice.getTotalIn()), pageWidth - marginLeft -10, end + 38, myPaint);
+            //canvas.drawText(String.format("%.2f",invoice.getTotalIn()), pageWidth - marginLeft -10, end + 38, myPaint);
+            canvas.drawText(String.format("%.2f",nTotalExTax), pageWidth - marginLeft -10, end + 38, myPaint);
             myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
+
+            if (debtor.getIsRound() == true){
+                //rounding
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+                canvas.drawText("Rounding Adj.", 440, end + 53, myPaint);
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
+                myPaint.setTextAlign(Paint.Align.RIGHT);
+                canvas.drawLine(450, end+42, pageWidth - marginLeft, end + 42, myPaint);
+                canvas.drawLine(450, end+42, 450, end + 55, myPaint);
+                canvas.drawLine(450, end+55, pageWidth - marginLeft, end + 55, myPaint);
+                canvas.drawLine(pageWidth - marginLeft, end+42, pageWidth - marginLeft, end + 55, myPaint);
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+                canvas.drawText(String.format("%.2f",debtor.getRoundingAdj()), pageWidth - marginLeft -10, end + 53, myPaint);
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
+
+                //finalTotal
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+                canvas.drawText("Final Total", 440, end + 68, myPaint);
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
+                myPaint.setTextAlign(Paint.Align.RIGHT);
+                canvas.drawLine(450, end+57, pageWidth - marginLeft, end + 57, myPaint);
+                canvas.drawLine(450, end+57, 450, end + 70, myPaint);
+                canvas.drawLine(450, end+70, pageWidth - marginLeft, end + 70, myPaint);
+                canvas.drawLine(pageWidth - marginLeft, end+57, pageWidth - marginLeft, end + 70, myPaint);
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+                canvas.drawText(String.format("%.2f",debtor.getTotalIn()), pageWidth - marginLeft -10, end + 68, myPaint);
+                myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
+            }
+
+
             if(debtor.getSignature()!=null){
                 Bitmap decodedByte = BitmapFactory.decodeByteArray(Base64.decode(debtor.getSignature(), Base64.DEFAULT), 0,
                         Base64.decode(debtor.getSignature(), Base64.DEFAULT).length);
@@ -735,12 +841,13 @@ public class InvoiceDtlMultipleTab extends AppCompatActivity {
                 if(bitmapS!=null){
                     myPaint.setTextAlign(Paint.Align.LEFT);
                     canvas.setDensity(100);
+                    canvas.drawBitmap(bitmapS, 100, end + 140, myPaint);
+                    canvas.drawLine(marginLeft, end+205, 210, end + 205, myPaint);;
                     myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
                     canvas.drawText("Authorised Signature",
                             70, end + 220, myPaint);
                     myPaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.NORMAL));
-                    canvas.drawBitmap(bitmapS, 100, end + 163, myPaint);
-                    canvas.drawLine(marginLeft, end+205, 210, end + 205, myPaint);;
+
                 }
             }else{
                 myPaint.setTextAlign(Paint.Align.LEFT);

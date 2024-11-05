@@ -23,7 +23,7 @@ import java.util.Locale;
 
 public class ACDatabase extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 63;
+    private static final int DATABASE_VERSION = 64;
 
     private static final String DATABASE_NAME = "AutoCountDatabase";
 
@@ -677,6 +677,17 @@ public class ACDatabase extends SQLiteOpenHelper {
         db.execSQL("ALTER TABLE Debtor ADD COLUMN DetailDiscount VARCHAR(100);");
 
         db.execSQL("CREATE TABLE CreditTermMaintenance ( ID INTEGER PRIMARY KEY AUTOINCREMENT, DisplayTerm VARCHAR(80), Terms VARCHAR(80), TermType VARCHAR(80), TermDays VARCHAR(80), DiscountDays VARCHAR(80), DiscountPercent VARCHAR(80) ) ");
+
+
+        //Sales IsRound
+        db.execSQL("INSERT INTO REG (ID, Value) VALUES ('74','0')");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN SubTotal Double");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN TotalDiscount Double");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN TotalTax Double");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN IsRound Boolean");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN RoundingAdj Double");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN TotalIn Double");
+        db.execSQL("ALTER TABLE Sales ADD COLUMN TotalEx Double");
     }
 
     @Override
@@ -1396,6 +1407,18 @@ public class ACDatabase extends SQLiteOpenHelper {
             db.execSQL("ALTER TABLE Item ADD COLUMN IsPurchaseItem INTEGER DEFAULT 1 NOT NULL");
             db.execSQL("ALTER TABLE Item ADD COLUMN IsRawMaterialItem INTEGER DEFAULT 1 NOT NULL");
             db.execSQL("ALTER TABLE Item ADD COLUMN IsFinishGoodsItem INTEGER DEFAULT 1 NOT NULL");
+        }
+
+        if (oldVersion < 64) {
+            //Sales IsRound
+            db.execSQL("INSERT INTO REG (ID, Value) VALUES ('74','0')");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN SubTotal Double");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN TotalDiscount Double");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN TotalTax Double");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN IsRound Boolean");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN RoundingAdj Double");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN TotalIn Double");
+            db.execSQL("ALTER TABLE Sales ADD COLUMN TotalEx Double");
         }
 
     }
@@ -2351,6 +2374,13 @@ public class ACDatabase extends SQLiteOpenHelper {
             cv.put("LastModifiedDateTime", invoice.getLastModifiedDateTime());
             cv.put("LastModifiedUser", invoice.getLastModifiedUser());
             cv.put("CreditTerm", invoice.getCreditTerm());
+            cv.put("SubTotal", invoice.getSubTotal());
+            cv.put("TotalDiscount", invoice.getTotalDiscount());
+            cv.put("TotalTax", invoice.getTotalTax());
+            cv.put("IsRound", invoice.getIsRound());
+            cv.put("RoundingAdj", invoice.getRoundingAdj());
+            cv.put("TotalIn", invoice.getTotalIn());
+            cv.put("TotalEx", invoice.getTotalEx());
 
         } catch (Exception e) {
             Log.i("custDebug", e.getMessage());
@@ -2559,7 +2589,6 @@ public class ACDatabase extends SQLiteOpenHelper {
     public Cursor loginValidate(String login_ID, String Password) {
         SQLiteDatabase database = this.getReadableDatabase();
         Password = Hash.bin2hex(Hash.getHash(Password));
-//        Log.i("custDebug", "Hashed input: "+Password);
         Cursor data = database.rawQuery("SELECT * FROM " + TABLE_NAME_USERS +
                 " WHERE Username =? AND Pwd =?", new String[]{login_ID, Password});
 
@@ -3608,7 +3637,7 @@ public class ACDatabase extends SQLiteOpenHelper {
     //Get Printing Details (Inv Header) by DocNo
     public Cursor getInvoiceHeaderPrint(String docNo) {
         SQLiteDatabase database = this.getReadableDatabase();
-        Cursor data = database.rawQuery("SELECT Sales.DocNo, Sales.CreatedTimeStamp, Sales.DocDate, Sales.DebtorCode, Sales.DebtorName, Sales.SalesAgent, Sales.DocType, Sales.Signature, Sales.Phone, Sales.Fax, Sales.Attention, Debtor.Address1, Debtor.Address2, Debtor.Address3, Debtor.Address4, Sales.Remarks FROM Sales INNER JOIN Debtor ON Sales.DebtorCode=Debtor.AccNo WHERE DocNo =?", new String[]{docNo});
+        Cursor data = database.rawQuery("SELECT Sales.DocNo, Sales.CreatedTimeStamp, Sales.DocDate, Sales.DebtorCode, Sales.DebtorName, Sales.SalesAgent, Sales.DocType, Sales.Signature, Sales.Phone, Sales.Fax, Sales.Attention, Debtor.Address1, Debtor.Address2, Debtor.Address3, Debtor.Address4, Sales.Remarks, Sales.TotalIn, Sales.TotalEx, Sales.TotalTax FROM Sales INNER JOIN Debtor ON Sales.DebtorCode=Debtor.AccNo WHERE DocNo =?", new String[]{docNo});
         return data;
     }
 
@@ -3880,7 +3909,7 @@ public class ACDatabase extends SQLiteOpenHelper {
         SQLiteDatabase database = this.getReadableDatabase();
         Cursor data = database.rawQuery("SELECT " + "a.DocType, " + "a.DocDate, "
                 + "a.DocNo, " + "a.DebtorCode, " + "a.DebtorName, c.Desc2,"
-                + "a.SalesAgent, SUM(b.Totalex), SUM(b.TaxValue), SUM(b.Totalin), Uploaded, Status, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4 FROM Sales a JOIN SalesDtl b ON a.DocNo = b.DocNo INNER JOIN Debtor c ON a.DebtorCode = c.AccNo WHERE a.DocNo LIKE ? OR a.SalesAgent LIKE ? OR a.DebtorName LIKE ? OR a.Status LIKE ? OR a.Remarks LIKE ? OR a.Remarks2 LIKE ? OR a.Remarks3 LIKE ? OR a.Remarks4 LIKE ? GROUP BY " + "a.DocNo ORDER BY (substr(a.DocDate,7,4)||substr(a.DocDate,4,2)||substr(a.DocDate,1,2)) desc ,a.DocNo DESC", new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
+                + "a.SalesAgent, SUM(b.Totalex), SUM(b.TaxValue), a.TotalIn, Uploaded, Status, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4 FROM Sales a JOIN SalesDtl b ON a.DocNo = b.DocNo INNER JOIN Debtor c ON a.DebtorCode = c.AccNo WHERE a.DocNo LIKE ? OR a.SalesAgent LIKE ? OR a.DebtorName LIKE ? OR a.Status LIKE ? OR a.Remarks LIKE ? OR a.Remarks2 LIKE ? OR a.Remarks3 LIKE ? OR a.Remarks4 LIKE ? GROUP BY " + "a.DocNo ORDER BY (substr(a.DocDate,7,4)||substr(a.DocDate,4,2)||substr(a.DocDate,1,2)) desc ,a.DocNo DESC", new String[]{"%" + substring + "%", "%" + substring + "%", "%" + substring + "%", "%" + substring + "%"});
         // DocType, DocDate, DocNo, DebtorCode, DebtorName, SalesAgent, TotalEx,
         // TotalValue, TotalIn, Uploaded
         return data;
@@ -4166,7 +4195,7 @@ public class ACDatabase extends SQLiteOpenHelper {
                 + "a.SalesAgent, a.Phone, a.Fax, a.Attention, b.Location, b.ItemCode, b.ItemDescription, b.Qty, b.UOM, b.UPrice, b.SubTotal, "
                 + "b.Discount, b.TaxType, b.TaxRate, b.TaxValue, b.Totalex, b.TotalIn, b.LineNo, a.Address1, a.Address2, " +
                 "a.Address3, a.Address4, a.Remarks, a.Remarks2, a.Remarks3, a.Remarks4, b.Remarks AS [DtlRemarks], b.Remarks2 AS [DtlRemarks2], " +
-                "b.BatchNo, a.CreatedUser, a.CreatedTimeStamp, a.LastModifiedUser, a.LastModifiedDateTime, a.CreditTerm, b.DiscountText "
+                "b.BatchNo, a.CreatedUser, a.CreatedTimeStamp, a.LastModifiedUser, a.LastModifiedDateTime, a.CreditTerm, b.DiscountText, a.SubTotal AS FinalSubTotal, a.TotalDiscount AS FinalTotalDiscount, a.TotalTax AS FinalTotalTax, a.IsRound, a.RoundingAdj, a.TotalIn As FinalTotalIn, a.TotalEx AS FinalTotalEx"
                 + " FROM Sales a JOIN SalesDtl b ON b.DocNo = a.DocNo" +
                 " WHERE a.Uploaded=?", new String[]{"0"});
 //        Log.i("custDebug", "Cursor: "+DatabaseUtils.dumpCursorToString(data));

@@ -50,6 +50,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -63,6 +64,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -121,11 +123,14 @@ public class InvoiceDtlList extends AppCompatActivity {
     boolean isReorderEnabled;
     String ntaxType;
     String func;
+    boolean defaultSales5CentRounding = false;
+    CheckBox roundingCheckBox;
+    TextView txt_rounding, txt_total;
 
-    private void openInvoiceViewHistory() {
-        Intent intent = new Intent(this, InvoiceViewHistory.class);
-        startActivityForResult(intent, REQUEST_CODE_INVOICE_VIEW_HISTORY);
-    }
+//    private void openInvoiceViewHistory() {
+//        Intent intent = new Intent(this, InvoiceViewHistory.class);
+//        startActivityForResult(intent, REQUEST_CODE_INVOICE_VIEW_HISTORY);
+//    }
 
 //    //Bcast Receiver
 //    private BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -162,6 +167,9 @@ public class InvoiceDtlList extends AppCompatActivity {
         ivSign = (ImageView) binding.ivSign;
         recyclerView = findViewById(R.id.invdtllist_itemlist);
         btnMerge = findViewById(R.id.btnMerge);
+        roundingCheckBox = findViewById(R.id.roundingCheckBox);
+        txt_rounding = findViewById(R.id.txt_rounding);
+        txt_total = findViewById(R.id.txt_total);
 
         Intent intent = getIntent();
         if (intent != null){
@@ -219,6 +227,15 @@ public class InvoiceDtlList extends AppCompatActivity {
         Cursor cursor8 = db.getReg("41");
         if (cursor8.moveToFirst()) {
             salesOrderType = cursor8.getString(0);
+        }
+
+        Cursor cursor9 = db.getReg("74");
+        if(cursor9.moveToFirst()){
+            defaultSales5CentRounding = Boolean.valueOf(cursor9.getString(0));
+        }
+
+        if (defaultSales5CentRounding){
+            roundingCheckBox.setChecked(true);
         }
 
         if (isCustomBarcodeEnabled) {
@@ -302,25 +319,6 @@ public class InvoiceDtlList extends AppCompatActivity {
         }
 
 
-
-
-        // Check if selectedItems is not null and not empty
-        if (selectedItems != null && !selectedItems.isEmpty()) {
-
-            for (AC_Class.InvoiceDetails item : selectedItems) {
-                if (item != null) {
-
-
-                } else {
-
-                }
-            }
-        } else {
-            Log.e("InvoiceDtlList", "No items received or selectedItems is null.");
-        }
-
-
-//        getData();
         invoice = getIntent().getParcelableExtra("DataFromInvHeader");
         invoiceDetails.setDocNo(invoice.getDocNo());
         invoiceDetails.setDocDate(invoice.getDocDate());
@@ -335,12 +333,7 @@ public class InvoiceDtlList extends AppCompatActivity {
 
         binding.invdtlEditText.requestFocus();
 
-//        binding.invdtllistItemlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
-//
-//            }
-//        });
+
         binding.invdtlEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -526,6 +519,13 @@ public class InvoiceDtlList extends AppCompatActivity {
                 }
             }, intentFilter);
         }
+
+        roundingCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getInvoiceDetailList();
+            }
+        });
     }
 
 //    private void deleteItem(int position) {
@@ -810,11 +810,26 @@ public class InvoiceDtlList extends AppCompatActivity {
                 " %.2f", tempTax));
         binding.totalTxt.setText(String.format(Locale.getDefault(),
                 " %.2f", tempTotal));
+
+        //calculate rounding,
+        if (roundingCheckBox.isChecked()){
+            double total = tempTotal;
+            double roundedTotal = Math.round(total * 20) / 20.0;
+            double roundingDifference = roundedTotal - total;
+            binding.totalTxt.setText(String.format(Locale.getDefault(), " %.2f", roundedTotal));
+            txt_rounding.setText(String.format("%.2f", roundingDifference));
+            txt_total.setText(String.format(Locale.getDefault(), " %.2f", tempTotal));
+
+        } else {
+            txt_rounding.setText("0.00");
+        }
+
+
         checkOut.setDocNo(invoice.getDocNo());
         checkOut.setSubTotal(tempTotal);
         checkOut.setTotalTax(tempTotal);
-        checkOut.setTotal(tempTotal);
-
+        checkOut.setTotal(Double.parseDouble(binding.totalTxt.getText().toString()));
+        //checkOut.setTotal(tempTotal);
     }
 
     public boolean CheckEmpty(AC_Class.InvoiceDetails invoiceDetails) {
@@ -928,6 +943,17 @@ public class InvoiceDtlList extends AppCompatActivity {
             boolean commitDetails = db.UpdateInvoiceDetail(invoice);
 
             // Insert header
+            invoice.setSubTotal(Double.parseDouble(binding.subtotalTxt.getText().toString()));
+            invoice.setTotalDiscount(Double.parseDouble(binding.discountTxt.getText().toString()));
+            invoice.setTotalTax(Double.parseDouble(binding.taxTxt.getText().toString()));
+            if (roundingCheckBox.isChecked()){
+                invoice.setIsRound(true);
+            } else {
+                invoice.setIsRound(false);
+            }
+            invoice.setRoundingAdj(Double.parseDouble(txt_rounding.getText().toString()));
+            invoice.setTotalIn(Double.parseDouble(binding.totalTxt.getText().toString()));
+            invoice.setTotalEx(Double.parseDouble(binding.subtotalTxt.getText().toString()));
 
             invoice.setDocType("IV");
             Cursor debtor = db.getReg("4");
@@ -939,8 +965,6 @@ public class InvoiceDtlList extends AppCompatActivity {
             String date = sdf.format(new Date());
             invoice.setLastModifiedDateTime(date);
 
-
-            Log.d("Testing678", "inv: " + invoice.getCreditTerm());
 
             boolean insertHeader = db.insertInv(invoice);
             if (invoice.getDocNo().equals(db.getNextNo())) {
@@ -965,6 +989,18 @@ public class InvoiceDtlList extends AppCompatActivity {
         public void OnCashSalesTxtViewClicked(View view) {
             if (invoice.getInvoiceDetailsList().size() > 0) {
 
+                invoice.setSubTotal(Double.parseDouble(binding.subtotalTxt.getText().toString()));
+                invoice.setTotalDiscount(Double.parseDouble(binding.discountTxt.getText().toString()));
+                invoice.setTotalTax(Double.parseDouble(binding.taxTxt.getText().toString()));
+                if (roundingCheckBox.isChecked()){
+                    invoice.setIsRound(true);
+                } else {
+                    invoice.setIsRound(false);
+                }
+                invoice.setRoundingAdj(Double.parseDouble(txt_rounding.getText().toString()));
+                invoice.setTotalIn(Double.parseDouble(binding.totalTxt.getText().toString()));
+                invoice.setTotalEx(Double.parseDouble(binding.subtotalTxt.getText().toString()));
+
                 final String[] methods = {"Cash", "Credit Card", "Multi-Payment"};
                 final AlertDialog.Builder builder = new AlertDialog.Builder(InvoiceDtlList.this);
                 builder.setTitle("Pick a payment method");
@@ -973,6 +1009,7 @@ public class InvoiceDtlList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case 0: //Cash
+                                Log.d("Test123", "test size: " + invoice.getInvoiceDetailsList().size());
                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault());
                                 String date = sdf.format(new Date());
                                 invoice.setLastModifiedDateTime(date);
@@ -1247,8 +1284,16 @@ public class InvoiceDtlList extends AppCompatActivity {
         invoiceDetails.setTotal_Ex(invoiceDetails.getSubTotal() - invoiceDetails.getDiscount());
         invoiceDetails.setTaxValue((invoiceDetails.getTotal_Ex() * invoiceDetails.getTaxRate()) / 100);
         invoiceDetails.setTotal_In(invoiceDetails.getTotal_Ex() + invoiceDetails.getTaxValue());
-    }
 
+        //calculate rounding,
+        if (roundingCheckBox.isChecked()){
+            double total = invoiceDetails.getTotal_In();
+            double roundedTotal = Math.round(total * 20) / 20.0;
+            double roundingDifference = roundedTotal - total;
+
+            txt_rounding.setText(String.format("%.2f", roundingDifference));
+        }
+    }
 
     private int checkInvoiceDetailList(AC_Class.InvoiceDetails invoiceDetails) {
         int result = -1;

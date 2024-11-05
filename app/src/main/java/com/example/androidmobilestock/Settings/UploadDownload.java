@@ -2926,6 +2926,14 @@ public class UploadDownload extends AppCompatActivity {
                     jsonObject.put("LastModifiedDateTime", data.getString(data.getColumnIndex("LastModifiedDateTime")));
                     jsonObject.put("CreditTerm", data.getString(data.getColumnIndex("CreditTerm")));
                     jsonObject.put("DiscountText", data.getString(data.getColumnIndex("DiscountText")));
+                    jsonObject.put("FinalSubTotal", data.getDouble(data.getColumnIndex("FinalSubTotal")));
+                    jsonObject.put("FinalTotalDiscount", data.getDouble(data.getColumnIndex("FinalTotalDiscount")));
+                    jsonObject.put("FinalTotalTax", data.getDouble(data.getColumnIndex("FinalTotalTax")));
+                    Boolean value = data.getDouble(data.getColumnIndex("IsRound")) > 0;
+                    jsonObject.put("IsRound", value);
+                    jsonObject.put("RoundingAdj", data.getDouble(data.getColumnIndex("RoundingAdj")));
+                    jsonObject.put("FinalTotalIn", data.getDouble(data.getColumnIndex("FinalTotalIn")));
+                    jsonObject.put("FinalTotalEx", data.getDouble(data.getColumnIndex("FinalTotalEx")));
                     jsonList.add(jsonObject);
 //                    Log.i("custDebug", jsonObject.toString());
                 } catch (Exception e) {

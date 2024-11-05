@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,9 +28,9 @@ public class TransactionSettings extends AppCompatActivity {
     boolean isEnabled = false;
 
     //Initialize arrays
-    String[] settingsTitles = new String[]{"Tax Settings","Barcode", "Permission", "Auto Price", "Hybrid Mode (beta)", "Batch No Settings", "Allow Negative Inventory", "Min Selling Price Control","Enable PL Only Tally Uploaded", "Enable PR Only Tally Uploaded","Enable Batch Comparison","Enable Location Comparison","Allow Edit PO"};
-    int[] settingsIcons = new int[]{R.drawable.taxsettings, R.drawable.barcode,R.drawable.rfid, R.drawable.autoprice, R.drawable.process, R.drawable.batch, R.drawable.neginventory, R.drawable.neginventory , R.drawable.tallyupload, R.drawable.prupload, R.drawable.batchcompare, R.drawable.locationcompare, R.drawable.alloweditpo};
-    String[] settingSubtitles = new String[]{"", "", "", "", "", "", "", "", "", "","","", ""};
+    String[] settingsTitles = new String[]{"Tax Settings","Barcode", "Permission", "Auto Price", "Hybrid Mode (beta)", "Batch No Settings", "Allow Negative Inventory", "Min Selling Price Control","Enable PL Only Tally Uploaded", "Enable PR Only Tally Uploaded","Enable Batch Comparison","Enable Location Comparison","Allow Edit PO", "Default 5 Cents Rounding"};
+    int[] settingsIcons = new int[]{R.drawable.taxsettings, R.drawable.barcode,R.drawable.rfid, R.drawable.autoprice, R.drawable.process, R.drawable.batch, R.drawable.neginventory, R.drawable.neginventory , R.drawable.tallyupload, R.drawable.prupload, R.drawable.batchcompare, R.drawable.locationcompare, R.drawable.alloweditpo, R.drawable.fivecent};
+    String[] settingSubtitles = new String[]{"", "", "", "", "", "", "", "", "", "","","", "", ""};
     ArrayList<String> myModules = new ArrayList<String>();
     Boolean OnlyTallyUploaded = true;
     Boolean OnlyTallyUploadedPR = true;
@@ -37,6 +38,8 @@ public class TransactionSettings extends AppCompatActivity {
     Boolean LocationComparison = true;
     Boolean CollectionDetails = true;
     Boolean AllowEditPO = true;
+    Boolean DefaultSales5CentRounding = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,7 @@ public class TransactionSettings extends AppCompatActivity {
         getData4();
         getData6();
         getData7();
+        getData8();
         adapter = new TransactionListViewAdapter(TransactionSettings.this, settingsTitles,
                 settingsIcons, settingSubtitles);
         binding.listView.setAdapter(adapter);
@@ -143,6 +147,11 @@ public class TransactionSettings extends AppCompatActivity {
                         db.updateREG("65", String.valueOf(AllowEditPO));
                         getData6();
                         break;
+                    case "Default 5 Cents Rounding":
+                        DefaultSales5CentRounding = !DefaultSales5CentRounding;
+                        db.updateREG("74", String.valueOf(DefaultSales5CentRounding));
+                        getData8();
+                        break;
                 }
             }
         });
@@ -171,12 +180,12 @@ public class TransactionSettings extends AppCompatActivity {
 
     public void resetIconsList() {
         if (myModules.contains("BATCH")) {
-            settingsTitles = new String[]{"Tax Settings","Barcode", "Permission", "Auto Price", "Hybrid Mode (beta)", "Batch No Settings", "Allow Negative Inventory", "Min Selling Price Control","Enable PL Only Tally Uploaded", "Enable PR Only Tally Uploaded","Enable Batch Comparison","Enable Location Comparison","Allow Edit PO"};
-            settingsIcons = new int[]{R.drawable.taxsettings, R.drawable.barcode,R.drawable.rfid, R.drawable.autoprice, R.drawable.process, R.drawable.batch, R.drawable.neginventory, R.drawable.neginventory , R.drawable.tallyupload, R.drawable.prupload, R.drawable.batchcompare, R.drawable.locationcompare,R.drawable.alloweditpo};
+            settingsTitles = new String[]{"Tax Settings","Barcode", "Permission", "Auto Price", "Hybrid Mode (beta)", "Batch No Settings", "Allow Negative Inventory", "Min Selling Price Control","Enable PL Only Tally Uploaded", "Enable PR Only Tally Uploaded","Enable Batch Comparison","Enable Location Comparison","Allow Edit PO", "Default 5 Cents Rounding"};
+            settingsIcons = new int[]{R.drawable.taxsettings, R.drawable.barcode,R.drawable.rfid, R.drawable.autoprice, R.drawable.process, R.drawable.batch, R.drawable.neginventory, R.drawable.neginventory , R.drawable.tallyupload, R.drawable.prupload, R.drawable.batchcompare, R.drawable.locationcompare,R.drawable.alloweditpo, R.drawable.fivecent};
             settingSubtitles = new String[]{"", "", "", "", "", "", "", "", "", "",""};
         } else {
-            settingsTitles = new String[]{"Tax Settings","Barcode", "Permission", "Auto Price", "Hybrid Mode (beta)", "Allow Negative Inventory", "Min Selling Price Control","Enable PL Only Tally Uploaded", "Enable PR Only Tally Uploaded", "Enable Batch Comparison","Enable Location Comparison","Allow Edit PO"};
-            settingsIcons = new int[]{R.drawable.taxsettings, R.drawable.barcode,R.drawable.rfid, R.drawable.autoprice, R.drawable.process, R.drawable.neginventory, R.drawable.neginventory ,R.drawable.tallyupload, R.drawable.batchcompare, R.drawable.prupload, R.drawable.locationcompare,  R.drawable.alloweditpo};
+            settingsTitles = new String[]{"Tax Settings","Barcode", "Permission", "Auto Price", "Hybrid Mode (beta)", "Allow Negative Inventory", "Min Selling Price Control","Enable PL Only Tally Uploaded", "Enable PR Only Tally Uploaded", "Enable Batch Comparison","Enable Location Comparison","Allow Edit PO", "Default 5 Cents Rounding"};
+            settingsIcons = new int[]{R.drawable.taxsettings, R.drawable.barcode,R.drawable.rfid, R.drawable.autoprice, R.drawable.process, R.drawable.neginventory, R.drawable.neginventory ,R.drawable.tallyupload, R.drawable.batchcompare, R.drawable.prupload, R.drawable.locationcompare,  R.drawable.alloweditpo, R.drawable.fivecent};
             settingSubtitles = new String[]{"", "", "", "", "", "", "", "", "",""};
             db.updateREG("38", "false");
         }
@@ -255,11 +264,22 @@ public class TransactionSettings extends AppCompatActivity {
 
     }
 
+    void getData8() {
+
+        Cursor cursor2 = db.getReg("74");
+        if(cursor2.moveToFirst()){
+            DefaultSales5CentRounding = Boolean.valueOf(cursor2.getString(0));
+        }
+
+        refresh();
+
+    }
+
     void refresh(){
         if (myModules.contains("BATCH")) {
-            settingSubtitles = new String[]{"", "", "", String.valueOf(isEnabled), "", "", String.valueOf(NegativeInventory), String.valueOf(MinimumSellingPrice), String.valueOf(OnlyTallyUploaded), String.valueOf(OnlyTallyUploadedPR),String.valueOf(BatchComparison), String.valueOf(LocationComparison), String.valueOf(AllowEditPO)};
+            settingSubtitles = new String[]{"", "", "", String.valueOf(isEnabled), "", "", String.valueOf(NegativeInventory), String.valueOf(MinimumSellingPrice), String.valueOf(OnlyTallyUploaded), String.valueOf(OnlyTallyUploadedPR),String.valueOf(BatchComparison), String.valueOf(LocationComparison), String.valueOf(AllowEditPO), String.valueOf(DefaultSales5CentRounding)};
         }else{
-            settingSubtitles = new String[]{"", "", "", String.valueOf(isEnabled), "", String.valueOf(NegativeInventory), String.valueOf(MinimumSellingPrice), String.valueOf(OnlyTallyUploaded), String.valueOf(OnlyTallyUploadedPR),String.valueOf(BatchComparison), String.valueOf(LocationComparison), String.valueOf(AllowEditPO)};
+            settingSubtitles = new String[]{"", "", "", String.valueOf(isEnabled), "", String.valueOf(NegativeInventory), String.valueOf(MinimumSellingPrice), String.valueOf(OnlyTallyUploaded), String.valueOf(OnlyTallyUploadedPR),String.valueOf(BatchComparison), String.valueOf(LocationComparison), String.valueOf(AllowEditPO), String.valueOf(DefaultSales5CentRounding)};
         }
 
         adapter = new TransactionListViewAdapter(this, settingsTitles,
