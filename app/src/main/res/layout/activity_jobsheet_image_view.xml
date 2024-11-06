@@ -6,7 +6,7 @@
     <data>
         <variable
             name="handler"
-            type="com.example.androidmobilestock.Jobsheet_ImageView.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.Jobsheet_ImageView.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

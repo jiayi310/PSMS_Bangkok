@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="InvMenu"
-            type="com.example.androidmobilestock.AC_Class.PurchaseMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.PurchaseMenu" />
         <variable
             name="DefaultCurr"
             type="String" />

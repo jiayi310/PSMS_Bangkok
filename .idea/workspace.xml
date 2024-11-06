@@ -50,6 +50,11 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_item__list.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_item_detail.xml">
         <config>
           <theme>@style/AppTheme</theme>
@@ -81,6 +86,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_order_list.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_stock_count_home.xml">
         <config>
           <theme>@style/AppTheme</theme>
         </config>
@@ -125,12 +135,22 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/row_historyprice_list.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/row_inv_list.xml">
         <config>
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/row_invdtl_list.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/row_item_list.xml">
         <config>
           <theme>@style/AppTheme</theme>
         </config>
@@ -162,12 +182,585 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="344ab8ff-f488-4b66-ab35-f2a6570a41eb" name="Changes" comment="sales receipt format: item code length">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Interface/OnQuantityChangeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/psms_v3.app.androidTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/psms_v3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ACDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ACDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AC_Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AC_Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPaymentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPaymentAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPaymentDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPaymentDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPaymentDtlListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPaymentDtlListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPaymentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPaymentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPayment_OutstandingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPayment_OutstandingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ARPayment_OutstandingListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ARPayment_OutstandingListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AR_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AR_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/About.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/About.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgentListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/AgentListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Agent_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Agent_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AgingStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatementAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AgingStatementAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AgingStatementDtl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AgingStatementDtl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AnalyticModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AnalyticModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Analytics.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Analytics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/AnalyticsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/AnalyticsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/BK_Backup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/BK_Backup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/BK_Restore.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/BK_Restore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/BluetoothPrinter/DeviceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/BluetoothPrinter/DeviceList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/BluetoothPrinter/PrinterCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/BluetoothPrinter/PrinterCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/BluetoothPrinter/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/BluetoothPrinter/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CartList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CartListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CartView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartViewListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CartViewListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CashPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CashPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Check_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Check_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ChequePayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ChequePayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ConnectionListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/ConnectionListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ConnectionSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ConnectionSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CreditCardPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CreditCardPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CreditorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CreditorList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CreditorListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CreditorListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/DebtorDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/DebtorList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Discount_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Discount_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DocumentAN.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/DocumentAN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/EmptyAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/EmptyAD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/FGItem_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/FGItem_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/First2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/First2Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/First3Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/First3Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/First5Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/First5Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/First6Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/First6Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/First7Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/First7Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/FirstFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/FirstFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Formatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/GeneralSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/GeneralSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/GridViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/GridViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/HistoryPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/HistoryPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/HistoryPriceListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/HistoryPriceListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ImageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Model/ImageModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ImageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Interface/OnQuantityChangeListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvPymntAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/InvPymntAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlAdapterListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/InvoiceDtlAdapterListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/InvoiceDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlList_Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/InvoiceDtlList_Sales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/InvoiceDtlMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/InvoiceList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/InvoiceViewHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/InvoiceViewHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Invoice_C.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Invoice_C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemBOMListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemBOMListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemBatchList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemBatchList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/ItemListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemListViewSalesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemListViewSalesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemUOMList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemUOMList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ItemUOMListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ItemUOMListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Item_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Item_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Item_List_Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Item_List_Sales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/JobsheetAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/JobsheetAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/JobsheetItemListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/JobsheetItemListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddItemDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddItemDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddItemManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddItemManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddNew2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddNew2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddNewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddNewItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_Details.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_Details.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_Details_Item_Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_Details_Item_Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_Fragment1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_Fragment1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_Fragment2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_Fragment2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_Fragment3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_Fragment3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_Fragment_Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_Fragment_Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_ImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_ImageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_ListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_SelectedItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_SelectedItemAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/LocationListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/LocationListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Location_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Location_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MPaymentListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/MPaymentListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MainActivityRFID.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/MainActivityRFID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Model/BarChart2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Model/BarChart2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ModuleSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ModuleSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MultiPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/MultiPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/OrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PLCartListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PLCartListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PLItemListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PLItemListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_Compare.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_Compare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_CompareListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_CompareListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_Item_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_Item_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_LocationListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_LocationListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_Location_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_Location_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_MultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_MultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_MultipleTabPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_MultipleTabPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_MultipleTab_CompareFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_MultipleTab_CompareFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_MultipleTab_DetailFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_MultipleTab_DetailFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PLDtlAddBarcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PLDtlAddBarcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PLDtlAddManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PLDtlAddManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PLDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PLDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PLDtlListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PLDtlListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_PLListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_PLListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_SODtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_SODtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_SOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_SOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_SO_DownloadDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_SO_DownloadDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_SO_DownloadList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_SO_DownloadList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_SO_DownloadListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_SO_DownloadListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PL_SO_Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PL_SO_Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPLCartListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPLCartListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPLItemListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPLItemListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_Compare.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_Compare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_Item_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_Item_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_MultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_MultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_MultipleTabPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_MultipleTabPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_MultipleTab_CompareFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_MultipleTab_CompareFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_MultipleTab_DetailFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_MultipleTab_DetailFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLDtlAddManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PLDtlAddManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PLDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PODtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PODtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_POListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_POListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_DownloadDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PO_DownloadDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_DownloadList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PO_DownloadList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PO_Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PO_Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PPL_PPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PPL_PPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_EmptyAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_EmptyAD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_MultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_MultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_PurchaseDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_PurchaseDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_PurchaseDtlListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_PurchaseDtlListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_PurchaseDtl_AddBarcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_PurchaseDtl_AddBarcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_PurchaseDtl_AddManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_PurchaseDtl_AddManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_PurchaseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_PurchaseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PUR_PurchaseListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PUR_PurchaseListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PurchaseAgentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PurchaseAgentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/PurchaseAgentListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/PurchaseAgentListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/RFIDSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/RFIDSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ReceiptView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ReceiptView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/SCAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/SCAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/SOListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/SOListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/SalesUploadStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/SalesUploadStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Second2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Second2Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Second3Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Second3Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Second5Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Second5Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Second6Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Second6Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Second7Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Second7Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/SecondFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/SecondFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/SellingPriceListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/SellingPriceListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_AdditionalFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_AdditionalFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_AutoPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_AutoPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Barcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Barcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Hybrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Hybrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Logo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Logo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_AR.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_AR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_JS.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_JS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_PL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_PL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_PPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_PPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_Pur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_Pur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_SA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_SA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_SR.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_SR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Setting_Status_StockTake.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Setting_Status_StockTake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/AN.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/AN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/BatchNoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/BatchNoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/BatchNoSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/BatchNoSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/SalesAN.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/SalesAN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/SettingsClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/SettingsClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/SettingsHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/SettingsHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/SettingsListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/SettingsListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/TaxSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/TaxSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/ULDLListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/ULDLListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Settings/UploadDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Settings/UploadDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ShowCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ShowCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/SpacesItemDecoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/SpacesItemDecoration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssembly.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssembly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssemblyDtlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssemblyDtlAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssemblyDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssemblyDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssemblyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssemblyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssemblyListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssemblyListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssemblyMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssemblyMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockAssembly_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockAssembly_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockCountHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockCountHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockCountMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockCountMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockInquiry.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockInquiry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockInquiryMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockInquiryMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceiveAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceiveAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceiveCartListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceiveCartListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceiveItemListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceiveItemListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_AddItemManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_AddItemManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_AddNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_AddNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_AddNewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_AddNewItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_AddNewItemDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_AddNewItemDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_AutoNumbering.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_AutoNumbering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_Details.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_Details.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_DetailsItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_DetailsItemAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_ListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockReceive_SelectedItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockReceive_SelectedItemAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTake.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeAN.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeAN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeDtlAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlAddBarcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeDtlAddBarcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlAddManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeDtlAddManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeDtlMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeUOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeUOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeUOMAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeUOMAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/StockTakeUploadStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/StockTakeUploadStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TaxType_List.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TaxType_List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TaxtypeListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TaxtypeListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransactionListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransactionListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransactionSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransactionSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Transfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferAN.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferAN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferDtlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferDtlAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferDtlAddBarcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferDtlAddBarcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferDtlAddManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferDtlAddManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferDtlList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferDtlList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferDtlMultipleTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferDtlMultipleTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/TransferUploadStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/TransferUploadStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ViewHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/WelcomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/BaseTabFragmentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/BaseTabFragmentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/First4Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/First4Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/Second4Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/Second4Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/StockTakeDtlAddRFID.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/StockTakeDtlAddRFID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/UHFMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/UHFMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/UHFSecondActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/UHFSecondActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/activity/UHFWriteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/activity/UHFWriteActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/DebtorListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/DebtorListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/InvoiceDtlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/InvoiceDtlAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/InvoiceListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/InvoiceListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/InvoiceSectionsPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/InvoiceSectionsPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/RFIDListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/RFIDListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/SettingHistoryItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/SettingHistoryItemAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/SettingHistoryItemTypeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/SettingHistoryItemTypeAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/StockAssemblyListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/StockAssemblyListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/StockTakeListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/StockTakeListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/adapter/ViewPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/adapter/ViewPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/FileImport.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/FileImport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/FileXls.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/FileXls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/InvoiceItemsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/InvoiceItemsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/InvoicePaymentsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/InvoicePaymentsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/KeyDwonFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/KeyDwonFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/PlaceholderFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/PlaceholderFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFKillFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFKillFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFLockFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFLockFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFReadFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFReadFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFReadTagFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFReadTagFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFReadTagFragment2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFReadTagFragment2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFSetFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFSetFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/fragment/UHFWriteFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/fragment/UHFWriteFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/tools/EnglishNumberToWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/tools/EnglishNumberToWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/tools/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/tools/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/tools/UIHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/tools/UIHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/CustomerHistoryPriceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/CustomerHistoryPriceFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/HistoryPriceListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/HistoryPriceListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADBarcodeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/InvADBarcodeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvADManualFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/InvADManualFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/InvoiceHistoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/InvoiceHistoryFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/ItemBatchListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/ItemBatchListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/PageViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/PageViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/SCBarcodeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/SCBarcodeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/SCManualFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/SCManualFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/SCSectionsPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/SCSectionsPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/SectionsPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/SectionsPagerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/StockBalanceByLocationFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/StockBalanceByLocationFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/StockBalanceListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/StockBalanceListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/StockDetailsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/StockDetailsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ui/main/UTDCostListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/ui/main/UTDCostListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/widget/BatchNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/widget/BatchNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/widget/LazyViewPager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/widget/LazyViewPager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/widget/NoScrollViewPager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/widget/NoScrollViewPager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_about.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_aging_statement.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_aging_statement.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_aging_statement_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_aging_statement_dtl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_armultiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_armultiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_arpay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_arpay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_arpayment_dtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_arpayment_dtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_cart_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_cart_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_cart_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_cart_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_cash_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_cash_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_check_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_check_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_cheque_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_cheque_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_connection_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_connection_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_credit_card_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_credit_card_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_debtor_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_debtor_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_image_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_image_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_invoice_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_invoice_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_invoice_detail_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_invoice_detail_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_invoice_details_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_invoice_details_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_item_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_item_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_main_rfid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_main_rfid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_multi_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_multi_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_receipt_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_receipt_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_sales_upload_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_sales_upload_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_settings_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_settings_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_sotck_take_dtll_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_sotck_take_dtll_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_assembly.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_assembly.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_assembly_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_assembly_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_assembly_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_assembly_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_inquiry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_inquiry.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_inquiry_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_inquiry_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_take.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_take.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_dtl_add_barcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_dtl_add_barcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_dtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_dtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_dtl_add_rfid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_dtl_add_rfid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_upload_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_stock_take_upload_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_transfer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_transfer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_add_barcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_add_barcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_transfer_dtl_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/activity_transfer_upload_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/activity_transfer_upload_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/ar_row_ardtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/ar_row_ardtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/content_debtor_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/content_debtor_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/customerhistpricelist_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/customerhistpricelist_row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_customer_history_price.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_customer_history_price.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_inv_adbarcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_inv_adbarcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_inv_admanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_inv_admanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_invoice_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_invoice_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_invoice_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_invoice_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_invoice_payments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_invoice_payments.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_scbarcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_scbarcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_scmanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_scmanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_stock_balance_by_location.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_stock_balance_by_location.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_stock_balance_by_location_batch_no.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_stock_balance_by_location_batch_no.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_stock_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_stock_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/fragment_stockbalance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/fragment_stockbalance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/itembatchlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/itembatchlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aging_statement.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aging_statement.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aging_statement_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aging_statement_dtl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_armultiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_armultiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_arpay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_arpay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_arpayment_dtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_arpayment_dtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cash_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cash_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_check_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_check_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cheque_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cheque_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_connection_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_connection_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_credit_card_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_credit_card_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_debtor_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_debtor_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_image_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_image_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_detail_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_detail_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_details_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_details_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_jobsheet_image_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_jobsheet_image_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_rfid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_rfid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_multi_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_multi_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_receipt_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_receipt_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sales_upload_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sales_upload_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sotck_take_dtll_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sotck_take_dtll_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_assembly.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_assembly.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_assembly_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_assembly_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_assembly_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_assembly_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_inquiry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_inquiry.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_inquiry_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_inquiry_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_dtl_add_barcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_dtl_add_barcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_dtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_dtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_dtl_add_rfid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_dtl_add_rfid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_upload_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_stock_take_upload_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_add_barcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_add_barcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_dtl_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_upload_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_transfer_upload_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ar_row_ardtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ar_row_ardtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_debtor_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_debtor_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/customerhistpricelist_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/customerhistpricelist_row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_customer_history_price.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_customer_history_price.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_adbarcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_adbarcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_admanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_inv_admanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_payments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_payments.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scbarcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scbarcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scmanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scmanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stock_balance_by_location.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stock_balance_by_location.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stock_balance_by_location_batch_no.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stock_balance_by_location_batch_no.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stock_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stock_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stockbalance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_stockbalance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/itembatchlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/itembatchlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listtag_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listtag_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/outstandinglist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/outstandinglist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_compare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_compare.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pldtl_add_barcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pldtl_add_barcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pldtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pldtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pldtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_pldtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_po_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_po_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_so_downloaddtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_so_downloaddtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_so_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_so_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_sodtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_activity_sodtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_row_compare_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_row_compare_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_row_pl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_row_pl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pl_row_pldtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pl_row_pldtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_compare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_compare.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_pldtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_pldtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_pldtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_pldtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_po_downloaddtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_po_downloaddtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_podtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_podtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_ppl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_activity_ppl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_row_cart_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_row_cart_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_activity_multipletab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_activity_multipletab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_activity_purchase.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_activity_purchase.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_activity_purchasedtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_activity_purchasedtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_fragment_purchasedtl_addbarcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_fragment_purchasedtl_addbarcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_purchasedtl_addmanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_purchasedtl_addmanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_row_purchasedtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_row_purchasedtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pur_row_purchaselist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pur_row_purchaselist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_agent_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_agent_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_ar_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_ar_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_bom_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_bom_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_cart_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_cart_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_checkprice_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_checkprice_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_creditorlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_creditorlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_debtor_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_debtor_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_historyprice_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_historyprice_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_inv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_inv.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_inv_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_inv_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_invdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_invdtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_invpayment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_invpayment_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_item_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_item_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_item_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_item_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_itemuom_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_itemuom_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_location_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_location_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_multipayment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_multipayment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_pdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_pdtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_pl_so_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_pl_so_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_plitem_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_plitem_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_pllocation_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_pllocation_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_pplitem_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_pplitem_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_price_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_price_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_purchaseagentlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_purchaseagentlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_sa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_sa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_sc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_sc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_so_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_so_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_st_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_st_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_stockassemblydocument.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_stockassemblydocument.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_stockbalancebylocation_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_stockbalancebylocation_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_stockbalancebylocation_list_batch_no.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_stockbalancebylocation_list_batch_no.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_stockcountdocument.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_stockcountdocument.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_stockcountdocument_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_stockcountdocument_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_taxtype_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_taxtype_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_transfer_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_transfer_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_transfer_list_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_transfer_list_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_transferdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_transferdtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_uldl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_uldl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_uom_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_uom_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_url_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_url_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_utdcost_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_utdcost_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/listtag_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/listtag_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_debtor_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_debtor_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_compare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_compare.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_multiple_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_multiple_tab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_pl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_pl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_pldtl_add_barcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_pldtl_add_barcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_pldtl_add_manual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_pldtl_add_manual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_pldtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_pldtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_so_downloaddtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_so_downloaddtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_so_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_so_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_activity_sodtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_activity_sodtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_row_compare_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_row_compare_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_row_pl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_row_pl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pl_row_pldtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pl_row_pldtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_activity_multipletab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_activity_multipletab.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_activity_purchase.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_activity_purchase.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_activity_purchasedtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_activity_purchasedtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_fragment_purchasedtl_addbarcode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_fragment_purchasedtl_addbarcode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_purchasedtl_addmanual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_purchasedtl_addmanual.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_row_purchasedtllist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_row_purchasedtllist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/pur_row_purchaselist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/pur_row_purchaselist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_agent_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_agent_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_ar_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_ar_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_bom_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_bom_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_cart_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_cart_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_checkprice_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_checkprice_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_creditorlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_creditorlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_debtor_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_debtor_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_historyprice_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_historyprice_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_inv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_inv.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_inv_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_inv_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_invdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_invdtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_invpayment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_invpayment_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_item_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_item_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_item_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_item_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_itemuom_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_itemuom_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_location_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_location_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_multipayment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_multipayment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_pdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_pdtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_plitem_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_plitem_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_pllocation_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_pllocation_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_price_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_price_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_purchaseagentlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_purchaseagentlist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_sa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_sa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_sc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_sc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_so_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_so_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_st_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_st_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_stockassemblydocument.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_stockassemblydocument.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_stockbalancebylocation_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_stockbalancebylocation_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_stockbalancebylocation_list_batch_no.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_stockbalancebylocation_list_batch_no.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_stockcountdocument.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_stockcountdocument.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_stockcountdocument_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_stockcountdocument_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_taxtype_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_taxtype_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_transfer_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_transfer_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_transfer_list_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_transfer_list_status.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_transferdtl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_transferdtl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_uldl_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_uldl_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_uom_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_uom_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/row_url_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/row_url_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apprf2/src/main/java/com/example/rfiddemo/activity/BaseTabFragmentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/apprf2/src/main/java/com/example/rfiddemo/activity/BaseTabFragmentActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +770,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\jiayi\.android\avd\Phone_Test.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=57b9ac4b)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -242,45 +835,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "ApkExportedModule": "psms_v3.app",
-    "BundleExportedModule": "psms_v3.app",
-    "DEBUGGABLE_DEVICE": "xiaomi-redmi_note_6_pro-57b9ac4b",
-    "DEBUGGABLE_PROCESS": "com.example.androidmobilestock",
-    "DEBUGGER_ID": "Auto",
-    "ExportApk.ApkPathForpsms_v3.app": "C:\\Users\\jiayi\\OneDrive\\Documents\\GitHub\\psms_v3\\app",
-    "PROJECT_TRUSTED_KEY": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHOW_ALL_PROCESSES": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jiayi/AndroidStudioProjects/AndroidMobileStock_Bangkok/AndroidMobileStock_Bangkok",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;ApkExportedModule&quot;: &quot;psms_v3.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;psms_v3.app&quot;,
+    &quot;DEBUGGABLE_DEVICE&quot;: &quot;xiaomi-redmi_note_6_pro-57b9ac4b&quot;,
+    &quot;DEBUGGABLE_PROCESS&quot;: &quot;com.example.androidmobilestock&quot;,
+    &quot;DEBUGGER_ID&quot;: &quot;Auto&quot;,
+    &quot;ExportApk.ApkPathForpsms_v3.app&quot;: &quot;C:\\Users\\jiayi\\OneDrive\\Documents\\GitHub\\psms_v3\\app&quot;,
+    &quot;PROJECT_TRUSTED_KEY&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jiayi/AndroidStudioProjects/AndroidMobileStock_Bangkok/AndroidMobileStock_Bangkok&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "release"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
     ],
-    "com.android.tools.idea.sqlite.queryhistory": [
-      "ALTER TABLE Sales ADD COLUMN TotalEx Double",
-      "ALTER TABLE Sales ADD COLUMN TotalIn Double",
-      "ALTER TABLE Sales ADD COLUMN RoundingAdj Double",
-      "ALTER TABLE Sales ADD COLUMN IsRound Boolean",
-      "ALTER TABLE Sales ADD COLUMN TotalTax Double"
+    &quot;com.android.tools.idea.sqlite.queryhistory&quot;: [
+      &quot;ALTER TABLE Sales ADD COLUMN TotalEx Double&quot;,
+      &quot;ALTER TABLE Sales ADD COLUMN TotalIn Double&quot;,
+      &quot;ALTER TABLE Sales ADD COLUMN RoundingAdj Double&quot;,
+      &quot;ALTER TABLE Sales ADD COLUMN IsRound Boolean&quot;,
+      &quot;ALTER TABLE Sales ADD COLUMN TotalTax Double&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jiayi\OneDrive\Documents\GitHub\psms_v3\app\src\main\res\drawable" />
@@ -458,94 +1051,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddNew.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddNew.java</url>
           <line>351</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/DebtorList.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Jobsheet_AddItemDetails.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/Jobsheet_AddItemDetails.java</url>
           <line>134</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ChequePayment.java</url>
-          <line>211</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/CartList.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/CartList.java</url>
           <line>263</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>515</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/ACDatabase.java</url>
-          <line>1997</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>507</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>380</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>325</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MainActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/MainActivity.java</url>
           <line>257</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/MainActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock_bangkok/MainActivity.java</url>
           <line>227</line>
           <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>510</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>460</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>490</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>308</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/androidmobilestock/Login.java</url>
-          <line>231</line>
-          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

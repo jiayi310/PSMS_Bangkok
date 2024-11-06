@@ -9,7 +9,7 @@
 
         <variable
             name="StateDtl"
-            type="com.example.androidmobilestock.AC_Class.Statement" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Statement" />
 
         <variable
             name="defaultCurr"

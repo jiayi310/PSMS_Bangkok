@@ -8,7 +8,7 @@
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.TransferDtlAddBarcode.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.TransferDtlAddBarcode.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

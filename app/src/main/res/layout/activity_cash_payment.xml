@@ -5,13 +5,13 @@
     <data>
         <variable
             name="payment"
-            type="com.example.androidmobilestock.AC_Class.Payment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Payment" />
         <variable
             name="invoice"
-            type="com.example.androidmobilestock.AC_Class.Invoice" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Invoice" />
         <variable
             name="clickHandler"
-            type="com.example.androidmobilestock.CashPayment.OnClickHandler"/>
+            type="com.example.androidmobilestock_bangkok.CashPayment.OnClickHandler"/>
     </data>
 
 

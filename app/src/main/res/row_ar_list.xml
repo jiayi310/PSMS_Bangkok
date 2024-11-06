@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="ARMenu"
-            type="com.example.androidmobilestock.AC_Class.ARPayment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.ARPayment" />
         <variable
             name="DefaultCurr"
             type="String" />

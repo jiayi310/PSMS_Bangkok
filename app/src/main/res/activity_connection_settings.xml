@@ -5,10 +5,10 @@
     <data>
         <variable
             name="Connection"
-            type="com.example.androidmobilestock.AC_Class.Connection" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Connection" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.ConnectionSettings.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.ConnectionSettings.MyClickHandler" />
     </data>
 
     <RelativeLayout

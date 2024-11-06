@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.androidmobilestock.FirstFragment"
+        android:name="com.example.androidmobilestock_bangkok.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.androidmobilestock.SecondFragment"
+        android:name="com.example.androidmobilestock_bangkok.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/First2Fragment"
-        android:name="com.example.androidmobilestock.First2Fragment"
+        android:name="com.example.androidmobilestock_bangkok.First2Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first2">
 
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="com.example.androidmobilestock.Second2Fragment"
+        android:name="com.example.androidmobilestock_bangkok.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/First3Fragment"
-        android:name="com.example.androidmobilestock.First3Fragment"
+        android:name="com.example.androidmobilestock_bangkok.First3Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first3">
 
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second3Fragment"
-        android:name="com.example.androidmobilestock.Second3Fragment"
+        android:name="com.example.androidmobilestock_bangkok.Second3Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second3">
 
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/First4Fragment"
-        android:name="com.example.androidmobilestock.activity.First4Fragment"
+        android:name="com.example.androidmobilestock_bangkok.activity.First4Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first4">
 
@@ -77,7 +77,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second4Fragment"
-        android:name="com.example.androidmobilestock.activity.Second4Fragment"
+        android:name="com.example.androidmobilestock_bangkok.activity.Second4Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second4">
 

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="SODODTL"
-            type="com.example.androidmobilestock.AC_Class.SODODtl" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.SODODtl" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

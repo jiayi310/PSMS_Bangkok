@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/home2"
-        android:name="com.example.androidmobilestock.Home"
+        android:name="com.example.androidmobilestock_bangkok.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/menu2"
-        android:name="com.example.androidmobilestock.Menu"
+        android:name="com.example.androidmobilestock_bangkok.Menu"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
 

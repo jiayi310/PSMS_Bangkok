@@ -5,7 +5,7 @@
     <data>
         <variable
             name="StockTakeMenu"
-            type="com.example.androidmobilestock.AC_Class.StockAssembly" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockAssembly" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

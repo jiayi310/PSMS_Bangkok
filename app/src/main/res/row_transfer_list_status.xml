@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="TransferMenu"
-            type="com.example.androidmobilestock.AC_Class.TransferMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.TransferMenu" />
         <variable
             name="DefaultCurr"
             type="String" />

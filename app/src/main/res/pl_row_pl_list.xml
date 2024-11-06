@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="DO"
-            type="com.example.androidmobilestock.AC_Class.DO" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.DO" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

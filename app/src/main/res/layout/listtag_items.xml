@@ -5,7 +5,7 @@
     <data>
         <variable
             name="myItemStatus"
-            type="com.example.androidmobilestock.AC_Class.RFIDItemStatus" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.RFIDItemStatus" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="handler"
-            type="com.example.androidmobilestock.PPL_PO_Search.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.PPL_PO_Search.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

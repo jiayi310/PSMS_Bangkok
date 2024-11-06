@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.androidmobilestock.AC_Class.StockTakeDetails" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockTakeDetails" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

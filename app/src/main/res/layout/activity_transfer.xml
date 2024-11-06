@@ -5,10 +5,10 @@
     <data>
         <variable
             name="Tr"
-            type="com.example.androidmobilestock.AC_Class.Transfer" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Transfer" />
         <variable
             name="TrHandler"
-            type="com.example.androidmobilestock.Transfer.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.Transfer.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

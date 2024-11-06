@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="so"
-            type="com.example.androidmobilestock.AC_Class.SOMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.SOMenu" />
 
     </data>
 

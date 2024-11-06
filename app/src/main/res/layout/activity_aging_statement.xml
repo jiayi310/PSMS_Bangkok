@@ -5,7 +5,7 @@
     <data>
         <variable
             name="handler"
-            type="com.example.androidmobilestock.AgingStatement.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.AgingStatement.MyClickHandler" />
         <variable
             name="defaultCurr"
             type="String" />

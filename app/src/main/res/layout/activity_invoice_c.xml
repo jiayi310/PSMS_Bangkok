@@ -5,10 +5,10 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
 <data>
     <variable
         name="Inv"
-        type="com.example.androidmobilestock.AC_Class.Invoice" />
+        type="com.example.androidmobilestock_bangkok.AC_Class.Invoice" />
     <variable
         name="handler"
-        type="com.example.androidmobilestock.Invoice_C.MyClickHandler" />
+        type="com.example.androidmobilestock_bangkok.Invoice_C.MyClickHandler" />
 </data>
 
 <!--<ScrollView android:layout_width="match_parent"-->

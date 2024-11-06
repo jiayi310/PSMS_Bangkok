@@ -6,7 +6,7 @@
     <data>
         <variable
             name="TrDetail"
-            type="com.example.androidmobilestock.AC_Class.TransferDtl" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.TransferDtl" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,13 +6,13 @@
         <import type="android.view.View"/>
         <variable
             name="InvMenu"
-            type="com.example.androidmobilestock.AC_Class.InvoiceMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.InvoiceMenu" />
         <variable
             name="DefaultCurr"
             type="String" />
         <variable
             name="Inv"
-            type="com.example.androidmobilestock.AC_Class.Invoice" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Invoice" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

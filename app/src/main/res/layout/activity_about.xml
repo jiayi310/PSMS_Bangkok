@@ -5,7 +5,7 @@
     <data>
         <variable
             name="About"
-            type="com.example.androidmobilestock.About" />
+            type="com.example.androidmobilestock_bangkok.About" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

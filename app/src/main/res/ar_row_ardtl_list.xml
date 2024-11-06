@@ -6,7 +6,7 @@
     <data>
         <variable
             name="ARDTL"
-            type="com.example.androidmobilestock.AC_Class.ARPaymentDtl" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.ARPaymentDtl" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

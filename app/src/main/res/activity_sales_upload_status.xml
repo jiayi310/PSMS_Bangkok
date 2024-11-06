@@ -6,13 +6,13 @@
     <data>
         <variable
             name="clickHandler"
-            type="com.example.androidmobilestock.SalesUploadStatus.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.SalesUploadStatus.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.androidmobilestock.SalesUploadStatus">
+        tools:context="com.example.androidmobilestock_bangkok.SalesUploadStatus">
 
         <ListView
             android:id="@+id/sales_menu_list"

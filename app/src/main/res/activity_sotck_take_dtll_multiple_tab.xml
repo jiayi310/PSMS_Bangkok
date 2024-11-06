@@ -6,7 +6,7 @@
         <import type="android.view.View" />
         <variable
             name="StockTakeMenu"
-            type="com.example.androidmobilestock.AC_Class.StockTakeMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockTakeMenu" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -10,7 +10,7 @@
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.PUR_PurchaseDtl_AddBarcode.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.PUR_PurchaseDtl_AddBarcode.MyClickHandler" />
     </data>
 
     <!--<ScrollView-->

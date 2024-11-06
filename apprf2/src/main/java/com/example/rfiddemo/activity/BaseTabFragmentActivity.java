@@ -1,4 +1,4 @@
-package com.example.androidmobilestock.activity;
+package com.example.androidmobilestock_bangkok.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

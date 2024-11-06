@@ -6,10 +6,10 @@
     <data>
         <variable
             name="stockCount"
-            type="com.example.androidmobilestock.AC_Class.StockCount" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockCount" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.ui.main.SCBarcodeFragment.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.ui.main.SCBarcodeFragment.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

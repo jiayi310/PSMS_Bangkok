@@ -5,7 +5,7 @@
     <data>
         <variable
             name="StDetail"
-            type="com.example.androidmobilestock.AC_Class.StockAssemblyDetails" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockAssemblyDetails" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

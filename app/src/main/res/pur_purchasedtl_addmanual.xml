@@ -5,10 +5,10 @@
     <data>
         <variable
             name="dtl"
-            type="com.example.androidmobilestock.AC_Class.PurchaseDetails" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.PurchaseDetails" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.PUR_PurchaseDtl_AddManual.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.PUR_PurchaseDtl_AddManual.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

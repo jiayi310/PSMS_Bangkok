@@ -7,10 +7,10 @@
         <import type="android.view.View" />
         <variable
             name="purchase"
-            type="com.example.androidmobilestock.AC_Class.PurchaseMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.PurchaseMenu" />
         <variable
             name="payment"
-            type="com.example.androidmobilestock.AC_Class.Payment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Payment" />
         <variable
             name="test"
             type="String" />

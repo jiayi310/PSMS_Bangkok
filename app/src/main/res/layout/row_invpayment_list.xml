@@ -10,7 +10,7 @@
     <data>
         <variable
             name="InvPayment"
-            type="com.example.androidmobilestock.AC_Class.Payment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Payment" />
         <variable
             name="DefaultCurr"
             type="String" />

@@ -7,16 +7,16 @@
     <data>
         <variable
             name="item"
-            type="com.example.androidmobilestock.AC_Class.Item" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Item" />
         <variable
             name="itemuom"
-            type="com.example.androidmobilestock.AC_Class.ItemUOM" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.ItemUOM" />
         <variable
             name="DefaultCurr"
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.ui.main.StockDetailsFragment.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.ui.main.StockDetailsFragment.MyClickHandler" />
     </data>
 
     <ScrollView

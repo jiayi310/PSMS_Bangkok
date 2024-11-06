@@ -5,7 +5,7 @@
     <data>
         <variable
             name="debtor"
-            type="com.example.androidmobilestock.AC_Class.Debtor" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Debtor" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -3,7 +3,7 @@
     <data>
         <variable
             name="stockbalance"
-            type="com.example.androidmobilestock.AC_Class.StockBalance" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockBalance" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

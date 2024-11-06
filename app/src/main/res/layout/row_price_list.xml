@@ -4,7 +4,7 @@
     <data>
         <variable
             name="price"
-            type="com.example.androidmobilestock.AC_Class.SellingPrice" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.SellingPrice" />
     </data>
     <RelativeLayout
         android:layout_width="match_parent"

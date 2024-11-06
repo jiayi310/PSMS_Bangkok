@@ -4,7 +4,7 @@
     <data>
         <variable
             name="location"
-            type="com.example.androidmobilestock.AC_Class.Location" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Location" />
     </data>
 
     <RelativeLayout

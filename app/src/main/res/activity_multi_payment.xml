@@ -5,10 +5,10 @@
     <data>
         <variable
             name="handler"
-            type="com.example.androidmobilestock.MultiPayment.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.MultiPayment.MyClickHandler" />
         <variable
             name="payment"
-            type="com.example.androidmobilestock.AC_Class.Payment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Payment" />
     </data>
 
     <ScrollView

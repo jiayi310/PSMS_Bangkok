@@ -4,7 +4,7 @@
     <data>
         <variable
             name="itemuom"
-            type="com.example.androidmobilestock.AC_Class.ItemUOM" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.ItemUOM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

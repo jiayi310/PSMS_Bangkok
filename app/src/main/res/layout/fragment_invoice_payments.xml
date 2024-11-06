@@ -5,7 +5,7 @@
         <data>
                 <variable
                     name="handler"
-                    type="com.example.androidmobilestock.InvoiceList" />
+                    type="com.example.androidmobilestock_bangkok.InvoiceList" />
         </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout

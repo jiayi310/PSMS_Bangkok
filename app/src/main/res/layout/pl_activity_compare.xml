@@ -7,10 +7,10 @@
         <import type="android.view.View" />
         <variable
             name="DO"
-            type="com.example.androidmobilestock.AC_Class.DO" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.DO" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.PL_Compare.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.PL_Compare.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

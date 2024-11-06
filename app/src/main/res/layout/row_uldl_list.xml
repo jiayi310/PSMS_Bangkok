@@ -6,7 +6,7 @@
     <data>
         <variable
             name="uldl"
-            type="com.example.androidmobilestock.AC_Class.UploadDownload" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.UploadDownload" />
         <variable
             name="selected"
             type="Boolean" />

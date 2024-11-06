@@ -10,7 +10,7 @@
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.ui.main.InvADBarcodeFragment.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.ui.main.InvADBarcodeFragment.MyClickHandler" />
     </data>
 
     <!--<ScrollView-->

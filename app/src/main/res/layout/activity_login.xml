@@ -5,7 +5,7 @@
     <data>
         <variable
             name="ConSettings"
-            type="com.example.androidmobilestock.AC_Class.Connection" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Connection" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

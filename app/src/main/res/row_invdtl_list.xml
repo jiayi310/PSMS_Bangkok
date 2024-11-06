@@ -10,7 +10,7 @@
     <data>
         <variable
             name="InvDetail"
-            type="com.example.androidmobilestock.AC_Class.InvoiceDetails" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.InvoiceDetails" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

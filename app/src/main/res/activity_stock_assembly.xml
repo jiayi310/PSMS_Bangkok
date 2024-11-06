@@ -5,10 +5,10 @@
     <data>
         <variable
             name="St"
-            type="com.example.androidmobilestock.AC_Class.StockAssembly" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.StockAssembly" />
         <variable
             name="StHandler"
-            type="com.example.androidmobilestock.StockAssembly.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.StockAssembly.MyClickHandler" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

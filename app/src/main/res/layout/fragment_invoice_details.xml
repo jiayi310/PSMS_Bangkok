@@ -5,10 +5,10 @@
     <data>
         <variable
             name="invoice"
-            type="com.example.androidmobilestock.AC_Class.InvoiceMenu" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.InvoiceMenu" />
         <variable
             name="payment"
-            type="com.example.androidmobilestock.AC_Class.Payment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Payment" />
         <variable
             name="test"
             type="String" />

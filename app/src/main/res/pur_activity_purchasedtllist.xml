@@ -5,13 +5,13 @@
     <data>
         <variable
             name="Inv"
-            type="com.example.androidmobilestock.AC_Class.Purchase" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Purchase" />
         <variable
             name="defaultCurr"
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.PUR_PurchaseDtlList.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.PUR_PurchaseDtlList.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,13 +6,13 @@
     <data>
         <variable
             name="invoicedetail"
-            type="com.example.androidmobilestock.AC_Class.InvoiceDetails" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.InvoiceDetails" />
         <variable
             name="defaultCurr"
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.ItemDetail.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.ItemDetail.MyClickHandler" />
     </data>
 
     <RelativeLayout

@@ -5,10 +5,10 @@
     <data>
         <variable
             name="AR"
-            type="com.example.androidmobilestock.AC_Class.ARPayment" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.ARPayment" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.ARPaymentDtlList.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.ARPaymentDtlList.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

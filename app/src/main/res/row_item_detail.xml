@@ -6,13 +6,13 @@
     <data>
         <variable
             name="item"
-            type="com.example.androidmobilestock.AC_Class.Item" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Item" />
         <variable
             name="defaultCurr"
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.CartView.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.CartView.MyClickHandler" />
         <import type="android.graphics.Bitmap"/>
     </data>
 

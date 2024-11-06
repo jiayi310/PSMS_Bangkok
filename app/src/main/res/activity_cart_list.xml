@@ -6,13 +6,13 @@
     <data>
         <variable
             name="Inv"
-            type="com.example.androidmobilestock.AC_Class.Invoice" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Invoice" />
         <variable
             name="defaultCurr"
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.CartList.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.CartList.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

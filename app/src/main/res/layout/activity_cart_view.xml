@@ -8,7 +8,7 @@
             type="String" />
         <variable
             name="handler"
-            type="com.example.androidmobilestock.CartView.MyClickHandler" />
+            type="com.example.androidmobilestock_bangkok.CartView.MyClickHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

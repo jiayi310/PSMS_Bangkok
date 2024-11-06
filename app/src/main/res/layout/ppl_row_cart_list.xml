@@ -5,10 +5,10 @@
     <data>
         <variable
             name="StDetail"
-            type="com.example.androidmobilestock.AC_Class.DODtl" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.DODtl" />
         <variable
             name="Item"
-            type="com.example.androidmobilestock.AC_Class.Item" />
+            type="com.example.androidmobilestock_bangkok.AC_Class.Item" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
