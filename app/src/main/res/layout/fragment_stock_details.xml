@@ -530,7 +530,126 @@
                         android:textColor="#000000" />
                 </LinearLayout>
             </TableRow>
-
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="UDF1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@={item.UDF_UDF1}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="UDF2" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@={item.UDF_UDF2}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="UDF3" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@={item.UDF_UDF3}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="UDF4" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@={item.UDF_UDF4}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:layout_margin="3dp"
+                    android:padding="5dp"
+                    android:background="@drawable/selector_fieldset_background"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4500"
+                        android:textSize="14sp"
+                        android:text="UDF5" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:text='@={item.UDF_UDF5}'
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </TableRow>
         </TableLayout>
 
             <LinearLayout

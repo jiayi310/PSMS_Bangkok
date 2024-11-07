@@ -852,6 +852,7 @@ public class AC_Class {
 
         //Sales
         public Item(String itemCode, String itemCode2, String uom, String description, String desc2, String itemGroup, String itemType, String taxType, String purchaseTaxType, String baseUOM, Float price, Float price2, Float price3, Float price4, Float price5, Float price6, String barCode, String shelf, Float rate, Float minPrice, Float maxPrice, String hasBatch, String UDF1, String UDF2, String UDF3, String UDF4, String UDF5) {
+
             ItemCode = itemCode;
             ItemCode2 = itemCode2;
             UOM = uom;
@@ -1056,12 +1057,13 @@ public class AC_Class {
             dest.writeParcelable(Image, flags);
             dest.writeString(HasBatchNo);
             dest.writeString(Location);
-            dest.writeString(BarCode);
+
             dest.writeString(UDF_UDF1);
             dest.writeString(UDF_UDF2);
             dest.writeString(UDF_UDF3);
             dest.writeString(UDF_UDF4);
             dest.writeString(UDF_UDF5);
+
         }
 
         @Override

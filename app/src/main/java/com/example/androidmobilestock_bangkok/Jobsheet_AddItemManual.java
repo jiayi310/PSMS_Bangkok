@@ -242,11 +242,13 @@ public class Jobsheet_AddItemManual extends AppCompatActivity implements Jobshee
                             data.getFloat(19),
                             data.getFloat(20),
                             data.getString(21),
-                            data.getString(nUDF1),
-                            data.getString(nUDF2),
-                            data.getString(nUDF3),
-                            data.getString(nUDF4),
-                            data.getString(nUDF5));
+                            data.getString(22),
+                            data.getString(23),
+                            data.getString(24),
+                            data.getString(25),
+                            data.getString(26)
+
+                    );
 
 
                     originalList.add(item);

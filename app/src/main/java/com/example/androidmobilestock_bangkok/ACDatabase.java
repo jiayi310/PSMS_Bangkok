@@ -23,7 +23,7 @@ import java.util.Locale;
 
 public class ACDatabase extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 64;
+    private static final int DATABASE_VERSION = 65;
 
     private static final String DATABASE_NAME = "AutoCountDatabase";
 

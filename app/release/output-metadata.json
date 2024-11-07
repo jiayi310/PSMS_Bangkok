@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.androidmobilestock",
+  "applicationId": "com.example.androidmobilestock_bangkok",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "attributes": [],
       "versionCode": 309036,
-      "versionName": "8.4.0",
+      "versionName": "3.9.37",
       "outputFile": "app-release.apk"
     }
   ],
